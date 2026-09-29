@@ -1,0 +1,67 @@
+{
+  "target": "srd/subclass/lore",
+  "features": {
+    "bonus-proficiencies": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "bonus-proficiencies",
+          "labelRu": "Дополнительные владения",
+          "choose": 3,
+          "options": {
+            "kind": "skills",
+            "from": "any",
+            "grant": "proficient"
+          }
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "cutting-words": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Реакцией: тратите вдохновение, вычитая кость из броска атаки, проверки или урона существа в 60 футах"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "additional-magical-secrets": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "additional-magical-secrets",
+          "labelRu": "Дополнительные тайны магии",
+          "choose": 2,
+          "options": {
+            "kind": "spells",
+            "list": "*",
+            "level": "up_to_max"
+          }
+        },
+        {
+          "type": "spell_grant",
+          "spell": {
+            "choice": "additional-magical-secrets"
+          },
+          "ability": "class",
+          "mode": "known"
+        },
+        {
+          "type": "text",
+          "noteRu": "Заклинания считаются заклинаниями барда, но не входят в число известных"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "peerless-skill": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Тратите вдохновение: прибавляете кость к своей проверке характеристики"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

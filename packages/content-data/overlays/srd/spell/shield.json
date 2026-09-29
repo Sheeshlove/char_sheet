@@ -1,0 +1,13 @@
+{
+  "target": "srd/spell/shield",
+  "data": {
+    "selfEffects": [
+      {
+        "type": "bonus",
+        "target": "ac",
+        "value": "5",
+        "labelRu": "Щит"
+      }
+    ]
+  }
+}

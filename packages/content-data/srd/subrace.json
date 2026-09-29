@@ -121,8 +121,13 @@
           "textMd": ""
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "type": "hp_max",
+              "value": "LEVEL"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "dwarven-toughness",
           "nameEn": "Dwarven Toughness",
           "nameRu": "Дварфская выдержка",
@@ -131,7 +136,7 @@
       ],
       "raceKey": "srd/race/dwarf"
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/subrace/hill-dwarf",
     "kind": "subrace",
     "nameEn": "Hill Dwarf",
@@ -158,8 +163,13 @@
           "textMd": ""
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Можно пытаться спрятаться за существом, которое хотя бы на размер больше вас",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "naturally-stealthy",
           "nameEn": "Naturally Stealthy",
           "nameRu": "Естественная скрытность",
@@ -168,7 +178,7 @@
       ],
       "raceKey": "srd/race/halfling"
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/subrace/lightfoot-halfling",
     "kind": "subrace",
     "nameEn": "Lightfoot Halfling",
@@ -195,8 +205,13 @@
           "textMd": ""
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Проверки Интеллекта (История) о магических, алхимических и технологических предметах: удвоенный БМ",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "artificers-lore",
           "nameEn": "Artificer's Lore",
           "nameRu": "Знания ремесленника",
@@ -219,7 +234,7 @@
       ],
       "raceKey": "srd/race/gnome"
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/subrace/rock-gnome",
     "kind": "subrace",
     "nameEn": "Rock Gnome",

@@ -1,0 +1,406 @@
+{
+  "target": "srd/subclass/draconic",
+  "features": {
+    "dragon-ancestor": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "ancestor",
+          "labelRu": "Драконий предок",
+          "choose": 1,
+          "options": {
+            "kind": "list",
+            "items": [
+              {
+                "value": "black",
+                "labelRu": "Чёрный (кислота)",
+                "effects": [
+                  {
+                    "type": "spell_damage_bonus",
+                    "value": "CHA",
+                    "labelRu": "Родство со стихией",
+                    "damageTypes": [
+                      "acid"
+                    ],
+                    "when": "CLASS_LEVEL >= 6"
+                  },
+                  {
+                    "type": "toggle",
+                    "id": "elemental-affinity",
+                    "labelRu": "Сопротивление: кислота (1 ед. чародейства, 1 час)",
+                    "effects": [
+                      {
+                        "type": "defense",
+                        "kind": "resistance",
+                        "damageType": "acid"
+                      }
+                    ],
+                    "cost": {
+                      "resource": "sorcery-points",
+                      "amount": 1
+                    },
+                    "when": "CLASS_LEVEL >= 6"
+                  }
+                ]
+              },
+              {
+                "value": "blue",
+                "labelRu": "Синий (электричество)",
+                "effects": [
+                  {
+                    "type": "spell_damage_bonus",
+                    "value": "CHA",
+                    "labelRu": "Родство со стихией",
+                    "damageTypes": [
+                      "lightning"
+                    ],
+                    "when": "CLASS_LEVEL >= 6"
+                  },
+                  {
+                    "type": "toggle",
+                    "id": "elemental-affinity",
+                    "labelRu": "Сопротивление: электричество (1 ед. чародейства, 1 час)",
+                    "effects": [
+                      {
+                        "type": "defense",
+                        "kind": "resistance",
+                        "damageType": "lightning"
+                      }
+                    ],
+                    "cost": {
+                      "resource": "sorcery-points",
+                      "amount": 1
+                    },
+                    "when": "CLASS_LEVEL >= 6"
+                  }
+                ]
+              },
+              {
+                "value": "brass",
+                "labelRu": "Латунный (огонь)",
+                "effects": [
+                  {
+                    "type": "spell_damage_bonus",
+                    "value": "CHA",
+                    "labelRu": "Родство со стихией",
+                    "damageTypes": [
+                      "fire"
+                    ],
+                    "when": "CLASS_LEVEL >= 6"
+                  },
+                  {
+                    "type": "toggle",
+                    "id": "elemental-affinity",
+                    "labelRu": "Сопротивление: огонь (1 ед. чародейства, 1 час)",
+                    "effects": [
+                      {
+                        "type": "defense",
+                        "kind": "resistance",
+                        "damageType": "fire"
+                      }
+                    ],
+                    "cost": {
+                      "resource": "sorcery-points",
+                      "amount": 1
+                    },
+                    "when": "CLASS_LEVEL >= 6"
+                  }
+                ]
+              },
+              {
+                "value": "bronze",
+                "labelRu": "Бронзовый (электричество)",
+                "effects": [
+                  {
+                    "type": "spell_damage_bonus",
+                    "value": "CHA",
+                    "labelRu": "Родство со стихией",
+                    "damageTypes": [
+                      "lightning"
+                    ],
+                    "when": "CLASS_LEVEL >= 6"
+                  },
+                  {
+                    "type": "toggle",
+                    "id": "elemental-affinity",
+                    "labelRu": "Сопротивление: электричество (1 ед. чародейства, 1 час)",
+                    "effects": [
+                      {
+                        "type": "defense",
+                        "kind": "resistance",
+                        "damageType": "lightning"
+                      }
+                    ],
+                    "cost": {
+                      "resource": "sorcery-points",
+                      "amount": 1
+                    },
+                    "when": "CLASS_LEVEL >= 6"
+                  }
+                ]
+              },
+              {
+                "value": "copper",
+                "labelRu": "Медный (кислота)",
+                "effects": [
+                  {
+                    "type": "spell_damage_bonus",
+                    "value": "CHA",
+                    "labelRu": "Родство со стихией",
+                    "damageTypes": [
+                      "acid"
+                    ],
+                    "when": "CLASS_LEVEL >= 6"
+                  },
+                  {
+                    "type": "toggle",
+                    "id": "elemental-affinity",
+                    "labelRu": "Сопротивление: кислота (1 ед. чародейства, 1 час)",
+                    "effects": [
+                      {
+                        "type": "defense",
+                        "kind": "resistance",
+                        "damageType": "acid"
+                      }
+                    ],
+                    "cost": {
+                      "resource": "sorcery-points",
+                      "amount": 1
+                    },
+                    "when": "CLASS_LEVEL >= 6"
+                  }
+                ]
+              },
+              {
+                "value": "gold",
+                "labelRu": "Золотой (огонь)",
+                "effects": [
+                  {
+                    "type": "spell_damage_bonus",
+                    "value": "CHA",
+                    "labelRu": "Родство со стихией",
+                    "damageTypes": [
+                      "fire"
+                    ],
+                    "when": "CLASS_LEVEL >= 6"
+                  },
+                  {
+                    "type": "toggle",
+                    "id": "elemental-affinity",
+                    "labelRu": "Сопротивление: огонь (1 ед. чародейства, 1 час)",
+                    "effects": [
+                      {
+                        "type": "defense",
+                        "kind": "resistance",
+                        "damageType": "fire"
+                      }
+                    ],
+                    "cost": {
+                      "resource": "sorcery-points",
+                      "amount": 1
+                    },
+                    "when": "CLASS_LEVEL >= 6"
+                  }
+                ]
+              },
+              {
+                "value": "green",
+                "labelRu": "Зелёный (яд)",
+                "effects": [
+                  {
+                    "type": "spell_damage_bonus",
+                    "value": "CHA",
+                    "labelRu": "Родство со стихией",
+                    "damageTypes": [
+                      "poison"
+                    ],
+                    "when": "CLASS_LEVEL >= 6"
+                  },
+                  {
+                    "type": "toggle",
+                    "id": "elemental-affinity",
+                    "labelRu": "Сопротивление: яд (1 ед. чародейства, 1 час)",
+                    "effects": [
+                      {
+                        "type": "defense",
+                        "kind": "resistance",
+                        "damageType": "poison"
+                      }
+                    ],
+                    "cost": {
+                      "resource": "sorcery-points",
+                      "amount": 1
+                    },
+                    "when": "CLASS_LEVEL >= 6"
+                  }
+                ]
+              },
+              {
+                "value": "red",
+                "labelRu": "Красный (огонь)",
+                "effects": [
+                  {
+                    "type": "spell_damage_bonus",
+                    "value": "CHA",
+                    "labelRu": "Родство со стихией",
+                    "damageTypes": [
+                      "fire"
+                    ],
+                    "when": "CLASS_LEVEL >= 6"
+                  },
+                  {
+                    "type": "toggle",
+                    "id": "elemental-affinity",
+                    "labelRu": "Сопротивление: огонь (1 ед. чародейства, 1 час)",
+                    "effects": [
+                      {
+                        "type": "defense",
+                        "kind": "resistance",
+                        "damageType": "fire"
+                      }
+                    ],
+                    "cost": {
+                      "resource": "sorcery-points",
+                      "amount": 1
+                    },
+                    "when": "CLASS_LEVEL >= 6"
+                  }
+                ]
+              },
+              {
+                "value": "silver",
+                "labelRu": "Серебряный (холод)",
+                "effects": [
+                  {
+                    "type": "spell_damage_bonus",
+                    "value": "CHA",
+                    "labelRu": "Родство со стихией",
+                    "damageTypes": [
+                      "cold"
+                    ],
+                    "when": "CLASS_LEVEL >= 6"
+                  },
+                  {
+                    "type": "toggle",
+                    "id": "elemental-affinity",
+                    "labelRu": "Сопротивление: холод (1 ед. чародейства, 1 час)",
+                    "effects": [
+                      {
+                        "type": "defense",
+                        "kind": "resistance",
+                        "damageType": "cold"
+                      }
+                    ],
+                    "cost": {
+                      "resource": "sorcery-points",
+                      "amount": 1
+                    },
+                    "when": "CLASS_LEVEL >= 6"
+                  }
+                ]
+              },
+              {
+                "value": "white",
+                "labelRu": "Белый (холод)",
+                "effects": [
+                  {
+                    "type": "spell_damage_bonus",
+                    "value": "CHA",
+                    "labelRu": "Родство со стихией",
+                    "damageTypes": [
+                      "cold"
+                    ],
+                    "when": "CLASS_LEVEL >= 6"
+                  },
+                  {
+                    "type": "toggle",
+                    "id": "elemental-affinity",
+                    "labelRu": "Сопротивление: холод (1 ед. чародейства, 1 час)",
+                    "effects": [
+                      {
+                        "type": "defense",
+                        "kind": "resistance",
+                        "damageType": "cold"
+                      }
+                    ],
+                    "cost": {
+                      "resource": "sorcery-points",
+                      "amount": 1
+                    },
+                    "when": "CLASS_LEVEL >= 6"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "proficiency",
+          "target": "language:draconic",
+          "level": "proficient"
+        },
+        {
+          "type": "text",
+          "noteRu": "Удвоенный БМ к проверкам Харизмы при общении с драконами"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "draconic-resilience": {
+      "effects": [
+        {
+          "type": "hp_max",
+          "value": "CLASS_LEVEL"
+        },
+        {
+          "type": "ac_formula",
+          "id": "draconic-resilience",
+          "labelRu": "Драконья устойчивость",
+          "base": "13 + DEX",
+          "allowShield": true,
+          "requires": "no_armor"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "elemental-affinity": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "+Хар к одному броску урона заклинания с типом урона предка; 1 единица — сопротивление этому урону на 1 час (переключатель в листе)"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "dragon-wings": {
+      "effects": [
+        {
+          "type": "toggle",
+          "id": "dragon-wings",
+          "labelRu": "Драконьи крылья",
+          "effects": [
+            {
+              "type": "speed",
+              "mode": "fly",
+              "op": "equal_walk"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "noteRu": "Бонусным действием; не в доспехах, не рассчитанных на крылья"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "draconic-presence": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "5 единиц: аура 60 футов на 1 минуту (концентрация) — очарование или испуг, спасбросок Мудрости"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

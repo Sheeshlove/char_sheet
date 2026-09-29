@@ -1,0 +1,14 @@
+{
+  "target": "srd/subrace/lightfoot-halfling",
+  "features": {
+    "naturally-stealthy": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Можно пытаться спрятаться за существом, которое хотя бы на размер больше вас"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

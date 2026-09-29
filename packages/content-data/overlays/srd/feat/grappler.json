@@ -1,0 +1,20 @@
+{
+  "target": "srd/feat/grappler",
+  "features": {
+    "grappler": {
+      "effects": [
+        {
+          "type": "roll_mode",
+          "mode": "advantage",
+          "target": "attack:melee_weapon",
+          "noteRu": "По существу, которое вы держите в захвате"
+        },
+        {
+          "type": "text",
+          "noteRu": "Действием можно попытаться опутать схваченное существо (проверка захвата); вы тоже опутаны до конца захвата"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

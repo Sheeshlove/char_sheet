@@ -1,0 +1,13 @@
+{
+  "target": "srd/spell/darkvision",
+  "data": {
+    "selfEffects": [
+      {
+        "type": "sense",
+        "sense": "darkvision",
+        "rangeFt": 60,
+        "op": "set_max"
+      }
+    ]
+  }
+}

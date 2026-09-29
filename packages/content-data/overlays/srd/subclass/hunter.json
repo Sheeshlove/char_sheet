@@ -1,0 +1,181 @@
+{
+  "target": "srd/subclass/hunter",
+  "features": {
+    "hunters-prey": {
+      "effects": [
+        {
+          "choose": 1,
+          "id": "option",
+          "labelRu": "Добыча охотника",
+          "options": {
+            "items": [
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Раз в ход: +1к8 урона по существу, у которого хитов меньше максимума"
+                  }
+                ],
+                "labelRu": "Убийца колоссов",
+                "value": "hunters-prey-colossus-slayer"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Реакцией: атака по Большому или крупнее существу в 5 футах, атаковавшему вас"
+                  }
+                ],
+                "labelRu": "Убийца великанов",
+                "value": "hunters-prey-giant-killer"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Раз в ход: дополнительная атака тем же оружием по другому существу в 5 футах от цели"
+                  }
+                ],
+                "labelRu": "Сокрушитель орд",
+                "value": "hunters-prey-horde-breaker"
+              }
+            ],
+            "kind": "list"
+          },
+          "type": "choice"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "defensive-tactics": {
+      "effects": [
+        {
+          "choose": 1,
+          "id": "option",
+          "labelRu": "Оборонительная тактика",
+          "options": {
+            "items": [
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Провоцированные атаки по вам совершаются с помехой"
+                  }
+                ],
+                "labelRu": "Побег от орды",
+                "value": "defensive-tactics-escape-the-horde"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "+4 к КД против последующих атак существа, попавшего по вам в этот ход"
+                  }
+                ],
+                "labelRu": "Защита от мультиатаки",
+                "value": "defensive-tactics-multiattack-defense"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "roll_mode",
+                    "mode": "advantage",
+                    "target": "save:*",
+                    "noteRu": "Против испуга"
+                  }
+                ],
+                "labelRu": "Стальная воля",
+                "value": "defensive-tactics-steel-will"
+              }
+            ],
+            "kind": "list"
+          },
+          "type": "choice"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "multiattack": {
+      "effects": [
+        {
+          "choose": 1,
+          "id": "option",
+          "labelRu": "Мультиатака",
+          "options": {
+            "items": [
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Действием: дальнобойная атака по каждому существу в 10 футах от точки"
+                  }
+                ],
+                "labelRu": "Залп",
+                "value": "multiattack-volley"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Действием: рукопашная атака по каждому существу в 5 футах"
+                  }
+                ],
+                "labelRu": "Атака вихрем",
+                "value": "multiattack-whirlwind-attack"
+              }
+            ],
+            "kind": "list"
+          },
+          "type": "choice"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "superior-hunters-defense": {
+      "effects": [
+        {
+          "choose": 1,
+          "id": "option",
+          "labelRu": "Улучшенная защита охотника",
+          "options": {
+            "items": [
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Спасбросок Ловкости для половины урона: при успехе — без урона, при провале — половина"
+                  }
+                ],
+                "labelRu": "Увёртливость",
+                "value": "superior-hunters-defense-evasion"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Реакцией: промах атакующего перенаправляется в другое существо"
+                  }
+                ],
+                "labelRu": "Стоять против течения",
+                "value": "superior-hunters-defense-stand-against-the-tide"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Реакцией: урон от видимой атаки уменьшается вдвое"
+                  }
+                ],
+                "labelRu": "Невероятное уклонение",
+                "value": "superior-hunters-defense-uncanny-dodge"
+              }
+            ],
+            "kind": "list"
+          },
+          "type": "choice"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

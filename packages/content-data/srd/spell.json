@@ -129,6 +129,16 @@
       },
       "ritual": false,
       "school": "abjuration",
+      "selfEffects": [
+        {
+          "type": "hp_max",
+          "value": "5"
+        },
+        {
+          "noteRu": "Ячейкой выше 2 круга: +5 хитов за каждый круг",
+          "type": "text"
+        }
+      ],
       "subclasses": [
         "srd/subclass/lore"
       ]
@@ -1001,6 +1011,16 @@
       },
       "ritual": false,
       "school": "transmutation",
+      "selfEffects": [
+        {
+          "allowShield": false,
+          "base": "16",
+          "id": "barkskin",
+          "labelRu": "Дубовая кожа",
+          "requires": "any",
+          "type": "ac_formula"
+        }
+      ],
       "subclasses": [
         "srd/subclass/lore",
         "srd/subclass/land"
@@ -3150,6 +3170,14 @@
       },
       "ritual": false,
       "school": "transmutation",
+      "selfEffects": [
+        {
+          "op": "set_max",
+          "rangeFt": 60,
+          "sense": "darkvision",
+          "type": "sense"
+        }
+      ],
       "subclasses": [
         "srd/subclass/lore"
       ]
@@ -5437,6 +5465,14 @@
       },
       "ritual": false,
       "school": "transmutation",
+      "selfEffects": [
+        {
+          "mode": "fly",
+          "op": "set",
+          "type": "speed",
+          "value": "60"
+        }
+      ],
       "subclasses": [
         "srd/subclass/lore"
       ]
@@ -6576,6 +6612,24 @@
       },
       "ritual": false,
       "school": "transmutation",
+      "selfEffects": [
+        {
+          "labelRu": "Ускорение",
+          "target": "ac",
+          "type": "bonus",
+          "value": "2"
+        },
+        {
+          "mode": "advantage",
+          "noteRu": "Ускорение",
+          "target": "save:dex",
+          "type": "roll_mode"
+        },
+        {
+          "noteRu": "Скорость удваивается; дополнительное действие (Атака одним оружием, Рывок, Отход, Засада, Использование предмета)",
+          "type": "text"
+        }
+      ],
       "subclasses": [
         "srd/subclass/lore",
         "srd/subclass/land"
@@ -8044,6 +8098,14 @@
       },
       "ritual": false,
       "school": "transmutation",
+      "selfEffects": [
+        {
+          "mode": "walk",
+          "op": "add",
+          "type": "speed",
+          "value": "10"
+        }
+      ],
       "subclasses": [
         "srd/subclass/lore"
       ]
@@ -8085,6 +8147,16 @@
       },
       "ritual": false,
       "school": "abjuration",
+      "selfEffects": [
+        {
+          "allowShield": true,
+          "base": "13 + DEX",
+          "id": "mage-armor",
+          "labelRu": "Доспехи мага",
+          "requires": "no_armor",
+          "type": "ac_formula"
+        }
+      ],
       "subclasses": [
         "srd/subclass/lore"
       ]
@@ -11304,6 +11376,14 @@
       },
       "ritual": false,
       "school": "abjuration",
+      "selfEffects": [
+        {
+          "labelRu": "Щит",
+          "target": "ac",
+          "type": "bonus",
+          "value": "5"
+        }
+      ],
       "subclasses": [
         "srd/subclass/lore"
       ]
@@ -11346,6 +11426,14 @@
       },
       "ritual": false,
       "school": "abjuration",
+      "selfEffects": [
+        {
+          "labelRu": "Щит веры",
+          "target": "ac",
+          "type": "bonus",
+          "value": "2"
+        }
+      ],
       "subclasses": [
         "srd/subclass/lore"
       ]
@@ -11895,6 +11983,13 @@
       },
       "ritual": false,
       "school": "transmutation",
+      "selfEffects": [
+        {
+          "mode": "climb",
+          "op": "equal_walk",
+          "type": "speed"
+        }
+      ],
       "subclasses": [
         "srd/subclass/lore",
         "srd/subclass/land"
@@ -12163,6 +12258,13 @@
       },
       "ritual": false,
       "school": "abjuration",
+      "selfEffects": [
+        {
+          "damageType": "nonmagical_bps",
+          "kind": "resistance",
+          "type": "defense"
+        }
+      ],
       "subclasses": [
         "srd/subclass/land"
       ]

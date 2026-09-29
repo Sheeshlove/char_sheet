@@ -1,0 +1,84 @@
+{
+  "target": "srd/subclass/devotion",
+  "features": {
+    "channel-divinity-sacred-weapon": {
+      "effects": [
+        {
+          "type": "toggle",
+          "id": "sacred-weapon",
+          "labelRu": "Священное оружие",
+          "effects": [
+            {
+              "type": "bonus",
+              "target": "attack:melee_weapon",
+              "value": "max(1, CHA)",
+              "labelRu": "Священное оружие"
+            },
+            {
+              "type": "bonus",
+              "target": "attack:ranged_weapon",
+              "value": "max(1, CHA)",
+              "labelRu": "Священное оружие"
+            },
+            {
+              "type": "text",
+              "noteRu": "Оружие излучает яркий свет в 20 футах; 1 минута"
+            }
+          ],
+          "cost": {
+            "resource": "channel-divinity",
+            "amount": 1
+          }
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "channel-divinity-turn-the-unholy": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Действием: исчадия и нежить в 30 футах — спасбросок Мудрости, при провале изгнаны на 1 минуту"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "aura-of-devotion": {
+      "effects": [
+        {
+          "type": "condition_immunity",
+          "condition": "charmed"
+        },
+        {
+          "type": "text",
+          "noteRu": "Союзники в пределах ауры не могут быть очарованы, пока вы в сознании"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "purity-of-spirit": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Постоянно под действием «Защиты от добра и зла»"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "holy-nimbus": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "holy-nimbus",
+          "nameRu": "Святой нимб",
+          "max": "1",
+          "reset": "long"
+        },
+        {
+          "type": "text",
+          "noteRu": "Действием на 1 минуту: яркий свет 30 футов, враги в свете получают 10 урона излучением в начале хода; преимущество на спасброски от заклинаний исчадий и нежити"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

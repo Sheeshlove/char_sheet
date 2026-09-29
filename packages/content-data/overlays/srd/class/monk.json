@@ -1,0 +1,282 @@
+{
+  "target": "srd/class/monk",
+  "features": {
+    "unarmored-defense": {
+      "effects": [
+        {
+          "type": "ac_formula",
+          "id": "monk-ud",
+          "labelRu": "Защита без доспехов",
+          "base": "10 + DEX + WIS",
+          "allowShield": false,
+          "requires": "no_armor_no_shield"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "martial-arts": {
+      "effects": [
+        {
+          "type": "weapon_option",
+          "filter": {
+            "monkWeapon": true,
+            "includeUnarmed": true
+          },
+          "allowAbilities": [
+            "dex"
+          ],
+          "minDamageDie": "col(\"martial_arts\")",
+          "labelRu": "Боевые искусства",
+          "when": {
+            "all": [
+              {
+                "armor": "none"
+              },
+              {
+                "shield": false
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "noteRu": "После атаки монашеским оружием или безоружным ударом — безоружный удар бонусным действием"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "ki": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "ki",
+          "nameRu": "Очки ци",
+          "max": "col(\"ki_points\")",
+          "reset": "short"
+        },
+        {
+          "type": "text",
+          "noteRu": "Сл спасбросков от умений ци = 8 + БМ + Мдр"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "flurry-of-blows": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "1 ци: после действия Атака — два безоружных удара бонусным действием"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "patient-defense": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "1 ци: Уклонение бонусным действием"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "step-of-the-wind": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "1 ци: Отход или Рывок бонусным действием; дальность прыжка удваивается"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "unarmored-movement-1": {
+      "effects": [
+        {
+          "type": "speed",
+          "mode": "walk",
+          "op": "add",
+          "value": "col(\"unarmored_movement\")",
+          "when": {
+            "all": [
+              {
+                "armor": "none"
+              },
+              {
+                "shield": false
+              }
+            ]
+          }
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "unarmored-movement-2": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "В свой ход можно бежать по вертикальным поверхностям и по воде, не падая"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "monastic-tradition": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "deflect-missiles": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Реакцией: урон от дальнобойной атаки оружием уменьшается на 1к10 + Лов + уровень монаха; при 0 — поймать и метнуть за 1 ци"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "slow-fall": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Реакцией: урон от падения уменьшается на 5 × уровень монаха"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "extra-attack": {
+      "effects": [
+        {
+          "type": "extra_attack",
+          "attacks": 1
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "stunning-strike": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "1 ци при попадании рукопашной атакой оружием: спасбросок Телосложения или ошеломлён до конца вашего следующего хода"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "ki-empowered-strikes": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Безоружные удары считаются магическими"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "evasion": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Спасбросок Ловкости для половины урона: при успехе — без урона, при провале — половина"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "stillness-of-mind": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Действием: окончить на себе очарование или испуг"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "purity-of-body": {
+      "effects": [
+        {
+          "type": "condition_immunity",
+          "condition": "poisoned"
+        },
+        {
+          "type": "defense",
+          "kind": "immunity",
+          "damageType": "poison"
+        },
+        {
+          "type": "text",
+          "noteRu": "Иммунитет к болезням"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "tongue-of-the-sun-and-moon": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Понимаете все разговорные языки; вас понимает любое существо, знающее язык"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "diamond-soul": {
+      "effects": [
+        {
+          "type": "proficiency",
+          "target": "save:str",
+          "level": "proficient"
+        },
+        {
+          "type": "proficiency",
+          "target": "save:dex",
+          "level": "proficient"
+        },
+        {
+          "type": "proficiency",
+          "target": "save:con",
+          "level": "proficient"
+        },
+        {
+          "type": "proficiency",
+          "target": "save:int",
+          "level": "proficient"
+        },
+        {
+          "type": "proficiency",
+          "target": "save:wis",
+          "level": "proficient"
+        },
+        {
+          "type": "proficiency",
+          "target": "save:cha",
+          "level": "proficient"
+        },
+        {
+          "type": "text",
+          "noteRu": "1 ци: перебросить проваленный спасбросок"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "timeless-body": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Не нуждаетесь в еде и воде; не стареете от магии"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "empty-body": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "4 ци: невидимость на 1 минуту и сопротивление всему урону, кроме силового; 8 ци: «Проекция в астрал» без компонентов"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "perfect-self": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Если при броске инициативы нет очков ци — восстанавливаете 4"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

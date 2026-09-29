@@ -24,8 +24,76 @@
       ],
       "features": [
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "rage",
+              "max": "CLASS_LEVEL >= 20 ? 99 : col(\"rages\")",
+              "nameRu": "Ярость",
+              "reset": "long",
+              "type": "resource"
+            },
+            {
+              "cost": {
+                "amount": 1,
+                "resource": "rage"
+              },
+              "effects": [
+                {
+                  "mode": "advantage",
+                  "noteRu": "Проверки Силы",
+                  "target": "check:str",
+                  "type": "roll_mode"
+                },
+                {
+                  "mode": "advantage",
+                  "noteRu": "Спасброски Силы",
+                  "target": "save:str",
+                  "type": "roll_mode"
+                },
+                {
+                  "labelRu": "Урон ярости (атаки Силой)",
+                  "target": "damage:melee_weapon",
+                  "type": "bonus",
+                  "value": "col(\"rage_damage\")",
+                  "when": {
+                    "all": [
+                      {
+                        "not": {
+                          "armor": "heavy"
+                        }
+                      },
+                      {
+                        "attackAbility": "str"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "damageType": "bludgeoning",
+                  "kind": "resistance",
+                  "type": "defense"
+                },
+                {
+                  "damageType": "piercing",
+                  "kind": "resistance",
+                  "type": "defense"
+                },
+                {
+                  "damageType": "slashing",
+                  "kind": "resistance",
+                  "type": "defense"
+                },
+                {
+                  "noteRu": "В ярости нельзя накладывать заклинания и концентрироваться; не действует в тяжёлых доспехах",
+                  "type": "text"
+                }
+              ],
+              "id": "raging",
+              "labelRu": "В ярости",
+              "type": "toggle"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "rage",
           "level": 1,
           "nameEn": "Rage",
@@ -33,8 +101,17 @@
           "textMd": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:\n\n- You have advantage on Strength checks and Strength saving throws.\n\n- When you make a melee weapon Attack using Strength, you gain a +2 bonus to the damage roll. This bonus increases as you level.\n\n- You have Resistance to bludgeoning, piercing, and slashing damage.\n\nIf you are able to cast Spells, you can't cast them or concentrate on them while raging.\n\nYour rage lasts for 1 minute. It ends early if you are knocked Unconscious or if Your Turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on Your Turn as a Bonus Action.\n\nOnce you have raged the maximum number of times for your barbarian level, you must finish a Long Rest before you can rage again. You may rage 2 times at 1st level, 3 at 3rd, 4 at 6th, 5 at 12th, and 6 at 17th."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "allowShield": true,
+              "base": "10 + DEX + CON",
+              "id": "barbarian-ud",
+              "labelRu": "Защита без доспехов",
+              "requires": "no_armor",
+              "type": "ac_formula"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "unarmored-defense",
           "level": 1,
           "nameEn": "Unarmored Defense",
@@ -42,8 +119,28 @@
           "textMd": "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "effects": [
+                {
+                  "mode": "advantage",
+                  "noteRu": "Рукопашные атаки Силой в этот ход",
+                  "target": "attack:melee_weapon",
+                  "type": "roll_mode"
+                },
+                {
+                  "mode": "advantage",
+                  "noteRu": "Безрассудная атака: атаки по вам с преимуществом",
+                  "target": "attacks_against_you",
+                  "type": "roll_mode"
+                }
+              ],
+              "id": "reckless",
+              "labelRu": "Безрассудная атака",
+              "type": "toggle"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "reckless-attack",
           "level": 2,
           "nameEn": "Reckless Attack",
@@ -51,8 +148,15 @@
           "textMd": "Starting at 2nd level, you can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "mode": "advantage",
+              "noteRu": "Против видимых эффектов (если не ослеплены, не оглохли, дееспособны)",
+              "target": "save:dex",
+              "type": "roll_mode"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "danger-sense",
           "level": 2,
           "nameEn": "Danger Sense",
@@ -61,7 +165,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "primal-path",
           "level": 3,
           "nameEn": "Primal Path",
@@ -79,8 +183,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "attacks": 1,
+              "type": "extra_attack"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "extra-attack",
           "level": 5,
           "nameEn": "Extra Attack",
@@ -88,8 +197,20 @@
           "textMd": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "mode": "walk",
+              "op": "add",
+              "type": "speed",
+              "value": "10",
+              "when": {
+                "not": {
+                  "armor": "heavy"
+                }
+              }
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "fast-movement",
           "level": 5,
           "nameEn": "Fast Movement",
@@ -107,8 +228,20 @@
           "textMd": "At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or the Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th, 10th, and 14th levels."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "conditional": false,
+              "mode": "advantage",
+              "noteRu": "Инициатива",
+              "target": "initiative",
+              "type": "roll_mode"
+            },
+            {
+              "noteRu": "Застигнутым врасплох можно действовать в первый ход, если сразу войти в ярость",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "feral-instinct",
           "level": 7,
           "nameEn": "Feral Instinct",
@@ -126,8 +259,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Критическое попадание рукопашной атакой оружием: дополнительные кости урона оружия — колонка «Сильный критический удар»",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "brutal-critical-1-die",
           "level": 9,
           "nameEn": "Brutal Critical (1 die)",
@@ -145,8 +283,13 @@
           "textMd": "At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or the Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th, 10th, and 14th levels."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "В ярости при падении до 0 хитов: спасбросок Телосложения Сл 10 (+5 за каждое повторение до отдыха) — при успехе 1 хит",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "relentless-rage",
           "level": 11,
           "nameEn": "Relentless Rage",
@@ -165,7 +308,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "brutal-critical-2-dice",
           "level": 13,
           "nameEn": "Brutal Critical (2 dice)",
@@ -183,8 +326,13 @@
           "textMd": "At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or the Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th, 10th, and 14th levels."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Ярость заканчивается раньше срока, только если вы теряете сознание или прекращаете её сами",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "persistent-rage",
           "level": 15,
           "nameEn": "Persistent Rage",
@@ -203,7 +351,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "brutal-critical-3-dice",
           "level": 17,
           "nameEn": "Brutal Critical (3 dice)",
@@ -211,8 +359,13 @@
           "textMd": "Beginning at 9th level, you can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack. This increases to two additional dice at 13th level and three additional dice at 17th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Если итог проверки Силы меньше значения Силы, используйте значение Силы",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "indomitable-might",
           "level": 18,
           "nameEn": "Indomitable Might",
@@ -230,8 +383,31 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "ability": "str",
+              "op": "add",
+              "type": "ability",
+              "value": "4"
+            },
+            {
+              "ability": "con",
+              "op": "add",
+              "type": "ability",
+              "value": "4"
+            },
+            {
+              "ability": "str",
+              "max": 24,
+              "type": "ability_cap"
+            },
+            {
+              "ability": "con",
+              "max": 24,
+              "type": "ability_cap"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "primal-champion",
           "level": 20,
           "nameEn": "Primal Champion",
@@ -556,7 +732,7 @@
       "subclassLabelRu": "Путь дикости",
       "subclassLevel": 3
     },
-    "effectsStatus": "text_only",
+    "effectsStatus": "complete",
     "key": "srd/class/barbarian",
     "kind": "class",
     "nameEn": "Barbarian",
@@ -631,7 +807,7 @@
       "features": [
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "spellcasting-bard",
           "level": 1,
           "nameEn": "Spellcasting: Bard",
@@ -639,8 +815,22 @@
           "textMd": "You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. Your spells are part of your vast repertoire, magic that you can tune to different situations."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "die": "col(\"bardic_inspiration\")",
+              "id": "bardic-inspiration",
+              "max": "max(1, CHA)",
+              "nameRu": "Вдохновение барда",
+              "reset": "long",
+              "type": "resource",
+              "when": "CLASS_LEVEL < 5"
+            },
+            {
+              "noteRu": "Бонусным действием: существо в 60 футах получает кость вдохновения на 10 минут",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "bardic-inspiration-d6",
           "level": 1,
           "nameEn": "Bardic Inspiration (d6)",
@@ -648,8 +838,15 @@
           "textMd": "You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6. Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.\n\nYou can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.\n\nYour Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "includeInitiative": true,
+              "rounding": "down",
+              "scope": "checks",
+              "type": "half_proficiency"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "jack-of-all-trades",
           "level": 2,
           "nameEn": "Jack of All Trades",
@@ -657,8 +854,13 @@
           "textMd": "Starting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include your proficiency bonus."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Короткий отдых: союзники, тратящие кости хитов, восстанавливают дополнительно кость из колонки «Песнь отдыха»",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "song-of-rest-d6",
           "level": 2,
           "nameEn": "Song of Rest (d6)",
@@ -667,7 +869,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "college",
           "level": 3,
           "nameEn": "Bard College",
@@ -708,7 +910,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "bardic-inspiration-d8",
           "level": 5,
           "nameEn": "Bardic Inspiration (d8)",
@@ -716,8 +918,17 @@
           "textMd": "You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6. Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.\n\nYou can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.\n\nYour Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "die": "col(\"bardic_inspiration\")",
+              "id": "bardic-inspiration",
+              "max": "max(1, CHA)",
+              "nameRu": "Вдохновение барда",
+              "reset": "short",
+              "type": "resource"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "font-of-inspiration",
           "level": 5,
           "nameEn": "Font of Inspiration",
@@ -725,8 +936,13 @@
           "textMd": "Beginning when you reach 5th level, you regain all of your expended uses of Bardic Inspiration when you finish a short or long rest."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Действием: исполнение до конца следующего хода — союзники в 30 футах с преимуществом на спасброски от испуга и очарования",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "countercharm",
           "level": 6,
           "nameEn": "Countercharm",
@@ -755,7 +971,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "song-of-rest-d8",
           "level": 9,
           "nameEn": "Song of Rest (d8)",
@@ -764,7 +980,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "bardic-inspiration-d10",
           "level": 10,
           "nameEn": "Bardic Inspiration (d10)",
@@ -794,8 +1010,31 @@
           "textMd": "At 3rd level, choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies. At 10th level, you can choose another two skill proficiencies to gain this benefit."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 2,
+              "id": "magical-secrets-1",
+              "labelRu": "Тайны магии",
+              "options": {
+                "kind": "spells",
+                "level": "up_to_max",
+                "list": "*"
+              },
+              "type": "choice"
+            },
+            {
+              "list": "bard",
+              "spells": {
+                "choice": "magical-secrets-1"
+              },
+              "type": "spell_list_extend"
+            },
+            {
+              "noteRu": "Выбранные заклинания считаются заклинаниями барда и входят в число известных заклинаний",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "magical-secrets-1",
           "level": 10,
           "nameEn": "Magical Secrets",
@@ -814,7 +1053,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "song-of-rest-d10",
           "level": 13,
           "nameEn": "Song of Rest (d10)",
@@ -822,8 +1061,31 @@
           "textMd": "Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 hit points.\n\nThe extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 2,
+              "id": "magical-secrets-2",
+              "labelRu": "Тайны магии",
+              "options": {
+                "kind": "spells",
+                "level": "up_to_max",
+                "list": "*"
+              },
+              "type": "choice"
+            },
+            {
+              "list": "bard",
+              "spells": {
+                "choice": "magical-secrets-2"
+              },
+              "type": "spell_list_extend"
+            },
+            {
+              "noteRu": "Выбранные заклинания считаются заклинаниями барда и входят в число известных заклинаний",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "magical-secrets-2",
           "level": 14,
           "nameEn": "Magical Secrets",
@@ -842,7 +1104,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "bardic-inspiration-d12",
           "level": 15,
           "nameEn": "Bardic Inspiration (d12)",
@@ -861,7 +1123,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "song-of-rest-d12",
           "level": 17,
           "nameEn": "Song of Rest (d12)",
@@ -869,8 +1131,31 @@
           "textMd": "Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 hit points.\n\nThe extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 2,
+              "id": "magical-secrets-3",
+              "labelRu": "Тайны магии",
+              "options": {
+                "kind": "spells",
+                "level": "up_to_max",
+                "list": "*"
+              },
+              "type": "choice"
+            },
+            {
+              "list": "bard",
+              "spells": {
+                "choice": "magical-secrets-3"
+              },
+              "type": "spell_list_extend"
+            },
+            {
+              "noteRu": "Выбранные заклинания считаются заклинаниями барда и входят в число известных заклинаний",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "magical-secrets-3",
           "level": 18,
           "nameEn": "Magical Secrets",
@@ -888,8 +1173,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Если при броске инициативы у вас не осталось вдохновения — восстанавливаете одно",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "superior-inspiration",
           "level": 20,
           "nameEn": "Superior Inspiration",
@@ -1497,7 +1787,7 @@
       "subclassLabelRu": "Коллегия бардов",
       "subclassLevel": 3
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/class/bard",
     "kind": "class",
     "nameEn": "Bard",
@@ -1568,7 +1858,7 @@
       "features": [
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "spellcasting-cleric",
           "level": 1,
           "nameEn": "Spellcasting: Cleric",
@@ -1577,7 +1867,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "divine-domain",
           "level": 1,
           "nameEn": "Divine Domain",
@@ -1586,7 +1876,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "domain-spells-1",
           "level": 1,
           "nameEn": "Domain Spells",
@@ -1594,8 +1884,16 @@
           "textMd": "Each domain has a list of spells--its domain spells--that you gain at the cleric levels noted in the domain description. Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day.\n\nIf you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "channel-divinity",
+              "max": "col(\"channel_divinity\")",
+              "nameRu": "Божественный канал",
+              "reset": "short",
+              "type": "resource"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "channel-divinity-1-rest",
           "level": 2,
           "nameEn": "Channel Divinity (1/rest)",
@@ -1603,8 +1901,13 @@
           "textMd": "At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.\n\nWhen you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.\n\nSome Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.\n\nBeginning at 6th level, you can use your Channel Divinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Действием: нежить в 30 футах — спасбросок Мудрости (Сл заклинаний), при провале изгнана на 1 минуту",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "channel-divinity-turn-undead",
           "level": 2,
           "nameEn": "Channel Divinity: Turn Undead",
@@ -1623,7 +1926,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "domain-spells-2",
           "level": 3,
           "nameEn": "Domain Spells",
@@ -1642,7 +1945,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "domain-spells-3",
           "level": 5,
           "nameEn": "Domain Spells",
@@ -1650,8 +1953,13 @@
           "textMd": "Each domain has a list of spells--its domain spells--that you gain at the cleric levels noted in the domain description. Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day.\n\nIf you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Изгнанная нежить с ПО не выше колонки «Уничтожение нежити» уничтожается",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "destroy-undead-cr-1-2-or-below",
           "level": 5,
           "nameEn": "Destroy Undead (CR 1/2 or below)",
@@ -1660,7 +1968,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "channel-divinity-2-rest",
           "level": 6,
           "nameEn": "Channel Divinity (2/rest)",
@@ -1679,7 +1987,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "domain-spells-4",
           "level": 7,
           "nameEn": "Domain Spells",
@@ -1698,7 +2006,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "destroy-undead-cr-1-or-below",
           "level": 8,
           "nameEn": "Destroy Undead (CR 1 or below)",
@@ -1717,7 +2025,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "domain-spells-5",
           "level": 9,
           "nameEn": "Domain Spells",
@@ -1725,8 +2033,20 @@
           "textMd": "Each domain has a list of spells--its domain spells--that you gain at the cleric levels noted in the domain description. Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day.\n\nIf you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "divine-intervention",
+              "max": "1",
+              "nameRu": "Божественное вмешательство",
+              "reset": "long",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Успех, если к100 ≤ уровня жреца; после успеха — снова только через 7 дней",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "divine-intervention",
           "level": 10,
           "nameEn": "Divine Intervention",
@@ -1735,7 +2055,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "destroy-undead-cr-2-or-below",
           "level": 11,
           "nameEn": "Destroy Undead (CR 2 or below)",
@@ -1754,7 +2074,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "destroy-undead-cr-3-or-below",
           "level": 14,
           "nameEn": "Destroy Undead (CR 3 or below)",
@@ -1773,7 +2093,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "destroy-undead-cr-4-or-below",
           "level": 17,
           "nameEn": "Destroy Undead (CR 4 or below)",
@@ -1792,7 +2112,8 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
+          "hidden": true,
           "key": "supreme-healing",
           "level": 17,
           "nameEn": "Supreme Healing",
@@ -1801,7 +2122,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "channel-divinity-3-rest",
           "level": 18,
           "nameEn": "Channel Divinity (3/rest)",
@@ -1819,8 +2140,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Божественное вмешательство удаётся автоматически",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "divine-intervention-improvement",
           "level": 20,
           "nameEn": "Divine Intervention Improvement",
@@ -2418,7 +2744,7 @@
       "subclassLabelRu": "Божественный домен",
       "subclassLevel": 1
     },
-    "effectsStatus": "text_only",
+    "effectsStatus": "complete",
     "key": "srd/class/cleric",
     "kind": "class",
     "nameEn": "Cleric",
@@ -2485,7 +2811,7 @@
       "features": [
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "spellcasting-druid",
           "level": 1,
           "nameEn": "Spellcasting: Druid",
@@ -2493,8 +2819,13 @@
           "textMd": "Drawing on the divine essence of nature itself, you can cast spells to shape that essence to your will."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Тайный язык друидов; скрытые послания замечают только знающие его",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "druidic",
           "level": 1,
           "nameEn": "Druidic",
@@ -2502,8 +2833,20 @@
           "textMd": "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "wild-shape",
+              "max": "CLASS_LEVEL >= 20 ? 99 : 2",
+              "nameRu": "Дикий облик",
+              "reset": "short",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Максимальный ПО и ограничения облика — колонка «Дикий облик»; длительность — половина уровня друида в часах",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "wild-shape-cr-1-4-or-below-no-flying-or-swim-speed",
           "level": 2,
           "nameEn": "Wild Shape (CR 1/4 or below, no flying or swim speed)",
@@ -2512,7 +2855,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "circle",
           "level": 2,
           "nameEn": "Druid Circle",
@@ -2521,7 +2864,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "wild-shape-cr-1-2-or-below-no-flying-speed",
           "level": 4,
           "nameEn": "Wild Shape (CR 1/2 or below, no flying speed)",
@@ -2550,7 +2893,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "wild-shape-cr-1-or-below",
           "level": 8,
           "nameEn": "Wild Shape (CR 1 or below)",
@@ -2608,8 +2951,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Стареете в 10 раз медленнее",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "timeless-body",
           "level": 18,
           "nameEn": "Timeless Body",
@@ -2617,8 +2965,13 @@
           "textMd": "Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Можно накладывать заклинания в диком облике (вербальные и соматические компоненты)",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "beast-spells",
           "level": 18,
           "nameEn": "Beast Spells",
@@ -2636,8 +2989,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Дикий облик без ограничений; игнорируются В, С и немагические М компоненты без цены",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "archdruid",
           "level": 20,
           "nameEn": "Archdruid",
@@ -3163,7 +3521,7 @@
       "subclassLabelRu": "Круг друидов",
       "subclassLevel": 2
     },
-    "effectsStatus": "text_only",
+    "effectsStatus": "complete",
     "key": "srd/class/druid",
     "kind": "class",
     "nameEn": "Druid",
@@ -3202,39 +3560,85 @@
           "effects": [
             {
               "choose": 1,
-              "id": "option",
+              "id": "fighting-style",
               "labelRu": "Боевой стиль",
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "labelRu": "Боевой стиль: Стрельба",
+                        "target": "attack:ranged_weapon",
+                        "type": "bonus",
+                        "value": "2"
+                      }
+                    ],
                     "labelRu": "Стрельба",
-                    "value": "fighting-style-archery"
+                    "value": "archery"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "labelRu": "Боевой стиль: Оборона",
+                        "target": "ac",
+                        "type": "bonus",
+                        "value": "1",
+                        "when": {
+                          "not": {
+                            "armor": "none"
+                          }
+                        }
+                      }
+                    ],
                     "labelRu": "Оборона",
-                    "value": "fighting-style-defense"
+                    "value": "defense"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "labelRu": "Боевой стиль: Дуэлянт",
+                        "target": "damage:melee_weapon",
+                        "type": "bonus",
+                        "value": "2",
+                        "when": {
+                          "wielding": "one_melee_weapon_no_other"
+                        }
+                      }
+                    ],
                     "labelRu": "Дуэлянт",
-                    "value": "fighting-style-dueling"
+                    "value": "dueling"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Перебросить 1 и 2 на костях урона двуручным или универсальным оружием (двумя руками)",
+                        "rule": "great_weapon_reroll",
+                        "type": "combat_rule"
+                      }
+                    ],
                     "labelRu": "Сражение большим оружием",
-                    "value": "fighting-style-great-weapon-fighting"
+                    "value": "great-weapon-fighting"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Реакцией, со щитом: помеха на атаку по союзнику в 5 футах от вас",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Защита",
-                    "value": "fighting-style-protection"
+                    "value": "protection"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Модификатор характеристики добавляется к урону второй атаки",
+                        "rule": "twf_ability_mod",
+                        "type": "combat_rule"
+                      }
+                    ],
                     "labelRu": "Сражение двумя оружиями",
-                    "value": "fighting-style-two-weapon-fighting"
+                    "value": "two-weapon-fighting"
                   }
                 ],
                 "kind": "list"
@@ -3242,7 +3646,7 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "fighting-style",
           "level": 1,
           "nameEn": "Fighting Style",
@@ -3250,8 +3654,20 @@
           "textMd": "You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "second-wind",
+              "max": "1",
+              "nameRu": "Второе дыхание",
+              "reset": "short",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Бонусным действием восстановить 1к10 + уровень воина хитов",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "second-wind",
           "level": 1,
           "nameEn": "Second Wind",
@@ -3259,8 +3675,20 @@
           "textMd": "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "action-surge",
+              "max": "1",
+              "nameRu": "Всплеск действий",
+              "reset": "short",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Одно дополнительное действие в свой ход",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "action-surge-1-use",
           "level": 2,
           "nameEn": "Action Surge (1 use)",
@@ -3269,7 +3697,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "martial-archetype",
           "level": 3,
           "nameEn": "Martial Archetype",
@@ -3287,8 +3715,13 @@
           "textMd": "When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "attacks": 1,
+              "type": "extra_attack"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "extra-attack-1",
           "level": 5,
           "nameEn": "Extra Attack",
@@ -3326,8 +3759,20 @@
           "textMd": "When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "indomitable",
+              "max": "1",
+              "nameRu": "Упорный",
+              "reset": "long",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Перебросить проваленный спасбросок",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "indomitable-1-use",
           "level": 9,
           "nameEn": "Indomitable (1 use)",
@@ -3345,8 +3790,13 @@
           "textMd": "At 3rd level, you choose an archetype that you strive to emulate in your combat styles and techniques, such as Champion. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "attacks": 2,
+              "type": "extra_attack"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "extra-attack-2",
           "level": 11,
           "nameEn": "Extra Attack (2)",
@@ -3364,8 +3814,16 @@
           "textMd": "When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "indomitable",
+              "max": "2",
+              "nameRu": "Упорный",
+              "reset": "long",
+              "type": "resource"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "indomitable-2-uses",
           "level": 13,
           "nameEn": "Indomitable (2 uses)",
@@ -3403,8 +3861,16 @@
           "textMd": "When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "action-surge",
+              "max": "2",
+              "nameRu": "Всплеск действий",
+              "reset": "short",
+              "type": "resource"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "action-surge-2-uses",
           "level": 17,
           "nameEn": "Action Surge (2 uses)",
@@ -3412,8 +3878,16 @@
           "textMd": "Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.\n\nOnce you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "indomitable",
+              "max": "3",
+              "nameRu": "Упорный",
+              "reset": "long",
+              "type": "resource"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "indomitable-3-uses",
           "level": 17,
           "nameEn": "Indomitable (3 uses)",
@@ -3441,8 +3915,13 @@
           "textMd": "When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "attacks": 3,
+              "type": "extra_attack"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "extra-attack-3",
           "level": 20,
           "nameEn": "Extra Attack (3)",
@@ -3809,7 +4288,7 @@
       "subclassLabelRu": "Воинский архетип",
       "subclassLevel": 3
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/class/fighter",
     "kind": "class",
     "nameEn": "Fighter",
@@ -3843,8 +4322,17 @@
       ],
       "features": [
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "allowShield": false,
+              "base": "10 + DEX + WIS",
+              "id": "monk-ud",
+              "labelRu": "Защита без доспехов",
+              "requires": "no_armor_no_shield",
+              "type": "ac_formula"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "unarmored-defense",
           "level": 1,
           "nameEn": "Unarmored Defense",
@@ -3852,8 +4340,35 @@
           "textMd": "Beginning at 1st level, while you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "allowAbilities": [
+                "dex"
+              ],
+              "filter": {
+                "includeUnarmed": true,
+                "monkWeapon": true
+              },
+              "labelRu": "Боевые искусства",
+              "minDamageDie": "col(\"martial_arts\")",
+              "type": "weapon_option",
+              "when": {
+                "all": [
+                  {
+                    "armor": "none"
+                  },
+                  {
+                    "shield": false
+                  }
+                ]
+              }
+            },
+            {
+              "noteRu": "После атаки монашеским оружием или безоружным ударом — безоружный удар бонусным действием",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "martial-arts",
           "level": 1,
           "nameEn": "Martial Arts",
@@ -3861,8 +4376,20 @@
           "textMd": "At 1st level, your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don't have the two- handed or heavy property.\n\nYou gain the following benefits while you are unarmed or wielding only monk weapons and you aren't wearing armor or wielding a shield:\n\n- You can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes and monk weapons.\n\n- You can roll a d4 in place of the normal damage of your unarmed strike or monk weapon. This die changes as you gain monk levels, as shown in the Martial Arts column of Table: The Monk.\n\n- When you use the Attack action with an unarmed strike or a monk weapon on your turn, you can make one unarmed strike as a bonus action. For example, if you take the Attack action and attack with a quarterstaff, you can also make an unarmed strike as a bonus action, assuming you haven't already taken a bonus action this turn.\n\nCertain monasteries use specialized forms of the monk weapons. For example, you might use a club that is two lengths of wood connected by a short chain (called a nunchaku) or a sickle with a shorter, straighter blade (called a kama). Whatever name you use for a monk weapon, you can use the game statistics provided for the weapon."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "ki",
+              "max": "col(\"ki_points\")",
+              "nameRu": "Очки ци",
+              "reset": "short",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Сл спасбросков от умений ци = 8 + БМ + Мдр",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "ki",
           "level": 2,
           "nameEn": "Ki",
@@ -3870,8 +4397,13 @@
           "textMd": "Starting at 2nd level, your training allows you to harness the mystic energy of ki. Your access to this energy is represented by a number of ki points. Your monk level determines the number of points you have, as shown in the Ki Points column of Table: The Monk.\n\nYou can spend these points to fuel various ki features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the Wind. You learn more ki features as you gain levels in this class.\n\nWhen you spend a ki point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended ki back into yourself. You must spend at least 30 minutes of the rest meditating to regain your ki points.\n\nSome of your ki features require your target to make a saving throw to resist the feature's effects. The saving throw DC is calculated as follows:\n\nKi save DC = 8 + your proficiency bonus + your Wisdom modifier"
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "1 ци: после действия Атака — два безоружных удара бонусным действием",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "flurry-of-blows",
           "level": 2,
           "nameEn": "Flurry of Blows",
@@ -3879,8 +4411,13 @@
           "textMd": "Immediately after you take the Attack action on your turn, you can spend 1 ki point to make two unarmed strikes as a bonus action."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "1 ци: Уклонение бонусным действием",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "patient-defense",
           "level": 2,
           "nameEn": "Patient Defense",
@@ -3888,8 +4425,13 @@
           "textMd": "You can spend 1 ki point to take the Dodge action as a bonus action on your turn."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "1 ци: Отход или Рывок бонусным действием; дальность прыжка удваивается",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "step-of-the-wind",
           "level": 2,
           "nameEn": "Step of the Wind",
@@ -3897,8 +4439,25 @@
           "textMd": "You can spend 1 ki point to take the Disengage or Dash action as a bonus action on your turn, and your jump distance is doubled for the turn."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "mode": "walk",
+              "op": "add",
+              "type": "speed",
+              "value": "col(\"unarmored_movement\")",
+              "when": {
+                "all": [
+                  {
+                    "armor": "none"
+                  },
+                  {
+                    "shield": false
+                  }
+                ]
+              }
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "unarmored-movement-1",
           "level": 2,
           "nameEn": "Unarmored Movement",
@@ -3907,7 +4466,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "monastic-tradition",
           "level": 3,
           "nameEn": "Monastic Tradition",
@@ -3915,8 +4474,13 @@
           "textMd": "When you reach 3rd level, you commit yourself to a monastic tradition, such as the Way of the Open Hand. Your tradition grants you features at 3rd level and again at 6th, 11th, and 17th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Реакцией: урон от дальнобойной атаки оружием уменьшается на 1к10 + Лов + уровень монаха; при 0 — поймать и метнуть за 1 ци",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "deflect-missiles",
           "level": 3,
           "nameEn": "Deflect Missiles",
@@ -3934,8 +4498,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Реакцией: урон от падения уменьшается на 5 × уровень монаха",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "slow-fall",
           "level": 4,
           "nameEn": "Slow Fall",
@@ -3943,8 +4512,13 @@
           "textMd": "Beginning at 4th level, you can use your reaction when you fall to reduce any falling damage you take by an amount equal to five times your monk level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "attacks": 1,
+              "type": "extra_attack"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "extra-attack",
           "level": 5,
           "nameEn": "Extra Attack",
@@ -3952,8 +4526,13 @@
           "textMd": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "1 ци при попадании рукопашной атакой оружием: спасбросок Телосложения или ошеломлён до конца вашего следующего хода",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "stunning-strike",
           "level": 5,
           "nameEn": "Stunning Strike",
@@ -3961,8 +4540,13 @@
           "textMd": "Starting at 5th level, you can interfere with the flow of ki in an opponent's body. When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Безоружные удары считаются магическими",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "ki-empowered-strikes",
           "level": 6,
           "nameEn": "Ki Empowered Strikes",
@@ -3980,8 +4564,13 @@
           "textMd": "When you reach 3rd level, you commit yourself to a monastic tradition, such as the Way of the Open Hand. Your tradition grants you features at 3rd level and again at 6th, 11th, and 17th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Спасбросок Ловкости для половины урона: при успехе — без урона, при провале — половина",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "evasion",
           "level": 7,
           "nameEn": "Evasion",
@@ -3989,8 +4578,13 @@
           "textMd": "At 7th level, your instinctive agility lets you dodge out of the way of certain area effects, such as a blue dragon's lightning breath or a fireball spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Действием: окончить на себе очарование или испуг",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "stillness-of-mind",
           "level": 7,
           "nameEn": "Stillness of Mind",
@@ -4008,8 +4602,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "В свой ход можно бежать по вертикальным поверхностям и по воде, не падая",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "unarmored-movement-2",
           "level": 9,
           "nameEn": "Unarmored Movement",
@@ -4017,8 +4616,22 @@
           "textMd": "Starting at 2nd level, your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in Table: The Monk.\n\nAt 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "condition": "poisoned",
+              "type": "condition_immunity"
+            },
+            {
+              "damageType": "poison",
+              "kind": "immunity",
+              "type": "defense"
+            },
+            {
+              "noteRu": "Иммунитет к болезням",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "purity-of-body",
           "level": 10,
           "nameEn": "Purity of Body",
@@ -4046,8 +4659,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Понимаете все разговорные языки; вас понимает любое существо, знающее язык",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "tongue-of-the-sun-and-moon",
           "level": 13,
           "nameEn": "Tongue of the Sun and Moon",
@@ -4055,8 +4673,43 @@
           "textMd": "Starting at 13th level, you learn to touch the ki of other minds so that you understand all spoken languages. Moreover, any creature that can understand a language can understand what you say."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "save:str",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "save:dex",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "save:con",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "save:int",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "save:wis",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "save:cha",
+              "type": "proficiency"
+            },
+            {
+              "noteRu": "1 ци: перебросить проваленный спасбросок",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "diamond-soul",
           "level": 14,
           "nameEn": "Diamond Soul",
@@ -4064,8 +4717,13 @@
           "textMd": "Beginning at 14th level, your mastery of ki grants you proficiency in all saving throws.\n\nAdditionally, whenever you make a saving throw and fail, you can spend 1 ki point to reroll it and take the second result."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Не нуждаетесь в еде и воде; не стареете от магии",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "timeless-body",
           "level": 15,
           "nameEn": "Timeless Body",
@@ -4093,8 +4751,13 @@
           "textMd": "When you reach 3rd level, you commit yourself to a monastic tradition, such as the Way of the Open Hand. Your tradition grants you features at 3rd level and again at 6th, 11th, and 17th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "4 ци: невидимость на 1 минуту и сопротивление всему урону, кроме силового; 8 ци: «Проекция в астрал» без компонентов",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "empty-body",
           "level": 18,
           "nameEn": "Empty Body",
@@ -4112,8 +4775,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Если при броске инициативы нет очков ци — восстанавливаете 4",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "perfect-self",
           "level": 20,
           "nameEn": "Perfect Self",
@@ -4443,7 +5111,7 @@
       "subclassLabelRu": "Монастырская традиция",
       "subclassLevel": 3
     },
-    "effectsStatus": "text_only",
+    "effectsStatus": "complete",
     "key": "srd/class/monk",
     "kind": "class",
     "nameEn": "Monk",
@@ -4489,8 +5157,20 @@
       ],
       "features": [
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "divine-sense",
+              "max": "max(1, 1 + CHA)",
+              "nameRu": "Божественное чувство",
+              "reset": "long",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Действием: чувствуете небожителей, исчадий и нежить в 60 футах до конца следующего хода",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "divine-sense",
           "level": 1,
           "nameEn": "Divine Sense",
@@ -4498,8 +5178,20 @@
           "textMd": "The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the hallow spell.\n\nYou can use this feature a number of times equal to 1 + your Charisma modifier. When you finish a long rest, you regain all expended uses."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "lay-on-hands",
+              "max": "CLASS_LEVEL * 5",
+              "nameRu": "Наложение рук (хиты)",
+              "reset": "long",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Действием: восстановить хиты из запаса или потратить 5 на лечение болезни или яда",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "lay-on-hands",
           "level": 1,
           "nameEn": "Lay on Hands",
@@ -4510,29 +5202,62 @@
           "effects": [
             {
               "choose": 1,
-              "id": "option",
+              "id": "fighting-style",
               "labelRu": "Боевой стиль",
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "labelRu": "Боевой стиль: Оборона",
+                        "target": "ac",
+                        "type": "bonus",
+                        "value": "1",
+                        "when": {
+                          "not": {
+                            "armor": "none"
+                          }
+                        }
+                      }
+                    ],
                     "labelRu": "Оборона",
-                    "value": "fighting-style-defense"
+                    "value": "defense"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "labelRu": "Боевой стиль: Дуэлянт",
+                        "target": "damage:melee_weapon",
+                        "type": "bonus",
+                        "value": "2",
+                        "when": {
+                          "wielding": "one_melee_weapon_no_other"
+                        }
+                      }
+                    ],
                     "labelRu": "Дуэлянт",
-                    "value": "fighting-style-dueling"
+                    "value": "dueling"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Перебросить 1 и 2 на костях урона двуручным или универсальным оружием (двумя руками)",
+                        "rule": "great_weapon_reroll",
+                        "type": "combat_rule"
+                      }
+                    ],
                     "labelRu": "Сражение большим оружием",
-                    "value": "fighting-style-great-weapon-fighting"
+                    "value": "great-weapon-fighting"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Реакцией, со щитом: помеха на атаку по союзнику в 5 футах от вас",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Защита",
-                    "value": "fighting-style-protection"
+                    "value": "protection"
                   }
                 ],
                 "kind": "list"
@@ -4540,7 +5265,7 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "fighting-style",
           "level": 2,
           "nameEn": "Fighting Style",
@@ -4549,7 +5274,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "spellcasting-paladin",
           "level": 2,
           "nameEn": "Spellcasting: Paladin",
@@ -4557,8 +5282,13 @@
           "textMd": "By 2nd level, you have learned to draw on divine magic through meditation and prayer to cast spells as a cleric does."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Попадание рукопашной атакой оружием: потратить ячейку — +2к8 излучением, +1к8 за круг выше 1-го (максимум 5к8), +1к8 против нежити и исчадий",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "divine-smite",
           "level": 2,
           "nameEn": "Divine Smite",
@@ -4566,8 +5296,13 @@
           "textMd": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target, in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is an undead or a fiend."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Иммунитет к болезням",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "divine-health",
           "level": 3,
           "nameEn": "Divine Health",
@@ -4576,7 +5311,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "sacred-oath",
           "level": 3,
           "nameEn": "Sacred Oath",
@@ -4585,7 +5320,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "oath-spells",
           "level": 3,
           "nameEn": "Oath Spells",
@@ -4593,8 +5328,20 @@
           "textMd": "Each oath has a list of associated spells. You gain access to these spells at the levels specified in the oath description. Once you gain access to an oath spell, you always have it prepared. Oath spells don't count against the number of spells you can prepare each day.\n\nIf you gain an oath spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "channel-divinity",
+              "max": "1",
+              "nameRu": "Божественный канал",
+              "reset": "short",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Варианты канала — от священной клятвы",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "channel-divinity",
           "level": 3,
           "nameEn": "Channel Divinity",
@@ -4612,8 +5359,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "attacks": 1,
+              "type": "extra_attack"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "extra-attack",
           "level": 5,
           "nameEn": "Extra Attack",
@@ -4621,8 +5373,19 @@
           "textMd": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "labelRu": "Аура защиты",
+              "target": "save:*",
+              "type": "bonus",
+              "value": "max(1, CHA)"
+            },
+            {
+              "noteRu": "Союзники в пределах ауры (колонка «Радиус ауры») тоже получают бонус к спасброскам",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "aura-of-protection",
           "level": 6,
           "nameEn": "Aura of Protection",
@@ -4650,8 +5413,17 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "condition": "frightened",
+              "type": "condition_immunity"
+            },
+            {
+              "noteRu": "Союзники в пределах ауры не могут быть испуганы, пока вы в сознании",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "aura-of-courage",
           "level": 10,
           "nameEn": "Aura of Courage",
@@ -4659,8 +5431,13 @@
           "textMd": "Starting at 10th level, you and friendly creatures within 10 feet of you can't be frightened while you are conscious.\n\nAt 18th level, the range of this aura increases to 30 feet."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Каждое попадание рукопашным оружием: +1к8 излучением",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "improved-divine-smite",
           "level": 11,
           "nameEn": "Improved Divine Smite",
@@ -4678,8 +5455,20 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "cleansing-touch",
+              "max": "max(1, CHA)",
+              "nameRu": "Очищающее касание",
+              "reset": "long",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Действием окончить одно заклинание на себе или согласном существе",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "cleansing-touch",
           "level": 14,
           "nameEn": "Cleansing Touch",
@@ -4708,7 +5497,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "aura-improvements",
           "level": 18,
           "nameEn": "Aura improvements",
@@ -5157,7 +5946,7 @@
       "subclassLabelRu": "Священная клятва",
       "subclassLevel": 3
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/class/paladin",
     "kind": "class",
     "nameEn": "Paladin",
@@ -5211,8 +6000,103 @@
       ],
       "features": [
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 1,
+              "id": "favored-enemy-1",
+              "labelRu": "Избранный враг",
+              "options": {
+                "items": [
+                  {
+                    "effects": [],
+                    "labelRu": "Аберрации",
+                    "value": "aberrations"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Звери",
+                    "value": "beasts"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Небожители",
+                    "value": "celestials"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Конструкты",
+                    "value": "constructs"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Драконы",
+                    "value": "dragons"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Элементали",
+                    "value": "elementals"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Феи",
+                    "value": "fey"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Исчадия",
+                    "value": "fiends"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Великаны",
+                    "value": "giants"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Чудовища",
+                    "value": "monstrosities"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Слизи",
+                    "value": "oozes"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Растения",
+                    "value": "plants"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Нежить",
+                    "value": "undead"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Два вида гуманоидов",
+                    "value": "humanoids"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            },
+            {
+              "choose": 1,
+              "id": "favored-enemy-language-1",
+              "labelRu": "Язык избранного врага",
+              "options": {
+                "kind": "languages"
+              },
+              "type": "choice"
+            },
+            {
+              "noteRu": "Преимущество на проверки Мудрости (Выживание) для выслеживания и Интеллекта для воспоминаний об избранных врагах",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "favored-enemy-1-type",
           "level": 1,
           "nameEn": "Favored Enemy (1 type)",
@@ -5220,8 +6104,64 @@
           "textMd": "Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy.\n\nChoose a type of favored enemy: aberrations, beasts, celestials, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. Alternatively, you can select two races of humanoid (such as gnolls and orcs) as favored enemies.\n\nYou have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them.\n\nWhen you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at all.\n\nYou choose one additional favored enemy, as well as an associated language, at 6th and 14th level. As you gain levels, your choices should reflect the types of monsters you have encountered on your adventures."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 1,
+              "id": "favored-terrain-1",
+              "labelRu": "Избранная местность",
+              "options": {
+                "items": [
+                  {
+                    "effects": [],
+                    "labelRu": "Полярная",
+                    "value": "arctic"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Побережье",
+                    "value": "coast"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Пустыня",
+                    "value": "desert"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Лес",
+                    "value": "forest"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Луга",
+                    "value": "grassland"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Горы",
+                    "value": "mountain"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Болото",
+                    "value": "swamp"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Подземье",
+                    "value": "underdark"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            },
+            {
+              "noteRu": "В избранной местности: удвоенный БМ к проверкам Инт и Мдр с владением, путешествие без замедлений и потерь",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "natural-explorer-1-terrain-type",
           "level": 1,
           "nameEn": "Natural Explorer (1 terrain type)",
@@ -5232,29 +6172,64 @@
           "effects": [
             {
               "choose": 1,
-              "id": "option",
+              "id": "fighting-style",
               "labelRu": "Боевой стиль",
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "labelRu": "Боевой стиль: Стрельба",
+                        "target": "attack:ranged_weapon",
+                        "type": "bonus",
+                        "value": "2"
+                      }
+                    ],
                     "labelRu": "Стрельба",
-                    "value": "fighting-style-archery"
+                    "value": "archery"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "labelRu": "Боевой стиль: Оборона",
+                        "target": "ac",
+                        "type": "bonus",
+                        "value": "1",
+                        "when": {
+                          "not": {
+                            "armor": "none"
+                          }
+                        }
+                      }
+                    ],
                     "labelRu": "Оборона",
-                    "value": "fighting-style-defense"
+                    "value": "defense"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "labelRu": "Боевой стиль: Дуэлянт",
+                        "target": "damage:melee_weapon",
+                        "type": "bonus",
+                        "value": "2",
+                        "when": {
+                          "wielding": "one_melee_weapon_no_other"
+                        }
+                      }
+                    ],
                     "labelRu": "Дуэлянт",
-                    "value": "fighting-style-dueling"
+                    "value": "dueling"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Модификатор характеристики добавляется к урону второй атаки",
+                        "rule": "twf_ability_mod",
+                        "type": "combat_rule"
+                      }
+                    ],
                     "labelRu": "Сражение двумя оружиями",
-                    "value": "fighting-style-two-weapon-fighting"
+                    "value": "two-weapon-fighting"
                   }
                 ],
                 "kind": "list"
@@ -5262,7 +6237,7 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "fighting-style",
           "level": 2,
           "nameEn": "Fighting Style",
@@ -5271,7 +6246,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "spellcasting-ranger",
           "level": 2,
           "nameEn": "Spellcasting: Ranger",
@@ -5280,7 +6255,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "archetype",
           "level": 3,
           "nameEn": "Ranger Archetype",
@@ -5288,8 +6263,13 @@
           "textMd": "At 3rd level, you choose an archetype that you strive to emulate, such as the Hunter. Your choice grants you features at 3rd level and again at 7th, 11th, and 15th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Действием и ячейкой: 1 минута на круг — узнаёте о присутствии избранных врагов в 1 миле (6 милях в избранной местности)",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "primeval-awareness",
           "level": 3,
           "nameEn": "Primeval Awareness",
@@ -5307,8 +6287,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "attacks": 1,
+              "type": "extra_attack"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "extra-attack",
           "level": 5,
           "nameEn": "Extra Attack",
@@ -5316,8 +6301,99 @@
           "textMd": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 1,
+              "id": "favored-enemy-2",
+              "labelRu": "Избранный враг",
+              "options": {
+                "items": [
+                  {
+                    "effects": [],
+                    "labelRu": "Аберрации",
+                    "value": "aberrations"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Звери",
+                    "value": "beasts"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Небожители",
+                    "value": "celestials"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Конструкты",
+                    "value": "constructs"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Драконы",
+                    "value": "dragons"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Элементали",
+                    "value": "elementals"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Феи",
+                    "value": "fey"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Исчадия",
+                    "value": "fiends"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Великаны",
+                    "value": "giants"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Чудовища",
+                    "value": "monstrosities"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Слизи",
+                    "value": "oozes"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Растения",
+                    "value": "plants"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Нежить",
+                    "value": "undead"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Два вида гуманоидов",
+                    "value": "humanoids"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            },
+            {
+              "choose": 1,
+              "id": "favored-enemy-language-2",
+              "labelRu": "Язык избранного врага",
+              "options": {
+                "kind": "languages"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "favored-enemy-2-types",
           "level": 6,
           "nameEn": "Favored Enemy (2 types)",
@@ -5325,8 +6401,60 @@
           "textMd": "Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy.\n\nChoose a type of favored enemy: aberrations, beasts, celestials, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. Alternatively, you can select two races of humanoid (such as gnolls and orcs) as favored enemies.\n\nYou have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them.\n\nWhen you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at all.\n\nYou choose one additional favored enemy, as well as an associated language, at 6th and 14th level. As you gain levels, your choices should reflect the types of monsters you have encountered on your adventures."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 1,
+              "id": "favored-terrain-2",
+              "labelRu": "Избранная местность",
+              "options": {
+                "items": [
+                  {
+                    "effects": [],
+                    "labelRu": "Полярная",
+                    "value": "arctic"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Побережье",
+                    "value": "coast"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Пустыня",
+                    "value": "desert"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Лес",
+                    "value": "forest"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Луга",
+                    "value": "grassland"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Горы",
+                    "value": "mountain"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Болото",
+                    "value": "swamp"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Подземье",
+                    "value": "underdark"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "natural-explorer-2-terrain-types",
           "level": 6,
           "nameEn": "Natural Explorer (2 terrain types)",
@@ -5354,8 +6482,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Немагическая труднопроходимая местность не замедляет; преимущество на спасброски от магических растений",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "lands-stride",
           "level": 8,
           "nameEn": "Land's Stride",
@@ -5363,8 +6496,60 @@
           "textMd": "Starting at 8th level, moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard.\n\nIn addition, you have advantage on saving throws against plants that are magically created or manipulated to impede movement, such those created by the entangle spell."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 1,
+              "id": "favored-terrain-3",
+              "labelRu": "Избранная местность",
+              "options": {
+                "items": [
+                  {
+                    "effects": [],
+                    "labelRu": "Полярная",
+                    "value": "arctic"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Побережье",
+                    "value": "coast"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Пустыня",
+                    "value": "desert"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Лес",
+                    "value": "forest"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Луга",
+                    "value": "grassland"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Горы",
+                    "value": "mountain"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Болото",
+                    "value": "swamp"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Подземье",
+                    "value": "underdark"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "natural-explorer-3-terrain-types",
           "level": 10,
           "nameEn": "Natural Explorer (3 terrain types)",
@@ -5372,8 +6557,26 @@
           "textMd": "You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain: arctic, coast, desert, forest, grassland, mountain, or swamp. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you're proficient in.\n\nWhile traveling for an hour or more in your favored terrain, you gain the following benefits:\n\n- Difficult terrain doesn't slow your group's travel.\n\n- Your group can't become lost except by magical means.\n\n- Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.\n\n- If you are traveling alone, you can move stealthily at a normal pace.\n\n- When you forage, you find twice as much food as you normally would.\n\n- While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.\n\nYou choose additional favored terrain types at 6th and 10th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "effects": [
+                {
+                  "labelRu": "Маскировка на виду",
+                  "target": "skill:stealth",
+                  "type": "bonus",
+                  "value": "10"
+                }
+              ],
+              "id": "camouflage",
+              "labelRu": "Маскировка на виду",
+              "type": "toggle"
+            },
+            {
+              "noteRu": "1 минута на маскировку; действует, пока вы не двигаетесь и не совершаете действий",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "hide-in-plain-sight",
           "level": 10,
           "nameEn": "Hide in Plain Sight",
@@ -5401,8 +6604,99 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 1,
+              "id": "favored-enemy-3",
+              "labelRu": "Избранный враг",
+              "options": {
+                "items": [
+                  {
+                    "effects": [],
+                    "labelRu": "Аберрации",
+                    "value": "aberrations"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Звери",
+                    "value": "beasts"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Небожители",
+                    "value": "celestials"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Конструкты",
+                    "value": "constructs"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Драконы",
+                    "value": "dragons"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Элементали",
+                    "value": "elementals"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Феи",
+                    "value": "fey"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Исчадия",
+                    "value": "fiends"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Великаны",
+                    "value": "giants"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Чудовища",
+                    "value": "monstrosities"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Слизи",
+                    "value": "oozes"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Растения",
+                    "value": "plants"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Нежить",
+                    "value": "undead"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Два вида гуманоидов",
+                    "value": "humanoids"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            },
+            {
+              "choose": 1,
+              "id": "favored-enemy-language-3",
+              "labelRu": "Язык избранного врага",
+              "options": {
+                "kind": "languages"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "favored-enemy-3-enemies",
           "level": 14,
           "nameEn": "Favored Enemy (3 enemies)",
@@ -5410,8 +6704,13 @@
           "textMd": "Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy.\n\nChoose a type of favored enemy: aberrations, beasts, celestials, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. Alternatively, you can select two races of humanoid (such as gnolls and orcs) as favored enemies.\n\nYou have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them.\n\nWhen you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at all.\n\nYou choose one additional favored enemy, as well as an associated language, at 6th and 14th level. As you gain levels, your choices should reflect the types of monsters you have encountered on your adventures."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Засада бонусным действием; вас нельзя выследить немагическими способами, если вы не хотите",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "vanish",
           "level": 14,
           "nameEn": "Vanish",
@@ -5439,8 +6738,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Нет помехи на атаки по невидимым существам; знаете о невидимых существах в 30 футах",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "feral-senses",
           "level": 18,
           "nameEn": "Feral Senses",
@@ -5458,8 +6762,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Раз в ход: +Мдр к броску атаки или урона по избранному врагу",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "foe-slayer",
           "level": 20,
           "nameEn": "Foe Slayer",
@@ -5944,7 +7253,7 @@
       "subclassLabelRu": "Архетип следопыта",
       "subclassLevel": 3
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/class/ranger",
     "kind": "class",
     "nameEn": "Ranger",
@@ -5973,14 +7282,17 @@
         {
           "effects": [
             {
-              "choose": 1,
+              "choose": 2,
               "id": "expertise",
               "labelRu": "Компетентность",
               "options": {
                 "from": "any",
                 "grant": "expertise",
                 "kind": "skills",
-                "requireProficient": true
+                "requireProficient": true,
+                "tools": [
+                  "thieves-tools"
+                ]
               },
               "type": "choice"
             }
@@ -5993,8 +7305,13 @@
           "textMd": "At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves' tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.\n\nAt 6th level, you can choose two more of your proficiencies (in skills or with thieves' tools) to gain this benefit"
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Раз в ход: дополнительный урон по колонке «Скрытая атака» — атака фехтовальным или дальнобойным оружием с преимуществом или при союзнике в 5 футах от цели",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "sneak-attack",
           "level": 1,
           "nameEn": "Sneak Attack",
@@ -6002,8 +7319,13 @@
           "textMd": "Beginning at 1st level, you know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\n\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.\n\nThe amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Тайная смесь жаргона и знаков; передача сообщения занимает вчетверо больше времени",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "thieves-cant",
           "level": 1,
           "nameEn": "Thieves' Cant",
@@ -6011,8 +7333,13 @@
           "textMd": "During your rogue training you learned thieves' cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves' cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.\n\nIn addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves' guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Бонусным действием: Рывок, Отход или Засада",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "cunning-action",
           "level": 2,
           "nameEn": "Cunning Action",
@@ -6021,7 +7348,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "roguish-archetype",
           "level": 3,
           "nameEn": "Roguish Archetype",
@@ -6039,8 +7366,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 10th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Реакцией: урон от видимой атаки уменьшается вдвое",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "uncanny-dodge",
           "level": 5,
           "nameEn": "Uncanny Dodge",
@@ -6057,7 +7389,10 @@
                 "from": "any",
                 "grant": "expertise",
                 "kind": "skills",
-                "requireProficient": true
+                "requireProficient": true,
+                "tools": [
+                  "thieves-tools"
+                ]
               },
               "type": "choice"
             }
@@ -6070,8 +7405,13 @@
           "textMd": "At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves' tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.\n\nAt 6th level, you can choose two more of your proficiencies (in skills or with thieves' tools) to gain this benefit"
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Спасбросок Ловкости для половины урона: при успехе — без урона, при провале — половина",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "evasion",
           "level": 7,
           "nameEn": "Evasion",
@@ -6109,8 +7449,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 10th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Проверки характеристик с владением: результат к20 меньше 10 считается 10",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "reliable-talent",
           "level": 11,
           "nameEn": "Reliable Talent",
@@ -6138,8 +7483,13 @@
           "textMd": "At 3rd level, you choose an archetype that you emulate in the exercise of your rogue abilities, such as Thief. Additional archetypes are available in the original source material. Your archetype choice grants you features at 3rd level and then again at 9th, 13th, and 17th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Если слышите — знаете положение скрытых и невидимых существ в 10 футах",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "blindsense",
           "level": 14,
           "nameEn": "Blindsense",
@@ -6147,8 +7497,14 @@
           "textMd": "Starting at 14th level, if you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "save:wis",
+              "type": "proficiency"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "slippery-mind",
           "level": 15,
           "nameEn": "Slippery Mind",
@@ -6176,8 +7532,13 @@
           "textMd": "At 3rd level, you choose an archetype that you emulate in the exercise of your rogue abilities, such as Thief. Additional archetypes are available in the original source material. Your archetype choice grants you features at 3rd level and then again at 9th, 13th, and 17th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Атаки по вам не получают преимущества, пока вы не недееспособны",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "elusive",
           "level": 18,
           "nameEn": "Elusive",
@@ -6195,8 +7556,20 @@
           "textMd": "When you reach 4th level, and again at 8th, 10th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "stroke-of-luck",
+              "max": "1",
+              "nameRu": "Удача",
+              "reset": "short",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Промах атаки — попадание; проваленная проверка — 20 на к20",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "stroke-of-luck",
           "level": 20,
           "nameEn": "Stroke of Luck",
@@ -6525,7 +7898,7 @@
       "subclassLabelRu": "Плутовской архетип",
       "subclassLevel": 3
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/class/rogue",
     "kind": "class",
     "nameEn": "Rogue",
@@ -6600,7 +7973,7 @@
       "features": [
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "spellcasting-sorcerer",
           "level": 1,
           "nameEn": "Spellcasting: Sorcerer",
@@ -6609,7 +7982,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "sorcerous-origin",
           "level": 1,
           "nameEn": "Sorcerous Origin",
@@ -6617,8 +7990,16 @@
           "textMd": "Choose a sorcerous origin, which describes the source of your innate magical power, such as Draconic Bloodline.\n\nYour choice grants you features when you choose it at 1st level and again at 6th, 14th, and 18th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "sorcery-points",
+              "max": "col(\"sorcery_points\")",
+              "nameRu": "Единицы чародейства",
+              "reset": "long",
+              "type": "resource"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "font-of-magic",
           "level": 2,
           "nameEn": "Font of Magic",
@@ -6626,8 +8007,13 @@
           "textMd": "At 2nd level, you tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points, which allow you to create a variety of magical effects.\n\nSorcery Points\n\nYou have 2 sorcery points, and you gain more as you reach higher levels, as shown in the Sorcery Points column of the Sorcerer table. You can never have more sorcery points than shown on the table for your level. You regain all spent sorcery points when you finish a long rest."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Бонусным действием: ячейка 1/2/3/4/5 круга за 2/3/5/6/7 единиц; исчезают после продолжительного отдыха",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "flexible-casting-creating-spell-slots",
           "level": 2,
           "nameEn": "Flexible Casting: Creating Spell Slots",
@@ -6635,8 +8021,13 @@
           "textMd": "You can transform unexpended sorcery points into one spell slot as a bonus action on your turn. The Creating Spell Slots table shows the cost of creating a spell slot of a given level. You can create spell slots no higher in level than 5th.\n\nAny spell slot you create with this feature vanishes when you finish a long rest."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Бонусным действием: ячейка превращается в единицы чародейства по её кругу",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "flexible-casting-converting-spell-slot",
           "level": 2,
           "nameEn": "Flexible Casting: Converting Spell Slot",
@@ -6652,42 +8043,82 @@
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: союзники (до Хар) автоматически преуспевают в спасброске",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Аккуратное заклинание",
                     "value": "metamagic-careful-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: дистанция удваивается; касание → 30 футов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Далёкое заклинание",
                     "value": "metamagic-distant-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: перебросить кости урона (до Хар)",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Усиленное заклинание",
                     "value": "metamagic-empowered-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: длительность от 1 минуты удваивается (до 24 часов)",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Продлённое заклинание",
                     "value": "metamagic-extended-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "3 ед.: помеха одной цели на первый спасбросок",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Повышенное заклинание",
                     "value": "metamagic-heightened-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "2 ед.: время накладывания 1 действие → 1 бонусное действие",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Ускоренное заклинание",
                     "value": "metamagic-quickened-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: без вербальных и соматических компонентов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Неуловимое заклинание",
                     "value": "metamagic-subtle-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Ед. = круг заклинания (заговор — 1): вторая цель для заклинания на одно существо",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Сдвоенное заклинание",
                     "value": "metamagic-twinned-spell"
                   }
@@ -6697,7 +8128,7 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "metamagic-1",
           "level": 3,
           "nameEn": "Metamagic",
@@ -6706,7 +8137,8 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
+          "hidden": true,
           "key": "metamagic-twinned-spell",
           "level": 3,
           "nameEn": "Metamagic: Twinned Spell",
@@ -6752,42 +8184,82 @@
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: союзники (до Хар) автоматически преуспевают в спасброске",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Аккуратное заклинание",
                     "value": "metamagic-careful-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: дистанция удваивается; касание → 30 футов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Далёкое заклинание",
                     "value": "metamagic-distant-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: перебросить кости урона (до Хар)",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Усиленное заклинание",
                     "value": "metamagic-empowered-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: длительность от 1 минуты удваивается (до 24 часов)",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Продлённое заклинание",
                     "value": "metamagic-extended-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "3 ед.: помеха одной цели на первый спасбросок",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Повышенное заклинание",
                     "value": "metamagic-heightened-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "2 ед.: время накладывания 1 действие → 1 бонусное действие",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Ускоренное заклинание",
                     "value": "metamagic-quickened-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: без вербальных и соматических компонентов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Неуловимое заклинание",
                     "value": "metamagic-subtle-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Ед. = круг заклинания (заговор — 1): вторая цель для заклинания на одно существо",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Сдвоенное заклинание",
                     "value": "metamagic-twinned-spell"
                   }
@@ -6797,7 +8269,7 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "metamagic-2",
           "level": 10,
           "nameEn": "Metamagic",
@@ -6843,42 +8315,82 @@
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: союзники (до Хар) автоматически преуспевают в спасброске",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Аккуратное заклинание",
                     "value": "metamagic-careful-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: дистанция удваивается; касание → 30 футов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Далёкое заклинание",
                     "value": "metamagic-distant-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: перебросить кости урона (до Хар)",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Усиленное заклинание",
                     "value": "metamagic-empowered-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: длительность от 1 минуты удваивается (до 24 часов)",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Продлённое заклинание",
                     "value": "metamagic-extended-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "3 ед.: помеха одной цели на первый спасбросок",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Повышенное заклинание",
                     "value": "metamagic-heightened-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "2 ед.: время накладывания 1 действие → 1 бонусное действие",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Ускоренное заклинание",
                     "value": "metamagic-quickened-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "1 ед.: без вербальных и соматических компонентов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Неуловимое заклинание",
                     "value": "metamagic-subtle-spell"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Ед. = круг заклинания (заговор — 1): вторая цель для заклинания на одно существо",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Сдвоенное заклинание",
                     "value": "metamagic-twinned-spell"
                   }
@@ -6888,7 +8400,7 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "metamagic-3",
           "level": 17,
           "nameEn": "Metamagic",
@@ -6916,8 +8428,13 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Короткий отдых: восстанавливаете 4 единицы чародейства",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "sorcerous-restoration",
           "level": 20,
           "nameEn": "Sorcerous Restoration",
@@ -7496,7 +9013,7 @@
       "subclassLabelRu": "Происхождение чародея",
       "subclassLevel": 1
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/class/sorcerer",
     "kind": "class",
     "nameEn": "Sorcerer",
@@ -7551,7 +9068,7 @@
       "features": [
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "otherworldly-patron",
           "level": 1,
           "nameEn": "Otherworldly Patron",
@@ -7560,7 +9077,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "pact-magic",
           "level": 1,
           "nameEn": "Pact Magic",
@@ -7576,162 +9093,437 @@
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "labelRu": "Мучительный взрыв (к каждому лучу)",
+                        "spells": [
+                          "srd/spell/eldritch-blast"
+                        ],
+                        "type": "spell_damage_bonus",
+                        "value": "CHA"
+                      }
+                    ],
                     "labelRu": "Мучительный взрыв",
                     "value": "agonizing-blast"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/mage-armor",
+                        "type": "spell_grant"
+                      }
+                    ],
                     "labelRu": "Доспех теней",
                     "value": "armor-of-shadows"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/speak-with-animals",
+                        "type": "spell_grant"
+                      }
+                    ],
                     "labelRu": "Звериная речь",
                     "value": "beast-speech"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "level": "proficient",
+                        "target": "skill:deception",
+                        "type": "proficiency"
+                      },
+                      {
+                        "level": "proficient",
+                        "target": "skill:persuasion",
+                        "type": "proficiency"
+                      }
+                    ],
                     "labelRu": "Обворожительное влияние",
                     "value": "beguiling-influence"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Книга ритуалов: два ритуала 1 круга любых классов; новые — по найденным",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Книга древних секретов",
                     "value": "book-of-ancient-secrets"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "op": "set_max",
+                        "rangeFt": 120,
+                        "sense": "darkvision",
+                        "type": "sense"
+                      },
+                      {
+                        "noteRu": "Видите в магической темноте",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Дьявольское зрение",
                     "value": "devils-sight"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/detect-magic",
+                        "type": "spell_grant"
+                      }
+                    ],
                     "labelRu": "Мистическое зрение",
                     "value": "eldritch-sight"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Дистанция «Мистического заряда» — 300 футов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Мистическое копьё",
                     "value": "eldritch-spear"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Читаете любые письмена",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Глаза хранителя рун",
                     "value": "eyes-of-the-rune-keeper"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "castAtLevel": 1,
+                        "mode": "innate",
+                        "spell": "srd/spell/false-life",
+                        "type": "spell_grant"
+                      }
+                    ],
                     "labelRu": "Дьявольская живучесть",
                     "value": "fiendish-vigor"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Действием: воспринимаете чувствами согласного гуманоида",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Взгляд двух разумов",
                     "value": "gaze-of-two-minds"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/disguise-self",
+                        "type": "spell_grant"
+                      }
+                    ],
                     "labelRu": "Маска многих лиц",
                     "value": "mask-of-many-faces"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/silent-image",
+                        "type": "spell_grant"
+                      }
+                    ],
                     "labelRu": "Туманные видения",
                     "value": "misty-visions"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Попадание «Мистическим зарядом» отталкивает на 10 футов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Отталкивающий взрыв",
                     "value": "repelling-blast"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/bane",
+                        "type": "spell_grant",
+                        "uses": {
+                          "count": "1",
+                          "reset": "long"
+                        }
+                      },
+                      {
+                        "noteRu": "Раз в продолжительный отдых, с тратой ячейки колдуна",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Вор пяти судеб",
                     "value": "thief-of-five-fates"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Общение с фамильяром и восприятие его чувствами на любом расстоянии",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Голос повелителя цепи",
                     "value": "voice-of-the-chain-master"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/slow",
+                        "type": "spell_grant",
+                        "uses": {
+                          "count": "1",
+                          "reset": "long"
+                        }
+                      },
+                      {
+                        "noteRu": "Раз в продолжительный отдых, с тратой ячейки колдуна",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Трясина разума",
                     "value": "mire-the-mind"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "В тусклом свете или темноте действием становитесь невидимым, пока не двигаетесь",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Единство с тенями",
                     "value": "one-with-shadows"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/bestow-curse",
+                        "type": "spell_grant",
+                        "uses": {
+                          "count": "1",
+                          "reset": "long"
+                        }
+                      },
+                      {
+                        "noteRu": "Раз в продолжительный отдых, с тратой ячейки колдуна",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Знак дурного предзнаменования",
                     "value": "sign-of-ill-omen"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Оружие договора: две атаки действием Атака",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Жаждущий клинок",
                     "value": "thirsting-blade"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/compulsion",
+                        "type": "spell_grant",
+                        "uses": {
+                          "count": "1",
+                          "reset": "long"
+                        }
+                      },
+                      {
+                        "noteRu": "Раз в продолжительный отдых, с тратой ячейки колдуна",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Колдовской шёпот",
                     "value": "bewitching-whispers"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/confusion",
+                        "type": "spell_grant",
+                        "uses": {
+                          "count": "1",
+                          "reset": "long"
+                        }
+                      },
+                      {
+                        "noteRu": "Раз в продолжительный отдых, с тратой ячейки колдуна",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Ужасное слово",
                     "value": "dreadful-word"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/polymorph",
+                        "type": "spell_grant",
+                        "uses": {
+                          "count": "1",
+                          "reset": "long"
+                        }
+                      },
+                      {
+                        "noteRu": "Раз в продолжительный отдых, с тратой ячейки колдуна",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Скульптор плоти",
                     "value": "sculptor-of-flesh"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/levitate",
+                        "type": "spell_grant"
+                      }
+                    ],
                     "labelRu": "Восходящий шаг",
                     "value": "ascendant-step"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/conjure-elemental",
+                        "type": "spell_grant",
+                        "uses": {
+                          "count": "1",
+                          "reset": "long"
+                        }
+                      },
+                      {
+                        "noteRu": "Раз в продолжительный отдых, с тратой ячейки колдуна",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Слуги хаоса",
                     "value": "minions-of-chaos"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/jump",
+                        "type": "spell_grant"
+                      }
+                    ],
                     "labelRu": "Потусторонний прыжок",
                     "value": "otherworldly-leap"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/speak-with-dead",
+                        "type": "spell_grant"
+                      }
+                    ],
                     "labelRu": "Шёпот могилы",
                     "value": "whispers-of-the-grave"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Оружие договора: +Хар некротического урона при попадании",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Пьющий жизнь",
                     "value": "lifedrinker"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/hold-monster",
+                        "type": "spell_grant"
+                      },
+                      {
+                        "noteRu": "Только небожители, исчадия и элементали; одно существо — раз в продолжительный отдых",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Цепи Карцери",
                     "value": "chains-of-carceri"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/alter-self",
+                        "type": "spell_grant"
+                      }
+                    ],
                     "labelRu": "Мастер бесчисленных обличий",
                     "value": "master-of-myriad-forms"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "innate",
+                        "spell": "srd/spell/arcane-eye",
+                        "type": "spell_grant"
+                      }
+                    ],
                     "labelRu": "Видения далёких миров",
                     "value": "visions-of-distant-realms"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Видите истинный облик перевёртышей и иллюзий в 30 футах",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Ведьмовское зрение",
                     "value": "witch-sight"
                   }
@@ -7742,7 +9534,7 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "eldritch-invocations",
           "level": 2,
           "nameEn": "Eldritch Invocations",
@@ -7758,17 +9550,57 @@
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "cha",
+                        "mode": "known",
+                        "spell": "srd/spell/find-familiar",
+                        "type": "spell_grant"
+                      },
+                      {
+                        "noteRu": "Особые формы фамильяра; фамильяр атакует вашей реакцией",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Договор цепи",
                     "value": "pact-of-the-chain"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Действием создаёте оружие договора; вы им владеете, оно считается магическим",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Договор клинка",
                     "value": "pact-of-the-blade"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Книга теней: три заговора любых классов, известные вам",
+                        "type": "text"
+                      },
+                      {
+                        "choose": 3,
+                        "id": "book-of-shadows",
+                        "labelRu": "Книга теней: заговоры",
+                        "options": {
+                          "kind": "spells",
+                          "level": "cantrip",
+                          "list": "*"
+                        },
+                        "type": "choice"
+                      },
+                      {
+                        "ability": "cha",
+                        "mode": "known",
+                        "spell": {
+                          "choice": "book-of-shadows"
+                        },
+                        "type": "spell_grant"
+                      }
+                    ],
                     "labelRu": "Договор гримуара",
                     "value": "pact-of-the-tome"
                   }
@@ -7778,7 +9610,7 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "pact-boon",
           "level": 3,
           "nameEn": "Pact Boon",
@@ -7826,8 +9658,33 @@
           "textMd": "At 1st level, you have struck a bargain with an otherworldly being of your choice, such as the Fiend. Your choice grants you features at 1st level and again at 6th, 10th, and 14th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 1,
+              "id": "mystic-arcanum-6",
+              "labelRu": "Таинственный арканум (6 круг)",
+              "options": {
+                "kind": "spells",
+                "level": 6,
+                "list": "warlock"
+              },
+              "type": "choice"
+            },
+            {
+              "ability": "class",
+              "castAtLevel": 6,
+              "mode": "known",
+              "spell": {
+                "choice": "mystic-arcanum-6"
+              },
+              "type": "spell_grant",
+              "uses": {
+                "count": "1",
+                "reset": "long"
+              }
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "mystic-arcanum-6th-level",
           "level": 11,
           "nameEn": "Mystic Arcanum (6th level)",
@@ -7845,8 +9702,33 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 1,
+              "id": "mystic-arcanum-7",
+              "labelRu": "Таинственный арканум (7 круг)",
+              "options": {
+                "kind": "spells",
+                "level": 7,
+                "list": "warlock"
+              },
+              "type": "choice"
+            },
+            {
+              "ability": "class",
+              "castAtLevel": 7,
+              "mode": "known",
+              "spell": {
+                "choice": "mystic-arcanum-7"
+              },
+              "type": "spell_grant",
+              "uses": {
+                "count": "1",
+                "reset": "long"
+              }
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "mystic-arcanum-7th-level",
           "level": 13,
           "nameEn": "Mystic Arcanum (7th level)",
@@ -7864,8 +9746,33 @@
           "textMd": "At 1st level, you have struck a bargain with an otherworldly being of your choice, such as the Fiend. Your choice grants you features at 1st level and again at 6th, 10th, and 14th level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 1,
+              "id": "mystic-arcanum-8",
+              "labelRu": "Таинственный арканум (8 круг)",
+              "options": {
+                "kind": "spells",
+                "level": 8,
+                "list": "warlock"
+              },
+              "type": "choice"
+            },
+            {
+              "ability": "class",
+              "castAtLevel": 8,
+              "mode": "known",
+              "spell": {
+                "choice": "mystic-arcanum-8"
+              },
+              "type": "spell_grant",
+              "uses": {
+                "count": "1",
+                "reset": "long"
+              }
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "mystic-arcanum-8th-level",
           "level": 15,
           "nameEn": "Mystic Arcanum (8th level)",
@@ -7883,8 +9790,33 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 1,
+              "id": "mystic-arcanum-9",
+              "labelRu": "Таинственный арканум (9 круг)",
+              "options": {
+                "kind": "spells",
+                "level": 9,
+                "list": "warlock"
+              },
+              "type": "choice"
+            },
+            {
+              "ability": "class",
+              "castAtLevel": 9,
+              "mode": "known",
+              "spell": {
+                "choice": "mystic-arcanum-9"
+              },
+              "type": "spell_grant",
+              "uses": {
+                "count": "1",
+                "reset": "long"
+              }
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "mystic-arcanum-9th-level",
           "level": 17,
           "nameEn": "Mystic Arcanum (9th level)",
@@ -7902,8 +9834,20 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "eldritch-master",
+              "max": "1",
+              "nameRu": "Таинственный мастер",
+              "reset": "long",
+              "type": "resource"
+            },
+            {
+              "noteRu": "1 минута мольбы: восстановить все ячейки магии договора",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "eldritch-master",
           "level": 20,
           "nameEn": "Eldritch Master",
@@ -8402,7 +10346,7 @@
       "subclassLabelRu": "Потусторонний покровитель",
       "subclassLevel": 1
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/class/warlock",
     "kind": "class",
     "nameEn": "Warlock",
@@ -8469,7 +10413,7 @@
       "features": [
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "spellcasting-wizard",
           "level": 1,
           "nameEn": "Spellcasting: Wizard",
@@ -8477,8 +10421,20 @@
           "textMd": "As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "arcane-recovery",
+              "max": "1",
+              "nameRu": "Магическое восстановление",
+              "reset": "long",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Короткий отдых: восстановить ячейки суммарным кругом до половины уровня волшебника (округляя вверх), не выше 5 круга",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "arcane-recovery",
           "level": 1,
           "nameEn": "Arcane Recovery",
@@ -8487,7 +10443,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "arcane-tradition",
           "level": 2,
           "nameEn": "Arcane Tradition",
@@ -8565,8 +10521,51 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 1,
+              "id": "spell-mastery-1",
+              "labelRu": "Мастерство заклинаний (1 круг)",
+              "options": {
+                "kind": "spells",
+                "level": 1,
+                "list": "wizard"
+              },
+              "type": "choice"
+            },
+            {
+              "choose": 1,
+              "id": "spell-mastery-2",
+              "labelRu": "Мастерство заклинаний (2 круг)",
+              "options": {
+                "kind": "spells",
+                "level": 2,
+                "list": "wizard"
+              },
+              "type": "choice"
+            },
+            {
+              "ability": "class",
+              "mode": "always_prepared",
+              "spell": {
+                "choice": "spell-mastery-1"
+              },
+              "type": "spell_grant"
+            },
+            {
+              "ability": "class",
+              "mode": "always_prepared",
+              "spell": {
+                "choice": "spell-mastery-2"
+              },
+              "type": "spell_grant"
+            },
+            {
+              "noteRu": "Выбранные заклинания накладываются без траты ячейки на минимальном круге",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "spell-mastery",
           "level": 18,
           "nameEn": "Spell Mastery",
@@ -8584,8 +10583,33 @@
           "textMd": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 2,
+              "id": "signature-spells",
+              "labelRu": "Коронные заклинания",
+              "options": {
+                "kind": "spells",
+                "level": 3,
+                "list": "wizard"
+              },
+              "type": "choice"
+            },
+            {
+              "ability": "class",
+              "castAtLevel": 3,
+              "mode": "always_prepared",
+              "spell": {
+                "choice": "signature-spells"
+              },
+              "type": "spell_grant",
+              "uses": {
+                "count": "1",
+                "reset": "short"
+              }
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "signature-spell",
           "level": 20,
           "nameEn": "Signature Spell",
@@ -9092,7 +11116,7 @@
       "subclassLabelRu": "Магическая традиция",
       "subclassLevel": 2
     },
-    "effectsStatus": "text_only",
+    "effectsStatus": "complete",
     "key": "srd/class/wizard",
     "kind": "class",
     "nameEn": "Wizard",

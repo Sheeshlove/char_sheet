@@ -1,0 +1,29 @@
+{
+  "target": "srd/race/elf",
+  "features": {
+    "fey-ancestry": {
+      "effects": [
+        {
+          "type": "roll_mode",
+          "mode": "advantage",
+          "target": "save:*",
+          "noteRu": "Против очарования"
+        },
+        {
+          "type": "text",
+          "noteRu": "Магия не может вас усыпить"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "trance": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Вместо сна 4 часа медитации — эффект продолжительного отдыха"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

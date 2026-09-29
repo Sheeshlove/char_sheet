@@ -47,8 +47,10 @@ export function casterLevelFor(casters: CasterInfo[]): number {
 /** Ключи заклинаний, доступных классу: список класса + расширения + подкласс. */
 export function classSpellPool(p: Pipeline, c: CasterInfo): Set<ContentKey> {
   const pool = new Set(p.content.spellList(c.sc.spellListKey));
-  for (const { effect } of p.active('spell_list_extend')) {
-    if (effect.list === c.sc.spellListKey) for (const k of effect.spells) pool.add(k);
+  for (const { effect, src } of p.active('spell_list_extend')) {
+    if (effect.list !== c.sc.spellListKey) continue;
+    const keys = Array.isArray(effect.spells) ? effect.spells : (p.choiceSelections.get(choiceKey(src, effect.spells.choice)) ?? []);
+    for (const k of keys) pool.add(k);
   }
   const sub = c.subclassKey ? p.content.getOf(c.subclassKey, 'subclass') : undefined;
   for (const e of sub?.data.expandedSpellList ?? []) for (const k of e.spells) pool.add(k);

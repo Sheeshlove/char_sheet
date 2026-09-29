@@ -196,6 +196,21 @@ export function spellAttackLines(p: Pipeline, spellcasting: ComputedSheet['spell
       bonus: 0,
       type: d.type as DamageType,
     }));
+    // RULES-NOTE: бонус к урону заклинания прибавляется к одному броску урона (первой строке).
+    const notes: string[] = [];
+    for (const { effect, src } of p.active('spell_damage_bonus')) {
+      const filtered = !!(effect.spells || effect.schools || effect.damageTypes);
+      const match =
+        !filtered ||
+        effect.spells?.includes(spellKey) ||
+        effect.schools?.includes(s.data.school) ||
+        damage.some((d) => effect.damageTypes?.includes(d.type as DamageType));
+      if (!match || !damage.length) continue;
+      const v = Math.floor(p.num(effect.value, src));
+      if (!v) continue;
+      damage[0]!.bonus += v;
+      notes.push(`${effect.labelRu}: ${v > 0 ? '+' : ''}${v}`);
+    }
     out.push({
       id,
       nameRu: s.nameRu,
@@ -210,7 +225,7 @@ export function spellAttackLines(p: Pipeline, spellcasting: ComputedSheet['spell
       damage,
       rangeFt: s.data.range.feet ? { normal: s.data.range.feet, long: s.data.range.feet } : undefined,
       properties: [],
-      notes: s.data.level > 0 && s.data.damage?.some((d) => d.scaling === 'slot') ? ['Усиливается ячейкой выше'] : [],
+      notes: [...(s.data.level > 0 && s.data.damage?.some((d) => d.scaling === 'slot') ? ['Усиливается ячейкой выше'] : []), ...notes],
       modes: s.data.attack ? attackModes(p, s.data.attack === 'ranged', true) : [],
     });
   };

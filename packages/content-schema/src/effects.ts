@@ -7,6 +7,7 @@ import {
   exprSchema,
   sizeSchema,
   skillSchema,
+  SPELL_SCHOOLS,
   type Ability,
   type ConditionId,
   type ContentKey,
@@ -120,12 +121,17 @@ export const weaponFilterSchema = z.strictObject({
 
 export type ChoiceSource =
   | { kind: 'list'; items: { value: string; labelRu: string; effects: Effect[] }[] }
-  | { kind: 'skills'; from: SkillId[] | 'any'; grant: 'proficient' | 'expertise'; requireProficient?: boolean }
+  /** `tools` — инструменты, которые можно выбрать вместо навыка (Компетентность плута: воровские инструменты). */
+  | { kind: 'skills'; from: SkillId[] | 'any'; grant: 'proficient' | 'expertise'; requireProficient?: boolean; tools?: string[] }
   | { kind: 'languages' }
   | { kind: 'tools'; group?: 'artisan' | 'musical' | 'gaming' | 'any' }
   | { kind: 'ability_increase'; points: number; maxPerAbility: number; abilities?: Ability[] }
   | { kind: 'feat' }
-  | { kind: 'spells'; list: string; level: number | 'cantrip'; school?: string[] }
+  /**
+   * `list: '*'` — заклинания всех списков; `level: 'up_to_max'` — заговоры и круги, доступные
+   * классу-источнику («Тайны магии» барда).
+   */
+  | { kind: 'spells'; list: string; level: number | 'cantrip' | 'up_to_max'; school?: string[] }
   | { kind: 'fighting_style'; styles: string[] };
 
 // ─── Эффекты ──────────────────────────────────────────────────────────────
@@ -198,7 +204,20 @@ export type Effect = Common &
         castAtLevel?: number;
         minCharacterLevel?: number;
       }
-    | { type: 'spell_list_extend'; list: string; spells: ContentKey[] }
+    /**
+     * Прибавка к урону атак заклинаниями (строка атаки в листе): «Мучительный взрыв», «Усиленное
+     * воплощение», «Родство со стихией». Фильтры объединяются по «или»; без фильтров — ко всем.
+     */
+    | {
+        type: 'spell_damage_bonus';
+        value: Expr;
+        labelRu: string;
+        spells?: ContentKey[];
+        schools?: (typeof SPELL_SCHOOLS)[number][];
+        damageTypes?: DamageType[];
+      }
+    /** Расширение списка класса; `{ choice }` — заклинания, выбранные в выборе этого умения. */
+    | { type: 'spell_list_extend'; list: string; spells: ContentKey[] | { choice: string } }
     | {
         type: 'choice';
         id: string;
@@ -239,6 +258,7 @@ const choiceSourceSchema: z.ZodType<ChoiceSource> = z.lazy(() =>
       from: z.union([z.array(skillSchema), z.literal('any')]),
       grant: z.enum(['proficient', 'expertise']),
       requireProficient: z.boolean().optional(),
+      tools: z.array(z.string().min(1)).optional(),
     }),
     z.strictObject({ kind: z.literal('languages') }),
     z.strictObject({ kind: z.literal('tools'), group: z.enum(['artisan', 'musical', 'gaming', 'any']).optional() }),
@@ -252,7 +272,7 @@ const choiceSourceSchema: z.ZodType<ChoiceSource> = z.lazy(() =>
     z.strictObject({
       kind: z.literal('spells'),
       list: z.string().min(1),
-      level: z.union([z.number().int().min(0).max(9), z.literal('cantrip')]),
+      level: z.union([z.number().int().min(0).max(9), z.literal('cantrip'), z.literal('up_to_max')]),
       school: z.array(z.string()).optional(),
     }),
     z.strictObject({ kind: z.literal('fighting_style'), styles: z.array(z.string()) }),
@@ -382,7 +402,21 @@ export const effectSchema: z.ZodType<Effect> = z.lazy(() =>
       castAtLevel: z.number().int().min(1).max(9).optional(),
       minCharacterLevel: z.number().int().min(1).max(20).optional(),
     }),
-    z.strictObject({ ...common, type: z.literal('spell_list_extend'), list: z.string().min(1), spells: z.array(contentKeySchema) }),
+    z.strictObject({
+      ...common,
+      type: z.literal('spell_damage_bonus'),
+      value: exprSchema,
+      labelRu: z.string().min(1),
+      spells: z.array(contentKeySchema).optional(),
+      schools: z.array(z.enum(SPELL_SCHOOLS)).optional(),
+      damageTypes: z.array(damageTypeSchema).optional(),
+    }),
+    z.strictObject({
+      ...common,
+      type: z.literal('spell_list_extend'),
+      list: z.string().min(1),
+      spells: z.union([z.array(contentKeySchema), z.strictObject({ choice: z.string().min(1) })]),
+    }),
     z.strictObject({
       ...common,
       type: z.literal('choice'),

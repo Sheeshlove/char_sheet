@@ -1,0 +1,201 @@
+{
+  "target": "srd/subclass/fiend",
+  "features": {
+    "dark-ones-blessing": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Уменьшив хиты враждебного существа до 0: временные хиты = Хар + уровень колдуна (минимум 1)"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "dark-ones-own-luck": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "dark-ones-luck",
+          "nameRu": "Удача тёмного",
+          "max": "1",
+          "reset": "short"
+        },
+        {
+          "type": "text",
+          "noteRu": "Прибавить к10 к проверке характеристики или спасброску"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "fiendish-resilience": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "fiendish-resilience",
+          "labelRu": "Адская стойкость: тип урона",
+          "choose": 1,
+          "options": {
+            "kind": "list",
+            "items": [
+              {
+                "value": "acid",
+                "labelRu": "Кислота",
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "acid"
+                  }
+                ]
+              },
+              {
+                "value": "bludgeoning",
+                "labelRu": "Дробящий",
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "bludgeoning",
+                    "noteRu": "Магическое и серебряное оружие игнорирует"
+                  }
+                ]
+              },
+              {
+                "value": "cold",
+                "labelRu": "Холод",
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "cold"
+                  }
+                ]
+              },
+              {
+                "value": "fire",
+                "labelRu": "Огонь",
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "fire"
+                  }
+                ]
+              },
+              {
+                "value": "lightning",
+                "labelRu": "Электричество",
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "lightning"
+                  }
+                ]
+              },
+              {
+                "value": "necrotic",
+                "labelRu": "Некротическая энергия",
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "necrotic"
+                  }
+                ]
+              },
+              {
+                "value": "piercing",
+                "labelRu": "Колющий",
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "piercing",
+                    "noteRu": "Магическое и серебряное оружие игнорирует"
+                  }
+                ]
+              },
+              {
+                "value": "poison",
+                "labelRu": "Яд",
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "poison"
+                  }
+                ]
+              },
+              {
+                "value": "psychic",
+                "labelRu": "Психическая энергия",
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "psychic"
+                  }
+                ]
+              },
+              {
+                "value": "radiant",
+                "labelRu": "Излучение",
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "radiant"
+                  }
+                ]
+              },
+              {
+                "value": "slashing",
+                "labelRu": "Рубящий",
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "slashing",
+                    "noteRu": "Магическое и серебряное оружие игнорирует"
+                  }
+                ]
+              },
+              {
+                "value": "thunder",
+                "labelRu": "Звук",
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "thunder"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "noteRu": "Тип меняется после короткого или продолжительного отдыха"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "hurl-through-hell": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "hurl-through-hell",
+          "nameRu": "Бросок сквозь ад",
+          "max": "1",
+          "reset": "long"
+        },
+        {
+          "type": "text",
+          "noteRu": "При попадании: цель исчезает до конца вашего следующего хода и получает 10к10 психической энергии (не исчадия)"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

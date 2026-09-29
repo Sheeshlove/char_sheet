@@ -10,6 +10,7 @@ import type {
 import { ABILITIES, SKILLS } from '@ps/content-schema';
 import { CONDITION_EFFECTS, exhaustionEffects } from '../tables/conditions';
 import { ABILITY_LABEL_RU } from '../tables/abilities';
+import { maxSpellLevelFor } from '../tables/spell-slots';
 import { CONDITION_LABEL_RU, SKILL_LABEL_RU } from '../tables/labels';
 import type { ChoiceOption } from '../types';
 import { choiceKey, type Equipment, type Pipeline, type Source, type SourceCtx, type WieldedWeapon } from './context';
@@ -162,12 +163,15 @@ function weaponProfLabel(p: Pipeline, slug: string): string {
   return p.content.bySlug('weapon', slug)?.nameRu ?? slug;
 }
 
-export function choiceOptions(p: Pipeline, source: ChoiceSource): ChoiceOption[] {
+export function choiceOptions(p: Pipeline, source: ChoiceSource, src?: SourceCtx): ChoiceOption[] {
   switch (source.kind) {
     case 'list':
       return source.items.map((i) => ({ value: i.value, labelRu: i.labelRu }));
     case 'skills':
-      return (source.from === 'any' ? [...SKILLS] : source.from).map((s) => ({ value: s, labelRu: SKILL_LABEL_RU[s] }));
+      return [
+        ...(source.from === 'any' ? [...SKILLS] : source.from).map((s) => ({ value: s, labelRu: SKILL_LABEL_RU[s] })),
+        ...(source.tools ?? []).map((t) => ({ value: `tool:${t}`, labelRu: p.content.bySlug('tool', t)?.nameRu ?? t })),
+      ];
     case 'languages': {
       const langs = p.content.byKind('language').map((l) => ({ value: l.slug, labelRu: l.nameRu }));
       const custom = p.rules.customLanguages.map((l) => ({ value: `custom:${l}`, labelRu: l }));
@@ -183,11 +187,10 @@ export function choiceOptions(p: Pipeline, source: ChoiceSource): ChoiceOption[]
     case 'feat':
       return p.content.byKind('feat').map((f) => ({ value: f.key, labelRu: f.nameRu }));
     case 'spells': {
-      const lvl = source.level === 'cantrip' ? 0 : source.level;
-      return p.content
-        .spellList(source.list)
-        .map((k) => p.content.getOf(k, 'spell'))
-        .filter((s) => !!s && s.data.level === lvl && (!source.school || source.school.includes(s.data.school)))
+      const levelOk = spellLevelFilter(p, source.level, src);
+      const pool = source.list === '*' ? p.content.byKind('spell') : p.content.spellList(source.list).map((k) => p.content.getOf(k, 'spell'));
+      return pool
+        .filter((s) => !!s && levelOk(s.data.level) && (!source.school || source.school.includes(s.data.school)))
         .map((s) => ({ value: s!.key, labelRu: s!.nameRu }));
     }
     case 'fighting_style':
@@ -195,12 +198,23 @@ export function choiceOptions(p: Pipeline, source: ChoiceSource): ChoiceOption[]
   }
 }
 
+/** Фильтр круга для выбора заклинаний; `up_to_max` — заговоры и круги, доступные классу-источнику. */
+function spellLevelFilter(p: Pipeline, level: number | 'cantrip' | 'up_to_max', src?: SourceCtx): (l: number) => boolean {
+  if (level === 'cantrip') return (l) => l === 0;
+  if (level !== 'up_to_max') return (l) => l === level;
+  const cls = src?.classKey ? p.content.getOf(src.classKey, 'class') : undefined;
+  const subKey = src?.classKey ? p.subclassOf.get(src.classKey) : undefined;
+  const sc = cls?.data.spellcasting ?? (subKey ? p.content.getOf(subKey, 'subclass')?.data.spellcasting : undefined);
+  const max = sc ? maxSpellLevelFor(sc.progression, p.classLevel(src!.classKey)) : 0;
+  return (l) => l <= max;
+}
+
 function expandChoice(p: Pipeline, e: EffectOf<'choice'>, src: SourceCtx, depth: number) {
   const key = choiceKey(src, e.id);
   if (p.choices.some((c) => c.key === key)) return;
   const opts = e.options;
   const required = opts.kind === 'ability_increase' ? opts.points : Math.max(0, Math.floor(p.num(e.choose, src)));
-  const options = choiceOptions(p, opts);
+  const options = choiceOptions(p, opts, src);
   const values = new Set(options.map((o) => o.value));
   const raw = p.build.choices[key] ?? [];
   const selected: string[] = [];
@@ -240,7 +254,10 @@ function expandChoice(p: Pipeline, e: EffectOf<'choice'>, src: SourceCtx, depth:
       }
       break;
     case 'skills':
-      for (const v of selected) p.pushEffect({ type: 'proficiency', target: `skill:${v}` as ProfTarget, level: opts.grant }, src);
+      for (const v of selected) {
+        const target = (v.startsWith('tool:') ? v : `skill:${v}`) as ProfTarget;
+        p.pushEffect({ type: 'proficiency', target, level: opts.grant }, src);
+      }
       break;
     case 'languages':
       for (const v of selected) {

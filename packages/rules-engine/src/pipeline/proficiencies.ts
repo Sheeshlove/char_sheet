@@ -16,11 +16,14 @@ export function computeProficiencies(p: Pipeline) {
   const weapons: string[] = [];
   const tools: string[] = [];
   const languages: string[] = [];
-  for (const [target] of profs) {
+  for (const [target, level] of profs) {
     const [kind, id = ''] = target.split(':');
     if (kind === 'armor') armor.push(ARMOR_CATEGORY_LABEL_RU[id] ?? id);
     else if (kind === 'weapon') weapons.push(weaponProfLabel(p, id));
-    else if (kind === 'tool') tools.push(p.content.bySlug('tool', id)?.nameRu ?? id);
+    else if (kind === 'tool') {
+      const name = p.content.bySlug('tool', id)?.nameRu ?? id;
+      tools.push(level === 'expertise' ? `${name} (компетентность)` : name);
+    }
     else if (kind === 'language') languages.push(p.content.bySlug('language', id)?.nameRu ?? id);
   }
   for (const l of p.customLanguages) languages.push(l);

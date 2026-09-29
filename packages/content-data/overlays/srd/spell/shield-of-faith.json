@@ -1,0 +1,13 @@
+{
+  "target": "srd/spell/shield-of-faith",
+  "data": {
+    "selfEffects": [
+      {
+        "type": "bonus",
+        "target": "ac",
+        "value": "2",
+        "labelRu": "Щит веры"
+      }
+    ]
+  }
+}

@@ -268,12 +268,27 @@ export function makeFeature(f: SrdFeature, byIndex: Map<string, SrdFeature>, tr:
   }
   const exp = fs?.expertise_options;
   if (exp) {
+    // 5e-database кодирует «два навыка или навык и воровские инструменты» как выбор 1 из вложенных
+    // вариантов: число — максимум вложенных `choose`, инструменты — ссылки не на навыки.
+    const chooses: number[] = [];
+    const refs: string[] = [];
+    const walk = (v: unknown) => {
+      if (Array.isArray(v)) v.forEach(walk);
+      else if (v && typeof v === 'object') {
+        const o = v as Record<string, unknown>;
+        if (typeof o.choose === 'number') chooses.push(o.choose);
+        if (o.option_type === 'reference' && o.item && typeof o.item === 'object') refs.push(String((o.item as { index: string }).index));
+        Object.values(o).forEach(walk);
+      }
+    };
+    walk(exp);
+    const tools = refs.filter((r) => !r.startsWith('skill-'));
     effects.push({
       type: 'choice',
       id: 'expertise',
       labelRu: 'Компетентность',
-      choose: exp.choose,
-      options: { kind: 'skills', from: 'any', grant: 'expertise', requireProficient: true },
+      choose: Math.max(...chooses),
+      options: { kind: 'skills', from: 'any', grant: 'expertise', requireProficient: true, ...(tools.length ? { tools } : {}) },
     });
   }
   const hidden = isAsi(f) || isPlaceholder(f);
@@ -449,14 +464,35 @@ export function convertClasses(src: SrdData, tr: Translator, eq: EquipmentIndex)
     const data: SubclassData = { classKey: key('class', s.class.index), features: feats };
     const byLevel = new Map<number, string[]>();
     const conditional = (s.spells ?? []).some((x) => x.prerequisites.some((p) => p.type === 'feature'));
+    const levelOf = (sp: NonNullable<typeof s.spells>[number]) => {
+      const lvl = sp.prerequisites.find((p) => p.type === 'level');
+      return lvl ? Number(/-(\d+)$/.exec(lvl.index)?.[1] ?? 1) : 1;
+    };
     if (!conditional) {
       for (const sp of s.spells ?? []) {
-        const lvl = sp.prerequisites.find((p) => p.type === 'level');
-        const n = lvl ? Number(/-(\d+)$/.exec(lvl.index)?.[1] ?? 1) : 1;
+        const n = levelOf(sp);
         const list = byLevel.get(n) ?? [];
         list.push(key('spell', sp.spell.index));
         byLevel.set(n, list);
       }
+    } else {
+      // Заклинания, зависящие от выбора (Круг земли: местность) → эффекты варианта выбора.
+      const items = feats.flatMap((f) =>
+        f.effects.flatMap((e) => (e.type === 'choice' && e.options.kind === 'list' ? e.options.items : [])),
+      );
+      for (const sp of s.spells ?? []) {
+        const req = sp.prerequisites.find((p) => p.type === 'feature');
+        const item = req ? items.find((i) => i.value === req.index) : undefined;
+        if (!item) continue;
+        item.effects.push({
+          type: 'spell_grant',
+          spell: key('spell', sp.spell.index),
+          ability: 'class',
+          mode: 'always_prepared',
+          when: `CLASS_LEVEL >= ${levelOf(sp)}`,
+        });
+      }
+      for (const f of feats) f.effectsStatus = effectsStatusOf(f.effects);
     }
     if (byLevel.size) {
       if (s.class.index === 'warlock') {

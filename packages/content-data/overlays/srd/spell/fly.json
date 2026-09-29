@@ -1,0 +1,13 @@
+{
+  "target": "srd/spell/fly",
+  "data": {
+    "selfEffects": [
+      {
+        "type": "speed",
+        "mode": "fly",
+        "op": "set",
+        "value": "60"
+      }
+    ]
+  }
+}

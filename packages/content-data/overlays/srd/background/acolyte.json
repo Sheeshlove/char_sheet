@@ -1,0 +1,14 @@
+{
+  "target": "srd/background/acolyte",
+  "features": {
+    "feature": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Вы и спутники получаете бесплатное лечение и помощь в храмах своей веры"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

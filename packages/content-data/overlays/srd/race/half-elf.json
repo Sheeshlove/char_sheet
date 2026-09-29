@@ -1,0 +1,20 @@
+{
+  "target": "srd/race/half-elf",
+  "features": {
+    "fey-ancestry": {
+      "effects": [
+        {
+          "type": "roll_mode",
+          "mode": "advantage",
+          "target": "save:*",
+          "noteRu": "Против очарования"
+        },
+        {
+          "type": "text",
+          "noteRu": "Магия не может вас усыпить"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "target": "srd/subclass/champion",
+  "features": {
+    "improved-critical": {
+      "effects": [
+        {
+          "type": "crit_range",
+          "min": 19
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "remarkable-athlete": {
+      "effects": [
+        {
+          "type": "half_proficiency",
+          "scope": [
+            "str",
+            "dex",
+            "con"
+          ],
+          "rounding": "up",
+          "includeInitiative": true
+        },
+        {
+          "type": "text",
+          "noteRu": "Прыжок в длину с разбега дальше на модификатор Силы (в футах)"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "additional-fighting-style": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "fighting-style-2",
+          "labelRu": "Боевой стиль",
+          "choose": 1,
+          "options": {
+            "kind": "list",
+            "items": [
+              {
+                "value": "archery",
+                "labelRu": "Стрельба",
+                "effects": [
+                  {
+                    "type": "bonus",
+                    "target": "attack:ranged_weapon",
+                    "value": "2",
+                    "labelRu": "Боевой стиль: Стрельба"
+                  }
+                ]
+              },
+              {
+                "value": "defense",
+                "labelRu": "Оборона",
+                "effects": [
+                  {
+                    "type": "bonus",
+                    "target": "ac",
+                    "value": "1",
+                    "labelRu": "Боевой стиль: Оборона",
+                    "when": {
+                      "not": {
+                        "armor": "none"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "value": "dueling",
+                "labelRu": "Дуэлянт",
+                "effects": [
+                  {
+                    "type": "bonus",
+                    "target": "damage:melee_weapon",
+                    "value": "2",
+                    "labelRu": "Боевой стиль: Дуэлянт",
+                    "when": {
+                      "wielding": "one_melee_weapon_no_other"
+                    }
+                  }
+                ]
+              },
+              {
+                "value": "great-weapon-fighting",
+                "labelRu": "Сражение большим оружием",
+                "effects": [
+                  {
+                    "type": "combat_rule",
+                    "rule": "great_weapon_reroll",
+                    "noteRu": "Перебросить 1 и 2 на костях урона двуручным или универсальным оружием (двумя руками)"
+                  }
+                ]
+              },
+              {
+                "value": "protection",
+                "labelRu": "Защита",
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Реакцией, со щитом: помеха на атаку по союзнику в 5 футах от вас"
+                  }
+                ]
+              },
+              {
+                "value": "two-weapon-fighting",
+                "labelRu": "Сражение двумя оружиями",
+                "effects": [
+                  {
+                    "type": "combat_rule",
+                    "rule": "twf_ability_mod",
+                    "noteRu": "Модификатор характеристики добавляется к урону второй атаки"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "superior-critical": {
+      "effects": [
+        {
+          "type": "crit_range",
+          "min": 18
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "survivor": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "В начале хода, если хитов не больше половины (но больше 0): восстанавливаете 5 + Тел хитов"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

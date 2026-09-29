@@ -3,8 +3,19 @@
     "data": {
       "features": [
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "mode": "advantage",
+              "noteRu": "По существу, которое вы держите в захвате",
+              "target": "attack:melee_weapon",
+              "type": "roll_mode"
+            },
+            {
+              "noteRu": "Действием можно попытаться опутать схваченное существо (проверка захвата); вы тоже опутаны до конца захвата",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "grappler",
           "nameEn": "Grappler",
           "nameRu": "Борец",
@@ -17,7 +28,7 @@
       },
       "repeatable": false
     },
-    "effectsStatus": "text_only",
+    "effectsStatus": "complete",
     "key": "srd/feat/grappler",
     "kind": "feat",
     "nameEn": "Grappler",

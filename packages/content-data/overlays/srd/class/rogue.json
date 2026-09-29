@@ -1,0 +1,107 @@
+{
+  "target": "srd/class/rogue",
+  "features": {
+    "sneak-attack": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Раз в ход: дополнительный урон по колонке «Скрытая атака» — атака фехтовальным или дальнобойным оружием с преимуществом или при союзнике в 5 футах от цели"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "thieves-cant": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Тайная смесь жаргона и знаков; передача сообщения занимает вчетверо больше времени"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "cunning-action": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Бонусным действием: Рывок, Отход или Засада"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "roguish-archetype": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "uncanny-dodge": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Реакцией: урон от видимой атаки уменьшается вдвое"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "evasion": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Спасбросок Ловкости для половины урона: при успехе — без урона, при провале — половина"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "reliable-talent": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Проверки характеристик с владением: результат к20 меньше 10 считается 10"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "blindsense": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Если слышите — знаете положение скрытых и невидимых существ в 10 футах"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "slippery-mind": {
+      "effects": [
+        {
+          "type": "proficiency",
+          "target": "save:wis",
+          "level": "proficient"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "elusive": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Атаки по вам не получают преимущества, пока вы не недееспособны"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "stroke-of-luck": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "stroke-of-luck",
+          "nameRu": "Удача",
+          "max": "1",
+          "reset": "short"
+        },
+        {
+          "type": "text",
+          "noteRu": "Промах атаки — попадание; проваленная проверка — 20 на к20"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

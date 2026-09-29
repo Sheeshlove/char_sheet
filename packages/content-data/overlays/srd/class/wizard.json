@@ -1,0 +1,105 @@
+{
+  "target": "srd/class/wizard",
+  "features": {
+    "spellcasting-wizard": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "arcane-recovery": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "arcane-recovery",
+          "nameRu": "Магическое восстановление",
+          "max": "1",
+          "reset": "long"
+        },
+        {
+          "type": "text",
+          "noteRu": "Короткий отдых: восстановить ячейки суммарным кругом до половины уровня волшебника (округляя вверх), не выше 5 круга"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "arcane-tradition": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "spell-mastery": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "spell-mastery-1",
+          "labelRu": "Мастерство заклинаний (1 круг)",
+          "choose": 1,
+          "options": {
+            "kind": "spells",
+            "list": "wizard",
+            "level": 1
+          }
+        },
+        {
+          "type": "choice",
+          "id": "spell-mastery-2",
+          "labelRu": "Мастерство заклинаний (2 круг)",
+          "choose": 1,
+          "options": {
+            "kind": "spells",
+            "list": "wizard",
+            "level": 2
+          }
+        },
+        {
+          "type": "spell_grant",
+          "spell": {
+            "choice": "spell-mastery-1"
+          },
+          "ability": "class",
+          "mode": "always_prepared"
+        },
+        {
+          "type": "spell_grant",
+          "spell": {
+            "choice": "spell-mastery-2"
+          },
+          "ability": "class",
+          "mode": "always_prepared"
+        },
+        {
+          "type": "text",
+          "noteRu": "Выбранные заклинания накладываются без траты ячейки на минимальном круге"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "signature-spell": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "signature-spells",
+          "labelRu": "Коронные заклинания",
+          "choose": 2,
+          "options": {
+            "kind": "spells",
+            "list": "wizard",
+            "level": 3
+          }
+        },
+        {
+          "type": "spell_grant",
+          "spell": {
+            "choice": "signature-spells"
+          },
+          "ability": "class",
+          "mode": "always_prepared",
+          "uses": {
+            "count": "1",
+            "reset": "short"
+          },
+          "castAtLevel": 3
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

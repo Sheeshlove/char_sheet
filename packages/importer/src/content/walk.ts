@@ -42,6 +42,7 @@ export function effectExprs(e: Effect): string[] {
     case 'ability':
     case 'bonus':
     case 'hp_max':
+    case 'spell_damage_bonus':
       out.push(e.value);
       break;
     case 'ac_formula':
@@ -79,7 +80,9 @@ export function effectRefs(e: Effect): string[] {
     case 'spell_grant':
       return typeof e.spell === 'string' ? [e.spell] : [];
     case 'spell_list_extend':
-      return e.spells;
+      return Array.isArray(e.spells) ? e.spells : [];
+    case 'spell_damage_bonus':
+      return e.spells ?? [];
     case 'choice':
       return e.options.kind === 'fighting_style' ? e.options.styles : [];
     default:

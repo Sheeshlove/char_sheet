@@ -33,52 +33,152 @@
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "damageType": "acid",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: кислота, линия 5 × 30 футов, спасбросок Лов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "чёрный",
                     "value": "draconic-ancestry-black"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "damageType": "lightning",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: электричество, линия 5 × 30 футов, спасбросок Лов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "синий",
                     "value": "draconic-ancestry-blue"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "damageType": "fire",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: огонь, линия 5 × 30 футов, спасбросок Лов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "латунный",
                     "value": "draconic-ancestry-brass"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "damageType": "lightning",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: электричество, линия 5 × 30 футов, спасбросок Лов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "бронзовый",
                     "value": "draconic-ancestry-bronze"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "damageType": "acid",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: кислота, линия 5 × 30 футов, спасбросок Лов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "медный",
                     "value": "draconic-ancestry-copper"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "damageType": "fire",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: огонь, конус 15 футов, спасбросок Лов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "золотой",
                     "value": "draconic-ancestry-gold"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "damageType": "poison",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: яд, конус 15 футов, спасбросок Тел",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "зелёный",
                     "value": "draconic-ancestry-green"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "damageType": "fire",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: огонь, конус 15 футов, спасбросок Лов",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "красный",
                     "value": "draconic-ancestry-red"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "damageType": "cold",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: холод, конус 15 футов, спасбросок Тел",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "серебряный",
                     "value": "draconic-ancestry-silver"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "damageType": "cold",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: холод, конус 15 футов, спасбросок Тел",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "белый",
                     "value": "draconic-ancestry-white"
                   }
@@ -88,15 +188,27 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "draconic-ancestry",
           "nameEn": "Draconic Ancestry",
           "nameRu": "Наследие драконов",
           "textMd": "You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "breath-weapon",
+              "max": "1",
+              "nameRu": "Оружие дыхания",
+              "reset": "short",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Действием; Сл = 8 + Тел + БМ; урон 2к6 (3к6 с 6, 4к6 с 11, 5к6 с 16 уровня), при успехе половина",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "breath-weapon",
           "nameEn": "Breath Weapon",
           "nameRu": "Оружие дыхания",
@@ -104,7 +216,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "damage-resistance",
           "nameEn": "Damage Resistance",
           "nameRu": "Сопротивление урону",
@@ -135,7 +247,7 @@
       },
       "subraceRequired": false
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/race/dragonborn",
     "kind": "race",
     "nameEn": "Dragonborn",
@@ -179,16 +291,33 @@
           "textMd": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "mode": "advantage",
+              "noteRu": "Против яда",
+              "target": "save:*",
+              "type": "roll_mode"
+            },
+            {
+              "damageType": "poison",
+              "kind": "resistance",
+              "type": "defense"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "dwarven-resilience",
           "nameEn": "Dwarven Resilience",
           "nameRu": "Дварфская устойчивость",
           "textMd": "You have advantage on saving throws against poison, and you have resistance against poison damage."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Проверки Интеллекта (История) о происхождении каменной кладки: удвоенный БМ",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "stonecunning",
           "nameEn": "Stonecunning",
           "nameRu": "Знание камня",
@@ -227,8 +356,8 @@
           "effects": [
             {
               "choose": 1,
-              "id": "choice",
-              "labelRu": "Владение инструментами",
+              "id": "tool",
+              "labelRu": "Инструменты ремесленника",
               "options": {
                 "items": [
                   {
@@ -239,7 +368,7 @@
                         "type": "proficiency"
                       }
                     ],
-                    "labelRu": "Smith's Tools",
+                    "labelRu": "Инструменты кузнеца",
                     "value": "smiths-tools"
                   },
                   {
@@ -250,7 +379,7 @@
                         "type": "proficiency"
                       }
                     ],
-                    "labelRu": "Brewer's Supplies",
+                    "labelRu": "Инструменты пивовара",
                     "value": "brewers-supplies"
                   },
                   {
@@ -261,7 +390,7 @@
                         "type": "proficiency"
                       }
                     ],
-                    "labelRu": "Mason's Tools",
+                    "labelRu": "Инструменты каменщика",
                     "value": "masons-tools"
                   }
                 ],
@@ -293,6 +422,20 @@
           "key": "languages",
           "nameRu": "Языки",
           "textMd": "You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and those characteristics spill over into whatever other language a dwarf might speak."
+        },
+        {
+          "effects": [
+            {
+              "category": "heavy",
+              "ignoreStrSpeedPenalty": true,
+              "type": "armor_rule"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "speed",
+          "nameEn": "Speed",
+          "nameRu": "Скорость",
+          "textMd": "Your base walking speed is 25 feet. Your speed is not reduced by wearing heavy armor."
         }
       ],
       "size": "medium",
@@ -301,7 +444,7 @@
       },
       "subraceRequired": true
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/race/dwarf",
     "kind": "race",
     "nameEn": "Dwarf",
@@ -345,16 +488,32 @@
           "textMd": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "mode": "advantage",
+              "noteRu": "Против очарования",
+              "target": "save:*",
+              "type": "roll_mode"
+            },
+            {
+              "noteRu": "Магия не может вас усыпить",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "fey-ancestry",
           "nameEn": "Fey Ancestry",
           "nameRu": "Наследие фей",
           "textMd": "You have advantage on saving throws against being charmed, and magic cannot put you to sleep."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Вместо сна 4 часа медитации — эффект продолжительного отдыха",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "trance",
           "nameEn": "Trance",
           "nameRu": "Транс",
@@ -399,7 +558,7 @@
       },
       "subraceRequired": true
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/race/elf",
     "kind": "race",
     "nameEn": "Elf",
@@ -443,8 +602,27 @@
           "textMd": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "mode": "advantage",
+              "noteRu": "Против магии",
+              "target": "save:int",
+              "type": "roll_mode"
+            },
+            {
+              "mode": "advantage",
+              "noteRu": "Против магии",
+              "target": "save:wis",
+              "type": "roll_mode"
+            },
+            {
+              "mode": "advantage",
+              "noteRu": "Против магии",
+              "target": "save:cha",
+              "type": "roll_mode"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "gnome-cunning",
           "nameEn": "Gnome Cunning",
           "nameRu": "Гномья хитрость",
@@ -475,7 +653,7 @@
       },
       "subraceRequired": true
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/race/gnome",
     "kind": "race",
     "nameEn": "Gnome",
@@ -537,8 +715,19 @@
           "textMd": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "mode": "advantage",
+              "noteRu": "Против очарования",
+              "target": "save:*",
+              "type": "roll_mode"
+            },
+            {
+              "noteRu": "Магия не может вас усыпить",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "fey-ancestry",
           "nameEn": "Fey Ancestry",
           "nameRu": "Наследие фей",
@@ -617,7 +806,7 @@
       },
       "subraceRequired": false
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/race/half-elf",
     "kind": "race",
     "nameEn": "Half-Elf",
@@ -667,16 +856,33 @@
           "textMd": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Критическое попадание рукопашной атакой оружием: одна дополнительная кость урона оружия",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "savage-attacks",
           "nameEn": "Savage Attacks",
           "nameRu": "Свирепые атаки",
           "textMd": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "relentless-endurance",
+              "max": "1",
+              "nameRu": "Непоколебимая стойкость",
+              "reset": "long",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Если урон опускает хиты до 0, но не убивает — остаётесь с 1 хитом",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "relentless-endurance",
           "nameEn": "Relentless Endurance",
           "nameRu": "Непоколебимая стойкость",
@@ -721,7 +927,7 @@
       },
       "subraceRequired": false
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/race/half-orc",
     "kind": "race",
     "nameEn": "Half-Orc",
@@ -750,24 +956,41 @@
           "textMd": ""
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "mode": "advantage",
+              "noteRu": "Против испуга",
+              "target": "save:*",
+              "type": "roll_mode"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "brave",
           "nameEn": "Brave",
           "nameRu": "Храбрый",
           "textMd": "You have advantage on saving throw against being frightened."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Можно проходить через пространство существ крупнее вас",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "halfling-nimbleness",
           "nameEn": "Halfling Nimbleness",
           "nameRu": "Проворство полуросликов",
           "textMd": "You can move through the space of any creature that is of a size larger than yours."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Выпала 1 на к20 при атаке, проверке или спасброске — перебросьте и используйте новый результат",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "lucky",
           "nameEn": "Lucky",
           "nameRu": "Везучий",
@@ -798,7 +1021,7 @@
       },
       "subraceRequired": true
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/race/halfling",
     "kind": "race",
     "nameEn": "Halfling",
@@ -935,16 +1158,52 @@
           "textMd": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "damageType": "fire",
+              "kind": "resistance",
+              "type": "defense"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "hellish-resistance",
           "nameEn": "Hellish Resistance",
           "nameRu": "Адское сопротивление",
           "textMd": "You have resistance to fire damage."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "ability": "cha",
+              "mode": "innate",
+              "spell": "srd/spell/thaumaturgy",
+              "type": "spell_grant"
+            },
+            {
+              "ability": "cha",
+              "castAtLevel": 2,
+              "minCharacterLevel": 3,
+              "mode": "innate",
+              "spell": "srd/spell/hellish-rebuke",
+              "type": "spell_grant",
+              "uses": {
+                "count": "1",
+                "reset": "long"
+              }
+            },
+            {
+              "ability": "cha",
+              "minCharacterLevel": 5,
+              "mode": "innate",
+              "spell": "srd/spell/darkness",
+              "type": "spell_grant",
+              "uses": {
+                "count": "1",
+                "reset": "long"
+              }
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "infernal-legacy",
           "nameEn": "Infernal Legacy",
           "nameRu": "Дьявольское наследие",
@@ -975,7 +1234,7 @@
       },
       "subraceRequired": false
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/race/tiefling",
     "kind": "race",
     "nameEn": "Tiefling",

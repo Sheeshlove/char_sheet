@@ -336,3 +336,59 @@ describe('выборы', () => {
     );
   });
 });
+
+describe('расширения DSL для оверлеев SRD', () => {
+  function withFeature(classSlug: string, effects: Effect[]) {
+    const entities = JSON.parse(JSON.stringify(MINI_ENTITIES)) as typeof MINI_ENTITIES;
+    const cls = entities.find((e) => e.key === `mini/class/${classSlug}`)!;
+    const data = cls.data as { features: { key: string; nameRu: string; level: number; textMd: string; effects: Effect[]; effectsStatus: 'complete' }[]; levels: { level: number; featureKeys: string[] }[] };
+    data.features.push({ key: 'test-feature', nameRu: 'Тест', level: 1, textMd: '', effects, effectsStatus: 'complete' });
+    data.levels[0]!.featureKeys.push('test-feature');
+    return createContentIndex(entities);
+  }
+
+  it('выбор заклинаний любого списка до доступного круга + расширение списка класса выбором', () => {
+    const index = withFeature('bard', [
+      { type: 'choice', id: 'secrets', labelRu: 'Тайны магии', choose: 2, options: { kind: 'spells', list: '*', level: 'up_to_max' } },
+      { type: 'spell_list_extend', list: 'bard', spells: { choice: 'secrets' } },
+    ]);
+    const g = golden('11');
+    g.build.choices['mini/class/bard#test-feature#secrets'] = ['mini/spell/magic-missile', 'mini/spell/shield'];
+    const s = compute(g.build, g.state, index, g.rules);
+    const secrets = s.choices.find((c) => c.key === 'mini/class/bard#test-feature#secrets')!;
+    const values = secrets.options.map((o) => o.value);
+    expect(values).toEqual(expect.arrayContaining(['mini/spell/fire-bolt', 'mini/spell/magic-missile', 'mini/spell/misty-step']));
+    expect(values).not.toContain('mini/spell/fireball');
+    const known = s.choices.find((c) => c.key === 'spells:mini/class/bard:known')!;
+    expect(known.options.map((o) => o.value)).toEqual(expect.arrayContaining(['mini/spell/magic-missile', 'mini/spell/shield']));
+  });
+
+  it('прибавка к урону заклинаний: по заклинанию, школе и типу урона', () => {
+    const g = golden('09');
+    const sheet = (effects: Effect[]) =>
+      compute({ ...g.build, manualEffects: [{ id: 'm', labelRu: 'Тест', enabled: true, effects }] }, g.state, mini, g.rules);
+    const eb = (s: ReturnType<typeof sheet>) => s.attacks.find((a) => a.spellKey === 'mini/spell/eldritch-blast')!;
+    const base = eb(sheet([]));
+    const agonizing = eb(sheet([{ type: 'spell_damage_bonus', value: 'CHA', labelRu: 'Мучительный взрыв', spells: ['mini/spell/eldritch-blast'] }]));
+    const cha = compute(g.build, g.state, mini, g.rules).abilities.cha.mod;
+    expect(agonizing.damage[0]!.bonus).toBe(base.damage[0]!.bonus + cha);
+    expect(agonizing.notes).toContain(`Мучительный взрыв: +${cha}`);
+    const bySchool = eb(sheet([{ type: 'spell_damage_bonus', value: '2', labelRu: 'Школа', schools: ['evocation'] }]));
+    expect(bySchool.damage[0]!.bonus).toBe(base.damage[0]!.bonus + 2);
+    const wrongType = eb(sheet([{ type: 'spell_damage_bonus', value: '2', labelRu: 'Огонь', damageTypes: ['fire'] }]));
+    expect(wrongType.damage[0]!.bonus).toBe(base.damage[0]!.bonus);
+  });
+
+  it('навыки или инструменты в выборе компетентности', () => {
+    const index = withFeature('rogue', [
+      { type: 'choice', id: 'exp', labelRu: 'Компетентность', choose: 2, options: { kind: 'skills', from: 'any', grant: 'expertise', tools: ['thieves-tools'] } },
+    ]);
+    const g = golden('04');
+    g.build.choices['mini/class/rogue#test-feature#exp'] = ['tool:thieves-tools', 'stealth'];
+    const s = compute(g.build, g.state, index, g.rules);
+    const c = s.choices.find((x) => x.key === 'mini/class/rogue#test-feature#exp')!;
+    expect(c.options.at(-1)).toEqual({ value: 'tool:thieves-tools', labelRu: 'Воровские инструменты' });
+    expect(s.proficiencies.tools).toContain('Воровские инструменты (компетентность)');
+    expect(s.skills.stealth.prof).toBe('expertise');
+  });
+});

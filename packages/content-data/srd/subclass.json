@@ -4,8 +4,13 @@
       "classKey": "srd/class/barbarian",
       "features": [
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "В ярости можно впасть в бешенство: бонусным действием одна рукопашная атака оружием в каждый ход; после окончания ярости — 1 степень истощения",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "frenzy",
           "level": 3,
           "nameEn": "Frenzy",
@@ -13,8 +18,27 @@
           "textMd": "Starting when you choose this path at 3rd level, you can go into a frenzy when you rage. If you do so, for the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. When your rage ends, you suffer one level of exhaustion (as described in appendix A)."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "condition": "charmed",
+              "type": "condition_immunity",
+              "when": {
+                "toggle": "raging"
+              }
+            },
+            {
+              "condition": "frightened",
+              "type": "condition_immunity",
+              "when": {
+                "toggle": "raging"
+              }
+            },
+            {
+              "noteRu": "Очарование и испуг, наложенные до ярости, приостанавливаются на время ярости",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "mindless-rage",
           "level": 6,
           "nameEn": "Mindless Rage",
@@ -22,8 +46,13 @@
           "textMd": "Beginning at 6th level, you can't be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Действием: существо в 30 футах — спасбросок Мудрости (Сл 8 + БМ + Хар) или испуган до конца вашего следующего хода",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "intimidating-presence",
           "level": 10,
           "nameEn": "Intimidating Presence",
@@ -31,8 +60,13 @@
           "textMd": "Beginning at 10th level, you can use your action to frighten someone with your menacing presence. When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you.\n\nIf the creature succeeds on its saving throw, you can't use this feature on that creature again for 24 hours."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Реакцией: рукопашная атака оружием по существу в 5 футах, причинившему вам урон",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "retaliation",
           "level": 14,
           "nameEn": "Retaliation",
@@ -41,7 +75,7 @@
         }
       ]
     },
-    "effectsStatus": "text_only",
+    "effectsStatus": "complete",
     "key": "srd/subclass/berserker",
     "kind": "subclass",
     "nameEn": "Berserker",
@@ -55,8 +89,13 @@
       "classKey": "srd/class/fighter",
       "features": [
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "min": 19,
+              "type": "crit_range"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "improved-critical",
           "level": 3,
           "nameEn": "Improved Critical",
@@ -64,8 +103,23 @@
           "textMd": "Beginning when you choose this archetype at 3rd level, your weapon attacks score a critical hit on a roll of 19 or 20."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "includeInitiative": true,
+              "rounding": "up",
+              "scope": [
+                "str",
+                "dex",
+                "con"
+              ],
+              "type": "half_proficiency"
+            },
+            {
+              "noteRu": "Прыжок в длину с разбега дальше на модификатор Силы (в футах)",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "remarkable-athlete",
           "level": 7,
           "nameEn": "Remarkable Athlete",
@@ -76,39 +130,85 @@
           "effects": [
             {
               "choose": 1,
-              "id": "option",
-              "labelRu": "Дополнительный боевой стиль",
+              "id": "fighting-style-2",
+              "labelRu": "Боевой стиль",
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "labelRu": "Боевой стиль: Стрельба",
+                        "target": "attack:ranged_weapon",
+                        "type": "bonus",
+                        "value": "2"
+                      }
+                    ],
                     "labelRu": "Стрельба",
-                    "value": "fighting-style-archery"
+                    "value": "archery"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "labelRu": "Боевой стиль: Оборона",
+                        "target": "ac",
+                        "type": "bonus",
+                        "value": "1",
+                        "when": {
+                          "not": {
+                            "armor": "none"
+                          }
+                        }
+                      }
+                    ],
                     "labelRu": "Оборона",
-                    "value": "fighting-style-defense"
+                    "value": "defense"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "labelRu": "Боевой стиль: Дуэлянт",
+                        "target": "damage:melee_weapon",
+                        "type": "bonus",
+                        "value": "2",
+                        "when": {
+                          "wielding": "one_melee_weapon_no_other"
+                        }
+                      }
+                    ],
                     "labelRu": "Дуэлянт",
-                    "value": "fighting-style-dueling"
+                    "value": "dueling"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Перебросить 1 и 2 на костях урона двуручным или универсальным оружием (двумя руками)",
+                        "rule": "great_weapon_reroll",
+                        "type": "combat_rule"
+                      }
+                    ],
                     "labelRu": "Сражение большим оружием",
-                    "value": "fighting-style-great-weapon-fighting"
+                    "value": "great-weapon-fighting"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Реакцией, со щитом: помеха на атаку по союзнику в 5 футах от вас",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Защита",
-                    "value": "fighting-style-protection"
+                    "value": "protection"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Модификатор характеристики добавляется к урону второй атаки",
+                        "rule": "twf_ability_mod",
+                        "type": "combat_rule"
+                      }
+                    ],
                     "labelRu": "Сражение двумя оружиями",
-                    "value": "fighting-style-two-weapon-fighting"
+                    "value": "two-weapon-fighting"
                   }
                 ],
                 "kind": "list"
@@ -116,7 +216,7 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "additional-fighting-style",
           "level": 10,
           "nameEn": "Additional Fighting Style",
@@ -124,8 +224,13 @@
           "textMd": "At 10th level, you can choose a second option from the Fighting Style class feature."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "min": 18,
+              "type": "crit_range"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "superior-critical",
           "level": 15,
           "nameEn": "Superior Critical",
@@ -133,8 +238,13 @@
           "textMd": "Starting at 15th level, your weapon attacks score a critical hit on a roll of 18-20."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "В начале хода, если хитов не больше половины (но больше 0): восстанавливаете 5 + Тел хитов",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "survivor",
           "level": 18,
           "nameEn": "Survivor",
@@ -143,7 +253,7 @@
         }
       ]
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/subclass/champion",
     "kind": "subclass",
     "nameEn": "Champion",
@@ -194,8 +304,36 @@
       "classKey": "srd/class/paladin",
       "features": [
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "cost": {
+                "amount": 1,
+                "resource": "channel-divinity"
+              },
+              "effects": [
+                {
+                  "labelRu": "Священное оружие",
+                  "target": "attack:melee_weapon",
+                  "type": "bonus",
+                  "value": "max(1, CHA)"
+                },
+                {
+                  "labelRu": "Священное оружие",
+                  "target": "attack:ranged_weapon",
+                  "type": "bonus",
+                  "value": "max(1, CHA)"
+                },
+                {
+                  "noteRu": "Оружие излучает яркий свет в 20 футах; 1 минута",
+                  "type": "text"
+                }
+              ],
+              "id": "sacred-weapon",
+              "labelRu": "Священное оружие",
+              "type": "toggle"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "channel-divinity-sacred-weapon",
           "level": 3,
           "nameEn": "Channel Divinity: Sacred Weapon",
@@ -203,8 +341,13 @@
           "textMd": "As an action, you can imbue one weapon that you are holding with positive energy, using your Channel Divinity. For 1 minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of +1). The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration.\n\nYou can end this effect on your turn as part of any other action. If you are no longer holding or carrying this weapon, or if you fall unconscious, this effect ends."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Действием: исчадия и нежить в 30 футах — спасбросок Мудрости, при провале изгнаны на 1 минуту",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "channel-divinity-turn-the-unholy",
           "level": 3,
           "nameEn": "Channel Divinity: Turn the Unholy",
@@ -212,8 +355,17 @@
           "textMd": "As an action, you present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.\n\nA turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "condition": "charmed",
+              "type": "condition_immunity"
+            },
+            {
+              "noteRu": "Союзники в пределах ауры не могут быть очарованы, пока вы в сознании",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "aura-of-devotion",
           "level": 7,
           "nameEn": "Aura of Devotion",
@@ -221,8 +373,13 @@
           "textMd": "Starting at 7th level, you and friendly creatures within 10 feet of you can't be charmed while you are conscious.\n\nAt 18th level, the range of this aura increases to 30 feet."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Постоянно под действием «Защиты от добра и зла»",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "purity-of-spirit",
           "level": 15,
           "nameEn": "Purity of Spirit",
@@ -230,8 +387,20 @@
           "textMd": "Beginning at 15th level, you are always under the effects of a protection from evil and good spell."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "holy-nimbus",
+              "max": "1",
+              "nameRu": "Святой нимб",
+              "reset": "long",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Действием на 1 минуту: яркий свет 30 футов, враги в свете получают 10 урона излучением в начале хода; преимущество на спасброски от заклинаний исчадий и нежити",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "holy-nimbus",
           "level": 20,
           "nameEn": "Holy Nimbus",
@@ -240,7 +409,7 @@
         }
       ]
     },
-    "effectsStatus": "text_only",
+    "effectsStatus": "complete",
     "key": "srd/subclass/devotion",
     "kind": "subclass",
     "nameEn": "Devotion",
@@ -257,67 +426,346 @@
           "effects": [
             {
               "choose": 1,
-              "id": "option",
+              "id": "ancestor",
               "labelRu": "Драконий предок",
               "options": {
                 "items": [
                   {
-                    "effects": [],
-                    "labelRu": "чёрный (кислота)",
-                    "value": "dragon-ancestor-black---acid-damage"
+                    "effects": [
+                      {
+                        "damageTypes": [
+                          "acid"
+                        ],
+                        "labelRu": "Родство со стихией",
+                        "type": "spell_damage_bonus",
+                        "value": "CHA",
+                        "when": "CLASS_LEVEL >= 6"
+                      },
+                      {
+                        "cost": {
+                          "amount": 1,
+                          "resource": "sorcery-points"
+                        },
+                        "effects": [
+                          {
+                            "damageType": "acid",
+                            "kind": "resistance",
+                            "type": "defense"
+                          }
+                        ],
+                        "id": "elemental-affinity",
+                        "labelRu": "Сопротивление: кислота (1 ед. чародейства, 1 час)",
+                        "type": "toggle",
+                        "when": "CLASS_LEVEL >= 6"
+                      }
+                    ],
+                    "labelRu": "Чёрный (кислота)",
+                    "value": "black"
                   },
                   {
-                    "effects": [],
-                    "labelRu": "синий (электричество)",
-                    "value": "dragon-ancestor-blue---lightning-damage"
+                    "effects": [
+                      {
+                        "damageTypes": [
+                          "lightning"
+                        ],
+                        "labelRu": "Родство со стихией",
+                        "type": "spell_damage_bonus",
+                        "value": "CHA",
+                        "when": "CLASS_LEVEL >= 6"
+                      },
+                      {
+                        "cost": {
+                          "amount": 1,
+                          "resource": "sorcery-points"
+                        },
+                        "effects": [
+                          {
+                            "damageType": "lightning",
+                            "kind": "resistance",
+                            "type": "defense"
+                          }
+                        ],
+                        "id": "elemental-affinity",
+                        "labelRu": "Сопротивление: электричество (1 ед. чародейства, 1 час)",
+                        "type": "toggle",
+                        "when": "CLASS_LEVEL >= 6"
+                      }
+                    ],
+                    "labelRu": "Синий (электричество)",
+                    "value": "blue"
                   },
                   {
-                    "effects": [],
-                    "labelRu": "латунный (огонь)",
-                    "value": "dragon-ancestor-brass---fire-damage"
+                    "effects": [
+                      {
+                        "damageTypes": [
+                          "fire"
+                        ],
+                        "labelRu": "Родство со стихией",
+                        "type": "spell_damage_bonus",
+                        "value": "CHA",
+                        "when": "CLASS_LEVEL >= 6"
+                      },
+                      {
+                        "cost": {
+                          "amount": 1,
+                          "resource": "sorcery-points"
+                        },
+                        "effects": [
+                          {
+                            "damageType": "fire",
+                            "kind": "resistance",
+                            "type": "defense"
+                          }
+                        ],
+                        "id": "elemental-affinity",
+                        "labelRu": "Сопротивление: огонь (1 ед. чародейства, 1 час)",
+                        "type": "toggle",
+                        "when": "CLASS_LEVEL >= 6"
+                      }
+                    ],
+                    "labelRu": "Латунный (огонь)",
+                    "value": "brass"
                   },
                   {
-                    "effects": [],
-                    "labelRu": "бронзовый (электричество)",
-                    "value": "dragon-ancestor-bronze---lightning-damage"
+                    "effects": [
+                      {
+                        "damageTypes": [
+                          "lightning"
+                        ],
+                        "labelRu": "Родство со стихией",
+                        "type": "spell_damage_bonus",
+                        "value": "CHA",
+                        "when": "CLASS_LEVEL >= 6"
+                      },
+                      {
+                        "cost": {
+                          "amount": 1,
+                          "resource": "sorcery-points"
+                        },
+                        "effects": [
+                          {
+                            "damageType": "lightning",
+                            "kind": "resistance",
+                            "type": "defense"
+                          }
+                        ],
+                        "id": "elemental-affinity",
+                        "labelRu": "Сопротивление: электричество (1 ед. чародейства, 1 час)",
+                        "type": "toggle",
+                        "when": "CLASS_LEVEL >= 6"
+                      }
+                    ],
+                    "labelRu": "Бронзовый (электричество)",
+                    "value": "bronze"
                   },
                   {
-                    "effects": [],
-                    "labelRu": "медный (кислота)",
-                    "value": "dragon-ancestor-copper---acid-damage"
+                    "effects": [
+                      {
+                        "damageTypes": [
+                          "acid"
+                        ],
+                        "labelRu": "Родство со стихией",
+                        "type": "spell_damage_bonus",
+                        "value": "CHA",
+                        "when": "CLASS_LEVEL >= 6"
+                      },
+                      {
+                        "cost": {
+                          "amount": 1,
+                          "resource": "sorcery-points"
+                        },
+                        "effects": [
+                          {
+                            "damageType": "acid",
+                            "kind": "resistance",
+                            "type": "defense"
+                          }
+                        ],
+                        "id": "elemental-affinity",
+                        "labelRu": "Сопротивление: кислота (1 ед. чародейства, 1 час)",
+                        "type": "toggle",
+                        "when": "CLASS_LEVEL >= 6"
+                      }
+                    ],
+                    "labelRu": "Медный (кислота)",
+                    "value": "copper"
                   },
                   {
-                    "effects": [],
-                    "labelRu": "золотой (огонь)",
-                    "value": "dragon-ancestor-gold---fire-damage"
+                    "effects": [
+                      {
+                        "damageTypes": [
+                          "fire"
+                        ],
+                        "labelRu": "Родство со стихией",
+                        "type": "spell_damage_bonus",
+                        "value": "CHA",
+                        "when": "CLASS_LEVEL >= 6"
+                      },
+                      {
+                        "cost": {
+                          "amount": 1,
+                          "resource": "sorcery-points"
+                        },
+                        "effects": [
+                          {
+                            "damageType": "fire",
+                            "kind": "resistance",
+                            "type": "defense"
+                          }
+                        ],
+                        "id": "elemental-affinity",
+                        "labelRu": "Сопротивление: огонь (1 ед. чародейства, 1 час)",
+                        "type": "toggle",
+                        "when": "CLASS_LEVEL >= 6"
+                      }
+                    ],
+                    "labelRu": "Золотой (огонь)",
+                    "value": "gold"
                   },
                   {
-                    "effects": [],
-                    "labelRu": "зелёный (яд)",
-                    "value": "dragon-ancestor-green---poison-damage"
+                    "effects": [
+                      {
+                        "damageTypes": [
+                          "poison"
+                        ],
+                        "labelRu": "Родство со стихией",
+                        "type": "spell_damage_bonus",
+                        "value": "CHA",
+                        "when": "CLASS_LEVEL >= 6"
+                      },
+                      {
+                        "cost": {
+                          "amount": 1,
+                          "resource": "sorcery-points"
+                        },
+                        "effects": [
+                          {
+                            "damageType": "poison",
+                            "kind": "resistance",
+                            "type": "defense"
+                          }
+                        ],
+                        "id": "elemental-affinity",
+                        "labelRu": "Сопротивление: яд (1 ед. чародейства, 1 час)",
+                        "type": "toggle",
+                        "when": "CLASS_LEVEL >= 6"
+                      }
+                    ],
+                    "labelRu": "Зелёный (яд)",
+                    "value": "green"
                   },
                   {
-                    "effects": [],
-                    "labelRu": "красный (огонь)",
-                    "value": "dragon-ancestor-red---fire-damage"
+                    "effects": [
+                      {
+                        "damageTypes": [
+                          "fire"
+                        ],
+                        "labelRu": "Родство со стихией",
+                        "type": "spell_damage_bonus",
+                        "value": "CHA",
+                        "when": "CLASS_LEVEL >= 6"
+                      },
+                      {
+                        "cost": {
+                          "amount": 1,
+                          "resource": "sorcery-points"
+                        },
+                        "effects": [
+                          {
+                            "damageType": "fire",
+                            "kind": "resistance",
+                            "type": "defense"
+                          }
+                        ],
+                        "id": "elemental-affinity",
+                        "labelRu": "Сопротивление: огонь (1 ед. чародейства, 1 час)",
+                        "type": "toggle",
+                        "when": "CLASS_LEVEL >= 6"
+                      }
+                    ],
+                    "labelRu": "Красный (огонь)",
+                    "value": "red"
                   },
                   {
-                    "effects": [],
-                    "labelRu": "серебряный (холод)",
-                    "value": "dragon-ancestor-silver---cold-damage"
+                    "effects": [
+                      {
+                        "damageTypes": [
+                          "cold"
+                        ],
+                        "labelRu": "Родство со стихией",
+                        "type": "spell_damage_bonus",
+                        "value": "CHA",
+                        "when": "CLASS_LEVEL >= 6"
+                      },
+                      {
+                        "cost": {
+                          "amount": 1,
+                          "resource": "sorcery-points"
+                        },
+                        "effects": [
+                          {
+                            "damageType": "cold",
+                            "kind": "resistance",
+                            "type": "defense"
+                          }
+                        ],
+                        "id": "elemental-affinity",
+                        "labelRu": "Сопротивление: холод (1 ед. чародейства, 1 час)",
+                        "type": "toggle",
+                        "when": "CLASS_LEVEL >= 6"
+                      }
+                    ],
+                    "labelRu": "Серебряный (холод)",
+                    "value": "silver"
                   },
                   {
-                    "effects": [],
-                    "labelRu": "белый (холод)",
-                    "value": "dragon-ancestor-white---cold-damage"
+                    "effects": [
+                      {
+                        "damageTypes": [
+                          "cold"
+                        ],
+                        "labelRu": "Родство со стихией",
+                        "type": "spell_damage_bonus",
+                        "value": "CHA",
+                        "when": "CLASS_LEVEL >= 6"
+                      },
+                      {
+                        "cost": {
+                          "amount": 1,
+                          "resource": "sorcery-points"
+                        },
+                        "effects": [
+                          {
+                            "damageType": "cold",
+                            "kind": "resistance",
+                            "type": "defense"
+                          }
+                        ],
+                        "id": "elemental-affinity",
+                        "labelRu": "Сопротивление: холод (1 ед. чародейства, 1 час)",
+                        "type": "toggle",
+                        "when": "CLASS_LEVEL >= 6"
+                      }
+                    ],
+                    "labelRu": "Белый (холод)",
+                    "value": "white"
                   }
                 ],
                 "kind": "list"
               },
               "type": "choice"
+            },
+            {
+              "level": "proficient",
+              "target": "language:draconic",
+              "type": "proficiency"
+            },
+            {
+              "noteRu": "Удвоенный БМ к проверкам Харизмы при общении с драконами",
+              "type": "text"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "dragon-ancestor",
           "level": 1,
           "nameEn": "Dragon Ancestor",
@@ -325,8 +773,21 @@
           "textMd": "At 1st level, you choose one type of dragon as your ancestor. The damage type associated with each dragon is used by features you gain later.\n\nYou can speak, read, and write Draconic. Additionally, whenever you make a Charisma check when interacting with dragons, your proficiency bonus is doubled if it applies to the check."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "type": "hp_max",
+              "value": "CLASS_LEVEL"
+            },
+            {
+              "allowShield": true,
+              "base": "13 + DEX",
+              "id": "draconic-resilience",
+              "labelRu": "Драконья устойчивость",
+              "requires": "no_armor",
+              "type": "ac_formula"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "draconic-resilience",
           "level": 1,
           "nameEn": "Draconic Resilience",
@@ -334,8 +795,13 @@
           "textMd": "As magic flows through your body, it causes physical traits of your dragon ancestors to emerge. At 1st level, your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class.\n\nAdditionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren't wearing armor, your AC equals 13 + your Dexterity modifier."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "+Хар к одному броску урона заклинания с типом урона предка; 1 единица — сопротивление этому урону на 1 час (переключатель в листе)",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "elemental-affinity",
           "level": 6,
           "nameEn": "Elemental Affinity",
@@ -343,8 +809,25 @@
           "textMd": "Starting at 6th level, when you cast a spell that deals damage of the type associated with your draconic ancestry, you can add your Charisma modifier to one damage roll of that spell. At the same time, you can spend 1 sorcery point to gain resistance to that damage type for 1 hour."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "effects": [
+                {
+                  "mode": "fly",
+                  "op": "equal_walk",
+                  "type": "speed"
+                }
+              ],
+              "id": "dragon-wings",
+              "labelRu": "Драконьи крылья",
+              "type": "toggle"
+            },
+            {
+              "noteRu": "Бонусным действием; не в доспехах, не рассчитанных на крылья",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "dragon-wings",
           "level": 14,
           "nameEn": "Dragon Wings",
@@ -352,8 +835,13 @@
           "textMd": "At 14th level, you gain the ability to sprout a pair of dragon wings from your back, gaining a flying speed equal to your current speed. You can create these wings as a bonus action on your turn. They last until you dismiss them as a bonus action on your turn.\n\nYou can't manifest your wings while wearing armor unless the armor is made to accommodate them, and clothing not made to accommodate your wings might be destroyed when you manifest them."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "5 единиц: аура 60 футов на 1 минуту (концентрация) — очарование или испуг, спасбросок Мудрости",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "draconic-presence",
           "level": 18,
           "nameEn": "Draconic Presence",
@@ -362,7 +850,7 @@
         }
       ]
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/subclass/draconic",
     "kind": "subclass",
     "nameEn": "Draconic",
@@ -376,8 +864,13 @@
       "classKey": "srd/class/wizard",
       "features": [
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Копирование заклинаний школы Воплощения в книгу — вдвое быстрее и дешевле",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "evocation-savant",
           "level": 2,
           "nameEn": "Evocation Savant",
@@ -385,8 +878,13 @@
           "textMd": "Beginning when you select this school at 2nd level, the gold and time you must spend to copy an evocation spell into your spellbook is halved."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Существа (1 + круг заклинания) автоматически преуспевают в спасброске от вашего воплощения и не получают урона",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "sculpt-spells",
           "level": 2,
           "nameEn": "Sculpt Spells",
@@ -394,8 +892,13 @@
           "textMd": "Beginning at 2nd level, you can create pockets of relative safety within the effects of your evocation spells. When you cast an evocation spell that affects other creatures that you can see, you can choose a number of them equal to 1 + the spell's level. The chosen creatures automatically succeed on their saving throws against the spell, and they take no damage if they would normally take half damage on a successful save."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Цель, преуспевшая в спасброске от вашего заговора, получает половину урона",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "potent-cantrip",
           "level": 6,
           "nameEn": "Potent Cantrip",
@@ -403,8 +906,17 @@
           "textMd": "Starting at 6th level, your damaging cantrips affect even creatures that avoid the brunt of the effect. When a creature succeeds on a saving throw against your cantrip, the creature takes half the cantrip's damage (if any) but suffers no additional effect from the cantrip."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "labelRu": "Усиленное воплощение",
+              "schools": [
+                "evocation"
+              ],
+              "type": "spell_damage_bonus",
+              "value": "INT"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "empowered-evocation",
           "level": 10,
           "nameEn": "Empowered Evocation",
@@ -412,8 +924,13 @@
           "textMd": "Beginning at 10th level, you can add your Intelligence modifier to one damage roll of any wizard evocation spell you cast."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Максимальный урон заклинания 1–5 круга; повтор до продолжительного отдыха — некротический урон 2к12 за круг (растёт)",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "overchannel",
           "level": 14,
           "nameEn": "Overchannel",
@@ -422,7 +939,7 @@
         }
       ]
     },
-    "effectsStatus": "text_only",
+    "effectsStatus": "complete",
     "key": "srd/subclass/evocation",
     "kind": "subclass",
     "nameEn": "Evocation",
@@ -473,8 +990,13 @@
       ],
       "features": [
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Уменьшив хиты враждебного существа до 0: временные хиты = Хар + уровень колдуна (минимум 1)",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "dark-ones-blessing",
           "level": 1,
           "nameEn": "Dark One's Blessing",
@@ -482,8 +1004,20 @@
           "textMd": "Starting at 1st level, when you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Charisma modifier + your warlock level (minimum of 1)."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "dark-ones-luck",
+              "max": "1",
+              "nameRu": "Удача тёмного",
+              "reset": "short",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Прибавить к10 к проверке характеристики или спасброску",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "dark-ones-own-luck",
           "level": 6,
           "nameEn": "Dark One's Own Luck",
@@ -491,8 +1025,159 @@
           "textMd": "Starting at 6th level, you can call on your patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add a d10 to your roll. You can do so after seeing the initial roll but before any of the roll's effects occur.\n\nOnce you use this feature, you can't use it again until you finish a short or long rest."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 1,
+              "id": "fiendish-resilience",
+              "labelRu": "Адская стойкость: тип урона",
+              "options": {
+                "items": [
+                  {
+                    "effects": [
+                      {
+                        "damageType": "acid",
+                        "kind": "resistance",
+                        "type": "defense"
+                      }
+                    ],
+                    "labelRu": "Кислота",
+                    "value": "acid"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "bludgeoning",
+                        "kind": "resistance",
+                        "noteRu": "Магическое и серебряное оружие игнорирует",
+                        "type": "defense"
+                      }
+                    ],
+                    "labelRu": "Дробящий",
+                    "value": "bludgeoning"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "cold",
+                        "kind": "resistance",
+                        "type": "defense"
+                      }
+                    ],
+                    "labelRu": "Холод",
+                    "value": "cold"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "fire",
+                        "kind": "resistance",
+                        "type": "defense"
+                      }
+                    ],
+                    "labelRu": "Огонь",
+                    "value": "fire"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "lightning",
+                        "kind": "resistance",
+                        "type": "defense"
+                      }
+                    ],
+                    "labelRu": "Электричество",
+                    "value": "lightning"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "necrotic",
+                        "kind": "resistance",
+                        "type": "defense"
+                      }
+                    ],
+                    "labelRu": "Некротическая энергия",
+                    "value": "necrotic"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "piercing",
+                        "kind": "resistance",
+                        "noteRu": "Магическое и серебряное оружие игнорирует",
+                        "type": "defense"
+                      }
+                    ],
+                    "labelRu": "Колющий",
+                    "value": "piercing"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "poison",
+                        "kind": "resistance",
+                        "type": "defense"
+                      }
+                    ],
+                    "labelRu": "Яд",
+                    "value": "poison"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "psychic",
+                        "kind": "resistance",
+                        "type": "defense"
+                      }
+                    ],
+                    "labelRu": "Психическая энергия",
+                    "value": "psychic"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "radiant",
+                        "kind": "resistance",
+                        "type": "defense"
+                      }
+                    ],
+                    "labelRu": "Излучение",
+                    "value": "radiant"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "slashing",
+                        "kind": "resistance",
+                        "noteRu": "Магическое и серебряное оружие игнорирует",
+                        "type": "defense"
+                      }
+                    ],
+                    "labelRu": "Рубящий",
+                    "value": "slashing"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "thunder",
+                        "kind": "resistance",
+                        "type": "defense"
+                      }
+                    ],
+                    "labelRu": "Звук",
+                    "value": "thunder"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            },
+            {
+              "noteRu": "Тип меняется после короткого или продолжительного отдыха",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "fiendish-resilience",
           "level": 10,
           "nameEn": "Fiendish Resilience",
@@ -500,8 +1185,20 @@
           "textMd": "Starting at 10th level, you can choose one damage type when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature. Damage from magical weapons or silver weapons ignores this resistance."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "hurl-through-hell",
+              "max": "1",
+              "nameRu": "Бросок сквозь ад",
+              "reset": "long",
+              "type": "resource"
+            },
+            {
+              "noteRu": "При попадании: цель исчезает до конца вашего следующего хода и получает 10к10 психической энергии (не исчадия)",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "hurl-through-hell",
           "level": 14,
           "nameEn": "Hurl Through Hell",
@@ -510,7 +1207,7 @@
         }
       ]
     },
-    "effectsStatus": "text_only",
+    "effectsStatus": "complete",
     "key": "srd/subclass/fiend",
     "kind": "subclass",
     "nameEn": "Fiend",
@@ -532,17 +1229,32 @@
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Раз в ход: +1к8 урона по существу, у которого хитов меньше максимума",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Убийца колоссов",
                     "value": "hunters-prey-colossus-slayer"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Реакцией: атака по Большому или крупнее существу в 5 футах, атаковавшему вас",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Убийца великанов",
                     "value": "hunters-prey-giant-killer"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Раз в ход: дополнительная атака тем же оружием по другому существу в 5 футах от цели",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Сокрушитель орд",
                     "value": "hunters-prey-horde-breaker"
                   }
@@ -552,7 +1264,7 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "hunters-prey",
           "level": 3,
           "nameEn": "Hunter's Prey",
@@ -568,17 +1280,34 @@
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Провоцированные атаки по вам совершаются с помехой",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Побег от орды",
                     "value": "defensive-tactics-escape-the-horde"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "+4 к КД против последующих атак существа, попавшего по вам в этот ход",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Защита от мультиатаки",
                     "value": "defensive-tactics-multiattack-defense"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "mode": "advantage",
+                        "noteRu": "Против испуга",
+                        "target": "save:*",
+                        "type": "roll_mode"
+                      }
+                    ],
                     "labelRu": "Стальная воля",
                     "value": "defensive-tactics-steel-will"
                   }
@@ -588,7 +1317,7 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "defensive-tactics",
           "level": 7,
           "nameEn": "Defensive Tactics",
@@ -604,12 +1333,22 @@
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Действием: дальнобойная атака по каждому существу в 10 футах от точки",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Залп",
                     "value": "multiattack-volley"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Действием: рукопашная атака по каждому существу в 5 футах",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Атака вихрем",
                     "value": "multiattack-whirlwind-attack"
                   }
@@ -619,7 +1358,7 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "multiattack",
           "level": 11,
           "nameEn": "Multiattack",
@@ -635,17 +1374,32 @@
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Спасбросок Ловкости для половины урона: при успехе — без урона, при провале — половина",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Увёртливость",
                     "value": "superior-hunters-defense-evasion"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Реакцией: промах атакующего перенаправляется в другое существо",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Стоять против течения",
                     "value": "superior-hunters-defense-stand-against-the-tide"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "noteRu": "Реакцией: урон от видимой атаки уменьшается вдвое",
+                        "type": "text"
+                      }
+                    ],
                     "labelRu": "Невероятное уклонение",
                     "value": "superior-hunters-defense-uncanny-dodge"
                   }
@@ -655,7 +1409,7 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "superior-hunters-defense",
           "level": 15,
           "nameEn": "Superior Hunter's Defense",
@@ -664,7 +1418,7 @@
         }
       ]
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/subclass/hunter",
     "kind": "subclass",
     "nameEn": "Hunter",
@@ -686,37 +1440,436 @@
               "options": {
                 "items": [
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/hold-person",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 3"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/spike-growth",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 3"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/sleet-storm",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 5"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/slow",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 5"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/freedom-of-movement",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 7"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/ice-storm",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 7"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/commune-with-nature",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 9"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/cone-of-cold",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 9"
+                      }
+                    ],
                     "labelRu": "Арктика",
                     "value": "circle-of-the-land-arctic"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/mirror-image",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 3"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/misty-step",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 3"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/water-breathing",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 5"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/water-walk",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 5"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/control-water",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 7"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/freedom-of-movement",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 7"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/conjure-elemental",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 9"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/scrying",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 9"
+                      }
+                    ],
                     "labelRu": "Побережье",
                     "value": "circle-of-the-land-coast"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/blur",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 3"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/silence",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 3"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/create-food-and-water",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 5"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/protection-from-energy",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 5"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/blight",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 7"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/hallucinatory-terrain",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 7"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/insect-plague",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 9"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/wall-of-stone",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 9"
+                      }
+                    ],
                     "labelRu": "Пустыня",
                     "value": "circle-of-the-land-desert"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/barkskin",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 3"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/spider-climb",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 3"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/call-lightning",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 5"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/plant-growth",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 5"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/divination",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 7"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/freedom-of-movement",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 7"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/commune-with-nature",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 9"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/tree-stride",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 9"
+                      }
+                    ],
                     "labelRu": "Лес",
                     "value": "circle-of-the-land-forest"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/invisibility",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 3"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/pass-without-trace",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 3"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/daylight",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 5"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/haste",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 5"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/divination",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 7"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/freedom-of-movement",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 7"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/dream",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 9"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/insect-plague",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 9"
+                      }
+                    ],
                     "labelRu": "Луга",
                     "value": "circle-of-the-land-grassland"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/spider-climb",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 3"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/spike-growth",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 3"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/lightning-bolt",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 5"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/meld-into-stone",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 5"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/stone-shape",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 7"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/stoneskin",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 7"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/passwall",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 9"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/wall-of-stone",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 9"
+                      }
+                    ],
                     "labelRu": "Горы",
                     "value": "circle-of-the-land-mountain"
                   },
                   {
-                    "effects": [],
+                    "effects": [
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/acid-arrow",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 3"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/darkness",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 3"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/water-walk",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 5"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/stinking-cloud",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 5"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/freedom-of-movement",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 7"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/locate-creature",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 7"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/insect-plague",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 9"
+                      },
+                      {
+                        "ability": "class",
+                        "mode": "always_prepared",
+                        "spell": "srd/spell/scrying",
+                        "type": "spell_grant",
+                        "when": "CLASS_LEVEL >= 9"
+                      }
+                    ],
                     "labelRu": "Болото",
                     "value": "circle-of-the-land-swamp"
                   }
@@ -726,7 +1879,7 @@
               "type": "choice"
             }
           ],
-          "effectsStatus": "partial",
+          "effectsStatus": "complete",
           "key": "circle-of-the-land",
           "level": 2,
           "nameEn": "Circle of the Land",
@@ -734,8 +1887,28 @@
           "textMd": "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition. These druids meet within sacred circles of trees or standing stones to whisper primal secrets in Druidic. The circle's wisest members preside as the chief priests of communities that hold to the Old Faith and serve as advisors to the rulers of those folk. As a member of this circle, your magic is influenced by the land where you were initiated into the circle's mysterious rites."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 1,
+              "id": "bonus-cantrip",
+              "labelRu": "Бонусный заговор",
+              "options": {
+                "kind": "spells",
+                "level": "cantrip",
+                "list": "druid"
+              },
+              "type": "choice"
+            },
+            {
+              "ability": "class",
+              "mode": "known",
+              "spell": {
+                "choice": "bonus-cantrip"
+              },
+              "type": "spell_grant"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "bonus-cantrip",
           "level": 2,
           "nameEn": "Bonus Cantrip",
@@ -743,8 +1916,20 @@
           "textMd": "When you choose this circle at 2nd level, you learn one additional druid cantrip of your choice."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "natural-recovery",
+              "max": "1",
+              "nameRu": "Естественное восстановление",
+              "reset": "long",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Короткий отдых: восстановить ячейки суммарным кругом до половины уровня друида (округляя вверх), не выше 5 круга",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "natural-recovery",
           "level": 2,
           "nameEn": "Natural Recovery",
@@ -753,7 +1938,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "circle-spells-1",
           "level": 3,
           "nameEn": "Circle Spells",
@@ -762,7 +1947,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "circle-spells-2",
           "level": 5,
           "nameEn": "Circle Spells",
@@ -770,8 +1955,13 @@
           "textMd": "Your mystical connection to the land infuses you with the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells connected to the land where you became a druid.\n\nChoose that land--arctic, coast, desert, forest, grassland, mountain, or swamp--and consult the associated list of spells.\n\nOnce you gain access to a circle spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Немагическая труднопроходимая местность не замедляет; преимущество на спасброски от магических растений",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "lands-stride",
           "level": 6,
           "nameEn": "Land's Stride",
@@ -780,7 +1970,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "circle-spells-3",
           "level": 7,
           "nameEn": "Circle Spells",
@@ -789,7 +1979,7 @@
         },
         {
           "effects": [],
-          "effectsStatus": "text_only",
+          "effectsStatus": "complete",
           "key": "circle-spells-4",
           "level": 9,
           "nameEn": "Circle Spells",
@@ -797,8 +1987,22 @@
           "textMd": "Your mystical connection to the land infuses you with the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells connected to the land where you became a druid.\n\nChoose that land--arctic, coast, desert, forest, grassland, mountain, or swamp--and consult the associated list of spells.\n\nOnce you gain access to a circle spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "condition": "poisoned",
+              "type": "condition_immunity"
+            },
+            {
+              "damageType": "poison",
+              "kind": "immunity",
+              "type": "defense"
+            },
+            {
+              "noteRu": "Иммунитет к болезням; элементали и феи не могут вас очаровать или испугать",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "natures-ward",
           "level": 10,
           "nameEn": "Nature's Ward",
@@ -806,8 +2010,13 @@
           "textMd": "When you reach 10th level, you can't be charmed or frightened by elementals or fey, and you are immune to poison and disease."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Звери и растения должны пройти спасбросок Мудрости, чтобы атаковать вас",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "natures-sanctuary",
           "level": 14,
           "nameEn": "Nature's Sanctuary",
@@ -816,7 +2025,7 @@
         }
       ]
     },
-    "effectsStatus": "partial",
+    "effectsStatus": "complete",
     "key": "srd/subclass/land",
     "kind": "subclass",
     "nameEn": "Land",
@@ -866,8 +2075,14 @@
       "classKey": "srd/class/cleric",
       "features": [
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "armor:heavy",
+              "type": "proficiency"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "bonus-proficiency",
           "level": 1,
           "nameEn": "Bonus Proficiency",
@@ -875,8 +2090,13 @@
           "textMd": "When you choose this domain at 1st level, you gain proficiency with heavy armor."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Лечащие заклинания 1 круга и выше восстанавливают дополнительно 2 + круг заклинания хитов",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "disciple-of-life",
           "level": 1,
           "nameEn": "Disciple of Life",
@@ -884,8 +2104,13 @@
           "textMd": "Also starting at 1st level, your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell's level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Божественный канал: распределить 5 × уровень жреца хитов между существами в 30 футах (не выше половины их максимума)",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "channel-divinity-preserve-life",
           "level": 2,
           "nameEn": "Channel Divinity: Preserve Life",
@@ -893,8 +2118,13 @@
           "textMd": "Starting at 2nd level, you can use your Channel Divinity to heal the badly injured.\n\nAs an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level.\n\nChoose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Лечащее заклинание 1 круга и выше на другое существо лечит и вас на 2 + круг заклинания",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "blessed-healer",
           "level": 6,
           "nameEn": "Blessed Healer",
@@ -902,17 +2132,36 @@
           "textMd": "Beginning at 6th level, the healing spells you cast on others heal you as well. When you cast a spell of 1st level or higher that restores hit points to a creature other than you, you regain hit points equal to 2 + the spell's level."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Раз в ход при попадании оружием: +1к8 излучением (2к8 с 14 уровня)",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "divine-strike",
           "level": 8,
           "nameEn": "Divine Strike",
           "nameRu": "Божественный удар",
           "textMd": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8."
+        },
+        {
+          "effects": [
+            {
+              "noteRu": "Кости лечения заклинаний принимают максимальное значение",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "supreme-healing",
+          "level": 17,
+          "nameEn": "Supreme Healing",
+          "nameRu": "Высшее исцеление",
+          "textMd": "Starting at 17th level, when you would normally roll one or more dice to restore hit points with a spell, you instead use the highest number possible for each die."
         }
       ]
     },
-    "effectsStatus": "text_only",
+    "effectsStatus": "complete",
     "key": "srd/subclass/life",
     "kind": "subclass",
     "nameEn": "Life",
@@ -926,8 +2175,20 @@
       "classKey": "srd/class/bard",
       "features": [
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 3,
+              "id": "bonus-proficiencies",
+              "labelRu": "Дополнительные владения",
+              "options": {
+                "from": "any",
+                "grant": "proficient",
+                "kind": "skills"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "bonus-proficiencies",
           "level": 3,
           "nameEn": "Bonus Proficiencies",
@@ -935,8 +2196,13 @@
           "textMd": "When you join the College of Lore at 3rd level, you gain proficiency with three skills of your choice."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Реакцией: тратите вдохновение, вычитая кость из броска атаки, проверки или урона существа в 60 футах",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "cutting-words",
           "level": 3,
           "nameEn": "Cutting Words",
@@ -944,8 +2210,32 @@
           "textMd": "Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others.\n\nWhen a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature's roll.\n\nYou can choose to use this feature after the creature makes its roll, but before the GM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can't hear you or if it's immune to being charmed."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "choose": 2,
+              "id": "additional-magical-secrets",
+              "labelRu": "Дополнительные тайны магии",
+              "options": {
+                "kind": "spells",
+                "level": "up_to_max",
+                "list": "*"
+              },
+              "type": "choice"
+            },
+            {
+              "ability": "class",
+              "mode": "known",
+              "spell": {
+                "choice": "additional-magical-secrets"
+              },
+              "type": "spell_grant"
+            },
+            {
+              "noteRu": "Заклинания считаются заклинаниями барда, но не входят в число известных",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "additional-magical-secrets",
           "level": 6,
           "nameEn": "Additional Magical Secrets",
@@ -953,8 +2243,13 @@
           "textMd": "At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you but don't count against the number of bard spells you know."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Тратите вдохновение: прибавляете кость к своей проверке характеристики",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "peerless-skill",
           "level": 14,
           "nameEn": "Peerless Skill",
@@ -963,7 +2258,7 @@
         }
       ]
     },
-    "effectsStatus": "text_only",
+    "effectsStatus": "complete",
     "key": "srd/subclass/lore",
     "kind": "subclass",
     "nameEn": "Lore",
@@ -977,8 +2272,13 @@
       "classKey": "srd/class/monk",
       "features": [
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "При попадании «Шквалом ударов»: сбить с ног (Лов), оттолкнуть на 15 футов (Сил) или лишить реакций до конца вашего следующего хода",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "open-hand-technique",
           "level": 3,
           "nameEn": "Open Hand Technique",
@@ -986,8 +2286,20 @@
           "textMd": "Starting when you choose this tradition at 3rd level, you can manipulate your enemy's ki when you harness your own. Whenever you hit a creature with one of the attacks granted by your Flurry of Blows, you can impose one of the following effects on that target:\n\n- It must succeed on a Dexterity saving throw or be knocked prone.\n\n- It must make a Strength saving throw. If it fails, you can push it up to 15 feet away from you.\n\n- It can't take reactions until the end of your next turn."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "id": "wholeness-of-body",
+              "max": "1",
+              "nameRu": "Исцеление тела",
+              "reset": "long",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Действием восстановить хиты: 3 × уровень монаха",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "wholeness-of-body",
           "level": 6,
           "nameEn": "Wholeness of Body",
@@ -995,8 +2307,13 @@
           "textMd": "At 6th level, you gain the ability to heal yourself. As an action, you can regain hit points equal to three times your monk level. You must finish a long rest before you can use this feature again."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "После продолжительного отдыха — эффект «Убежища» до следующего отдыха (Сл 8 + Мдр + БМ)",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "tranquility",
           "level": 11,
           "nameEn": "Tranquility",
@@ -1004,8 +2321,13 @@
           "textMd": "Beginning at 11th level, you can enter a special meditation that surrounds you with an aura of peace. At the end of a long rest, you gain the effect of a sanctuary spell that lasts until the start of your next long rest (the spell can end early as normal). The saving throw DC for the spell equals 8 + your Wisdom modifier + your proficiency bonus."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "3 ци при попадании безоружным ударом: позже действием — спасбросок Телосложения, при провале хиты 0, при успехе 10к10 некротической энергии",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "quivering-palm",
           "level": 17,
           "nameEn": "Quivering Palm",
@@ -1014,7 +2336,7 @@
         }
       ]
     },
-    "effectsStatus": "text_only",
+    "effectsStatus": "complete",
     "key": "srd/subclass/open-hand",
     "kind": "subclass",
     "nameEn": "Open Hand",
@@ -1028,8 +2350,13 @@
       "classKey": "srd/class/rogue",
       "features": [
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Бонусным действием: Ловкость рук, воровские инструменты или Использование предмета",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "fast-hands",
           "level": 3,
           "nameEn": "Fast Hands",
@@ -1037,8 +2364,18 @@
           "textMd": "Starting at 3rd level, you can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves' tools to disarm a trap or open a lock, or take the Use an Object action."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "mode": "climb",
+              "op": "equal_walk",
+              "type": "speed"
+            },
+            {
+              "noteRu": "Прыжок в длину с разбега дальше на модификатор Ловкости (в футах)",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "second-story-work",
           "level": 3,
           "nameEn": "Second-Story Work",
@@ -1046,8 +2383,15 @@
           "textMd": "When you choose this archetype at 3rd level, you gain the ability to climb faster than normal; climbing no longer costs you extra movement.\n\nIn addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "mode": "advantage",
+              "noteRu": "Если за ход перемещаетесь не более чем на половину скорости",
+              "target": "skill:stealth",
+              "type": "roll_mode"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "supreme-sneak",
           "level": 9,
           "nameEn": "Supreme Sneak",
@@ -1055,8 +2399,13 @@
           "textMd": "Starting at 9th level, you have advantage on a Dexterity (Stealth) check if you move no more than half your speed on the same turn."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "Игнорируете требования классов, рас и уровней для магических предметов",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "use-magic-device",
           "level": 13,
           "nameEn": "Use Magic Device",
@@ -1064,8 +2413,13 @@
           "textMd": "By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items."
         },
         {
-          "effects": [],
-          "effectsStatus": "text_only",
+          "effects": [
+            {
+              "noteRu": "В первом раунде боя — два хода: обычный и с инициативой −10",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
           "key": "thiefs-reflexes",
           "level": 17,
           "nameEn": "Thief's Reflexes",
@@ -1074,7 +2428,7 @@
         }
       ]
     },
-    "effectsStatus": "text_only",
+    "effectsStatus": "complete",
     "key": "srd/subclass/thief",
     "kind": "subclass",
     "nameEn": "Thief",

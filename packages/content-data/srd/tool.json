@@ -1,0 +1,498 @@
+[
+  {
+    "data": {
+      "costCp": 5000,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 8
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/alchemists-supplies",
+    "kind": "tool",
+    "nameEn": "Alchemist's Supplies",
+    "nameRu": "Инструменты алхимика",
+    "slug": "alchemists-supplies",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 3000,
+      "kind": "tool",
+      "toolGroup": "musical",
+      "weightLb": 6
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/bagpipes",
+    "kind": "tool",
+    "nameEn": "Bagpipes",
+    "nameRu": "Волынка",
+    "slug": "bagpipes",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 2000,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 9
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/brewers-supplies",
+    "kind": "tool",
+    "nameEn": "Brewer's Supplies",
+    "nameRu": "Инструменты пивовара",
+    "slug": "brewers-supplies",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 1000,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/calligraphers-supplies",
+    "kind": "tool",
+    "nameEn": "Calligrapher's Supplies",
+    "nameRu": "Инструменты каллиграфа",
+    "slug": "calligraphers-supplies",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 800,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 6
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/carpenters-tools",
+    "kind": "tool",
+    "nameEn": "Carpenter's Tools",
+    "nameRu": "Инструменты плотника",
+    "slug": "carpenters-tools",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 1500,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 6
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/cartographers-tools",
+    "kind": "tool",
+    "nameEn": "Cartographer's Tools",
+    "nameRu": "Инструменты картографа",
+    "slug": "cartographers-tools",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/cobblers-tools",
+    "kind": "tool",
+    "nameEn": "Cobbler's Tools",
+    "nameRu": "Инструменты сапожника",
+    "slug": "cobblers-tools",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 8
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/cooks-utensils",
+    "kind": "tool",
+    "nameEn": "Cook's utensils",
+    "nameRu": "Инструменты повара",
+    "slug": "cooks-utensils",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 10,
+      "kind": "tool",
+      "toolGroup": "gaming",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/dice-set",
+    "kind": "tool",
+    "nameEn": "Dice Set",
+    "nameRu": "Кости",
+    "slug": "dice-set",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This item encompasses a wide range of game pieces, including dice and decks of cards (for games such as Three-Dragon Ante). A few common examples appear on the Tools table, but other kinds of gaming sets exist. If you are proficient with a gaming set, you can add your proficiency bonus to ability checks you make to play a game with that set. Each type of gaming set requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 600,
+      "kind": "tool",
+      "toolGroup": "musical",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/drum",
+    "kind": "tool",
+    "nameEn": "Drum",
+    "nameRu": "Барабан",
+    "slug": "drum",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 2500,
+      "kind": "tool",
+      "toolGroup": "musical",
+      "weightLb": 10
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/dulcimer",
+    "kind": "tool",
+    "nameEn": "Dulcimer",
+    "nameRu": "Цимбалы",
+    "slug": "dulcimer",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "tool",
+      "toolGroup": "musical",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/flute",
+    "kind": "tool",
+    "nameEn": "Flute",
+    "nameRu": "Флейта",
+    "slug": "flute",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 3000,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/glassblowers-tools",
+    "kind": "tool",
+    "nameEn": "Glassblower's Tools",
+    "nameRu": "Инструменты стеклодува",
+    "slug": "glassblowers-tools",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 300,
+      "kind": "tool",
+      "toolGroup": "musical",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/horn",
+    "kind": "tool",
+    "nameEn": "Horn",
+    "nameRu": "Рожок",
+    "slug": "horn",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 2500,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/jewelers-tools",
+    "kind": "tool",
+    "nameEn": "Jeweler's Tools",
+    "nameRu": "Инструменты ювелира",
+    "slug": "jewelers-tools",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/leatherworkers-tools",
+    "kind": "tool",
+    "nameEn": "Leatherworker's Tools",
+    "nameRu": "Инструменты кожевника",
+    "slug": "leatherworkers-tools",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 3500,
+      "kind": "tool",
+      "toolGroup": "musical",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/lute",
+    "kind": "tool",
+    "nameEn": "Lute",
+    "nameRu": "Лютня",
+    "slug": "lute",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 3000,
+      "kind": "tool",
+      "toolGroup": "musical",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/lyre",
+    "kind": "tool",
+    "nameEn": "Lyre",
+    "nameRu": "Лира",
+    "slug": "lyre",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 1000,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 8
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/masons-tools",
+    "kind": "tool",
+    "nameEn": "Mason's Tools",
+    "nameRu": "Инструменты каменщика",
+    "slug": "masons-tools",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 2500,
+      "kind": "tool",
+      "toolGroup": "other",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/navigators-tools",
+    "kind": "tool",
+    "nameEn": "Navigator's Tools",
+    "nameRu": "Инструменты навигатора",
+    "slug": "navigators-tools",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This set of instruments is used for navigation at sea. Proficiency with navigator's tools lets you chart a ship's course and follow navigation charts. In addition, these tools allow you to add your proficiency bonus to any ability check you make to avoid getting lost at sea."
+  },
+  {
+    "data": {
+      "costCp": 1000,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/painters-supplies",
+    "kind": "tool",
+    "nameEn": "Painter's Supplies",
+    "nameRu": "Инструменты художника",
+    "slug": "painters-supplies",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 1200,
+      "kind": "tool",
+      "toolGroup": "musical",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/pan-flute",
+    "kind": "tool",
+    "nameEn": "Pan flute",
+    "nameRu": "Флейта Пана",
+    "slug": "pan-flute",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 50,
+      "kind": "tool",
+      "toolGroup": "gaming",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/playing-card-set",
+    "kind": "tool",
+    "nameEn": "Playing Card Set",
+    "nameRu": "Игральные карты",
+    "slug": "playing-card-set",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This item encompasses a wide range of game pieces, including dice and decks of cards (for games such as Three-Dragon Ante). A few common examples appear on the Tools table, but other kinds of gaming sets exist. If you are proficient with a gaming set, you can add your proficiency bonus to ability checks you make to play a game with that set. Each type of gaming set requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 1000,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/potters-tools",
+    "kind": "tool",
+    "nameEn": "Potter's Tools",
+    "nameRu": "Инструменты гончара",
+    "slug": "potters-tools",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "tool",
+      "toolGroup": "musical",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/shawm",
+    "kind": "tool",
+    "nameEn": "Shawm",
+    "nameRu": "Шалмей",
+    "slug": "shawm",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 2000,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 8
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/smiths-tools",
+    "kind": "tool",
+    "nameEn": "Smith's Tools",
+    "nameRu": "Инструменты кузнеца",
+    "slug": "smiths-tools",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 2500,
+      "kind": "tool",
+      "toolGroup": "other",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/thieves-tools",
+    "kind": "tool",
+    "nameEn": "Thieves' Tools",
+    "nameRu": "Воровские инструменты",
+    "slug": "thieves-tools",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This set of tools includes a small file, a set of lock picks, a small mirror mounted on a metal handle, a set of narrow-bladed scissors, and a pair of pliers. Proficiency with these tools lets you add your proficiency bonus to any ability checks you make to disarm traps or open locks."
+  },
+  {
+    "data": {
+      "costCp": 5000,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 10
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/tinkers-tools",
+    "kind": "tool",
+    "nameEn": "Tinker's Tools",
+    "nameRu": "Инструменты ремонтника",
+    "slug": "tinkers-tools",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 3000,
+      "kind": "tool",
+      "toolGroup": "musical",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/viol",
+    "kind": "tool",
+    "nameEn": "Viol",
+    "nameRu": "Виола",
+    "slug": "viol",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/weavers-tools",
+    "kind": "tool",
+    "nameEn": "Weaver's Tools",
+    "nameRu": "Инструменты ткача",
+    "slug": "weavers-tools",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "tool",
+      "toolGroup": "artisan",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/tool/woodcarvers-tools",
+    "kind": "tool",
+    "nameEn": "Woodcarver's Tools",
+    "nameRu": "Инструменты резчика по дереву",
+    "slug": "woodcarvers-tools",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency."
+  }
+]

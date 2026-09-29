@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "scripts": {
     "typecheck": "tsc -p tsconfig.json",
     "test": "vitest run --passWithNoTests",
@@ -12,8 +15,10 @@
     "content:coverage": "tsx src/cli/content-coverage.ts"
   },
   "dependencies": {
+    "@ps/content-data": "workspace:*",
     "@ps/content-schema": "workspace:*",
-    "@ps/rules-engine": "workspace:*"
+    "@ps/rules-engine": "workspace:*",
+    "zod": "^4.6.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

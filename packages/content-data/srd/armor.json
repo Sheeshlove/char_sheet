@@ -1,0 +1,239 @@
+[
+  {
+    "data": {
+      "baseAc": 14,
+      "category": "medium",
+      "costCp": 40000,
+      "dexCap": 2,
+      "stealthDisadvantage": false,
+      "weightLb": 20
+    },
+    "effectsStatus": "complete",
+    "key": "srd/armor/breastplate",
+    "kind": "armor",
+    "nameEn": "Breastplate",
+    "nameRu": "Кираса",
+    "slug": "breastplate",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "baseAc": 16,
+      "category": "heavy",
+      "costCp": 7500,
+      "dexCap": 0,
+      "stealthDisadvantage": true,
+      "strRequirement": 13,
+      "weightLb": 55
+    },
+    "effectsStatus": "complete",
+    "key": "srd/armor/chain-mail",
+    "kind": "armor",
+    "nameEn": "Chain Mail",
+    "nameRu": "Кольчуга",
+    "slug": "chain-mail",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "baseAc": 13,
+      "category": "medium",
+      "costCp": 5000,
+      "dexCap": 2,
+      "stealthDisadvantage": false,
+      "weightLb": 20
+    },
+    "effectsStatus": "complete",
+    "key": "srd/armor/chain-shirt",
+    "kind": "armor",
+    "nameEn": "Chain Shirt",
+    "nameRu": "Кольчужная рубаха",
+    "slug": "chain-shirt",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "baseAc": 15,
+      "category": "medium",
+      "costCp": 75000,
+      "dexCap": 2,
+      "stealthDisadvantage": true,
+      "weightLb": 40
+    },
+    "effectsStatus": "complete",
+    "key": "srd/armor/half-plate-armor",
+    "kind": "armor",
+    "nameEn": "Half Plate Armor",
+    "nameRu": "Полулаты",
+    "slug": "half-plate-armor",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "baseAc": 12,
+      "category": "medium",
+      "costCp": 1000,
+      "dexCap": 2,
+      "stealthDisadvantage": false,
+      "weightLb": 12
+    },
+    "effectsStatus": "complete",
+    "key": "srd/armor/hide-armor",
+    "kind": "armor",
+    "nameEn": "Hide Armor",
+    "nameRu": "Шкурный доспех",
+    "slug": "hide-armor",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "baseAc": 11,
+      "category": "light",
+      "costCp": 1000,
+      "dexCap": null,
+      "stealthDisadvantage": false,
+      "weightLb": 10
+    },
+    "effectsStatus": "complete",
+    "key": "srd/armor/leather-armor",
+    "kind": "armor",
+    "nameEn": "Leather Armor",
+    "nameRu": "Кожаный доспех",
+    "slug": "leather-armor",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "baseAc": 11,
+      "category": "light",
+      "costCp": 500,
+      "dexCap": null,
+      "stealthDisadvantage": true,
+      "weightLb": 8
+    },
+    "effectsStatus": "complete",
+    "key": "srd/armor/padded-armor",
+    "kind": "armor",
+    "nameEn": "Padded Armor",
+    "nameRu": "Стёганый доспех",
+    "slug": "padded-armor",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "baseAc": 18,
+      "category": "heavy",
+      "costCp": 150000,
+      "dexCap": 0,
+      "stealthDisadvantage": true,
+      "strRequirement": 15,
+      "weightLb": 65
+    },
+    "effectsStatus": "complete",
+    "key": "srd/armor/plate-armor",
+    "kind": "armor",
+    "nameEn": "Plate Armor",
+    "nameRu": "Латы",
+    "slug": "plate-armor",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "baseAc": 14,
+      "category": "heavy",
+      "costCp": 3000,
+      "dexCap": 0,
+      "stealthDisadvantage": true,
+      "weightLb": 40
+    },
+    "effectsStatus": "complete",
+    "key": "srd/armor/ring-mail",
+    "kind": "armor",
+    "nameEn": "Ring Mail",
+    "nameRu": "Колечный доспех",
+    "slug": "ring-mail",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "baseAc": 14,
+      "category": "medium",
+      "costCp": 5000,
+      "dexCap": 2,
+      "stealthDisadvantage": true,
+      "weightLb": 45
+    },
+    "effectsStatus": "complete",
+    "key": "srd/armor/scale-mail",
+    "kind": "armor",
+    "nameEn": "Scale Mail",
+    "nameRu": "Чешуйчатый доспех",
+    "slug": "scale-mail",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "baseAc": 2,
+      "category": "shield",
+      "costCp": 1000,
+      "dexCap": null,
+      "stealthDisadvantage": false,
+      "weightLb": 6
+    },
+    "effectsStatus": "complete",
+    "key": "srd/armor/shield",
+    "kind": "armor",
+    "nameEn": "Shield",
+    "nameRu": "Щит",
+    "slug": "shield",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "baseAc": 17,
+      "category": "heavy",
+      "costCp": 20000,
+      "dexCap": 0,
+      "stealthDisadvantage": true,
+      "strRequirement": 15,
+      "weightLb": 60
+    },
+    "effectsStatus": "complete",
+    "key": "srd/armor/splint-armor",
+    "kind": "armor",
+    "nameEn": "Splint Armor",
+    "nameRu": "Наборный доспех",
+    "slug": "splint-armor",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "baseAc": 12,
+      "category": "light",
+      "costCp": 4500,
+      "dexCap": null,
+      "stealthDisadvantage": false,
+      "weightLb": 13
+    },
+    "effectsStatus": "complete",
+    "key": "srd/armor/studded-leather-armor",
+    "kind": "armor",
+    "nameEn": "Studded Leather Armor",
+    "nameRu": "Проклёпанный кожаный доспех",
+    "slug": "studded-leather-armor",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  }
+]

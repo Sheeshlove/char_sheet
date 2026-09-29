@@ -1,0 +1,1086 @@
+[
+  {
+    "data": {
+      "classKey": "srd/class/barbarian",
+      "features": [
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "frenzy",
+          "level": 3,
+          "nameEn": "Frenzy",
+          "nameRu": "Бешенство",
+          "textMd": "Starting when you choose this path at 3rd level, you can go into a frenzy when you rage. If you do so, for the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. When your rage ends, you suffer one level of exhaustion (as described in appendix A)."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "mindless-rage",
+          "level": 6,
+          "nameEn": "Mindless Rage",
+          "nameRu": "Бездумная ярость",
+          "textMd": "Beginning at 6th level, you can't be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "intimidating-presence",
+          "level": 10,
+          "nameEn": "Intimidating Presence",
+          "nameRu": "Пугающее присутствие",
+          "textMd": "Beginning at 10th level, you can use your action to frighten someone with your menacing presence. When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you.\n\nIf the creature succeeds on its saving throw, you can't use this feature on that creature again for 24 hours."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "retaliation",
+          "level": 14,
+          "nameEn": "Retaliation",
+          "nameRu": "Ответный удар",
+          "textMd": "Starting at 14th level, when you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon Attack against that creature."
+        }
+      ]
+    },
+    "effectsStatus": "text_only",
+    "key": "srd/subclass/berserker",
+    "kind": "subclass",
+    "nameEn": "Berserker",
+    "nameRu": "Путь берсерка",
+    "slug": "berserker",
+    "sourceBook": "SRD 5.1",
+    "textMd": "For some barbarians, rage is a means to an end--that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker's rage, you thrill in the chaos of battle, heedless of your own health or well-being."
+  },
+  {
+    "data": {
+      "classKey": "srd/class/fighter",
+      "features": [
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "improved-critical",
+          "level": 3,
+          "nameEn": "Improved Critical",
+          "nameRu": "Улучшенный критический удар",
+          "textMd": "Beginning when you choose this archetype at 3rd level, your weapon attacks score a critical hit on a roll of 19 or 20."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "remarkable-athlete",
+          "level": 7,
+          "nameEn": "Remarkable Athlete",
+          "nameRu": "Выдающийся атлет",
+          "textMd": "Starting at 7th level, you can add half your proficiency bonus (round up) to any Strength, Dexterity, or Constitution check you make that doesn't already use your proficiency bonus. In addition, when you make a running long jump, the distance you can cover increases by a number of feet equal to your Strength modifier."
+        },
+        {
+          "effects": [
+            {
+              "choose": 1,
+              "id": "option",
+              "labelRu": "Дополнительный боевой стиль",
+              "options": {
+                "items": [
+                  {
+                    "effects": [],
+                    "labelRu": "Стрельба",
+                    "value": "fighting-style-archery"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Оборона",
+                    "value": "fighting-style-defense"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Дуэлянт",
+                    "value": "fighting-style-dueling"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Сражение большим оружием",
+                    "value": "fighting-style-great-weapon-fighting"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Защита",
+                    "value": "fighting-style-protection"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Сражение двумя оружиями",
+                    "value": "fighting-style-two-weapon-fighting"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "partial",
+          "key": "additional-fighting-style",
+          "level": 10,
+          "nameEn": "Additional Fighting Style",
+          "nameRu": "Дополнительный боевой стиль",
+          "textMd": "At 10th level, you can choose a second option from the Fighting Style class feature."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "superior-critical",
+          "level": 15,
+          "nameEn": "Superior Critical",
+          "nameRu": "Превосходный критический удар",
+          "textMd": "Starting at 15th level, your weapon attacks score a critical hit on a roll of 18-20."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "survivor",
+          "level": 18,
+          "nameEn": "Survivor",
+          "nameRu": "Уцелевший",
+          "textMd": "At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left. You don't gain this benefit if you have 0 hit points."
+        }
+      ]
+    },
+    "effectsStatus": "partial",
+    "key": "srd/subclass/champion",
+    "kind": "subclass",
+    "nameEn": "Champion",
+    "nameRu": "Чемпион",
+    "slug": "champion",
+    "sourceBook": "SRD 5.1",
+    "textMd": "The archetypal Champion focuses on the development of raw physical power honed to deadly perfection. Those who model themselves on this archetype combine rigorous training with physical excellence to deal devastating blows."
+  },
+  {
+    "data": {
+      "alwaysPrepared": [
+        {
+          "classLevel": 3,
+          "spells": [
+            "srd/spell/protection-from-evil-and-good",
+            "srd/spell/sanctuary"
+          ]
+        },
+        {
+          "classLevel": 5,
+          "spells": [
+            "srd/spell/lesser-restoration",
+            "srd/spell/zone-of-truth"
+          ]
+        },
+        {
+          "classLevel": 9,
+          "spells": [
+            "srd/spell/beacon-of-hope",
+            "srd/spell/dispel-magic"
+          ]
+        },
+        {
+          "classLevel": 13,
+          "spells": [
+            "srd/spell/freedom-of-movement",
+            "srd/spell/guardian-of-faith"
+          ]
+        },
+        {
+          "classLevel": 17,
+          "spells": [
+            "srd/spell/commune",
+            "srd/spell/flame-strike"
+          ]
+        }
+      ],
+      "classKey": "srd/class/paladin",
+      "features": [
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "channel-divinity-sacred-weapon",
+          "level": 3,
+          "nameEn": "Channel Divinity: Sacred Weapon",
+          "nameRu": "Божественный канал: Священное оружие",
+          "textMd": "As an action, you can imbue one weapon that you are holding with positive energy, using your Channel Divinity. For 1 minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of +1). The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration.\n\nYou can end this effect on your turn as part of any other action. If you are no longer holding or carrying this weapon, or if you fall unconscious, this effect ends."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "channel-divinity-turn-the-unholy",
+          "level": 3,
+          "nameEn": "Channel Divinity: Turn the Unholy",
+          "nameRu": "Божественный канал: Изгнание нечестивцев",
+          "textMd": "As an action, you present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.\n\nA turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "aura-of-devotion",
+          "level": 7,
+          "nameEn": "Aura of Devotion",
+          "nameRu": "Аура преданности",
+          "textMd": "Starting at 7th level, you and friendly creatures within 10 feet of you can't be charmed while you are conscious.\n\nAt 18th level, the range of this aura increases to 30 feet."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "purity-of-spirit",
+          "level": 15,
+          "nameEn": "Purity of Spirit",
+          "nameRu": "Чистота духа",
+          "textMd": "Beginning at 15th level, you are always under the effects of a protection from evil and good spell."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "holy-nimbus",
+          "level": 20,
+          "nameEn": "Holy Nimbus",
+          "nameRu": "Святой нимб",
+          "textMd": "At 20th level, as an action, you can emanate an aura of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that.\n\nWhenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage.\n\nIn addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead."
+        }
+      ]
+    },
+    "effectsStatus": "text_only",
+    "key": "srd/subclass/devotion",
+    "kind": "subclass",
+    "nameEn": "Devotion",
+    "nameRu": "Клятва преданности",
+    "slug": "devotion",
+    "sourceBook": "SRD 5.1",
+    "textMd": "The Oath of Devotion binds a paladin to the loftiest ideals of justice, virtue, and order. Sometimes called cavaliers, white knights, or holy warriors, these paladins meet the ideal of the knight in shining armor, acting with honor in pursuit of justice and the greater good. They hold themselves to the highest standards of conduct, and some, for better or worse, hold the rest of the world to the same standards. Many who swear this oath are devoted to gods of law and good and use their gods' tenets as the measure of their devotion. They hold angels--the perfect servants of good--as their ideals, and incorporate images of angelic wings into their helmets or coats of arms."
+  },
+  {
+    "data": {
+      "classKey": "srd/class/sorcerer",
+      "features": [
+        {
+          "effects": [
+            {
+              "choose": 1,
+              "id": "option",
+              "labelRu": "Драконий предок",
+              "options": {
+                "items": [
+                  {
+                    "effects": [],
+                    "labelRu": "чёрный (кислота)",
+                    "value": "dragon-ancestor-black---acid-damage"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "синий (электричество)",
+                    "value": "dragon-ancestor-blue---lightning-damage"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "латунный (огонь)",
+                    "value": "dragon-ancestor-brass---fire-damage"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "бронзовый (электричество)",
+                    "value": "dragon-ancestor-bronze---lightning-damage"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "медный (кислота)",
+                    "value": "dragon-ancestor-copper---acid-damage"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "золотой (огонь)",
+                    "value": "dragon-ancestor-gold---fire-damage"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "зелёный (яд)",
+                    "value": "dragon-ancestor-green---poison-damage"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "красный (огонь)",
+                    "value": "dragon-ancestor-red---fire-damage"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "серебряный (холод)",
+                    "value": "dragon-ancestor-silver---cold-damage"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "белый (холод)",
+                    "value": "dragon-ancestor-white---cold-damage"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "partial",
+          "key": "dragon-ancestor",
+          "level": 1,
+          "nameEn": "Dragon Ancestor",
+          "nameRu": "Драконий предок",
+          "textMd": "At 1st level, you choose one type of dragon as your ancestor. The damage type associated with each dragon is used by features you gain later.\n\nYou can speak, read, and write Draconic. Additionally, whenever you make a Charisma check when interacting with dragons, your proficiency bonus is doubled if it applies to the check."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "draconic-resilience",
+          "level": 1,
+          "nameEn": "Draconic Resilience",
+          "nameRu": "Драконья устойчивость",
+          "textMd": "As magic flows through your body, it causes physical traits of your dragon ancestors to emerge. At 1st level, your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class.\n\nAdditionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren't wearing armor, your AC equals 13 + your Dexterity modifier."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "elemental-affinity",
+          "level": 6,
+          "nameEn": "Elemental Affinity",
+          "nameRu": "Родство со стихией",
+          "textMd": "Starting at 6th level, when you cast a spell that deals damage of the type associated with your draconic ancestry, you can add your Charisma modifier to one damage roll of that spell. At the same time, you can spend 1 sorcery point to gain resistance to that damage type for 1 hour."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "dragon-wings",
+          "level": 14,
+          "nameEn": "Dragon Wings",
+          "nameRu": "Драконьи крылья",
+          "textMd": "At 14th level, you gain the ability to sprout a pair of dragon wings from your back, gaining a flying speed equal to your current speed. You can create these wings as a bonus action on your turn. They last until you dismiss them as a bonus action on your turn.\n\nYou can't manifest your wings while wearing armor unless the armor is made to accommodate them, and clothing not made to accommodate your wings might be destroyed when you manifest them."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "draconic-presence",
+          "level": 18,
+          "nameEn": "Draconic Presence",
+          "nameRu": "Драконье присутствие",
+          "textMd": "Beginning at 18th level, you can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or frightened. As an action, you can spend 5 sorcery points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or until you lose your concentration (as if you were casting a concentration spell), each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be charmed (if you chose awe) or frightened (if you chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours."
+        }
+      ]
+    },
+    "effectsStatus": "partial",
+    "key": "srd/subclass/draconic",
+    "kind": "subclass",
+    "nameEn": "Draconic",
+    "nameRu": "Наследие драконьей крови",
+    "slug": "draconic",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Your innate magic comes from draconic magic that was mingled with your blood or that of your ancestors. Most often, sorcerers with this origin trace their descent back to a mighty sorcerer of ancient times who made a bargain with a dragon or who might even have claimed a dragon parent. Some of these bloodlines are well established in the world, but most are obscure. Any given sorcerer could be the first of a new bloodline, as a result of a pact or some other exceptional circumstance."
+  },
+  {
+    "data": {
+      "classKey": "srd/class/wizard",
+      "features": [
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "evocation-savant",
+          "level": 2,
+          "nameEn": "Evocation Savant",
+          "nameRu": "Мастер воплощения",
+          "textMd": "Beginning when you select this school at 2nd level, the gold and time you must spend to copy an evocation spell into your spellbook is halved."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "sculpt-spells",
+          "level": 2,
+          "nameEn": "Sculpt Spells",
+          "nameRu": "Придание формы заклинаниям",
+          "textMd": "Beginning at 2nd level, you can create pockets of relative safety within the effects of your evocation spells. When you cast an evocation spell that affects other creatures that you can see, you can choose a number of them equal to 1 + the spell's level. The chosen creatures automatically succeed on their saving throws against the spell, and they take no damage if they would normally take half damage on a successful save."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "potent-cantrip",
+          "level": 6,
+          "nameEn": "Potent Cantrip",
+          "nameRu": "Мощный заговор",
+          "textMd": "Starting at 6th level, your damaging cantrips affect even creatures that avoid the brunt of the effect. When a creature succeeds on a saving throw against your cantrip, the creature takes half the cantrip's damage (if any) but suffers no additional effect from the cantrip."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "empowered-evocation",
+          "level": 10,
+          "nameEn": "Empowered Evocation",
+          "nameRu": "Усиленное воплощение",
+          "textMd": "Beginning at 10th level, you can add your Intelligence modifier to one damage roll of any wizard evocation spell you cast."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "overchannel",
+          "level": 14,
+          "nameEn": "Overchannel",
+          "nameRu": "Сверхканалирование",
+          "textMd": "Starting at 14th level, you can increase the power of your simpler spells. When you cast a wizard spell of 1st through 5th level that deals damage, you can deal maximum damage with that spell.\n\nThe first time you do so, you suffer no adverse effect. If you use this feature again before you finish a long rest, you take 2d12 necrotic damage for each level of the spell, immediately after you cast it. Each time you use this feature again before finishing a long rest, the necrotic damage per spell level increases by 1d12. This damage ignores resistance and immunity."
+        }
+      ]
+    },
+    "effectsStatus": "text_only",
+    "key": "srd/subclass/evocation",
+    "kind": "subclass",
+    "nameEn": "Evocation",
+    "nameRu": "Школа воплощения",
+    "slug": "evocation",
+    "sourceBook": "SRD 5.1",
+    "textMd": "You focus your study on magic that creates powerful elemental effects such as bitter cold, searing flame, rolling thunder, crackling lightning, and burning acid. Some evokers find employment in military forces, serving as artillery to blast enemy armies from afar. Others use their spectacular power to protect the weak, while some seek their own gain as bandits, adventurers, or aspiring tyrants."
+  },
+  {
+    "data": {
+      "classKey": "srd/class/warlock",
+      "expandedSpellList": [
+        {
+          "spellLevel": 1,
+          "spells": [
+            "srd/spell/burning-hands",
+            "srd/spell/command"
+          ]
+        },
+        {
+          "spellLevel": 2,
+          "spells": [
+            "srd/spell/blindness-deafness",
+            "srd/spell/scorching-ray"
+          ]
+        },
+        {
+          "spellLevel": 3,
+          "spells": [
+            "srd/spell/fireball",
+            "srd/spell/stinking-cloud"
+          ]
+        },
+        {
+          "spellLevel": 4,
+          "spells": [
+            "srd/spell/fire-shield",
+            "srd/spell/wall-of-fire"
+          ]
+        },
+        {
+          "spellLevel": 5,
+          "spells": [
+            "srd/spell/flame-strike",
+            "srd/spell/hallow"
+          ]
+        }
+      ],
+      "features": [
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "dark-ones-blessing",
+          "level": 1,
+          "nameEn": "Dark One's Blessing",
+          "nameRu": "Благословение тёмного",
+          "textMd": "Starting at 1st level, when you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Charisma modifier + your warlock level (minimum of 1)."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "dark-ones-own-luck",
+          "level": 6,
+          "nameEn": "Dark One's Own Luck",
+          "nameRu": "Удача тёмного",
+          "textMd": "Starting at 6th level, you can call on your patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add a d10 to your roll. You can do so after seeing the initial roll but before any of the roll's effects occur.\n\nOnce you use this feature, you can't use it again until you finish a short or long rest."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "fiendish-resilience",
+          "level": 10,
+          "nameEn": "Fiendish Resilience",
+          "nameRu": "Адская стойкость",
+          "textMd": "Starting at 10th level, you can choose one damage type when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature. Damage from magical weapons or silver weapons ignores this resistance."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "hurl-through-hell",
+          "level": 14,
+          "nameEn": "Hurl Through Hell",
+          "nameRu": "Бросок сквозь ад",
+          "textMd": "Starting at 14th level, when you hit a creature with an attack, you can use this feature to instantly transport the target through the lower planes. The creature disappears and hurtles through a nightmare landscape.\n\nAt the end of your next turn, the target returns to the space it previously occupied, or the nearest unoccupied space. If the target is not a fiend, it takes 10d10 psychic damage as it reels from its horrific experience.\n\nOnce you use this feature, you can't use it again until you finish a long rest."
+        }
+      ]
+    },
+    "effectsStatus": "text_only",
+    "key": "srd/subclass/fiend",
+    "kind": "subclass",
+    "nameEn": "Fiend",
+    "nameRu": "Исчадие",
+    "slug": "fiend",
+    "sourceBook": "SRD 5.1",
+    "textMd": "You have made a pact with a fiend from the lower planes of existence, a being whose aims are evil, even if you strive against those aims. Such beings desire the corruption or destruction of all things, ultimately including you. Fiends powerful enough to forge a pact include demon lords such as Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that are especially mighty; and ultroloths and other lords of the yugoloths."
+  },
+  {
+    "data": {
+      "classKey": "srd/class/ranger",
+      "features": [
+        {
+          "effects": [
+            {
+              "choose": 1,
+              "id": "option",
+              "labelRu": "Добыча охотника",
+              "options": {
+                "items": [
+                  {
+                    "effects": [],
+                    "labelRu": "Убийца колоссов",
+                    "value": "hunters-prey-colossus-slayer"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Убийца великанов",
+                    "value": "hunters-prey-giant-killer"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Сокрушитель орд",
+                    "value": "hunters-prey-horde-breaker"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "partial",
+          "key": "hunters-prey",
+          "level": 3,
+          "nameEn": "Hunter's Prey",
+          "nameRu": "Добыча охотника",
+          "textMd": "At 3rd level, you gain one of the following features of your choice.\n\nColossus Slayer\n\nGiant Killer\n\nHorde Breaker"
+        },
+        {
+          "effects": [
+            {
+              "choose": 1,
+              "id": "option",
+              "labelRu": "Оборонительная тактика",
+              "options": {
+                "items": [
+                  {
+                    "effects": [],
+                    "labelRu": "Побег от орды",
+                    "value": "defensive-tactics-escape-the-horde"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Защита от мультиатаки",
+                    "value": "defensive-tactics-multiattack-defense"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Стальная воля",
+                    "value": "defensive-tactics-steel-will"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "partial",
+          "key": "defensive-tactics",
+          "level": 7,
+          "nameEn": "Defensive Tactics",
+          "nameRu": "Оборонительная тактика",
+          "textMd": "At 7th level, you gain one of the following features of your choice.\n\nEscape the Horde\n\nMultiattack Defense\n\nSteel Will"
+        },
+        {
+          "effects": [
+            {
+              "choose": 1,
+              "id": "option",
+              "labelRu": "Мультиатака",
+              "options": {
+                "items": [
+                  {
+                    "effects": [],
+                    "labelRu": "Залп",
+                    "value": "multiattack-volley"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Атака вихрем",
+                    "value": "multiattack-whirlwind-attack"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "partial",
+          "key": "multiattack",
+          "level": 11,
+          "nameEn": "Multiattack",
+          "nameRu": "Мультиатака",
+          "textMd": "At 11th level, you gain one of the following features of your choice.\n\nVolley\n\nWhirlwind Attack"
+        },
+        {
+          "effects": [
+            {
+              "choose": 1,
+              "id": "option",
+              "labelRu": "Улучшенная защита охотника",
+              "options": {
+                "items": [
+                  {
+                    "effects": [],
+                    "labelRu": "Увёртливость",
+                    "value": "superior-hunters-defense-evasion"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Стоять против течения",
+                    "value": "superior-hunters-defense-stand-against-the-tide"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Невероятное уклонение",
+                    "value": "superior-hunters-defense-uncanny-dodge"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "partial",
+          "key": "superior-hunters-defense",
+          "level": 15,
+          "nameEn": "Superior Hunter's Defense",
+          "nameRu": "Улучшенная защита охотника",
+          "textMd": "At 15th level, you gain one of the following features of your choice.\n\nEvasion\n\nStand Against the Tide\n\nUncanny Dodge"
+        }
+      ]
+    },
+    "effectsStatus": "partial",
+    "key": "srd/subclass/hunter",
+    "kind": "subclass",
+    "nameEn": "Hunter",
+    "nameRu": "Охотник",
+    "slug": "hunter",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Emulating the Hunter archetype means accepting your place as a bulwark between civilization and the terrors of the wilderness. As you walk the Hunter's path, you learn specialized techniques for fighting the threats you face, from rampaging ogres and hordes of orcs to towering giants and terrifying dragons."
+  },
+  {
+    "data": {
+      "classKey": "srd/class/druid",
+      "features": [
+        {
+          "effects": [
+            {
+              "choose": 1,
+              "id": "option",
+              "labelRu": "Круг земли",
+              "options": {
+                "items": [
+                  {
+                    "effects": [],
+                    "labelRu": "Арктика",
+                    "value": "circle-of-the-land-arctic"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Побережье",
+                    "value": "circle-of-the-land-coast"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Пустыня",
+                    "value": "circle-of-the-land-desert"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Лес",
+                    "value": "circle-of-the-land-forest"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Луга",
+                    "value": "circle-of-the-land-grassland"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Горы",
+                    "value": "circle-of-the-land-mountain"
+                  },
+                  {
+                    "effects": [],
+                    "labelRu": "Болото",
+                    "value": "circle-of-the-land-swamp"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "partial",
+          "key": "circle-of-the-land",
+          "level": 2,
+          "nameEn": "Circle of the Land",
+          "nameRu": "Круг земли",
+          "textMd": "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition. These druids meet within sacred circles of trees or standing stones to whisper primal secrets in Druidic. The circle's wisest members preside as the chief priests of communities that hold to the Old Faith and serve as advisors to the rulers of those folk. As a member of this circle, your magic is influenced by the land where you were initiated into the circle's mysterious rites."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "bonus-cantrip",
+          "level": 2,
+          "nameEn": "Bonus Cantrip",
+          "nameRu": "Бонусный заговор",
+          "textMd": "When you choose this circle at 2nd level, you learn one additional druid cantrip of your choice."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "natural-recovery",
+          "level": 2,
+          "nameEn": "Natural Recovery",
+          "nameRu": "Естественное восстановление",
+          "textMd": "Starting at 2nd level, you can regain some of your magical energy by sitting in meditation and communing with nature. During a short rest, you choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your druid level (rounded up), and none of the slots can be 6th level or higher. You can't use this feature again until you finish a long rest.\n\nFor example, when you are a 4th-level druid, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level slot or two 1st-level slots."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "circle-spells-1",
+          "level": 3,
+          "nameEn": "Circle Spells",
+          "nameRu": "Заклинания круга",
+          "textMd": "Your mystical connection to the land infuses you with the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells connected to the land where you became a druid.\n\nChoose that land--arctic, coast, desert, forest, grassland, mountain, or swamp--and consult the associated list of spells.\n\nOnce you gain access to a circle spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "circle-spells-2",
+          "level": 5,
+          "nameEn": "Circle Spells",
+          "nameRu": "Заклинания круга",
+          "textMd": "Your mystical connection to the land infuses you with the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells connected to the land where you became a druid.\n\nChoose that land--arctic, coast, desert, forest, grassland, mountain, or swamp--and consult the associated list of spells.\n\nOnce you gain access to a circle spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "lands-stride",
+          "level": 6,
+          "nameEn": "Land's Stride",
+          "nameRu": "Тропами земли",
+          "textMd": "Starting at 6th level, moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard.\n\nIn addition, you have advantage on saving throws against plants that are magically created or manipulated to impede movement, such those created by the entangle spell."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "circle-spells-3",
+          "level": 7,
+          "nameEn": "Circle Spells",
+          "nameRu": "Заклинания круга",
+          "textMd": "Your mystical connection to the land infuses you with the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells connected to the land where you became a druid.\n\nChoose that land--arctic, coast, desert, forest, grassland, mountain, or swamp--and consult the associated list of spells.\n\nOnce you gain access to a circle spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "circle-spells-4",
+          "level": 9,
+          "nameEn": "Circle Spells",
+          "nameRu": "Заклинания круга",
+          "textMd": "Your mystical connection to the land infuses you with the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells connected to the land where you became a druid.\n\nChoose that land--arctic, coast, desert, forest, grassland, mountain, or swamp--and consult the associated list of spells.\n\nOnce you gain access to a circle spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "natures-ward",
+          "level": 10,
+          "nameEn": "Nature's Ward",
+          "nameRu": "Защита природы",
+          "textMd": "When you reach 10th level, you can't be charmed or frightened by elementals or fey, and you are immune to poison and disease."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "natures-sanctuary",
+          "level": 14,
+          "nameEn": "Nature's Sanctuary",
+          "nameRu": "Святилище природы",
+          "textMd": "When you reach 14th level, creatures of the natural world sense your connection to nature and become hesitant to attack you. When a beast or plant creature attacks you, that creature must make a Wisdom saving throw against your druid spell save DC. On a failed save, the creature must choose a different target, or the attack automatically misses. On a successful save, the creature is immune to this effect for 24 hours. The creature is aware of this effect before it makes its attack against you."
+        }
+      ]
+    },
+    "effectsStatus": "partial",
+    "key": "srd/subclass/land",
+    "kind": "subclass",
+    "nameEn": "Land",
+    "nameRu": "Круг земли",
+    "slug": "land",
+    "sourceBook": "SRD 5.1",
+    "textMd": "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition. These druids meet within sacred circles of trees or standing stones to whisper primal secrets in Druidic. The circle's wisest members preside as the chief priests of communities that hold to the Old Faith and serve as advisors to the rulers of those folk. As a member of this circle, your magic is influenced by the land where you were initiated into the circle's mysterious rites."
+  },
+  {
+    "data": {
+      "alwaysPrepared": [
+        {
+          "classLevel": 1,
+          "spells": [
+            "srd/spell/bless",
+            "srd/spell/cure-wounds"
+          ]
+        },
+        {
+          "classLevel": 3,
+          "spells": [
+            "srd/spell/lesser-restoration",
+            "srd/spell/spiritual-weapon"
+          ]
+        },
+        {
+          "classLevel": 5,
+          "spells": [
+            "srd/spell/beacon-of-hope",
+            "srd/spell/revivify"
+          ]
+        },
+        {
+          "classLevel": 7,
+          "spells": [
+            "srd/spell/death-ward"
+          ]
+        },
+        {
+          "classLevel": 9,
+          "spells": [
+            "srd/spell/mass-cure-wounds",
+            "srd/spell/raise-dead"
+          ]
+        }
+      ],
+      "classKey": "srd/class/cleric",
+      "features": [
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "bonus-proficiency",
+          "level": 1,
+          "nameEn": "Bonus Proficiency",
+          "nameRu": "Бонусное владение",
+          "textMd": "When you choose this domain at 1st level, you gain proficiency with heavy armor."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "disciple-of-life",
+          "level": 1,
+          "nameEn": "Disciple of Life",
+          "nameRu": "Поборник жизни",
+          "textMd": "Also starting at 1st level, your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell's level."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "channel-divinity-preserve-life",
+          "level": 2,
+          "nameEn": "Channel Divinity: Preserve Life",
+          "nameRu": "Божественный канал: Сохранение жизни",
+          "textMd": "Starting at 2nd level, you can use your Channel Divinity to heal the badly injured.\n\nAs an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level.\n\nChoose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "blessed-healer",
+          "level": 6,
+          "nameEn": "Blessed Healer",
+          "nameRu": "Благословенный целитель",
+          "textMd": "Beginning at 6th level, the healing spells you cast on others heal you as well. When you cast a spell of 1st level or higher that restores hit points to a creature other than you, you regain hit points equal to 2 + the spell's level."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "divine-strike",
+          "level": 8,
+          "nameEn": "Divine Strike",
+          "nameRu": "Божественный удар",
+          "textMd": "At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8."
+        }
+      ]
+    },
+    "effectsStatus": "text_only",
+    "key": "srd/subclass/life",
+    "kind": "subclass",
+    "nameEn": "Life",
+    "nameRu": "Домен жизни",
+    "slug": "life",
+    "sourceBook": "SRD 5.1",
+    "textMd": "The Life domain focuses on the vibrant positive energy--one of the fundamental forces of the universe--that sustains all life. The gods of life promote vitality and health through healing the sick and wounded, caring for those in need, and driving away the forces of death and undeath. Almost any non-evil deity can claim influence over this domain, particularly agricultural deities, sun gods, gods of healing or endurance, and gods of home and community."
+  },
+  {
+    "data": {
+      "classKey": "srd/class/bard",
+      "features": [
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "bonus-proficiencies",
+          "level": 3,
+          "nameEn": "Bonus Proficiencies",
+          "nameRu": "Дополнительные владения",
+          "textMd": "When you join the College of Lore at 3rd level, you gain proficiency with three skills of your choice."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "cutting-words",
+          "level": 3,
+          "nameEn": "Cutting Words",
+          "nameRu": "Острое словцо",
+          "textMd": "Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others.\n\nWhen a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature's roll.\n\nYou can choose to use this feature after the creature makes its roll, but before the GM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can't hear you or if it's immune to being charmed."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "additional-magical-secrets",
+          "level": 6,
+          "nameEn": "Additional Magical Secrets",
+          "nameRu": "Дополнительные тайны магии",
+          "textMd": "At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you but don't count against the number of bard spells you know."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "peerless-skill",
+          "level": 14,
+          "nameEn": "Peerless Skill",
+          "nameRu": "Непревзойдённое мастерство",
+          "textMd": "Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the GM tells you whether you succeed or fail."
+        }
+      ]
+    },
+    "effectsStatus": "text_only",
+    "key": "srd/subclass/lore",
+    "kind": "subclass",
+    "nameEn": "Lore",
+    "nameRu": "Коллегия знаний",
+    "slug": "lore",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Bards of the College of Lore know something about most things, collecting bits of knowledge from sources as diverse as scholarly tomes and peasant tales. Whether singing folk ballads in taverns or elaborate compositions in royal courts, these bards use their gifts to hold audiences spellbound. When the applause dies down, the audience members might find themselves questioning everything they held to be true, from their faith in the priesthood of the local temple to their loyalty to the king. The loyalty of these bards lies in the pursuit of beauty and truth, not in fealty to a monarch or following the tenets of a deity. A noble who keeps such a bard as a herald or advisor knows that the bard would rather be honest than politic. The college's members gather in libraries and sometimes in actual colleges, complete with classrooms and dormitories, to share their lore with one another. They also meet at festivals or affairs of state, where they can expose corruption, unravel lies, and poke fun at self-important figures of authority."
+  },
+  {
+    "data": {
+      "classKey": "srd/class/monk",
+      "features": [
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "open-hand-technique",
+          "level": 3,
+          "nameEn": "Open Hand Technique",
+          "nameRu": "Техника открытой ладони",
+          "textMd": "Starting when you choose this tradition at 3rd level, you can manipulate your enemy's ki when you harness your own. Whenever you hit a creature with one of the attacks granted by your Flurry of Blows, you can impose one of the following effects on that target:\n\n- It must succeed on a Dexterity saving throw or be knocked prone.\n\n- It must make a Strength saving throw. If it fails, you can push it up to 15 feet away from you.\n\n- It can't take reactions until the end of your next turn."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "wholeness-of-body",
+          "level": 6,
+          "nameEn": "Wholeness of Body",
+          "nameRu": "Исцеление тела",
+          "textMd": "At 6th level, you gain the ability to heal yourself. As an action, you can regain hit points equal to three times your monk level. You must finish a long rest before you can use this feature again."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "tranquility",
+          "level": 11,
+          "nameEn": "Tranquility",
+          "nameRu": "Умиротворение",
+          "textMd": "Beginning at 11th level, you can enter a special meditation that surrounds you with an aura of peace. At the end of a long rest, you gain the effect of a sanctuary spell that lasts until the start of your next long rest (the spell can end early as normal). The saving throw DC for the spell equals 8 + your Wisdom modifier + your proficiency bonus."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "quivering-palm",
+          "level": 17,
+          "nameEn": "Quivering Palm",
+          "nameRu": "Дрожащая ладонь",
+          "textMd": "At 17th level, you gain the ability to set up lethal vibrations in someone's body. When you hit a creature with an unarmed strike, you can spend 3 ki points to start these imperceptible vibrations, which last for a number of days equal to your monk level. The vibrations are harmless unless you use your action to end them. To do so, you and the target must be on the same plane of existence. When you use this action, the creature must make a Constitution saving throw. If it fails, it is reduced to 0 hit points. If it succeeds, it takes 10d10 necrotic damage.\n\nYou can have only one creature under the effect of this feature at a time. You can choose to end the vibrations harmlessly without using an action."
+        }
+      ]
+    },
+    "effectsStatus": "text_only",
+    "key": "srd/subclass/open-hand",
+    "kind": "subclass",
+    "nameEn": "Open Hand",
+    "nameRu": "Путь открытой ладони",
+    "slug": "open-hand",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Monks of the Way of the Open Hand are the ultimate masters of martial arts combat, whether armed or unarmed. They learn techniques to push and trip their opponents, manipulate ki to heal damage to their bodies, and practice advanced meditation that can protect them from harm."
+  },
+  {
+    "data": {
+      "classKey": "srd/class/rogue",
+      "features": [
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "fast-hands",
+          "level": 3,
+          "nameEn": "Fast Hands",
+          "nameRu": "Быстрые руки",
+          "textMd": "Starting at 3rd level, you can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves' tools to disarm a trap or open a lock, or take the Use an Object action."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "second-story-work",
+          "level": 3,
+          "nameEn": "Second-Story Work",
+          "nameRu": "Работа на втором этаже",
+          "textMd": "When you choose this archetype at 3rd level, you gain the ability to climb faster than normal; climbing no longer costs you extra movement.\n\nIn addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "supreme-sneak",
+          "level": 9,
+          "nameEn": "Supreme Sneak",
+          "nameRu": "Непревзойдённая скрытность",
+          "textMd": "Starting at 9th level, you have advantage on a Dexterity (Stealth) check if you move no more than half your speed on the same turn."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "use-magic-device",
+          "level": 13,
+          "nameEn": "Use Magic Device",
+          "nameRu": "Использование магических устройств",
+          "textMd": "By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "text_only",
+          "key": "thiefs-reflexes",
+          "level": 17,
+          "nameEn": "Thief's Reflexes",
+          "nameRu": "Воровские рефлексы",
+          "textMd": "When you reach 17th level, you have become adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can't use this feature when you are surprised."
+        }
+      ]
+    },
+    "effectsStatus": "text_only",
+    "key": "srd/subclass/thief",
+    "kind": "subclass",
+    "nameEn": "Thief",
+    "nameRu": "Вор",
+    "slug": "thief",
+    "sourceBook": "SRD 5.1",
+    "textMd": "You hone your skills in the larcenous arts. Burglars, bandits, cutpurses, and other criminals typically follow this archetype, but so do rogues who prefer to think of themselves as professional treasure seekers, explorers, delvers, and investigators. In addition to improving your agility and stealth, you learn skills useful for delving into ancient ruins, reading unfamiliar languages, and using magic items you normally couldn't employ."
+  }
+]

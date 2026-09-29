@@ -86,6 +86,8 @@ function weaponLine(p: Pipeline, w: WieldedWeapon): AttackLine {
   for (const b of dmgBonus) notes.push(`Урон: ${b.labelRu} ${b.value >= 0 ? '+' : ''}${b.value}`);
   if (d.versatileDice && !twoHanded) notes.push(`Двумя руками: ${d.versatileDice}`);
 
+  const noDamage = !parseDice(dice);
+  if (noDamage) notes.push('Оружие не наносит урона (особое свойство)');
   return {
     id: `weapon:${w.itemId}`,
     nameRu: w.nameRu,
@@ -94,7 +96,7 @@ function weaponLine(p: Pipeline, w: WieldedWeapon): AttackLine {
     ability,
     proficient,
     toHit: makeVal(hit),
-    damage: [{ dice, bonus, type: d.damage.type }],
+    damage: noDamage ? [] : [{ dice, bonus, type: d.damage.type }],
     reachFt: ranged ? undefined : d.properties.includes('reach') ? 10 : 5,
     rangeFt: d.rangeFt,
     properties: d.properties.map((x) => PROPERTY_LABEL_RU[x] ?? x),

@@ -53,6 +53,7 @@ export function CampaignSettingsForm({ campaignId }: { campaignId: string }) {
   const trpc = useTRPC();
   const qc = useQueryClient();
   const campaign = useQuery(trpc.campaigns.get.queryOptions({ campaignId }));
+  const dbPacks = useQuery(trpc.content.packs.queryOptions());
   const [s, setS] = useState<CampaignSettings | null>(null);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -97,7 +98,8 @@ export function CampaignSettingsForm({ campaignId }: { campaignId: string }) {
   };
 
   const isGm = campaign.data?.role === 'gm' || campaign.data?.role === 'co_gm';
-  const packs = s ? Array.from(new Set([...KNOWN_PACKS, ...s.allowedPacks])) : KNOWN_PACKS;
+  const packNames = new Map((dbPacks.data ?? []).map((p) => [p.key, p.name]));
+  const packs = Array.from(new Set([...KNOWN_PACKS, ...packNames.keys(), ...(s?.allowedPacks ?? [])]));
 
   return (
     <QueryState isLoading={campaign.isLoading} error={campaign.error}>
@@ -129,7 +131,7 @@ export function CampaignSettingsForm({ campaignId }: { campaignId: string }) {
                         set('allowedPacks', v ? [...s.allowedPacks, p] : s.allowedPacks.filter((x) => x !== p))
                       }
                     />
-                    <code>{p}</code>
+                    {packNames.get(p) ?? p} <code className="text-xs text-muted-foreground">{p}</code>
                   </Label>
                 ))}
                 <Field label={S.allowedSources} htmlFor="cs-sources" hint={S.allowedSourcesAll}>

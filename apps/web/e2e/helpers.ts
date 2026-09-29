@@ -37,11 +37,25 @@ export async function trpcMutation(request: APIRequestContext, baseURL: string, 
 }
 
 export async function createSiteInvite(page: Page): Promise<string> {
-  await page.goto('/admin');
-  const before = await page.getByTestId('invite-code').count();
-  await page.getByTestId('create-invite').click();
-  await expect(page.getByTestId('invite-code')).toHaveCount(before + 1);
-  const code = (await page.getByTestId('invite-code').first().textContent())?.trim();
-  if (!code) throw new Error('no invite code');
-  return code;
+  // Создаём через API и берём код из ответа: список на странице может ещё не загрузиться.
+  const origin = new URL(page.url() || 'http://localhost').origin;
+  const res = await page.request.post('/api/trpc/admin.invites.create', {
+    headers: { origin: origin.startsWith('http') ? origin : '', 'content-type': 'application/json' },
+    data: { json: { note: 'e2e', expiresInDays: null } },
+  });
+  expect(res.ok()).toBe(true);
+  const body = (await res.json()) as { result: { data: { json: { code: string } } } };
+  return body.result.data.json.code;
+}
+
+/** Вход под админом; если пользователей ещё нет — регистрация первого (он становится админом). */
+export async function loginAsAdmin(page: Page) {
+  const res = await page.request.get('/api/trpc/auth.bootstrapNeeded');
+  const bootstrap = ((await res.json()) as { result?: { data?: { json?: boolean } } }).result?.data?.json === true;
+  if (bootstrap) {
+    await registerUser(page, { email: 'admin@example.com', username: 'admin', displayName: 'Админ' });
+    await expect(page.getByTestId('user-menu')).toBeVisible();
+    return;
+  }
+  await login(page, 'admin');
 }

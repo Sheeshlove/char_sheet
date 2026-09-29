@@ -1,0 +1,980 @@
+[
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 1000,
+      "damage": {
+        "dice": "1d8",
+        "type": "slashing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "versatile"
+      ],
+      "range": "melee",
+      "versatileDice": "1d10",
+      "weightLb": 4
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/battleaxe",
+    "kind": "weapon",
+    "nameEn": "Battleaxe",
+    "nameRu": "Боевой топор",
+    "slug": "battleaxe",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 1000,
+      "damage": {
+        "dice": "1",
+        "type": "piercing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "ammunition",
+        "loading"
+      ],
+      "range": "ranged",
+      "rangeFt": {
+        "long": 100,
+        "normal": 25
+      },
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/blowgun",
+    "kind": "weapon",
+    "nameEn": "Blowgun",
+    "nameRu": "Духовая трубка",
+    "slug": "blowgun",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "simple",
+      "costCp": 10,
+      "damage": {
+        "dice": "1d4",
+        "type": "bludgeoning"
+      },
+      "monkWeapon": true,
+      "properties": [
+        "light"
+      ],
+      "range": "melee",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/club",
+    "kind": "weapon",
+    "nameEn": "Club",
+    "nameRu": "Дубинка",
+    "slug": "club",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 7500,
+      "damage": {
+        "dice": "1d6",
+        "type": "piercing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "ammunition",
+        "light",
+        "loading"
+      ],
+      "range": "ranged",
+      "rangeFt": {
+        "long": 120,
+        "normal": 30
+      },
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/crossbow-hand",
+    "kind": "weapon",
+    "nameEn": "Crossbow, hand",
+    "nameRu": "Ручной арбалет",
+    "slug": "crossbow-hand",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 5000,
+      "damage": {
+        "dice": "1d10",
+        "type": "piercing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "ammunition",
+        "heavy",
+        "loading",
+        "two_handed"
+      ],
+      "range": "ranged",
+      "rangeFt": {
+        "long": 400,
+        "normal": 100
+      },
+      "weightLb": 18
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/crossbow-heavy",
+    "kind": "weapon",
+    "nameEn": "Crossbow, heavy",
+    "nameRu": "Тяжёлый арбалет",
+    "slug": "crossbow-heavy",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "simple",
+      "costCp": 2500,
+      "damage": {
+        "dice": "1d8",
+        "type": "piercing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "ammunition",
+        "loading",
+        "two_handed"
+      ],
+      "range": "ranged",
+      "rangeFt": {
+        "long": 320,
+        "normal": 80
+      },
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/crossbow-light",
+    "kind": "weapon",
+    "nameEn": "Crossbow, light",
+    "nameRu": "Лёгкий арбалет",
+    "slug": "crossbow-light",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "simple",
+      "costCp": 200,
+      "damage": {
+        "dice": "1d4",
+        "type": "piercing"
+      },
+      "monkWeapon": true,
+      "properties": [
+        "finesse",
+        "light",
+        "thrown"
+      ],
+      "range": "melee",
+      "rangeFt": {
+        "long": 60,
+        "normal": 20
+      },
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/dagger",
+    "kind": "weapon",
+    "nameEn": "Dagger",
+    "nameRu": "Кинжал",
+    "slug": "dagger",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "simple",
+      "costCp": 5,
+      "damage": {
+        "dice": "1d4",
+        "type": "piercing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "finesse",
+        "thrown"
+      ],
+      "range": "ranged",
+      "rangeFt": {
+        "long": 60,
+        "normal": 20
+      },
+      "weightLb": 0.25
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/dart",
+    "kind": "weapon",
+    "nameEn": "Dart",
+    "nameRu": "Дротик",
+    "slug": "dart",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 1000,
+      "damage": {
+        "dice": "1d8",
+        "type": "bludgeoning"
+      },
+      "monkWeapon": false,
+      "properties": [],
+      "range": "melee",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/flail",
+    "kind": "weapon",
+    "nameEn": "Flail",
+    "nameRu": "Цеп",
+    "slug": "flail",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 2000,
+      "damage": {
+        "dice": "1d10",
+        "type": "slashing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "heavy",
+        "reach",
+        "two_handed"
+      ],
+      "range": "melee",
+      "weightLb": 6
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/glaive",
+    "kind": "weapon",
+    "nameEn": "Glaive",
+    "nameRu": "Глефа",
+    "slug": "glaive",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 3000,
+      "damage": {
+        "dice": "1d12",
+        "type": "slashing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "heavy",
+        "two_handed"
+      ],
+      "range": "melee",
+      "weightLb": 7
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/greataxe",
+    "kind": "weapon",
+    "nameEn": "Greataxe",
+    "nameRu": "Секира",
+    "slug": "greataxe",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "simple",
+      "costCp": 20,
+      "damage": {
+        "dice": "1d8",
+        "type": "bludgeoning"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "two_handed"
+      ],
+      "range": "melee",
+      "weightLb": 10
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/greatclub",
+    "kind": "weapon",
+    "nameEn": "Greatclub",
+    "nameRu": "Палица",
+    "slug": "greatclub",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 5000,
+      "damage": {
+        "dice": "2d6",
+        "type": "slashing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "heavy",
+        "two_handed"
+      ],
+      "range": "melee",
+      "weightLb": 6
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/greatsword",
+    "kind": "weapon",
+    "nameEn": "Greatsword",
+    "nameRu": "Двуручный меч",
+    "slug": "greatsword",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 2000,
+      "damage": {
+        "dice": "1d10",
+        "type": "slashing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "heavy",
+        "reach",
+        "two_handed"
+      ],
+      "range": "melee",
+      "weightLb": 6
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/halberd",
+    "kind": "weapon",
+    "nameEn": "Halberd",
+    "nameRu": "Алебарда",
+    "slug": "halberd",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "simple",
+      "costCp": 500,
+      "damage": {
+        "dice": "1d6",
+        "type": "slashing"
+      },
+      "monkWeapon": true,
+      "properties": [
+        "light",
+        "thrown"
+      ],
+      "range": "melee",
+      "rangeFt": {
+        "long": 60,
+        "normal": 20
+      },
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/handaxe",
+    "kind": "weapon",
+    "nameEn": "Handaxe",
+    "nameRu": "Ручной топор",
+    "slug": "handaxe",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "simple",
+      "costCp": 50,
+      "damage": {
+        "dice": "1d6",
+        "type": "piercing"
+      },
+      "monkWeapon": true,
+      "properties": [
+        "thrown"
+      ],
+      "range": "melee",
+      "rangeFt": {
+        "long": 120,
+        "normal": 30
+      },
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/javelin",
+    "kind": "weapon",
+    "nameEn": "Javelin",
+    "nameRu": "Метательное копьё",
+    "slug": "javelin",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 1000,
+      "damage": {
+        "dice": "1d12",
+        "type": "piercing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "reach",
+        "special"
+      ],
+      "range": "melee",
+      "weightLb": 6
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/lance",
+    "kind": "weapon",
+    "nameEn": "Lance",
+    "nameRu": "Длинное копьё",
+    "slug": "lance",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "simple",
+      "costCp": 200,
+      "damage": {
+        "dice": "1d4",
+        "type": "bludgeoning"
+      },
+      "monkWeapon": true,
+      "properties": [
+        "light",
+        "thrown"
+      ],
+      "range": "melee",
+      "rangeFt": {
+        "long": 60,
+        "normal": 20
+      },
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/light-hammer",
+    "kind": "weapon",
+    "nameEn": "Light hammer",
+    "nameRu": "Лёгкий молот",
+    "slug": "light-hammer",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 5000,
+      "damage": {
+        "dice": "1d8",
+        "type": "piercing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "ammunition",
+        "heavy",
+        "two_handed"
+      ],
+      "range": "ranged",
+      "rangeFt": {
+        "long": 600,
+        "normal": 150
+      },
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/longbow",
+    "kind": "weapon",
+    "nameEn": "Longbow",
+    "nameRu": "Длинный лук",
+    "slug": "longbow",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 1500,
+      "damage": {
+        "dice": "1d8",
+        "type": "slashing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "versatile"
+      ],
+      "range": "melee",
+      "versatileDice": "1d10",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/longsword",
+    "kind": "weapon",
+    "nameEn": "Longsword",
+    "nameRu": "Длинный меч",
+    "slug": "longsword",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "simple",
+      "costCp": 500,
+      "damage": {
+        "dice": "1d6",
+        "type": "bludgeoning"
+      },
+      "monkWeapon": true,
+      "properties": [],
+      "range": "melee",
+      "weightLb": 4
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/mace",
+    "kind": "weapon",
+    "nameEn": "Mace",
+    "nameRu": "Булава",
+    "slug": "mace",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 1000,
+      "damage": {
+        "dice": "2d6",
+        "type": "bludgeoning"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "heavy",
+        "two_handed"
+      ],
+      "range": "melee",
+      "weightLb": 10
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/maul",
+    "kind": "weapon",
+    "nameEn": "Maul",
+    "nameRu": "Молот",
+    "slug": "maul",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 1500,
+      "damage": {
+        "dice": "1d8",
+        "type": "piercing"
+      },
+      "monkWeapon": false,
+      "properties": [],
+      "range": "melee",
+      "weightLb": 4
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/morningstar",
+    "kind": "weapon",
+    "nameEn": "Morningstar",
+    "nameRu": "Моргенштерн",
+    "slug": "morningstar",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 100,
+      "damage": {
+        "dice": "—",
+        "type": "bludgeoning"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "thrown",
+        "special"
+      ],
+      "range": "ranged",
+      "rangeFt": {
+        "long": 15,
+        "normal": 5
+      },
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/net",
+    "kind": "weapon",
+    "nameEn": "Net",
+    "nameRu": "Сеть",
+    "slug": "net",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 500,
+      "damage": {
+        "dice": "1d10",
+        "type": "piercing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "heavy",
+        "reach",
+        "two_handed"
+      ],
+      "range": "melee",
+      "weightLb": 18
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/pike",
+    "kind": "weapon",
+    "nameEn": "Pike",
+    "nameRu": "Пика",
+    "slug": "pike",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "simple",
+      "costCp": 20,
+      "damage": {
+        "dice": "1d6",
+        "type": "bludgeoning"
+      },
+      "monkWeapon": true,
+      "properties": [
+        "versatile"
+      ],
+      "range": "melee",
+      "versatileDice": "1d8",
+      "weightLb": 4
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/quarterstaff",
+    "kind": "weapon",
+    "nameEn": "Quarterstaff",
+    "nameRu": "Боевой посох",
+    "slug": "quarterstaff",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 2500,
+      "damage": {
+        "dice": "1d8",
+        "type": "piercing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "finesse"
+      ],
+      "range": "melee",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/rapier",
+    "kind": "weapon",
+    "nameEn": "Rapier",
+    "nameRu": "Рапира",
+    "slug": "rapier",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 2500,
+      "damage": {
+        "dice": "1d6",
+        "type": "slashing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "finesse",
+        "light"
+      ],
+      "range": "melee",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/scimitar",
+    "kind": "weapon",
+    "nameEn": "Scimitar",
+    "nameRu": "Скимитар",
+    "slug": "scimitar",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "simple",
+      "costCp": 2500,
+      "damage": {
+        "dice": "1d6",
+        "type": "piercing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "ammunition",
+        "two_handed"
+      ],
+      "range": "ranged",
+      "rangeFt": {
+        "long": 320,
+        "normal": 80
+      },
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/shortbow",
+    "kind": "weapon",
+    "nameEn": "Shortbow",
+    "nameRu": "Короткий лук",
+    "slug": "shortbow",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 1000,
+      "damage": {
+        "dice": "1d6",
+        "type": "piercing"
+      },
+      "monkWeapon": true,
+      "properties": [
+        "finesse",
+        "light"
+      ],
+      "range": "melee",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/shortsword",
+    "kind": "weapon",
+    "nameEn": "Shortsword",
+    "nameRu": "Короткий меч",
+    "slug": "shortsword",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "simple",
+      "costCp": 100,
+      "damage": {
+        "dice": "1d4",
+        "type": "slashing"
+      },
+      "monkWeapon": true,
+      "properties": [
+        "light"
+      ],
+      "range": "melee",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/sickle",
+    "kind": "weapon",
+    "nameEn": "Sickle",
+    "nameRu": "Серп",
+    "slug": "sickle",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "simple",
+      "costCp": 10,
+      "damage": {
+        "dice": "1d4",
+        "type": "bludgeoning"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "ammunition"
+      ],
+      "range": "ranged",
+      "rangeFt": {
+        "long": 120,
+        "normal": 30
+      },
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/sling",
+    "kind": "weapon",
+    "nameEn": "Sling",
+    "nameRu": "Праща",
+    "slug": "sling",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "simple",
+      "costCp": 100,
+      "damage": {
+        "dice": "1d6",
+        "type": "piercing"
+      },
+      "monkWeapon": true,
+      "properties": [
+        "thrown",
+        "versatile"
+      ],
+      "range": "melee",
+      "rangeFt": {
+        "long": 60,
+        "normal": 20
+      },
+      "versatileDice": "1d8",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/spear",
+    "kind": "weapon",
+    "nameEn": "Spear",
+    "nameRu": "Копьё",
+    "slug": "spear",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 500,
+      "damage": {
+        "dice": "1d6",
+        "type": "piercing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "thrown",
+        "versatile"
+      ],
+      "range": "melee",
+      "rangeFt": {
+        "long": 60,
+        "normal": 20
+      },
+      "versatileDice": "1d8",
+      "weightLb": 4
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/trident",
+    "kind": "weapon",
+    "nameEn": "Trident",
+    "nameRu": "Трезубец",
+    "slug": "trident",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 500,
+      "damage": {
+        "dice": "1d8",
+        "type": "piercing"
+      },
+      "monkWeapon": false,
+      "properties": [],
+      "range": "melee",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/war-pick",
+    "kind": "weapon",
+    "nameEn": "War pick",
+    "nameRu": "Боевая кирка",
+    "slug": "war-pick",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 1500,
+      "damage": {
+        "dice": "1d8",
+        "type": "bludgeoning"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "versatile"
+      ],
+      "range": "melee",
+      "versatileDice": "1d10",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/warhammer",
+    "kind": "weapon",
+    "nameEn": "Warhammer",
+    "nameRu": "Боевой молот",
+    "slug": "warhammer",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "category": "martial",
+      "costCp": 200,
+      "damage": {
+        "dice": "1d4",
+        "type": "slashing"
+      },
+      "monkWeapon": false,
+      "properties": [
+        "finesse",
+        "reach"
+      ],
+      "range": "melee",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/weapon/whip",
+    "kind": "weapon",
+    "nameEn": "Whip",
+    "nameRu": "Кнут",
+    "slug": "whip",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  }
+]

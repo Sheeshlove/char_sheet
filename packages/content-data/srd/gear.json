@@ -1,0 +1,2629 @@
+[
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "gear",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/abacus",
+    "kind": "gear",
+    "nameEn": "Abacus",
+    "nameRu": "Счёты",
+    "slug": "abacus",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 2500,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/acid-vial",
+    "kind": "gear",
+    "nameEn": "Acid (vial)",
+    "nameRu": "Кислота (флакон)",
+    "slug": "acid-vial",
+    "sourceBook": "SRD 5.1",
+    "textMd": "As an action, you can splash the contents of this vial onto a creature within 5 feet of you or throw the vial up to 20 feet, shattering it on impact. In either case, make a ranged attack against a creature or object, treating the acid as an improvised weapon.\n\nOn a hit, the target takes 2d6 acid damage."
+  },
+  {
+    "data": {
+      "costCp": 5000,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/alchemists-fire-flask",
+    "kind": "gear",
+    "nameEn": "Alchemist's fire (flask)",
+    "nameRu": "Алхимический огонь (флакон)",
+    "slug": "alchemists-fire-flask",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This sticky, adhesive fluid ignites when exposed to air.\n\nAs an action, you can throw this flask up to 20 feet, shattering it on impact. Make a ranged attack against a creature or object, treating the alchemist's fire as an improvised weapon.\n\nOn a hit, the target takes 1d4 fire damage at the start of each of its turns. A creature can end this damage by using its action to make a DC 10 Dexterity check to extinguish the flames."
+  },
+  {
+    "data": {
+      "costCp": 0,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/alms-box",
+    "kind": "gear",
+    "nameEn": "Alms box",
+    "nameRu": "Ящик для пожертвований",
+    "slug": "alms-box",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A small box for alms, typically found in a priest's pack."
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "focus",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/amulet",
+    "kind": "gear",
+    "nameEn": "Amulet",
+    "nameRu": "Амулет",
+    "slug": "amulet",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A holy symbol is a representation of a god or pantheon. It might be an amulet depicting a symbol representing a deity, the same symbol carefully engraved or inlaid as an emblem on a shield, or a tiny box holding a fragment of a sacred relic.\n\nAppendix B lists the symbols commonly associated with many gods in the multiverse. A cleric or paladin can use a holy symbol as a spellcasting focus. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield."
+  },
+  {
+    "data": {
+      "costCp": 5,
+      "kind": "gear",
+      "weightLb": 10
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/animal-feed-1-day",
+    "kind": "gear",
+    "nameEn": "Animal Feed (1 day)",
+    "nameRu": "Корм (1 день)",
+    "slug": "animal-feed-1-day",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 5000,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/antitoxin-vial",
+    "kind": "gear",
+    "nameEn": "Antitoxin (vial)",
+    "nameRu": "Противоядие (флакон)",
+    "slug": "antitoxin-vial",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A creature that drinks this vial of liquid gains advantage on saving throws against poison for 1 hour. It confers no benefit to undead or constructs."
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "ammunition",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/arrow",
+    "kind": "gear",
+    "nameEn": "Arrow",
+    "nameRu": "Стрелы (20)",
+    "slug": "arrow",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "gear",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/backpack",
+    "kind": "gear",
+    "nameEn": "Backpack",
+    "nameRu": "Рюкзак",
+    "slug": "backpack",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "gear",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/ball-bearings-bag-of-1000",
+    "kind": "gear",
+    "nameEn": "Ball bearings (bag of 1,000)",
+    "nameRu": "Металлические шарики (сумка с 1 000 штук)",
+    "slug": "ball-bearings-bag-of-1000",
+    "sourceBook": "SRD 5.1",
+    "textMd": "As an action, you can spill these tiny metal balls from their pouch to cover a level, square area that is 10 feet on a side.\n\nA creature moving across the covered area must succeed on a DC 10 Dexterity saving throw or fall prone.\n\nA creature moving through the area at half speed doesn't need to make the save."
+  },
+  {
+    "data": {
+      "costCp": 160000,
+      "kind": "gear",
+      "weightLb": 40
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/barding-breastplate",
+    "kind": "gear",
+    "nameEn": "Barding: Breastplate",
+    "nameRu": "Барда: кираса",
+    "slug": "barding-breastplate",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Barding is armor designed to protect an animal's head, neck, chest, and body. Any type of armor shown on the Armor table can be purchased as barding. The cost is four times the equivalent armor made for humanoids, and it weighs twice as much."
+  },
+  {
+    "data": {
+      "costCp": 30000,
+      "kind": "gear",
+      "weightLb": 110
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/barding-chain-mail",
+    "kind": "gear",
+    "nameEn": "Barding: Chain mail",
+    "nameRu": "Барда: кольчуга",
+    "slug": "barding-chain-mail",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Barding is armor designed to protect an animal's head, neck, chest, and body. Any type of armor shown on the Armor table can be purchased as barding. The cost is four times the equivalent armor made for humanoids, and it weighs twice as much."
+  },
+  {
+    "data": {
+      "costCp": 20000,
+      "kind": "gear",
+      "weightLb": 40
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/barding-chain-shirt",
+    "kind": "gear",
+    "nameEn": "Barding: Chain shirt",
+    "nameRu": "Барда: кольчужная рубаха",
+    "slug": "barding-chain-shirt",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Barding is armor designed to protect an animal's head, neck, chest, and body. Any type of armor shown on the Armor table can be purchased as barding. The cost is four times the equivalent armor made for humanoids, and it weighs twice as much."
+  },
+  {
+    "data": {
+      "costCp": 300000,
+      "kind": "gear",
+      "weightLb": 80
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/barding-half-plate",
+    "kind": "gear",
+    "nameEn": "Barding: Half plate",
+    "nameRu": "Барда: полулаты",
+    "slug": "barding-half-plate",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Barding is armor designed to protect an animal's head, neck, chest, and body. Any type of armor shown on the Armor table can be purchased as barding. The cost is four times the equivalent armor made for humanoids, and it weighs twice as much."
+  },
+  {
+    "data": {
+      "costCp": 4000,
+      "kind": "gear",
+      "weightLb": 24
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/barding-hide",
+    "kind": "gear",
+    "nameEn": "Barding: Hide",
+    "nameRu": "Барда: шкурный доспех",
+    "slug": "barding-hide",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Barding is armor designed to protect an animal's head, neck, chest, and body. Any type of armor shown on the Armor table can be purchased as barding. The cost is four times the equivalent armor made for humanoids, and it weighs twice as much."
+  },
+  {
+    "data": {
+      "costCp": 4000,
+      "kind": "gear",
+      "weightLb": 20
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/barding-leather",
+    "kind": "gear",
+    "nameEn": "Barding: Leather",
+    "nameRu": "Барда: кожаный доспех",
+    "slug": "barding-leather",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Barding is armor designed to protect an animal's head, neck, chest, and body. Any type of armor shown on the Armor table can be purchased as barding. The cost is four times the equivalent armor made for humanoids, and it weighs twice as much."
+  },
+  {
+    "data": {
+      "costCp": 2000,
+      "kind": "gear",
+      "weightLb": 16
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/barding-padded",
+    "kind": "gear",
+    "nameEn": "Barding: Padded",
+    "nameRu": "Барда: стёганый доспех",
+    "slug": "barding-padded",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Barding is armor designed to protect an animal's head, neck, chest, and body. Any type of armor shown on the Armor table can be purchased as barding. The cost is four times the equivalent armor made for humanoids, and it weighs twice as much."
+  },
+  {
+    "data": {
+      "costCp": 600000,
+      "kind": "gear",
+      "weightLb": 130
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/barding-plate",
+    "kind": "gear",
+    "nameEn": "Barding: Plate",
+    "nameRu": "Барда: латы",
+    "slug": "barding-plate",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Barding is armor designed to protect an animal's head, neck, chest, and body. Any type of armor shown on the Armor table can be purchased as barding. The cost is four times the equivalent armor made for humanoids, and it weighs twice as much."
+  },
+  {
+    "data": {
+      "costCp": 1200,
+      "kind": "gear",
+      "weightLb": 80
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/barding-ring-mail",
+    "kind": "gear",
+    "nameEn": "Barding: Ring mail",
+    "nameRu": "Барда: колечный доспех",
+    "slug": "barding-ring-mail",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Barding is armor designed to protect an animal's head, neck, chest, and body. Any type of armor shown on the Armor table can be purchased as barding. The cost is four times the equivalent armor made for humanoids, and it weighs twice as much."
+  },
+  {
+    "data": {
+      "costCp": 20000,
+      "kind": "gear",
+      "weightLb": 90
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/barding-scale-mail",
+    "kind": "gear",
+    "nameEn": "Barding: Scale mail",
+    "nameRu": "Барда: чешуйчатый доспех",
+    "slug": "barding-scale-mail",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Barding is armor designed to protect an animal's head, neck, chest, and body. Any type of armor shown on the Armor table can be purchased as barding. The cost is four times the equivalent armor made for humanoids, and it weighs twice as much."
+  },
+  {
+    "data": {
+      "costCp": 80000,
+      "kind": "gear",
+      "weightLb": 120
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/barding-splint",
+    "kind": "gear",
+    "nameEn": "Barding: Splint",
+    "nameRu": "Барда: наборный доспех",
+    "slug": "barding-splint",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Barding is armor designed to protect an animal's head, neck, chest, and body. Any type of armor shown on the Armor table can be purchased as barding. The cost is four times the equivalent armor made for humanoids, and it weighs twice as much."
+  },
+  {
+    "data": {
+      "costCp": 18000,
+      "kind": "gear",
+      "weightLb": 26
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/barding-studded-leather",
+    "kind": "gear",
+    "nameEn": "Barding: Studded Leather",
+    "nameRu": "Барда: проклёпанный кожаный доспех",
+    "slug": "barding-studded-leather",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Barding is armor designed to protect an animal's head, neck, chest, and body. Any type of armor shown on the Armor table can be purchased as barding. The cost is four times the equivalent armor made for humanoids, and it weighs twice as much."
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "gear",
+      "weightLb": 70
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/barrel",
+    "kind": "gear",
+    "nameEn": "Barrel",
+    "nameRu": "Бочка",
+    "slug": "barrel",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 40,
+      "kind": "gear",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/basket",
+    "kind": "gear",
+    "nameEn": "Basket",
+    "nameRu": "Корзина",
+    "slug": "basket",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "gear",
+      "weightLb": 7
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/bedroll",
+    "kind": "gear",
+    "nameEn": "Bedroll",
+    "nameRu": "Спальник",
+    "slug": "bedroll",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/bell",
+    "kind": "gear",
+    "nameEn": "Bell",
+    "nameRu": "Колокольчик",
+    "slug": "bell",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/bit-and-bridle",
+    "kind": "gear",
+    "nameEn": "Bit and bridle",
+    "nameRu": "Удила и уздечка",
+    "slug": "bit-and-bridle",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 50,
+      "kind": "gear",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/blanket",
+    "kind": "gear",
+    "nameEn": "Blanket",
+    "nameRu": "Одеяло",
+    "slug": "blanket",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "gear",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/block-and-tackle",
+    "kind": "gear",
+    "nameEn": "Block and tackle",
+    "nameRu": "Блок и лебёдка",
+    "slug": "block-and-tackle",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A set of pulleys with a cable threaded through them and a hook to attach to objects, a block and tackle allows you to hoist up to four times the weight you can normally lift."
+  },
+  {
+    "data": {
+      "costCp": 0,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/block-of-incense",
+    "kind": "gear",
+    "nameEn": "Block of incense",
+    "nameRu": "Брикет благовоний",
+    "slug": "block-of-incense",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A block of incense, typically found in a priest's pack."
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "ammunition",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/blowgun-needle",
+    "kind": "gear",
+    "nameEn": "Blowgun needle",
+    "nameRu": "Иглы для духовой трубки (50)",
+    "slug": "blowgun-needle",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 2500,
+      "kind": "gear",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/book",
+    "kind": "gear",
+    "nameEn": "Book",
+    "nameRu": "Книга",
+    "slug": "book",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A book might contain poetry, historical accounts, information pertaining to a particular field of lore, diagrams and notes on gnomish contraptions, or just about anything else that can be represented using text or pictures. A book of spells is a spellbook (described later in this section)."
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "gear",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/bottle-glass",
+    "kind": "gear",
+    "nameEn": "Bottle, glass",
+    "nameRu": "Бутылка, стеклянная",
+    "slug": "bottle-glass",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 5,
+      "kind": "gear",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/bucket",
+    "kind": "gear",
+    "nameEn": "Bucket",
+    "nameRu": "Ведро",
+    "slug": "bucket",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "contents": [
+        {
+          "key": "srd/gear/backpack",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/ball-bearings-bag-of-1000",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/string-10-feet",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/bell",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/candle",
+          "qty": 5
+        },
+        {
+          "key": "srd/gear/crowbar",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/hammer",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/piton",
+          "qty": 10
+        },
+        {
+          "key": "srd/gear/lantern-hooded",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/oil-flask",
+          "qty": 2
+        },
+        {
+          "key": "srd/gear/rations-1-day",
+          "qty": 5
+        },
+        {
+          "key": "srd/gear/tinderbox",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/waterskin",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/rope-hempen-50-feet",
+          "qty": 1
+        }
+      ],
+      "costCp": 1600,
+      "kind": "pack",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/burglars-pack",
+    "kind": "gear",
+    "nameEn": "Burglar's Pack",
+    "nameRu": "Набор взломщика",
+    "slug": "burglars-pack",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 5,
+      "kind": "gear",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/caltrops",
+    "kind": "gear",
+    "nameEn": "Caltrops",
+    "nameRu": "Калтропы (сумка с 20 штуками)",
+    "slug": "caltrops",
+    "sourceBook": "SRD 5.1",
+    "textMd": "As an action, you can spread a bag of caltrops to cover a square area that is 5 feet on a side.\n\nAny creature that enters the area must succeed on a DC 15 Dexterity saving throw or stop moving this turn and take 1 piercing damage.\n\nTaking this damage reduces the creature's walking speed by 10 feet until the creature regains at least 1 hit point.\n\nA creature moving through the area at half speed doesn't need to make the save."
+  },
+  {
+    "data": {
+      "capacityLb": 480,
+      "costCp": 5000,
+      "kind": "mount",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/camel",
+    "kind": "gear",
+    "nameEn": "Camel",
+    "nameRu": "Верблюд",
+    "slug": "camel",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 1,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/candle",
+    "kind": "gear",
+    "nameEn": "Candle",
+    "nameRu": "Свеча",
+    "slug": "candle",
+    "sourceBook": "SRD 5.1",
+    "textMd": "For 1 hour, a candle sheds bright light in a 5-foot radius and dim light for an additional 5 feet."
+  },
+  {
+    "data": {
+      "costCp": 10000,
+      "kind": "gear",
+      "weightLb": 600
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/carriage",
+    "kind": "gear",
+    "nameEn": "Carriage",
+    "nameRu": "Карета",
+    "slug": "carriage",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 1500,
+      "kind": "gear",
+      "weightLb": 200
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/cart",
+    "kind": "gear",
+    "nameEn": "Cart",
+    "nameRu": "Телега",
+    "slug": "cart",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/case-crossbow-bolt",
+    "kind": "gear",
+    "nameEn": "Case, crossbow bolt",
+    "nameRu": "Футляр для арбалетных болтов",
+    "slug": "case-crossbow-bolt",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This wooden case can hold up to twenty crossbow bolts."
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/case-map-or-scroll",
+    "kind": "gear",
+    "nameEn": "Case, map or scroll",
+    "nameRu": "Футляр для карт и свитков",
+    "slug": "case-map-or-scroll",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This cylindrical leather case can hold up to ten rolled-up sheets of paper or five rolled-up sheets of parchment."
+  },
+  {
+    "data": {
+      "costCp": 0,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/censer",
+    "kind": "gear",
+    "nameEn": "Censer",
+    "nameRu": "Кадило",
+    "slug": "censer",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A censer, typically found in a priest's pack."
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "gear",
+      "weightLb": 10
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/chain-10-feet",
+    "kind": "gear",
+    "nameEn": "Chain (10 feet)",
+    "nameRu": "Цепь (10 футов)",
+    "slug": "chain-10-feet",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A chain has 10 hit points. It can be burst with a successful DC 20 Strength check."
+  },
+  {
+    "data": {
+      "costCp": 1,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/chalk-1-piece",
+    "kind": "gear",
+    "nameEn": "Chalk (1 piece)",
+    "nameRu": "Мел (1 кусочек)",
+    "slug": "chalk-1-piece",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 25000,
+      "kind": "gear",
+      "weightLb": 100
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/chariot",
+    "kind": "gear",
+    "nameEn": "Chariot",
+    "nameRu": "Колесница",
+    "slug": "chariot",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "gear",
+      "weightLb": 25
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/chest",
+    "kind": "gear",
+    "nameEn": "Chest",
+    "nameRu": "Сундук",
+    "slug": "chest",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 2500,
+      "kind": "gear",
+      "weightLb": 12
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/climbers-kit",
+    "kind": "gear",
+    "nameEn": "Climber's Kit",
+    "nameRu": "Комплект для лазания",
+    "slug": "climbers-kit",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A climber's kit includes special pitons, boot tips, gloves, and a harness. You can use the climber's kit as an action to anchor yourself; when you do, you can't fall more than 25 feet from the point where you anchored yourself, and you can't climb more than 25 feet away from that point without undoing the anchor."
+  },
+  {
+    "data": {
+      "costCp": 50,
+      "kind": "gear",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/clothes-common",
+    "kind": "gear",
+    "nameEn": "Clothes, common",
+    "nameRu": "Одежда, обычная",
+    "slug": "clothes-common",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "gear",
+      "weightLb": 4
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/clothes-costume",
+    "kind": "gear",
+    "nameEn": "Clothes, costume",
+    "nameRu": "Одежда, костюм",
+    "slug": "clothes-costume",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 1500,
+      "kind": "gear",
+      "weightLb": 6
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/clothes-fine",
+    "kind": "gear",
+    "nameEn": "Clothes, fine",
+    "nameRu": "Одежда, отличная",
+    "slug": "clothes-fine",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "gear",
+      "weightLb": 4
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/clothes-travelers",
+    "kind": "gear",
+    "nameEn": "Clothes, traveler's",
+    "nameRu": "Одежда, дорожная",
+    "slug": "clothes-travelers",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 2500,
+      "kind": "gear",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/component-pouch",
+    "kind": "gear",
+    "nameEn": "Component pouch",
+    "nameRu": "Мешочек с компонентами",
+    "slug": "component-pouch",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A component pouch is a small, watertight leather belt pouch that has compartments to hold all the material components and other special items you need to cast your spells, except for those components that have a specific cost (as indicated in a spell's description)."
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "ammunition",
+      "weightLb": 1.5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/crossbow-bolt",
+    "kind": "gear",
+    "nameEn": "Crossbow bolt",
+    "nameRu": "Арбалетные болты (20)",
+    "slug": "crossbow-bolt",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "gear",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/crowbar",
+    "kind": "gear",
+    "nameEn": "Crowbar",
+    "nameRu": "Ломик",
+    "slug": "crowbar",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Using a crowbar grants advantage to Strength checks where the crowbar's leverage can be applied."
+  },
+  {
+    "data": {
+      "costCp": 1000,
+      "kind": "focus",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/crystal",
+    "kind": "gear",
+    "nameEn": "Crystal",
+    "nameRu": "Кристалл",
+    "slug": "crystal",
+    "sourceBook": "SRD 5.1",
+    "textMd": "An arcane focus is a special item--an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item--designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus."
+  },
+  {
+    "data": {
+      "contents": [
+        {
+          "key": "srd/gear/chest",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/case-map-or-scroll",
+          "qty": 2
+        },
+        {
+          "key": "srd/gear/clothes-fine",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/ink-1-ounce-bottle",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/ink-pen",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/lamp",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/oil-flask",
+          "qty": 2
+        },
+        {
+          "key": "srd/gear/paper-one-sheet",
+          "qty": 5
+        },
+        {
+          "key": "srd/gear/perfume-vial",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/sealing-wax",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/soap",
+          "qty": 1
+        }
+      ],
+      "costCp": 3900,
+      "kind": "pack",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/diplomats-pack",
+    "kind": "gear",
+    "nameEn": "Diplomat's Pack",
+    "nameRu": "Набор дипломата",
+    "slug": "diplomats-pack",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 2500,
+      "kind": "gear",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/disguise-kit",
+    "kind": "gear",
+    "nameEn": "Disguise Kit",
+    "nameRu": "Набор для грима",
+    "slug": "disguise-kit",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This pouch of cosmetics, hair dye, and small props lets you create disguises that change your physical appearance. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a visual disguise."
+  },
+  {
+    "data": {
+      "capacityLb": 420,
+      "costCp": 800,
+      "kind": "mount",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/donkey",
+    "kind": "gear",
+    "nameEn": "Donkey",
+    "nameRu": "Осёл",
+    "slug": "donkey",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "contents": [
+        {
+          "key": "srd/gear/backpack",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/crowbar",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/hammer",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/piton",
+          "qty": 10
+        },
+        {
+          "key": "srd/gear/torch",
+          "qty": 10
+        },
+        {
+          "key": "srd/gear/tinderbox",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/rations-1-day",
+          "qty": 10
+        },
+        {
+          "key": "srd/gear/waterskin",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/rope-hempen-50-feet",
+          "qty": 1
+        }
+      ],
+      "costCp": 1200,
+      "kind": "pack",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/dungeoneers-pack",
+    "kind": "gear",
+    "nameEn": "Dungeoneer's Pack",
+    "nameRu": "Набор исследователя подземелий",
+    "slug": "dungeoneers-pack",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "capacityLb": 1320,
+      "costCp": 20000,
+      "kind": "mount",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/elephant",
+    "kind": "gear",
+    "nameEn": "Elephant",
+    "nameRu": "Слон",
+    "slug": "elephant",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "focus",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/emblem",
+    "kind": "gear",
+    "nameEn": "Emblem",
+    "nameRu": "Эмблема",
+    "slug": "emblem",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A holy symbol is a representation of a god or pantheon. It might be an amulet depicting a symbol representing a deity, the same symbol carefully engraved or inlaid as an emblem on a shield, or a tiny box holding a fragment of a sacred relic.\n\nAppendix B lists the symbols commonly associated with many gods in the multiverse. A cleric or paladin can use a holy symbol as a spellcasting focus. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield."
+  },
+  {
+    "data": {
+      "contents": [
+        {
+          "key": "srd/gear/backpack",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/bedroll",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/clothes-costume",
+          "qty": 2
+        },
+        {
+          "key": "srd/gear/candle",
+          "qty": 5
+        },
+        {
+          "key": "srd/gear/rations-1-day",
+          "qty": 5
+        },
+        {
+          "key": "srd/gear/waterskin",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/disguise-kit",
+          "qty": 1
+        }
+      ],
+      "costCp": 4000,
+      "kind": "pack",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/entertainers-pack",
+    "kind": "gear",
+    "nameEn": "Entertainer's Pack",
+    "nameRu": "Набор артиста",
+    "slug": "entertainers-pack",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "contents": [
+        {
+          "key": "srd/gear/backpack",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/bedroll",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/mess-kit",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/tinderbox",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/torch",
+          "qty": 10
+        },
+        {
+          "key": "srd/gear/rations-1-day",
+          "qty": 10
+        },
+        {
+          "key": "srd/gear/waterskin",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/rope-hempen-50-feet",
+          "qty": 1
+        }
+      ],
+      "costCp": 1000,
+      "kind": "pack",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/explorers-pack",
+    "kind": "gear",
+    "nameEn": "Explorer's Pack",
+    "nameRu": "Набор путешественника",
+    "slug": "explorers-pack",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "gear",
+      "weightLb": 4
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/fishing-tackle",
+    "kind": "gear",
+    "nameEn": "Fishing tackle",
+    "nameRu": "Рыболовные снасти",
+    "slug": "fishing-tackle",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This kit includes a wooden rod, silken line, corkwood bobbers, steel hooks, lead sinkers, velvet lures, and narrow netting."
+  },
+  {
+    "data": {
+      "costCp": 2,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/flask-or-tankard",
+    "kind": "gear",
+    "nameEn": "Flask or tankard",
+    "nameRu": "Фляга или большая кружка",
+    "slug": "flask-or-tankard",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 1500,
+      "kind": "gear",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/forgery-kit",
+    "kind": "gear",
+    "nameEn": "Forgery Kit",
+    "nameRu": "Набор для фальсификации",
+    "slug": "forgery-kit",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This small box contains a variety of papers and parchments, pens and inks, seals and sealing wax, gold and silver leaf, and other supplies necessary to create convincing forgeries of physical documents. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a physical forgery of a document."
+  },
+  {
+    "data": {
+      "costCp": 3000000,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/galley",
+    "kind": "gear",
+    "nameEn": "Galley",
+    "nameRu": "Галера",
+    "slug": "galley",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "gear",
+      "weightLb": 4
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/grappling-hook",
+    "kind": "gear",
+    "nameEn": "Grappling hook",
+    "nameRu": "Абордажный крюк",
+    "slug": "grappling-hook",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "gear",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/hammer",
+    "kind": "gear",
+    "nameEn": "Hammer",
+    "nameRu": "Молоток",
+    "slug": "hammer",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "gear",
+      "weightLb": 10
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/hammer-sledge",
+    "kind": "gear",
+    "nameEn": "Hammer, sledge",
+    "nameRu": "Кувалда",
+    "slug": "hammer-sledge",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "gear",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/healers-kit",
+    "kind": "gear",
+    "nameEn": "Healer's Kit",
+    "nameRu": "Комплект целителя",
+    "slug": "healers-kit",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This kit is a leather pouch containing bandages, salves, and splints. The kit has ten uses. As an action, you can expend one use of the kit to stabilize a creature that has 0 hit points, without needing to make a Wisdom (Medicine) check."
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "gear",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/herbalism-kit",
+    "kind": "gear",
+    "nameEn": "Herbalism Kit",
+    "nameRu": "Набор травника",
+    "slug": "herbalism-kit",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This kit contains a variety of instruments such as clippers, mortar and pestle, and pouches and vials used by herbalists to create remedies and potions. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to identify or apply herbs. Also, proficiency with this kit is required to create antitoxin and potions of healing."
+  },
+  {
+    "data": {
+      "costCp": 2500,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/holy-water-flask",
+    "kind": "gear",
+    "nameEn": "Holy water (flask)",
+    "nameRu": "Святая вода (флакон)",
+    "slug": "holy-water-flask",
+    "sourceBook": "SRD 5.1",
+    "textMd": "As an action, you can splash the contents of this flask onto a creature within 5 feet of you or throw it up to 20 feet, shattering it on impact. In either case, make a ranged attack against a target creature, treating the holy water as an improvised weapon.\n\nIf the target is a fiend or undead, it takes 2d6 radiant damage.\n\nA cleric or paladin may create holy water by performing a special ritual.\n\nThe ritual takes 1 hour to perform, uses 25 gp worth of powdered silver, and requires the caster to expend a 1st-level spell slot."
+  },
+  {
+    "data": {
+      "capacityLb": 540,
+      "costCp": 5000,
+      "kind": "mount",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/horse-draft",
+    "kind": "gear",
+    "nameEn": "Horse, draft",
+    "nameRu": "Лошадь, тяжеловоз",
+    "slug": "horse-draft",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "capacityLb": 480,
+      "costCp": 7500,
+      "kind": "mount",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/horse-riding",
+    "kind": "gear",
+    "nameEn": "Horse, riding",
+    "nameRu": "Лошадь, ездовая",
+    "slug": "horse-riding",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 2500,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/hourglass",
+    "kind": "gear",
+    "nameEn": "Hourglass",
+    "nameRu": "Песочные часы",
+    "slug": "hourglass",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "gear",
+      "weightLb": 25
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/hunting-trap",
+    "kind": "gear",
+    "nameEn": "Hunting trap",
+    "nameRu": "Охотничий капкан",
+    "slug": "hunting-trap",
+    "sourceBook": "SRD 5.1",
+    "textMd": "When you use your action to set it, this trap forms a saw-toothed steel ring that snaps shut when a creature steps on a pressure plate in the center. The trap is affixed by a heavy chain to an immobile object, such as a tree or a spike driven into the ground.\n\nA creature that steps on the plate must succeed on a DC 13 Dexterity saving throw or take 1d4 piercing damage and stop moving. Thereafter, until the creature breaks free of the trap, its movement is limited by the length of the chain (typically 3 feet long).\n\nA creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. Each failed check deals 1 piercing damage to the trapped creature."
+  },
+  {
+    "data": {
+      "costCp": 1000,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/ink-1-ounce-bottle",
+    "kind": "gear",
+    "nameEn": "Ink (1 ounce bottle)",
+    "nameRu": "Чернила (бутылочка на 1 унцию)",
+    "slug": "ink-1-ounce-bottle",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 2,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/ink-pen",
+    "kind": "gear",
+    "nameEn": "Ink pen",
+    "nameRu": "Писчее перо",
+    "slug": "ink-pen",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 2,
+      "kind": "gear",
+      "weightLb": 4
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/jug-or-pitcher",
+    "kind": "gear",
+    "nameEn": "Jug or pitcher",
+    "nameRu": "Кувшин или графин",
+    "slug": "jug-or-pitcher",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 300000,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/keelboat",
+    "kind": "gear",
+    "nameEn": "Keelboat",
+    "nameRu": "Шлюп",
+    "slug": "keelboat",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Keelboats and rowboats are used on lakes and rivers. If going downstream, add the speed of the current (typically 3 miles per hour) to the speed of the vehicle. These vehicles can't be rowed against any significant current, but they can be pulled upstream by draft animals on the shores. A rowboat weighs 100 pounds, in case adventurers carry it over land."
+  },
+  {
+    "data": {
+      "costCp": 10,
+      "kind": "gear",
+      "weightLb": 25
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/ladder-10-foot",
+    "kind": "gear",
+    "nameEn": "Ladder (10-foot)",
+    "nameRu": "Лестница (10 футов)",
+    "slug": "ladder-10-foot",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 50,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/lamp",
+    "kind": "gear",
+    "nameEn": "Lamp",
+    "nameRu": "Лампа",
+    "slug": "lamp",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A lamp casts bright light in a 15-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil."
+  },
+  {
+    "data": {
+      "costCp": 1000,
+      "kind": "gear",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/lantern-bullseye",
+    "kind": "gear",
+    "nameEn": "Lantern, bullseye",
+    "nameRu": "Фонарь «бычий глаз»",
+    "slug": "lantern-bullseye",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A bullseye lantern casts bright light in a 60-foot cone and dim light for an additional 60 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil."
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "gear",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/lantern-hooded",
+    "kind": "gear",
+    "nameEn": "Lantern, hooded",
+    "nameRu": "Фонарь с заслонкой",
+    "slug": "lantern-hooded",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A hooded lantern casts bright light in a 30-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil. As an action, you can lower the hood, reducing the light to dim light in a 5-foot radius."
+  },
+  {
+    "data": {
+      "costCp": 0,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/little-bag-of-sand",
+    "kind": "gear",
+    "nameEn": "Little bag of sand",
+    "nameRu": "Мешочек песка",
+    "slug": "little-bag-of-sand",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A small bag of sand, typically found in a scholar's pack."
+  },
+  {
+    "data": {
+      "costCp": 1000,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/lock",
+    "kind": "gear",
+    "nameEn": "Lock",
+    "nameRu": "Замок",
+    "slug": "lock",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A key is provided with the lock. Without the key, a creature proficient with thieves' tools can pick this lock with a successful DC 15 Dexterity check. Your GM may decide that better locks are available for higher prices."
+  },
+  {
+    "data": {
+      "costCp": 1000000,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/longship",
+    "kind": "gear",
+    "nameEn": "Longship",
+    "nameRu": "Драккар",
+    "slug": "longship",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 10000,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/magnifying-glass",
+    "kind": "gear",
+    "nameEn": "Magnifying glass",
+    "nameRu": "Увеличительное стекло",
+    "slug": "magnifying-glass",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This lens allows a closer look at small objects. It is also useful as a substitute for flint and steel when starting fires. Lighting a fire with a magnifying glass requires light as bright as sunlight to focus, tinder to ignite, and about 5 minutes for the fire to ignite.\n\nA magnifying glass grants advantage on any ability check made to appraise or inspect an item that is small or highly detailed."
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "gear",
+      "weightLb": 6
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/manacles",
+    "kind": "gear",
+    "nameEn": "Manacles",
+    "nameRu": "Кандалы",
+    "slug": "manacles",
+    "sourceBook": "SRD 5.1",
+    "textMd": "These metal restraints can bind a Small or Medium creature. Escaping the manacles requires a successful DC 20 Dexterity check. Breaking them requires a successful DC 20 Strength check.\n\nEach set of manacles comes with one key. Without the key, a creature proficient with thieves' tools can pick the manacles' lock with a successful DC 15 Dexterity check. Manacles have 15 hit points."
+  },
+  {
+    "data": {
+      "capacityLb": 195,
+      "costCp": 2500,
+      "kind": "mount",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/mastiff",
+    "kind": "gear",
+    "nameEn": "Mastiff",
+    "nameRu": "Мастиф",
+    "slug": "mastiff",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 20,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/mess-kit",
+    "kind": "gear",
+    "nameEn": "Mess Kit",
+    "nameRu": "Столовый набор",
+    "slug": "mess-kit",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This tin box contains a cup and simple cutlery. The box clamps together, and one side can be used as a cooking pan and the other as a plate or shallow bowl."
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "gear",
+      "weightLb": 0.5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/mirror-steel",
+    "kind": "gear",
+    "nameEn": "Mirror, steel",
+    "nameRu": "Зеркало, стальное",
+    "slug": "mirror-steel",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "capacityLb": 420,
+      "costCp": 800,
+      "kind": "mount",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/mule",
+    "kind": "gear",
+    "nameEn": "Mule",
+    "nameRu": "Мул",
+    "slug": "mule",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 10,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/oil-flask",
+    "kind": "gear",
+    "nameEn": "Oil (flask)",
+    "nameRu": "Масло (флакон)",
+    "slug": "oil-flask",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Oil usually comes in a clay flask that holds 1 pint.\n\nAs an action, you can splash the oil in this flask onto a creature within 5 feet of you or throw it up to 20 feet, shattering it on impact. Make a ranged attack against a target creature or object, treating the oil as an improvised weapon.\n\nOn a hit, the target is covered in oil. If the target takes any fire damage before the oil dries (after 1 minute), the target takes an additional 5 fire damage from the burning oil.\n\nYou can also pour a flask of oil on the ground to cover a 5-foot-square area, provided that the surface is level.\n\nIf lit, the oil burns for 2 rounds and deals 5 fire damage to any creature that enters the area or ends its turn in the area. A creature can take this damage only once per turn."
+  },
+  {
+    "data": {
+      "costCp": 2000,
+      "kind": "focus",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/orb",
+    "kind": "gear",
+    "nameEn": "Orb",
+    "nameRu": "Сфера",
+    "slug": "orb",
+    "sourceBook": "SRD 5.1",
+    "textMd": "An arcane focus is a special item--an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item--designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus."
+  },
+  {
+    "data": {
+      "costCp": 20,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/paper-one-sheet",
+    "kind": "gear",
+    "nameEn": "Paper (one sheet)",
+    "nameRu": "Бумага (1 лист)",
+    "slug": "paper-one-sheet",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 10,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/parchment-one-sheet",
+    "kind": "gear",
+    "nameEn": "Parchment (one sheet)",
+    "nameRu": "Пергамент (1 лист)",
+    "slug": "parchment-one-sheet",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/perfume-vial",
+    "kind": "gear",
+    "nameEn": "Perfume (vial)",
+    "nameRu": "Духи (флакон)",
+    "slug": "perfume-vial",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "gear",
+      "weightLb": 10
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/pick-miners",
+    "kind": "gear",
+    "nameEn": "Pick, miner's",
+    "nameRu": "Кирка, горняцкая",
+    "slug": "pick-miners",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 5,
+      "kind": "gear",
+      "weightLb": 0.25
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/piton",
+    "kind": "gear",
+    "nameEn": "Piton",
+    "nameRu": "Шлямбур",
+    "slug": "piton",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 10000,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/poison-basic-vial",
+    "kind": "gear",
+    "nameEn": "Poison, basic (vial)",
+    "nameRu": "Яд, простой (флакон)",
+    "slug": "poison-basic-vial",
+    "sourceBook": "SRD 5.1",
+    "textMd": "You can use the poison in this vial to coat one slashing or piercing weapon or up to three pieces of ammunition. Applying the poison takes an action. A creature hit by the poisoned weapon or ammunition must make a DC 10 Constitution saving throw or take 1d4 poison damage. Once applied, the poison retains potency for 1 minute before drying."
+  },
+  {
+    "data": {
+      "costCp": 5000,
+      "kind": "gear",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/poisoners-kit",
+    "kind": "gear",
+    "nameEn": "Poisoner's Kit",
+    "nameRu": "Инструменты отравителя",
+    "slug": "poisoners-kit",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A poisoner's kit includes the vials, chemicals, and other equipment necessary for the creation of poisons. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to craft or use poisons."
+  },
+  {
+    "data": {
+      "costCp": 5,
+      "kind": "gear",
+      "weightLb": 7
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/pole-10-foot",
+    "kind": "gear",
+    "nameEn": "Pole (10-foot)",
+    "nameRu": "Шест (10 футов)",
+    "slug": "pole-10-foot",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "capacityLb": 225,
+      "costCp": 3000,
+      "kind": "mount",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/pony",
+    "kind": "gear",
+    "nameEn": "Pony",
+    "nameRu": "Пони",
+    "slug": "pony",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "gear",
+      "weightLb": 10
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/pot-iron",
+    "kind": "gear",
+    "nameEn": "Pot, iron",
+    "nameRu": "Котелок, железный",
+    "slug": "pot-iron",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 50,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/pouch",
+    "kind": "gear",
+    "nameEn": "Pouch",
+    "nameRu": "Поясной кошель",
+    "slug": "pouch",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A cloth or leather pouch can hold up to 20 sling bullets or 50 blowgun needles, among other things. A compartmentalized pouch for holding spell components is called a component pouch (described earlier in this section)."
+  },
+  {
+    "data": {
+      "contents": [
+        {
+          "key": "srd/gear/backpack",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/blanket",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/candle",
+          "qty": 10
+        },
+        {
+          "key": "srd/gear/tinderbox",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/rations-1-day",
+          "qty": 2
+        },
+        {
+          "key": "srd/gear/waterskin",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/alms-box",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/block-of-incense",
+          "qty": 2
+        },
+        {
+          "key": "srd/gear/censer",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/vestments",
+          "qty": 1
+        }
+      ],
+      "costCp": 1900,
+      "kind": "pack",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/priests-pack",
+    "kind": "gear",
+    "nameEn": "Priest's Pack",
+    "nameRu": "Набор священника",
+    "slug": "priests-pack",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/quiver",
+    "kind": "gear",
+    "nameEn": "Quiver",
+    "nameRu": "Колчан",
+    "slug": "quiver",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A quiver can hold up to 20 arrows."
+  },
+  {
+    "data": {
+      "costCp": 400,
+      "kind": "gear",
+      "weightLb": 35
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/ram-portable",
+    "kind": "gear",
+    "nameEn": "Ram, portable",
+    "nameRu": "Таран, портативный",
+    "slug": "ram-portable",
+    "sourceBook": "SRD 5.1",
+    "textMd": "You can use a portable ram to break down doors. When doing so, you gain a +4 bonus on the Strength check. One other character can help you use the ram, giving you advantage on this check."
+  },
+  {
+    "data": {
+      "costCp": 50,
+      "kind": "gear",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/rations-1-day",
+    "kind": "gear",
+    "nameEn": "Rations (1 day)",
+    "nameRu": "Рационы (1 день)",
+    "slug": "rations-1-day",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Rations consist of dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts."
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "focus",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/reliquary",
+    "kind": "gear",
+    "nameEn": "Reliquary",
+    "nameRu": "Реликварий",
+    "slug": "reliquary",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A holy symbol is a representation of a god or pantheon. It might be an amulet depicting a symbol representing a deity, the same symbol carefully engraved or inlaid as an emblem on a shield, or a tiny box holding a fragment of a sacred relic.\n\nAppendix B lists the symbols commonly associated with many gods in the multiverse. A cleric or paladin can use a holy symbol as a spellcasting focus. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield."
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "gear",
+      "weightLb": 4
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/robes",
+    "kind": "gear",
+    "nameEn": "Robes",
+    "nameRu": "Ряса",
+    "slug": "robes",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 1000,
+      "kind": "focus",
+      "weightLb": 2
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/rod",
+    "kind": "gear",
+    "nameEn": "Rod",
+    "nameRu": "Жезл",
+    "slug": "rod",
+    "sourceBook": "SRD 5.1",
+    "textMd": "An arcane focus is a special item--an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item--designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus."
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "gear",
+      "weightLb": 10
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/rope-hempen-50-feet",
+    "kind": "gear",
+    "nameEn": "Rope, hempen (50 feet)",
+    "nameRu": "Верёвка, пеньковая (50 футов)",
+    "slug": "rope-hempen-50-feet",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Rope, whether made of hemp or silk, has 2 hit points and can be burst with a DC 17 Strength check."
+  },
+  {
+    "data": {
+      "costCp": 1000,
+      "kind": "gear",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/rope-silk-50-feet",
+    "kind": "gear",
+    "nameEn": "Rope, silk (50 feet)",
+    "nameRu": "Верёвка, шёлковая (50 футов)",
+    "slug": "rope-silk-50-feet",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Rope, whether made of hemp or silk, has 2 hit points and can be burst with a DC 17 Strength check."
+  },
+  {
+    "data": {
+      "costCp": 5000,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/rowboat",
+    "kind": "gear",
+    "nameEn": "Rowboat",
+    "nameRu": "Гребная лодка",
+    "slug": "rowboat",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Keelboats and rowboats are used on lakes and rivers. If going downstream, add the speed of the current (typically 3 miles per hour) to the speed of the vehicle. These vehicles can't be rowed against any significant current, but they can be pulled upstream by draft animals on the shores. A rowboat weighs 100 pounds, in case adventurers carry it over land."
+  },
+  {
+    "data": {
+      "costCp": 1,
+      "kind": "gear",
+      "weightLb": 0.5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/sack",
+    "kind": "gear",
+    "nameEn": "Sack",
+    "nameRu": "Мешок",
+    "slug": "sack",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 6000,
+      "kind": "gear",
+      "weightLb": 50
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/saddle-exotic",
+    "kind": "gear",
+    "nameEn": "Saddle, Exotic",
+    "nameRu": "Седло, экзотическое",
+    "slug": "saddle-exotic",
+    "sourceBook": "SRD 5.1",
+    "textMd": "An exotic saddle is required for riding any aquatic or flying mount."
+  },
+  {
+    "data": {
+      "costCp": 2000,
+      "kind": "gear",
+      "weightLb": 30
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/saddle-military",
+    "kind": "gear",
+    "nameEn": "Saddle, Military",
+    "nameRu": "Седло, военное",
+    "slug": "saddle-military",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A military saddle braces the rider, helping you keep your seat on an active mount in battle. It gives you advantage on any check you make to remain mounted."
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "gear",
+      "weightLb": 15
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/saddle-pack",
+    "kind": "gear",
+    "nameEn": "Saddle, Pack",
+    "nameRu": "Седло, вьючное",
+    "slug": "saddle-pack",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 1000,
+      "kind": "gear",
+      "weightLb": 25
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/saddle-riding",
+    "kind": "gear",
+    "nameEn": "Saddle, Riding",
+    "nameRu": "Седло, верховое",
+    "slug": "saddle-riding",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 400,
+      "kind": "gear",
+      "weightLb": 8
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/saddlebags",
+    "kind": "gear",
+    "nameEn": "Saddlebags",
+    "nameRu": "Перемётная сума",
+    "slug": "saddlebags",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 1000000,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/sailing-ship",
+    "kind": "gear",
+    "nameEn": "Sailing ship",
+    "nameRu": "Парусник",
+    "slug": "sailing-ship",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "gear",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/scale-merchants",
+    "kind": "gear",
+    "nameEn": "Scale, merchant's",
+    "nameRu": "Весы, торговые",
+    "slug": "scale-merchants",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A scale includes a small balance, pans, and a suitable assortment of weights up to 2 pounds. With it, you can measure the exact weight of small objects, such as raw precious metals or trade goods, to help determine their worth."
+  },
+  {
+    "data": {
+      "contents": [
+        {
+          "key": "srd/gear/backpack",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/book",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/ink-1-ounce-bottle",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/ink-pen",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/parchment-one-sheet",
+          "qty": 10
+        },
+        {
+          "key": "srd/gear/little-bag-of-sand",
+          "qty": 1
+        },
+        {
+          "key": "srd/gear/small-knife",
+          "qty": 1
+        }
+      ],
+      "costCp": 4000,
+      "kind": "pack",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/scholars-pack",
+    "kind": "gear",
+    "nameEn": "Scholar's Pack",
+    "nameRu": "Набор учёного",
+    "slug": "scholars-pack",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 50,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/sealing-wax",
+    "kind": "gear",
+    "nameEn": "Sealing wax",
+    "nameRu": "Воск",
+    "slug": "sealing-wax",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "gear",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/shovel",
+    "kind": "gear",
+    "nameEn": "Shovel",
+    "nameRu": "Лопата",
+    "slug": "shovel",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 5,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/signal-whistle",
+    "kind": "gear",
+    "nameEn": "Signal whistle",
+    "nameRu": "Сигнальный свисток",
+    "slug": "signal-whistle",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/signet-ring",
+    "kind": "gear",
+    "nameEn": "Signet ring",
+    "nameRu": "Кольцо-печатка",
+    "slug": "signet-ring",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 2000,
+      "kind": "gear",
+      "weightLb": 300
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/sled",
+    "kind": "gear",
+    "nameEn": "Sled",
+    "nameRu": "Сани",
+    "slug": "sled",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 4,
+      "kind": "ammunition",
+      "weightLb": 1.5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/sling-bullet",
+    "kind": "gear",
+    "nameEn": "Sling bullet",
+    "nameRu": "Снаряды для пращи (20)",
+    "slug": "sling-bullet",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 0,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/small-knife",
+    "kind": "gear",
+    "nameEn": "Small knife",
+    "nameRu": "Маленький нож",
+    "slug": "small-knife",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A small knife, typically found in a scholar's pack."
+  },
+  {
+    "data": {
+      "costCp": 2,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/soap",
+    "kind": "gear",
+    "nameEn": "Soap",
+    "nameRu": "Мыло",
+    "slug": "soap",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 5000,
+      "kind": "gear",
+      "weightLb": 3
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/spellbook",
+    "kind": "gear",
+    "nameEn": "Spellbook",
+    "nameRu": "Книга заклинаний",
+    "slug": "spellbook",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Essential for wizards, a spellbook is a leather-bound tome with 100 blank vellum pages suitable for recording spells."
+  },
+  {
+    "data": {
+      "costCp": 10,
+      "kind": "gear",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/spike-iron",
+    "kind": "gear",
+    "nameEn": "Spike, iron",
+    "nameRu": "Железные шипы (10)",
+    "slug": "spike-iron",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "focus",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/sprig-of-mistletoe",
+    "kind": "gear",
+    "nameEn": "Sprig of mistletoe",
+    "nameRu": "Веточка омелы",
+    "slug": "sprig-of-mistletoe",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A druidic focus might be a sprig of mistletoe or holly, a wand or scepter made of yew or another special wood, a staff drawn whole out of a living tree, or a totem object incorporating feathers, fur, bones, and teeth from sacred animals. A druid can use such an object as a spellcasting focus."
+  },
+  {
+    "data": {
+      "costCp": 100000,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/spyglass",
+    "kind": "gear",
+    "nameEn": "Spyglass",
+    "nameRu": "Подзорная труба",
+    "slug": "spyglass",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Objects viewed through a spyglass are magnified to twice their size."
+  },
+  {
+    "data": {
+      "costCp": 50,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/stabling-1-day",
+    "kind": "gear",
+    "nameEn": "Stabling (1 day)",
+    "nameRu": "Стойло (1 день)",
+    "slug": "stabling-1-day",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "focus",
+      "weightLb": 4
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/staff",
+    "kind": "gear",
+    "nameEn": "Staff",
+    "nameRu": "Посох",
+    "slug": "staff",
+    "sourceBook": "SRD 5.1",
+    "textMd": "An arcane focus is a special item--an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item--designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus."
+  },
+  {
+    "data": {
+      "costCp": 0,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/string-10-feet",
+    "kind": "gear",
+    "nameEn": "String (10 feet)",
+    "nameRu": "Бечёвка (10 футов)",
+    "slug": "string-10-feet",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A 10-foot length of string, typically found in a burglar's pack."
+  },
+  {
+    "data": {
+      "costCp": 200,
+      "kind": "gear",
+      "weightLb": 20
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/tent-two-person",
+    "kind": "gear",
+    "nameEn": "Tent, two-person",
+    "nameRu": "Палатка, двухместная",
+    "slug": "tent-two-person",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A simple and portable canvas shelter, a tent sleeps two."
+  },
+  {
+    "data": {
+      "costCp": 50,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/tinderbox",
+    "kind": "gear",
+    "nameEn": "Tinderbox",
+    "nameRu": "Трутница",
+    "slug": "tinderbox",
+    "sourceBook": "SRD 5.1",
+    "textMd": "This small container holds flint, fire steel, and tinder (usually dry cloth soaked in light oil) used to kindle a fire. Using it to light a torch--or anything else with abundant, exposed fuel--takes an action.\n\nLighting any other fire takes 1 minute."
+  },
+  {
+    "data": {
+      "costCp": 1,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/torch",
+    "kind": "gear",
+    "nameEn": "Torch",
+    "nameRu": "Факел",
+    "slug": "torch",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A torch burns for 1 hour, providing bright light in a 20-foot radius and dim light for an additional 20 feet. If you make a melee attack with a burning torch and hit, it deals 1 fire damage."
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "focus",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/totem",
+    "kind": "gear",
+    "nameEn": "Totem",
+    "nameRu": "Тотем",
+    "slug": "totem",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A druidic focus might be a sprig of mistletoe or holly, a wand or scepter made of yew or another special wood, a staff drawn whole out of a living tree, or a totem object incorporating feathers, fur, bones, and teeth from sacred animals. A druid can use such an object as a spellcasting focus."
+  },
+  {
+    "data": {
+      "costCp": 0,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/vestments",
+    "kind": "gear",
+    "nameEn": "Vestments",
+    "nameRu": "Облачение",
+    "slug": "vestments",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Religious clothing, typically found in a priest's pack."
+  },
+  {
+    "data": {
+      "costCp": 100,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/vial",
+    "kind": "gear",
+    "nameEn": "Vial",
+    "nameRu": "Флакон",
+    "slug": "vial",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 3500,
+      "kind": "gear",
+      "weightLb": 400
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/wagon",
+    "kind": "gear",
+    "nameEn": "Wagon",
+    "nameRu": "Фургон",
+    "slug": "wagon",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 1000,
+      "kind": "focus",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/wand",
+    "kind": "gear",
+    "nameEn": "Wand",
+    "nameRu": "Волшебная палочка",
+    "slug": "wand",
+    "sourceBook": "SRD 5.1",
+    "textMd": "An arcane focus is a special item--an orb, a crystal, a rod, a specially constructed staff, a wand-like length of wood, or some similar item--designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus."
+  },
+  {
+    "data": {
+      "capacityLb": 540,
+      "costCp": 40000,
+      "kind": "mount",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/warhorse",
+    "kind": "gear",
+    "nameEn": "Warhorse",
+    "nameRu": "Боевой конь",
+    "slug": "warhorse",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 2500000,
+      "kind": "gear",
+      "weightLb": 0
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/warship",
+    "kind": "gear",
+    "nameEn": "Warship",
+    "nameRu": "Военный корабль",
+    "slug": "warship",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 20,
+      "kind": "gear",
+      "weightLb": 5
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/waterskin",
+    "kind": "gear",
+    "nameEn": "Waterskin",
+    "nameRu": "Бурдюк",
+    "slug": "waterskin",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 1,
+      "kind": "gear",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/whetstone",
+    "kind": "gear",
+    "nameEn": "Whetstone",
+    "nameRu": "Точильный камень",
+    "slug": "whetstone",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "costCp": 500,
+      "kind": "focus",
+      "weightLb": 4
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/wooden-staff",
+    "kind": "gear",
+    "nameEn": "Wooden staff",
+    "nameRu": "Деревянный посох",
+    "slug": "wooden-staff",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A druidic focus might be a sprig of mistletoe or holly, a wand or scepter made of yew or another special wood, a staff drawn whole out of a living tree, or a totem object incorporating feathers, fur, bones, and teeth from sacred animals. A druid can use such an object as a spellcasting focus."
+  },
+  {
+    "data": {
+      "costCp": 1000,
+      "kind": "focus",
+      "weightLb": 1
+    },
+    "effectsStatus": "complete",
+    "key": "srd/gear/yew-wand",
+    "kind": "gear",
+    "nameEn": "Yew wand",
+    "nameRu": "Тисовая волшебная палочка",
+    "slug": "yew-wand",
+    "sourceBook": "SRD 5.1",
+    "textMd": "A druidic focus might be a sprig of mistletoe or holly, a wand or scepter made of yew or another special wood, a staff drawn whole out of a living tree, or a totem object incorporating feathers, fur, bones, and teeth from sacred animals. A druid can use such an object as a spellcasting focus."
+  }
+]

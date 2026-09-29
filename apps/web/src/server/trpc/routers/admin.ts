@@ -7,10 +7,12 @@ import { generateInviteCode } from '../../auth/crypto';
 import { siteInviteStatus } from '../../auth/invites';
 import { createPasswordReset } from '../../services/auth';
 import { badRequest, notFound } from '../errors';
+import { adminPacksRouter } from './content';
 
 const usedByUser = alias(users, 'used_by_user');
 
 export const adminRouter = router({
+  packs: adminPacksRouter,
   invites: router({
     create: adminProcedure
       .input(

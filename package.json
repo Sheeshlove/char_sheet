@@ -1,0 +1,39 @@
+{
+  "name": "party-sheet",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @ps/web dev",
+    "build": "turbo run build",
+    "start": "pnpm --filter @ps/web start",
+    "lint": "eslint . --max-warnings=0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:coverage": "turbo run test:coverage",
+    "test:e2e": "pnpm --filter @ps/web test:e2e",
+    "db:generate": "pnpm --filter @ps/web db:generate",
+    "db:migrate": "pnpm --filter @ps/web db:migrate",
+    "db:seed": "pnpm --filter @ps/web db:seed",
+    "admin:bootstrap": "pnpm --filter @ps/web admin:bootstrap",
+    "import:srd": "pnpm --filter @ps/importer import:srd",
+    "import:dndsu": "pnpm --filter @ps/importer import:dndsu",
+    "content:validate": "pnpm --filter @ps/importer content:validate",
+    "content:coverage": "pnpm --filter @ps/importer content:coverage",
+    "content:load": "pnpm --filter @ps/web content:load"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "globals": "^16.4.0",
+    "prettier": "^3.9.0",
+    "turbo": "^2.11.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.71.0"
+  }
+}

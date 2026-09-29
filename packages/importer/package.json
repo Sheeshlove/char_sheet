@@ -1,0 +1,24 @@
+{
+  "name": "@ps/importer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run --passWithNoTests",
+    "import:srd": "tsx src/cli/import-srd.ts",
+    "import:dndsu": "tsx src/cli/import-dndsu.ts",
+    "content:validate": "tsx src/cli/content-validate.ts",
+    "content:coverage": "tsx src/cli/content-coverage.ts"
+  },
+  "dependencies": {
+    "@ps/content-schema": "workspace:*",
+    "@ps/rules-engine": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.21.0",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.0"
+  }
+}

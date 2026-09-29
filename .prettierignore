@@ -1,0 +1,11 @@
+pnpm-lock.yaml
+node_modules
+.next
+.turbo
+coverage
+apps/web/drizzle
+packages/content-data/srd
+packages/content-data/dndsu
+packages/importer/fixtures
+packages/importer/cache
+SPEC.md

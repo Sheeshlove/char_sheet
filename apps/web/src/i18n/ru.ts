@@ -140,6 +140,7 @@ export const ru = {
   },
   campaigns: {
     title: 'Кампании',
+    overview: 'Обзор',
     create: 'Новая кампания',
     name: 'Название',
     description: 'Описание',

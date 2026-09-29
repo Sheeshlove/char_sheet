@@ -39,6 +39,22 @@
 **Известные проблемы**
 - —
 
+## M2. Кампании и права — готово
+
+**Сделано**
+- Таблицы §4.2; `CampaignSettings` — zod-схема со значениями по умолчанию в `@ps/content-schema` (общая для сервера и движка правил).
+- Роутер `campaigns`: list, get, create, update, updateSettings, archive, invites.create/list/revoke/preview, join, leave, members.list/setRole/remove.
+- Страницы: `/campaigns` (список, создание), `/campaigns/:id` (обзор, участники, роли, ссылки-приглашения), `/campaigns/:id/settings` (форма `CampaignSettings`), `/join/:code` (с возвратом после входа через `?next=`).
+- Гарды §5.3: чистая матрица прав `server/auth/access.ts` + серверные обёртки `server/auth/guards.ts` (`requireUser`, `requireCampaignRole`, `canViewCharacter`, `canEditCharacter`, `canViewNote`, `canEditNote`). Параметризованные тесты по всем строкам таблицы 5.3 (`access.test.ts`, 97 случаев).
+- Со-мастер: права мастера, кроме архивации кампании и смены ролей. При исключении участника его персонажи отвязываются от кампании.
+- e2e `e2e/campaigns.spec.ts`.
+
+**Отложено**
+- Персонажи и квесты на обзоре кампании — вехи M7/M8.
+
+**Известные проблемы**
+- —
+
 ## Замечания по окружению
 
 - Сетевая политика среды разработки блокирует `dnd.su` (403 на CONNECT). Импорт dnd.su (M5) требует реальных страниц-образцов, поэтому парсеры dnd.su не пишутся до открытия доступа.

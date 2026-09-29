@@ -15,7 +15,12 @@ import { Input } from '@/components/ui/input';
 
 type Values = z.input<typeof loginInput>;
 
-export function LoginForm() {
+/** Только относительные пути внутри сайта. */
+function safeNext(next?: string): string {
+  return next && next.startsWith('/') && !next.startsWith('//') ? next : '/';
+}
+
+export function LoginForm({ next }: { next?: string }) {
   const trpc = useTRPC();
   const router = useRouter();
   const form = useForm<Values>({ resolver: zodResolver(loginInput), defaultValues: { login: '', password: '' } });
@@ -23,7 +28,7 @@ export function LoginForm() {
     trpc.auth.login.mutationOptions({
       meta: { silent: true },
       onSuccess: () => {
-        router.replace('/');
+        router.replace(safeNext(next));
         router.refresh();
       },
     }),

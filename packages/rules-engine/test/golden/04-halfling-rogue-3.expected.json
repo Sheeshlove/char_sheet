@@ -1,0 +1,14 @@
+{
+  "skills.perception.value.value": 6,
+  "skills.perception.prof": "expertise",
+  "passives.perception.value": 16,
+  "skills.stealth.value.value": 7,
+  "skills.acrobatics.value.value": 5,
+  "passives.investigation.value": 13,
+  "hp.max.value": 21,
+  "size": "small",
+  "speed.walk.value": 25,
+  "abilities.dex.save.value": 5,
+  "abilities.int.save.value": 3,
+  "pendingChoices.length": 0
+}

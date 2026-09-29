@@ -1,0 +1,69 @@
+{
+  "title": "Чародей 3 (Наследие драконьей крови)",
+  "build": {
+    "identity": {
+      "name": "Эталон 10",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 8,
+        "dex": 13,
+        "con": 14,
+        "int": 12,
+        "wis": 10,
+        "cha": 15
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/acolyte",
+    "classes": [
+      {
+        "classKey": "mini/class/sorcerer",
+        "subclassKey": "mini/subclass/draconic-bloodline"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/sorcerer",
+        "hp": {
+          "method": "max"
+        }
+      },
+      {
+        "classKey": "mini/class/sorcerer",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/sorcerer",
+        "hp": {
+          "method": "average"
+        }
+      }
+    ],
+    "choices": {
+      "mini/race/human#languages#language": [
+        "elvish"
+      ],
+      "mini/class/sorcerer#proficiencies#skills": [
+        "arcana",
+        "persuasion"
+      ],
+      "mini/background/acolyte#proficiencies#languages": [
+        "giant",
+        "orc"
+      ],
+      "mini/subclass/draconic-bloodline#dragon-ancestor#ancestor": [
+        "red"
+      ]
+    }
+  }
+}

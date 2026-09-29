@@ -1,0 +1,60 @@
+{
+  "title": "Жрец 1 / Паладин 1 / Следопыт 1",
+  "build": {
+    "identity": {
+      "name": "Эталон 17",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 14,
+        "dex": 13,
+        "con": 10,
+        "int": 8,
+        "wis": 15,
+        "cha": 12
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/acolyte",
+    "classes": [
+      {
+        "classKey": "mini/class/cleric",
+        "subclassKey": "mini/subclass/life"
+      },
+      {
+        "classKey": "mini/class/paladin"
+      },
+      {
+        "classKey": "mini/class/ranger"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/cleric",
+        "hp": {
+          "method": "max"
+        }
+      },
+      {
+        "classKey": "mini/class/paladin",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/ranger",
+        "hp": {
+          "method": "average"
+        }
+      }
+    ],
+    "choices": {}
+  }
+}

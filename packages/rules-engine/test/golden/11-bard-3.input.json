@@ -1,0 +1,75 @@
+{
+  "title": "Бард 3: «Мастер на все руки»",
+  "build": {
+    "identity": {
+      "name": "Эталон 11",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 8,
+        "dex": 14,
+        "con": 13,
+        "int": 10,
+        "wis": 12,
+        "cha": 15
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/acolyte",
+    "classes": [
+      {
+        "classKey": "mini/class/bard"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/bard",
+        "hp": {
+          "method": "max"
+        }
+      },
+      {
+        "classKey": "mini/class/bard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/bard",
+        "hp": {
+          "method": "average"
+        }
+      }
+    ],
+    "choices": {
+      "mini/race/human#languages#language": [
+        "elvish"
+      ],
+      "mini/class/bard#proficiencies#skills": [
+        "performance",
+        "persuasion",
+        "deception"
+      ],
+      "mini/class/bard#proficiencies#tools-1": [
+        "lute",
+        "flute",
+        "drum"
+      ],
+      "mini/class/bard#expertise#expertise": [
+        "performance",
+        "persuasion"
+      ],
+      "mini/background/acolyte#proficiencies#languages": [
+        "giant",
+        "orc"
+      ]
+    }
+  }
+}

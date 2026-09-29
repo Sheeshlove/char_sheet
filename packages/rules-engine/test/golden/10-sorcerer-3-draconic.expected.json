@@ -1,0 +1,20 @@
+{
+  "ac.value": 15,
+  "ac.formulaLabelRu": "Драконья устойчивость",
+  "hp.max.value": 23,
+  "spellcasting.slots": [
+    {
+      "level": 1,
+      "max": 4,
+      "used": 0
+    },
+    {
+      "level": 2,
+      "max": 2,
+      "used": 0
+    }
+  ],
+  "resources[id=sorcery-points].max": 3,
+  "spellcasting.classes.0.cantripsMax": 4,
+  "spellcasting.classes.0.knownMax": 4
+}

@@ -1,0 +1,94 @@
+{
+  "title": "Воин 5 / Волшебник 1",
+  "build": {
+    "identity": {
+      "name": "Эталон 15",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 15,
+        "dex": 12,
+        "con": 14,
+        "int": 13,
+        "wis": 10,
+        "cha": 8
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/soldier",
+    "classes": [
+      {
+        "classKey": "mini/class/fighter"
+      },
+      {
+        "classKey": "mini/class/wizard"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "max"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "str": 2
+          }
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      }
+    ],
+    "choices": {
+      "mini/race/human#languages#language": [
+        "elvish"
+      ],
+      "mini/class/fighter#proficiencies#skills": [
+        "perception",
+        "survival"
+      ],
+      "mini/class/fighter#fighting-style#fighting-style": [
+        "defense"
+      ],
+      "mini/background/soldier#proficiencies#tools-1": [
+        "dice-set"
+      ]
+    }
+  }
+}

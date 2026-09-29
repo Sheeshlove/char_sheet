@@ -1,0 +1,12 @@
+{
+  "spellcasting.slots": [
+    {
+      "level": 1,
+      "max": 2,
+      "used": 0
+    }
+  ],
+  "spellcasting.casterLevel": 1,
+  "spellcasting.classes.length": 1,
+  "hp.max.value": 20
+}

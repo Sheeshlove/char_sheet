@@ -1,0 +1,16 @@
+{
+  "spellcasting.slots": [
+    {
+      "level": 1,
+      "max": 2,
+      "used": 0
+    }
+  ],
+  "pb.value": 3,
+  "abilities.str.save.value": 7,
+  "abilities.con.save.value": 5,
+  "abilities.int.save.value": 2,
+  "abilities.wis.save.value": 0,
+  "abilities.int.saveProficient": false,
+  "hp.max.value": 50
+}

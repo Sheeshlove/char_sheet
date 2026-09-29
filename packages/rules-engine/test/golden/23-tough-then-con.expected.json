@@ -1,0 +1,5 @@
+{
+  "hp.max.value": 92,
+  "abilities.con.score.value": 17,
+  "features[sourceKey=mini/feat/tough].features.0.key": "tough"
+}

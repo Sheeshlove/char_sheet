@@ -1,0 +1,17 @@
+{
+  "ac.value": 14,
+  "ac.formulaLabelRu": "Защита без доспехов",
+  "speed.walk.value": 40,
+  "attacksPerAction": 2,
+  "attacks[nameRu=Секира].toHit.value": 7,
+  "attacks[nameRu=Секира].damage.0.bonus": 6,
+  "attacks[nameRu=Секира].damage.0.dice": "1d12",
+  "resources[id=rage].max": 3,
+  "resources[id=rage].used": 1,
+  "toggles[id=raging].active": true,
+  "defenses.resistances.length": 3,
+  "abilities.str.score.value": 18,
+  "hp.max.value": 50,
+  "skills.athletics.modes.0.mode": "advantage",
+  "abilities.dex.modes.0.mode": "advantage"
+}

@@ -1,0 +1,211 @@
+{
+  "title": "Воин 20 (Чемпион)",
+  "build": {
+    "identity": {
+      "name": "Эталон 18",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 15,
+        "dex": 13,
+        "con": 14,
+        "int": 10,
+        "wis": 12,
+        "cha": 8
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/acolyte",
+    "classes": [
+      {
+        "classKey": "mini/class/fighter",
+        "subclassKey": "mini/subclass/champion"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "max"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "str": 2
+          }
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "str": 2
+          }
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "con": 2
+          }
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "con": 1,
+            "dex": 1
+          }
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "dex": 1,
+            "wis": 1
+          }
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "con": 2
+          }
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "dex": 2
+          }
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      }
+    ],
+    "choices": {
+      "mini/class/fighter#proficiencies#skills": [
+        "athletics",
+        "perception"
+      ],
+      "mini/class/fighter#fighting-style#fighting-style": [
+        "defense"
+      ],
+      "mini/subclass/champion#additional-fighting-style#fighting-style-2": [
+        "archery"
+      ]
+    }
+  }
+}

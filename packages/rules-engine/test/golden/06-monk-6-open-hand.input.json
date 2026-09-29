@@ -1,0 +1,93 @@
+{
+  "title": "Монах 6 (Путь открытой ладони)",
+  "build": {
+    "identity": {
+      "name": "Эталон 06",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 12,
+        "dex": 15,
+        "con": 13,
+        "int": 10,
+        "wis": 14,
+        "cha": 8
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/soldier",
+    "classes": [
+      {
+        "classKey": "mini/class/monk",
+        "subclassKey": "mini/subclass/open-hand"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/monk",
+        "hp": {
+          "method": "max"
+        }
+      },
+      {
+        "classKey": "mini/class/monk",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/monk",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/monk",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "dex": 1,
+            "wis": 1
+          }
+        }
+      },
+      {
+        "classKey": "mini/class/monk",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/monk",
+        "hp": {
+          "method": "average"
+        }
+      }
+    ],
+    "choices": {
+      "mini/race/human#languages#language": [
+        "elvish"
+      ],
+      "mini/class/monk#proficiencies#skills": [
+        "acrobatics",
+        "insight"
+      ],
+      "mini/class/monk#proficiencies#tools-1": [
+        "lute"
+      ],
+      "mini/background/soldier#proficiencies#tools-1": [
+        "dice-set"
+      ]
+    }
+  }
+}

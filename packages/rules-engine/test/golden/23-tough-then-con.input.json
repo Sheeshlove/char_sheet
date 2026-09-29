@@ -1,0 +1,99 @@
+{
+  "title": "«Крепкий» на 4 уровне, затем +Тел на 8",
+  "build": {
+    "identity": {
+      "name": "Эталон 23",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 15,
+        "dex": 13,
+        "con": 14,
+        "int": 10,
+        "wis": 12,
+        "cha": 8
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/soldier",
+    "classes": [
+      {
+        "classKey": "mini/class/fighter"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "max"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "feat",
+          "featKey": "mini/feat/tough"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "str": 2
+          }
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "con": 2
+          }
+        }
+      }
+    ],
+    "choices": {}
+  }
+}

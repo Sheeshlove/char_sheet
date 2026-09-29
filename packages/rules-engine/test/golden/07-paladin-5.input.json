@@ -1,0 +1,111 @@
+{
+  "title": "Паладин 5",
+  "build": {
+    "identity": {
+      "name": "Эталон 07",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 15,
+        "dex": 10,
+        "con": 13,
+        "int": 8,
+        "wis": 12,
+        "cha": 14
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/acolyte",
+    "classes": [
+      {
+        "classKey": "mini/class/paladin"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/paladin",
+        "hp": {
+          "method": "max"
+        }
+      },
+      {
+        "classKey": "mini/class/paladin",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/paladin",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/paladin",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "cha": 2
+          }
+        }
+      },
+      {
+        "classKey": "mini/class/paladin",
+        "hp": {
+          "method": "average"
+        }
+      }
+    ],
+    "choices": {
+      "mini/race/human#languages#language": [
+        "elvish"
+      ],
+      "mini/class/paladin#proficiencies#skills": [
+        "athletics",
+        "persuasion"
+      ],
+      "mini/class/paladin#fighting-style#fighting-style": [
+        "defense"
+      ],
+      "mini/background/acolyte#proficiencies#languages": [
+        "giant",
+        "celestial"
+      ]
+    }
+  },
+  "state": {
+    "inventory": [
+      {
+        "id": "i1",
+        "key": "mini/armor/chain-mail",
+        "qty": 1,
+        "equipped": true,
+        "attuned": false
+      },
+      {
+        "id": "i2",
+        "key": "mini/armor/shield",
+        "qty": 1,
+        "equipped": true,
+        "attuned": false
+      },
+      {
+        "id": "i3",
+        "key": "mini/weapon/longsword",
+        "qty": 1,
+        "equipped": true,
+        "attuned": false
+      }
+    ]
+  }
+}

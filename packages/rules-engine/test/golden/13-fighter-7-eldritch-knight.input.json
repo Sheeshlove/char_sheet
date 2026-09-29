@@ -1,0 +1,121 @@
+{
+  "title": "Воин 7 (Мистический рыцарь)",
+  "build": {
+    "identity": {
+      "name": "Эталон 13",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 15,
+        "dex": 12,
+        "con": 13,
+        "int": 14,
+        "wis": 10,
+        "cha": 8
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/soldier",
+    "classes": [
+      {
+        "classKey": "mini/class/fighter",
+        "subclassKey": "mini/subclass/eldritch-knight"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "max"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "str": 2
+          }
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "int": 1,
+            "con": 1
+          }
+        }
+      },
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "average"
+        }
+      }
+    ],
+    "choices": {
+      "mini/race/human#languages#language": [
+        "elvish"
+      ],
+      "mini/class/fighter#proficiencies#skills": [
+        "perception",
+        "survival"
+      ],
+      "mini/class/fighter#fighting-style#fighting-style": [
+        "defense"
+      ],
+      "mini/background/soldier#proficiencies#tools-1": [
+        "dice-set"
+      ]
+    },
+    "knownSpells": [
+      {
+        "classKey": "mini/class/fighter",
+        "cantrips": [
+          "mini/spell/fire-bolt",
+          "mini/spell/light"
+        ],
+        "spells": [
+          "mini/spell/shield",
+          "mini/spell/burning-hands",
+          "mini/spell/magic-missile",
+          "mini/spell/thunderwave",
+          "mini/spell/sleep"
+        ]
+      }
+    ]
+  }
+}

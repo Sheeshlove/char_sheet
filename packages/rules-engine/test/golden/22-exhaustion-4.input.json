@@ -1,0 +1,48 @@
+{
+  "title": "Истощение 4: хиты и скорость вдвое",
+  "build": {
+    "identity": {
+      "name": "Эталон 22",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 15,
+        "dex": 12,
+        "con": 14,
+        "int": 8,
+        "wis": 13,
+        "cha": 10
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/soldier",
+    "classes": [
+      {
+        "classKey": "mini/class/fighter"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "max"
+        }
+      }
+    ],
+    "choices": {}
+  },
+  "state": {
+    "exhaustion": 4,
+    "hp": {
+      "current": 12,
+      "temp": 0
+    }
+  }
+}

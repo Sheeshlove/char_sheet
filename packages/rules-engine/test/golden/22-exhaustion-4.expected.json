@@ -1,0 +1,8 @@
+{
+  "hp.max.value": 6,
+  "speed.walk.value": 15,
+  "status.exhaustion": 4,
+  "hp.current": 6,
+  "skills.athletics.modes.0.mode": "disadvantage",
+  "abilities.str.modes.0.mode": "disadvantage"
+}

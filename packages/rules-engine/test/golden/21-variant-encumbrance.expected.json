@@ -1,0 +1,9 @@
+{
+  "carrying.weightLb": 175,
+  "carrying.status": "heavily_encumbered",
+  "carrying.capacityLb": 240,
+  "speed.walk.value": 10,
+  "skills.athletics.modes.0.mode": "disadvantage",
+  "abilities.con.modes.0.mode": "disadvantage",
+  "attacks[id=unarmed].modes.0.mode": "disadvantage"
+}

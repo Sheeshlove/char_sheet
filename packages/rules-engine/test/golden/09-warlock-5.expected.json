@@ -1,0 +1,21 @@
+{
+  "spellcasting.pact": {
+    "level": 3,
+    "max": 2,
+    "used": 2
+  },
+  "spellcasting.slots": [],
+  "spellcasting.classes.0.cantripsMax": 3,
+  "spellcasting.classes.0.knownMax": 6,
+  "hp.max.value": 38,
+  "attacks[nameRu=Мистический заряд].toHit.value": 7,
+  "attacks[nameRu=Мистический заряд].damage.0.dice": "1d10",
+  "senses": [
+    {
+      "sense": "darkvision",
+      "rangeFt": 120
+    }
+  ],
+  "spellcasting.grants.0.spellKey": "mini/spell/mage-armor",
+  "pendingChoices.length": 0
+}

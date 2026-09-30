@@ -11,6 +11,11 @@ export function campaignNavItems(campaignId: string): Item[] {
   const base = `/campaigns/${campaignId}`;
   return [
     { key: 'overview', href: base, label: ru.campaigns.overview },
+    { key: 'notes', href: `${base}/notes`, label: ru.notes.views.list },
+    { key: 'quests', href: `${base}/quests`, label: ru.notes.views.quests },
+    { key: 'timeline', href: `${base}/timeline`, label: ru.notes.views.timeline },
+    { key: 'graph', href: `${base}/graph`, label: ru.notes.views.graph },
+    { key: 'boards', href: `${base}/boards`, label: ru.notes.views.boards },
     { key: 'settings', href: `${base}/settings`, label: ru.campaigns.settings, gmOnly: true },
   ];
 }

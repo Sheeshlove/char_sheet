@@ -1,8 +1,8 @@
 import { eq } from 'drizzle-orm';
 import { getDb } from '@/server/db/client';
-import { characters, files } from '@/server/db/schema';
+import { characters, files, notes } from '@/server/db/schema';
 import { getRouteUser } from '@/server/auth/route';
-import { canViewCharacter } from '@/server/auth/guards';
+import { canViewCharacter, canViewNote } from '@/server/auth/guards';
 import { readStoredFile } from '@/server/files/storage';
 
 export const dynamic = 'force-dynamic';
@@ -24,6 +24,12 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
       .from(characters)
       .where(eq(characters.id, file.attachedId));
     allowed = !!c && (await canViewCharacter({ db, user }, c)) !== 'none';
+  } else if (file.attachedType === 'note') {
+    const [n] = await db
+      .select({ id: notes.id, authorId: notes.authorId, campaignId: notes.campaignId, visibility: notes.visibility })
+      .from(notes)
+      .where(eq(notes.id, file.attachedId));
+    allowed = !!n && (await canViewNote({ db, user }, n));
   } else {
     allowed = file.ownerId === user.id;
   }

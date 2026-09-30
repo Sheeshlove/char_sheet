@@ -29,6 +29,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { GlobalSearch } from '@/features/search/global-search';
 import { OfflineBanner } from './offline-banner';
 
 export type ShellUser = { displayName: string; username: string; isAdmin: boolean };
@@ -111,6 +112,7 @@ export function AppShell({ user, children }: { user: ShellUser; children: React.
             ))}
           </nav>
           <div className="ml-auto flex items-center gap-1">
+            <GlobalSearch />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="max-w-48" data-testid="user-menu">

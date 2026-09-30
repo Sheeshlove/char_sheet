@@ -44,6 +44,7 @@ import { TabSpells } from './tab-spells';
 import { TabGear } from './tab-gear';
 import { TabFeatures } from './tab-features';
 import { TabBio } from './tab-bio';
+import { CharacterNotes } from '@/features/notes/character-notes';
 import { TabLog } from './tab-log';
 import { PlayMode, StickyStats } from './play-mode';
 
@@ -157,7 +158,7 @@ function SheetBody() {
             <TabBio />
           </TabsContent>
           <TabsContent value="notes">
-            <p className="text-muted-foreground">{S.notesSoon}</p>
+            <CharacterNotes characterId={characterId} campaignId={character.campaign?.id ?? null} />
           </TabsContent>
           <TabsContent value="log">
             <TabLog />

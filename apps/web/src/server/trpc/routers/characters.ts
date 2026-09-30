@@ -1,4 +1,4 @@
-import { and, desc, eq, isNull, lt, or } from 'drizzle-orm';
+import { and, desc, eq, ilike, isNotNull, isNull, lt, or } from 'drizzle-orm';
 import { z } from 'zod';
 import {
   characterBuildSchema,
@@ -113,6 +113,48 @@ export const charactersRouter = router({
         archivedAt: r.archivedAt,
         updatedAt: r.updatedAt,
       }));
+    }),
+
+  /** Поиск по имени для глобального поиска: свои и видимые в кампаниях. Гард: `characterViewLevel` каждого. */
+  search: authedProcedure
+    .input(z.object({ q: z.string().trim().min(1).max(120), limit: z.number().int().min(1).max(20).default(8) }))
+    .query(async ({ ctx, input }) => {
+      const like = `%${input.q.replace(/[\\%_]/g, (c) => `\\${c}`)}%`;
+      const rows = await ctx.db
+        .select({
+          id: characters.id,
+          name: characters.name,
+          ownerId: characters.ownerId,
+          campaignId: characters.campaignId,
+          campaignName: campaigns.name,
+          settings: campaigns.settings,
+          role: campaignMembers.role,
+        })
+        .from(characters)
+        .leftJoin(campaigns, eq(campaigns.id, characters.campaignId))
+        .leftJoin(campaignMembers, and(eq(campaignMembers.campaignId, characters.campaignId), eq(campaignMembers.userId, ctx.user.id)))
+        .where(
+          and(
+            isNull(characters.archivedAt),
+            ilike(characters.name, like),
+            or(eq(characters.ownerId, ctx.user.id), isNotNull(campaignMembers.userId)),
+          ),
+        )
+        .orderBy(characters.name)
+        .limit(input.limit * 3);
+      return rows
+        .filter(
+          (r) =>
+            characterViewLevel({
+              userId: ctx.user.id,
+              isAdmin: ctx.user.isAdmin,
+              character: { ownerId: r.ownerId, campaignId: r.campaignId },
+              viewerRole: r.role,
+              partySheetVisibility: parseCampaignSettings(r.settings).partySheetVisibility as SheetVisibility,
+            }) !== 'none',
+        )
+        .slice(0, input.limit)
+        .map((r) => ({ id: r.id, name: r.name, campaignName: r.campaignName }));
     }),
 
   /** Персонажи кампании. Гард: участник кампании; видимость — по `partySheetVisibility`. */

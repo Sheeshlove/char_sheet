@@ -23,8 +23,7 @@ export class UploadError extends Error {
   }
 }
 
-/** Портрет: формат проверяется по содержимому, обрезка до квадрата 512×512, WebP. */
-export async function processPortrait(input: Buffer): Promise<Buffer> {
+async function checkImage(input: Buffer) {
   if (input.byteLength > MAX_UPLOAD_BYTES) throw new UploadError('fileTooLarge');
   let format: string | undefined;
   try {
@@ -33,10 +32,25 @@ export async function processPortrait(input: Buffer): Promise<Buffer> {
     throw new UploadError('fileType');
   }
   if (!format || !ACCEPTED_FORMATS.has(format)) throw new UploadError('fileType');
+}
+
+/** Портрет: формат проверяется по содержимому, обрезка до квадрата 512×512, WebP. */
+export async function processPortrait(input: Buffer): Promise<Buffer> {
+  await checkImage(input);
   return sharp(input, { limitInputPixels: 40_000_000 })
     .rotate()
     .resize(512, 512, { fit: 'cover', position: 'attention' })
     .webp({ quality: 85 })
+    .toBuffer();
+}
+
+/** Картинка в заметке: не больше 1600 px по большей стороне, WebP. */
+export async function processNoteImage(input: Buffer): Promise<Buffer> {
+  await checkImage(input);
+  return sharp(input, { limitInputPixels: 40_000_000 })
+    .rotate()
+    .resize(1600, 1600, { fit: 'inside', withoutEnlargement: true })
+    .webp({ quality: 82 })
     .toBuffer();
 }
 

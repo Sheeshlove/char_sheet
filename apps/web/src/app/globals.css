@@ -135,3 +135,60 @@
 .prose-ps code {
   @apply rounded bg-muted px-1 py-0.5 text-xs;
 }
+
+/* Редактор заметок (TipTap) и отображение заметок */
+.prose-ps pre {
+  @apply my-2 overflow-x-auto rounded-md bg-muted p-3 text-xs;
+}
+.prose-ps pre code {
+  @apply bg-transparent p-0;
+}
+.prose-ps hr {
+  @apply my-4 border-border;
+}
+.prose-ps img {
+  @apply my-2 max-h-[480px] max-w-full rounded-md;
+}
+.prose-ps mark {
+  @apply rounded-sm bg-yellow-200 px-0.5 text-inherit dark:bg-yellow-500/40;
+}
+.prose-ps ul[data-type='taskList'] {
+  @apply list-none pl-0;
+}
+.prose-ps ul[data-type='taskList'] li {
+  @apply flex items-start gap-2;
+}
+.prose-ps ul[data-type='taskList'] li > label {
+  @apply mt-1 shrink-0;
+}
+.prose-ps ul[data-type='taskList'] li > div {
+  @apply min-w-0 flex-1;
+}
+.prose-ps ul[data-type='taskList'] li[data-checked='true'] > div {
+  @apply text-muted-foreground line-through;
+}
+.note-link,
+.note-mention {
+  @apply cursor-pointer rounded-sm px-0.5 font-medium text-primary not-italic;
+  background: color-mix(in oklab, var(--primary) 10%, transparent);
+}
+.note-link:hover,
+.note-mention:hover {
+  @apply underline underline-offset-2;
+}
+.note-link-missing {
+  @apply text-muted-foreground line-through;
+}
+.ProseMirror {
+  @apply min-h-48 outline-none;
+}
+.ProseMirror p.is-editor-empty:first-child::before {
+  @apply pointer-events-none float-left h-0 text-muted-foreground;
+  content: attr(data-placeholder);
+}
+.ProseMirror .selectedCell {
+  @apply bg-accent;
+}
+.ProseMirror-selectednode {
+  @apply ring-2 ring-ring/60;
+}

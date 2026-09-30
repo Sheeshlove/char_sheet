@@ -12,6 +12,7 @@ import { changePassword, countUsers, loginUser, logout, registerUser, resetPassw
 import { serializeBlankSessionCookie, serializeSessionCookie, createSession } from '../../auth/session';
 import { sessions, users } from '../../db/schema';
 import { notFound } from '../errors';
+import { log } from '../../log';
 
 export const authRouter = router({
   /** Гард: публичный доступ (возвращает null для гостя). */
@@ -30,9 +31,14 @@ export const authRouter = router({
 
   /** Гард: публичный доступ с ограничением попыток (SPEC §5.1). */
   login: publicProcedure.input(loginInput).mutation(async ({ ctx, input }) => {
-    const { user, token, session } = await loginUser(ctx.db, input, { ip: ctx.ip, userAgent: ctx.userAgent });
-    ctx.resHeaders?.append('Set-Cookie', serializeSessionCookie(token, session.expiresAt, ctx.secureCookies));
-    return { id: user.id };
+    const result = await loginUser(ctx.db, input, { ip: ctx.ip, userAgent: ctx.userAgent }).catch((e: unknown) => {
+      // В лог — только адрес и код отказа, без логина и пароля.
+      log.warn({ event: 'login_failed', ip: ctx.ip, code: (e as { code?: unknown }).code }, 'неудачная попытка входа');
+      throw e;
+    });
+    log.info({ event: 'login', userId: result.user.id, ip: ctx.ip }, 'вход');
+    ctx.resHeaders?.append('Set-Cookie', serializeSessionCookie(result.token, result.session.expiresAt, ctx.secureCookies));
+    return { id: result.user.id };
   }),
 
   logout: authedProcedure.mutation(async ({ ctx }) => {

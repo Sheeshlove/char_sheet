@@ -34,7 +34,8 @@ import type { DocNode, NoteVisibilityValue } from '@/lib/notes/schema';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { LinkPreviewArea } from '../link-preview';
-import { linkHref, NoteMention, WikiLink } from './extensions';
+import { NoteMention, WikiLink } from './extensions';
+import { linkHref } from '@/lib/notes/links';
 import type { SuggestionItem } from './suggestion-list';
 
 const N = ru.notes;

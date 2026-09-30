@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import Link from 'next/link';
 import type { SheetSummary } from '@ps/rules-engine';
 import { ru } from '@/i18n/ru';
@@ -6,16 +7,22 @@ import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 
-/** Портрет или инициалы. */
+/** Портрет или инициалы (и когда файл не загрузился: нет сети, не восстановлен из копии). */
 export function Portrait({ url, name, className }: { url: string | null | undefined; name: string; className?: string }) {
+  const [failedUrl, setFailedUrl] = useState<string | null>(null);
   const initials = name
     .split(/\s+/)
     .filter(Boolean)
     .slice(0, 2)
     .map((w) => w[0]!.toUpperCase())
     .join('');
-  return url ? (
-    <img src={url} alt={ru.characters.portraitAlt(name)} className={cn('rounded-lg object-cover', className)} />
+  return url && url !== failedUrl ? (
+    <img
+      src={url}
+      alt={ru.characters.portraitAlt(name)}
+      className={cn('rounded-lg object-cover', className)}
+      onError={() => setFailedUrl(url)}
+    />
   ) : (
     <div
       aria-hidden

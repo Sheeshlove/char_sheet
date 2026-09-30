@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Snippet } from './note-render';
+import { Snippet } from '@/features/notes/snippet';
 import { notesBase } from './notes-sidebar';
 import type { NotesView } from './use-notes-filter';
 

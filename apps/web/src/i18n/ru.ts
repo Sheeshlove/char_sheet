@@ -4,7 +4,11 @@
 export const ru = {
   app: {
     name: 'Party Sheet',
+    shortName: 'Party Sheet',
     tagline: 'Лист персонажа D&D 5e для своей компании',
+    offlineTitle: 'Нет сети',
+    offlineText: 'Эта страница ещё не открывалась на устройстве. Листы персонажей, которые вы уже смотрели, доступны без сети.',
+    offlineHome: 'На главную',
   },
   common: {
     save: 'Сохранить',

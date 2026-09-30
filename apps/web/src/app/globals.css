@@ -1,9 +1,21 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-@custom-variant dark (&:is(.dark *));
+/* Тёмная тема: класс `dark` на <html> или выбор «как в системе» (`theme-system`) при тёмной
+   теме устройства. Класс ставит сервер по cookie — без скрипта и мигания (SPEC §16.5). */
+@custom-variant dark {
+  &:is(.dark *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:is(.theme-system *) {
+      @slot;
+    }
+  }
+}
 
 :root {
+  color-scheme: light;
   --radius: 0.6rem;
   --background: oklch(0.985 0.004 85);
   --foreground: oklch(0.2 0.02 60);
@@ -48,6 +60,33 @@
   --border: oklch(0.32 0.014 60);
   --input: oklch(0.34 0.014 60);
   --ring: oklch(0.72 0.14 55);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-system {
+    --background: oklch(0.17 0.012 60);
+    --foreground: oklch(0.93 0.012 85);
+    --card: oklch(0.21 0.014 60);
+    --card-foreground: oklch(0.93 0.012 85);
+    --popover: oklch(0.22 0.014 60);
+    --popover-foreground: oklch(0.93 0.012 85);
+    --primary: oklch(0.72 0.14 55);
+    --primary-foreground: oklch(0.18 0.02 60);
+    --secondary: oklch(0.27 0.014 60);
+    --secondary-foreground: oklch(0.93 0.012 85);
+    --muted: oklch(0.26 0.012 60);
+    --muted-foreground: oklch(0.7 0.02 80);
+    --accent: oklch(0.3 0.02 60);
+    --accent-foreground: oklch(0.95 0.012 85);
+    --destructive: oklch(0.65 0.2 25);
+    --success: oklch(0.7 0.15 150);
+    --warning: oklch(0.8 0.15 85);
+    --border: oklch(0.32 0.014 60);
+    --input: oklch(0.34 0.014 60);
+    --ring: oklch(0.72 0.14 55);
+    color-scheme: dark;
+  }
 }
 
 @theme inline {

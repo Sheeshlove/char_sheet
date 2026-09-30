@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { QueryClient, QueryClientProvider, MutationCache } from '@tanstack/react-query';
-import { createTRPCClient, httpBatchLink, TRPCClientError } from '@trpc/client';
+import { createTRPCClient, httpBatchLink, httpLink, splitLink, TRPCClientError } from '@trpc/client';
 import { createTRPCContext } from '@trpc/tanstack-react-query';
 import superjson from 'superjson';
 import { toast } from 'sonner';
@@ -42,6 +42,8 @@ function makeQueryClient() {
       mutations: {
         networkMode: 'always',
       },
+      // Данные, предзагруженные сервером (lib/trpc/server.tsx), приходят в формате superjson.
+      hydrate: { deserializeData: superjson.deserialize },
     },
     mutationCache: new MutationCache({
       onError: (err, _vars, _ctx, mutation) => {
@@ -60,7 +62,15 @@ export function TRPCReactProvider({ children }: { children: React.ReactNode }) {
   const [queryClient] = React.useState(makeQueryClient);
   const [trpcClient] = React.useState(() =>
     createTRPCClient<AppRouter>({
-      links: [httpBatchLink({ url: '/api/trpc', transformer: superjson })],
+      links: [
+        // Лист персонажа — отдельным GET с постоянным адресом: service worker хранит его копию
+        // для просмотра без сети (SPEC §16.4).
+        splitLink({
+          condition: (op) => op.type === 'query' && op.path === 'characters.get',
+          true: httpLink({ url: '/api/trpc', transformer: superjson }),
+          false: httpBatchLink({ url: '/api/trpc', transformer: superjson }),
+        }),
+      ],
     }),
   );
   return (

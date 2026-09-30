@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { useTheme } from 'next-themes';
 import { useMutation } from '@tanstack/react-query';
 import {
   BookOpenIcon,
@@ -31,10 +30,17 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { GlobalSearch } from '@/features/search/global-search';
 import { OfflineBanner } from './offline-banner';
+import { clearPrivateCaches } from '@/lib/pwa/clear-caches';
+import { setTheme, useResolvedTheme, type ResolvedTheme } from '@/lib/theme';
 
 export type ShellUser = { displayName: string; username: string; isAdmin: boolean };
 
-type NavItem = { href: string; label: string; icon: React.ComponentType<{ className?: string }>; admin?: boolean };
+type NavItem = {
+  href: string;
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+  admin?: boolean;
+};
 
 export const NAV_ITEMS: NavItem[] = [
   { href: '/', label: ru.nav.home, icon: HomeIcon },
@@ -50,14 +56,23 @@ function isActive(pathname: string, href: string) {
   return href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export function AppShell({ user, children }: { user: ShellUser; children: React.ReactNode }) {
+export function AppShell({
+  user,
+  serverTheme,
+  children,
+}: {
+  user: ShellUser;
+  serverTheme: ResolvedTheme;
+  children: React.ReactNode;
+}) {
   const pathname = usePathname();
   const router = useRouter();
   const trpc = useTRPC();
-  const { resolvedTheme, setTheme } = useTheme();
+  const resolvedTheme = useResolvedTheme(serverTheme);
   const logout = useMutation(
     trpc.auth.logout.mutationOptions({
-      onSuccess: () => {
+      onSuccess: async () => {
+        await clearPrivateCaches();
         router.replace('/login');
         router.refresh();
       },

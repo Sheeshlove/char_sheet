@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { withSerwist } from '@serwist/turbopack';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -40,4 +41,5 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// Service worker собирается маршрутом `/serwist/[path]` (SPEC §16.4).
+export default withSerwist(nextConfig);

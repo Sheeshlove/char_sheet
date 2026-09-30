@@ -15,21 +15,54 @@ const V = ru.sheet.val;
  * Число листа — кнопка: по нажатию расшифровка `Val.parts` и «Переопределить»
  * (значение + причина, SPEC §12.1). Переопределённые числа помечены значком.
  */
-export function ValButton({
-  val,
-  path,
-  label,
-  sign = false,
-  className,
-  testId,
-}: {
+type ValButtonProps = {
   val: Val;
   path?: string;
   label: string;
   sign?: boolean;
   className?: string;
   testId?: string;
-}) {
+};
+
+/**
+ * Всплывающее окно монтируется при первом нажатии: на листе десятки таких чисел, и окна
+ * Radix на каждом заметно замедляют гидратацию на телефоне (SPEC §16.5).
+ */
+export function ValButton(props: ValButtonProps) {
+  const [armed, setArmed] = useState(false);
+  if (!armed) return <ValTrigger {...props} onClick={() => setArmed(true)} />;
+  return <ValPopover {...props} />;
+}
+
+function ValTrigger({
+  val,
+  label,
+  sign = false,
+  className,
+  testId,
+  path: _path,
+  ...rest
+}: ValButtonProps & Omit<React.ComponentProps<'button'>, 'className'>) {
+  const shown = sign ? signed(val.value) : String(val.value);
+  return (
+    <button
+      type="button"
+      aria-label={`${label}: ${shown}`}
+      data-testid={testId}
+      className={cn(
+        'inline-flex items-center justify-center gap-0.5 rounded-md px-1 font-semibold tabular-nums hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:outline-none',
+        val.overridden && 'text-warning',
+        className,
+      )}
+      {...rest}
+    >
+      {shown}
+      {val.overridden && <PencilIcon className="size-3" aria-hidden />}
+    </button>
+  );
+}
+
+function ValPopover({ val, path, label, sign = false, className, testId }: ValButtonProps) {
   const { character, saveBuild, canEdit } = useSheet();
   const [editing, setEditing] = useState(false);
   const [value, setValue] = useState(String(val.value));
@@ -47,21 +80,9 @@ export function ValButton({
   };
 
   return (
-    <Popover onOpenChange={(o) => !o && setEditing(false)}>
+    <Popover defaultOpen onOpenChange={(o) => !o && setEditing(false)}>
       <PopoverTrigger asChild>
-        <button
-          type="button"
-          aria-label={`${label}: ${shown}`}
-          data-testid={testId}
-          className={cn(
-            'inline-flex items-center justify-center gap-0.5 rounded-md px-1 font-semibold tabular-nums hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring/60 focus-visible:outline-none',
-            val.overridden && 'text-warning',
-            className,
-          )}
-        >
-          {shown}
-          {val.overridden && <PencilIcon className="size-3" aria-hidden />}
-        </button>
+        <ValTrigger val={val} label={label} sign={sign} className={className} testId={testId} />
       </PopoverTrigger>
       <PopoverContent className="w-72">
         <p className="mb-2 text-sm font-medium">
@@ -109,8 +130,19 @@ export function ValButton({
               void saveOverride(false);
             }}
           >
-            <Input type="number" value={value} onChange={(e) => setValue(e.target.value)} aria-label={V.value} />
-            <Input value={reason} onChange={(e) => setReason(e.target.value)} placeholder={V.reason} aria-label={V.reason} maxLength={300} />
+            <Input
+              type="number"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              aria-label={V.value}
+            />
+            <Input
+              value={reason}
+              onChange={(e) => setReason(e.target.value)}
+              placeholder={V.reason}
+              aria-label={V.reason}
+              maxLength={300}
+            />
             <Button type="submit" size="sm">
               {ru.common.save}
             </Button>

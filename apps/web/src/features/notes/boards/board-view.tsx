@@ -3,7 +3,7 @@ import '@xyflow/react/dist/style.css';
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useTheme } from 'next-themes';
+import { useResolvedTheme } from '@/lib/theme';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import {
   Background,
@@ -101,7 +101,7 @@ function BoardInner({ campaignId, boardId }: { campaignId: string; boardId: stri
   const client = useTRPCClient();
   const qc = useQueryClient();
   const router = useRouter();
-  const { resolvedTheme } = useTheme();
+  const resolvedTheme = useResolvedTheme();
   const flow = useReactFlow();
   const board = useQuery({ ...trpc.boards.get.queryOptions({ boardId }), refetchOnWindowFocus: false });
   const [nodes, setNodes, onNodesChange] = useNodesState<BoardNode>([]);

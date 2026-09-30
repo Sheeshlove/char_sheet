@@ -1,6 +1,7 @@
 import cron from 'node-cron';
 import { getDb } from './db/client';
 import { purgeTrash } from './services/notes';
+import { errorFields, log } from './log';
 
 let started = false;
 
@@ -11,9 +12,9 @@ export function startJobs() {
   const purge = () =>
     purgeTrash(getDb())
       .then((n) => {
-        if (n > 0) console.info(`[jobs] корзина заметок: удалено ${n}`);
+        if (n > 0) log.info({ job: 'purge-note-trash', removed: n }, 'корзина заметок очищена');
       })
-      .catch((e: unknown) => console.error('[jobs] очистка корзины не удалась', e instanceof Error ? e.message : e));
+      .catch((e: unknown) => log.error({ job: 'purge-note-trash', ...errorFields(e) }, 'очистка корзины не удалась'));
   cron.schedule('17 4 * * *', purge, { name: 'purge-note-trash' });
   // Первый прогон — вскоре после старта (если сервер перезапускается чаще, чем раз в сутки).
   setTimeout(purge, 60_000).unref();

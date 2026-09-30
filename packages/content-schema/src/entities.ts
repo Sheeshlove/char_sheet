@@ -1,14 +1,6 @@
 import { z } from 'zod';
-import {
-  abilitySchema,
-  contentKeySchema,
-  damageTypeSchema,
-  exprSchema,
-  sizeSchema,
-  skillSchema,
-  SPELL_SCHOOLS,
-  type ContentKind,
-} from './base';
+import { abilitySchema, contentKeySchema, damageTypeSchema, exprSchema, sizeSchema, skillSchema } from './base';
+import { SPELL_SCHOOLS, type ContentKind } from './constants';
 import { effectSchema, effectsStatusSchema, featureSchema, predicateSchema } from './effects';
 
 const armorCat = z.enum(['light', 'medium', 'heavy', 'shield']);

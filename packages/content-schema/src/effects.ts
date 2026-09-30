@@ -1,21 +1,6 @@
 import { z } from 'zod';
-import {
-  abilitySchema,
-  conditionSchema,
-  contentKeySchema,
-  damageTypeSchema,
-  exprSchema,
-  sizeSchema,
-  skillSchema,
-  SPELL_SCHOOLS,
-  type Ability,
-  type ConditionId,
-  type ContentKey,
-  type DamageType,
-  type Expr,
-  type Size,
-  type SkillId,
-} from './base';
+import { abilitySchema, conditionSchema, contentKeySchema, damageTypeSchema, exprSchema, sizeSchema, skillSchema } from './base';
+import { SPELL_SCHOOLS, type Ability, type ConditionId, type ContentKey, type DamageType, type Expr, type Size, type SkillId } from './constants';
 
 // ─── Цели (SPEC §6.3) ─────────────────────────────────────────────────────
 

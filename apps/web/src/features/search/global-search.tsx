@@ -8,7 +8,7 @@ import { ru } from '@/i18n/ru';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
-import { Snippet } from '@/features/notes/note-render';
+import { Snippet } from '@/features/notes/snippet';
 
 const S = ru.notes.search;
 

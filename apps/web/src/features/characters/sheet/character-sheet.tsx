@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
+import dynamic from 'next/dynamic';
+import { memo, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
@@ -40,13 +41,19 @@ import { useCharacter, useCharacterCommand, useSaveBuild } from '../use-characte
 import { SheetProvider, useSheet, type SheetContextValue } from './context';
 import { TabMain } from './tab-main';
 import { TabCombat } from './tab-combat';
-import { TabSpells } from './tab-spells';
-import { TabGear } from './tab-gear';
-import { TabFeatures } from './tab-features';
-import { TabBio } from './tab-bio';
-import { CharacterNotes } from '@/features/notes/character-notes';
-import { TabLog } from './tab-log';
 import { PlayMode, StickyStats } from './play-mode';
+
+// Вкладки, которых нет на первом экране, грузятся при открытии (SPEC §16.5): заметки тянут
+// редактор TipTap и zod, остальные — просто лишний код для телефона.
+const tabLoading = () => <p className="py-6 text-center text-sm text-muted-foreground">{ru.common.loading}</p>;
+const TabSpells = dynamic(() => import('./tab-spells').then((m) => m.TabSpells), { loading: tabLoading });
+const TabGear = dynamic(() => import('./tab-gear').then((m) => m.TabGear), { loading: tabLoading });
+const TabFeatures = dynamic(() => import('./tab-features').then((m) => m.TabFeatures), { loading: tabLoading });
+const TabBio = dynamic(() => import('./tab-bio').then((m) => m.TabBio), { loading: tabLoading });
+const TabLog = dynamic(() => import('./tab-log').then((m) => m.TabLog), { loading: tabLoading });
+const CharacterNotes = dynamic(() => import('@/features/notes/character-notes').then((m) => m.CharacterNotes), {
+  loading: tabLoading,
+});
 
 const S = ru.sheet;
 const TABS = ['main', 'combat', 'spells', 'gear', 'features', 'bio', 'notes', 'log'] as const;
@@ -54,9 +61,26 @@ type Tab = (typeof TABS)[number];
 
 /** Лист персонажа (SPEC §12.1) и игровой режим (§12.2). */
 export function CharacterSheet({ characterId }: { characterId: string }) {
-  const { query, character, full, content, sheet } = useCharacter(characterId, { live: true });
-  const { run, isPending } = useCharacterCommand(characterId, content.data?.index);
+  const { query, character, full, index, sheet } = useCharacter(characterId, { live: true });
+  const { run, isPending } = useCharacterCommand(characterId, index);
   const { save } = useSaveBuild(characterId);
+  const value = useMemo<SheetContextValue | null>(
+    () =>
+      full && sheet
+        ? {
+            characterId,
+            character: full,
+            sheet,
+            index,
+            run,
+            busy: isPending,
+            saveBuild: save,
+            canEdit: full.canEdit,
+            canEditState: full.canEditState && full.build.status === 'ready',
+          }
+        : null,
+    [characterId, full, sheet, index, run, isPending, save],
+  );
   return (
     <QueryState isLoading={query.isLoading} error={query.error}>
       {character?.access === 'summary' && (
@@ -65,20 +89,8 @@ export function CharacterSheet({ characterId }: { characterId: string }) {
           <p className="text-sm text-muted-foreground">{ru.characters.summaryOnly}</p>
         </div>
       )}
-      {full && sheet && (
-        <SheetProvider
-          value={{
-            characterId,
-            character: full,
-            sheet,
-            index: content.data?.index ?? null,
-            run,
-            busy: isPending,
-            saveBuild: save,
-            canEdit: full.canEdit,
-            canEditState: full.canEditState && full.build.status === 'ready',
-          }}
-        >
+      {value && (
+        <SheetProvider value={value}>
           <SheetBody />
         </SheetProvider>
       )}
@@ -86,7 +98,11 @@ export function CharacterSheet({ characterId }: { characterId: string }) {
   );
 }
 
-function SheetBody() {
+/**
+ * Тело листа без пропсов, в `memo`: обновления запросов (синхронные в React) перерисовывают
+ * только CharacterSheet, а лист — лишь когда меняется значение контекста (SPEC §16.5).
+ */
+const SheetBody = memo(function SheetBody() {
   const { character, sheet, characterId, canEdit } = useSheet();
   const params = useSearchParams();
   const router = useRouter();
@@ -167,7 +183,7 @@ function SheetBody() {
       )}
     </>
   );
-}
+});
 
 function XpDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { run } = useSheet();

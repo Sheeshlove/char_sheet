@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useTheme } from 'next-themes';
+import { setTheme, useThemeChoice, type ThemeChoice } from '@/lib/theme';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
 import { useTRPC } from '@/lib/trpc/client';
@@ -16,11 +16,16 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
-export function SettingsView(props: { displayName: string; email: string; username: string }) {
+export function SettingsView(props: {
+  displayName: string;
+  email: string;
+  username: string;
+  themeChoice: ThemeChoice;
+}) {
   const trpc = useTRPC();
   const router = useRouter();
   const qc = useQueryClient();
-  const { theme, setTheme } = useTheme();
+  const theme = useThemeChoice(props.themeChoice);
   const [displayName, setDisplayName] = useState(props.displayName);
   const [current, setCurrent] = useState('');
   const [next, setNext] = useState('');
@@ -89,10 +94,15 @@ export function SettingsView(props: { displayName: string; email: string; userna
               <Input value={props.username} disabled />
             </Field>
             <Field label={ru.auth.displayName} htmlFor="displayName">
-              <Input id="displayName" value={displayName} onChange={(e) => setDisplayName(e.target.value)} maxLength={64} />
+              <Input
+                id="displayName"
+                value={displayName}
+                onChange={(e) => setDisplayName(e.target.value)}
+                maxLength={64}
+              />
             </Field>
             <Field label={ru.nav.theme}>
-              <Select value={theme ?? 'dark'} onValueChange={setTheme}>
+              <Select value={theme} onValueChange={setTheme}>
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>
@@ -118,13 +128,31 @@ export function SettingsView(props: { displayName: string; email: string; userna
         <CardContent>
           <form className="grid gap-4" onSubmit={submitPassword} noValidate>
             <Field label={ru.auth.currentPassword} htmlFor="cur">
-              <Input id="cur" type="password" autoComplete="current-password" value={current} onChange={(e) => setCurrent(e.target.value)} />
+              <Input
+                id="cur"
+                type="password"
+                autoComplete="current-password"
+                value={current}
+                onChange={(e) => setCurrent(e.target.value)}
+              />
             </Field>
             <Field label={ru.auth.newPassword} htmlFor="new" hint={ru.auth.passwordHint}>
-              <Input id="new" type="password" autoComplete="new-password" value={next} onChange={(e) => setNext(e.target.value)} />
+              <Input
+                id="new"
+                type="password"
+                autoComplete="new-password"
+                value={next}
+                onChange={(e) => setNext(e.target.value)}
+              />
             </Field>
             <Field label={ru.auth.passwordRepeat} htmlFor="rep" error={pwError}>
-              <Input id="rep" type="password" autoComplete="new-password" value={repeat} onChange={(e) => setRepeat(e.target.value)} />
+              <Input
+                id="rep"
+                type="password"
+                autoComplete="new-password"
+                value={repeat}
+                onChange={(e) => setRepeat(e.target.value)}
+              />
             </Field>
             <div>
               <Button type="submit" disabled={changePassword.isPending}>

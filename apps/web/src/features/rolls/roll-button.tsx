@@ -28,19 +28,7 @@ export function d20(mod: number): string {
   return mod === 0 ? '1d20' : `1d20${mod > 0 ? '+' : '-'}${Math.abs(mod)}`;
 }
 
-/**
- * Кнопка броска в листе: всплывающее окно с выбором режима (обычный / преимущество / помеха)
- * и результатом. Бросок идёт на сервер и попадает в журнал кампании.
- */
-export function RollButton({
-  expression,
-  label,
-  characterId,
-  campaignId,
-  className,
-  size = 'icon-sm',
-  children,
-}: {
+type RollButtonProps = {
   expression: string;
   label: string;
   characterId: string;
@@ -49,7 +37,52 @@ export function RollButton({
   size?: 'icon-sm' | 'icon';
   /** Своё содержимое кнопки (игровой режим: название и модификатор). */
   children?: React.ReactNode;
-}) {
+};
+
+/**
+ * Кнопка броска в листе: всплывающее окно с выбором режима (обычный / преимущество / помеха)
+ * и результатом. Бросок идёт на сервер и попадает в журнал кампании. Окно и запрос
+ * создаются при первом нажатии: кнопок на листе десятки, а гидратация на телефоне
+ * должна быть быстрой (SPEC §16.5).
+ */
+export function RollButton(props: RollButtonProps) {
+  const [armed, setArmed] = useState(false);
+  if (!armed) return <RollTrigger {...props} onClick={() => setArmed(true)} />;
+  return <RollPopover {...props} />;
+}
+
+function RollTrigger({
+  expression,
+  label,
+  className,
+  size = 'icon-sm',
+  children,
+  characterId: _characterId,
+  campaignId: _campaignId,
+  ...rest
+}: RollButtonProps & Omit<React.ComponentProps<typeof Button>, 'size' | 'children' | 'className'>) {
+  const title = `${R.rollFor(label)} (${expression})`;
+  return children ? (
+    <Button type="button" variant="outline" className={className} title={title} {...rest}>
+      {children}
+    </Button>
+  ) : (
+    <Button
+      type="button"
+      size={size}
+      variant="ghost"
+      className={cn('text-muted-foreground', className)}
+      aria-label={R.rollFor(label)}
+      title={title}
+      {...rest}
+    >
+      <DicesIcon />
+    </Button>
+  );
+}
+
+function RollPopover(props: RollButtonProps) {
+  const { expression, label, characterId, campaignId } = props;
   const roll = useRoll();
   const [result, setResult] = useState<RollResult | null>(null);
   const isD20 = /^1d20([+-]\d+)?$/.test(expression);
@@ -59,24 +92,22 @@ export function RollButton({
       { onSuccess: (r) => setResult(r.result) },
     );
   return (
-    <Popover onOpenChange={(o) => !o && setResult(null)}>
+    <Popover defaultOpen onOpenChange={(o) => !o && setResult(null)}>
       <PopoverTrigger asChild>
-        {children ? (
-          <Button type="button" variant="outline" className={className} title={`${R.rollFor(label)} (${expression})`}>
-            {children}
-          </Button>
-        ) : (
-          <Button type="button" size={size} variant="ghost" className={cn('text-muted-foreground', className)} aria-label={R.rollFor(label)} title={`${R.rollFor(label)} (${expression})`}>
-            <DicesIcon />
-          </Button>
-        )}
+        <RollTrigger {...props} />
       </PopoverTrigger>
       <PopoverContent align="end" className="grid w-64 gap-2">
         <div className="text-sm font-medium">{label}</div>
         <div className="text-xs text-muted-foreground">{expression.replace(/d/g, 'к')}</div>
         <div className="flex flex-wrap gap-1">
           {(isD20 ? (['normal', 'advantage', 'disadvantage'] as const) : (['normal'] as const)).map((m) => (
-            <Button key={m} size="sm" variant={m === 'normal' ? 'default' : 'outline'} disabled={roll.isPending} onClick={() => go(m)}>
+            <Button
+              key={m}
+              size="sm"
+              variant={m === 'normal' ? 'default' : 'outline'}
+              disabled={roll.isPending}
+              onClick={() => go(m)}
+            >
               {m === 'normal' ? R.roll : R.modes[m]}
             </Button>
           ))}

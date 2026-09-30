@@ -1,5 +1,5 @@
 'use client';
-import { useCallback, useMemo, useRef } from 'react';
+import { useCallback, useDeferredValue, useMemo, useRef } from 'react';
 import { useIsMutating, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { TRPCClientError } from '@trpc/client';
 import type { inferRouterOutputs } from '@trpc/server';
@@ -9,6 +9,7 @@ import { applyCommand, CommandError, compute, type ComputedSheet, type ContentIn
 import type { AppRouter } from '@/server/trpc/routers/_app';
 import { trpcErrorText, useTRPC } from '@/lib/trpc/client';
 import { useContent } from '@/lib/content/use-content';
+import { useIdleReady } from '@/lib/use-idle-ready';
 import { ru } from '@/i18n/ru';
 
 type Outputs = inferRouterOutputs<AppRouter>;
@@ -31,17 +32,23 @@ export function useCharacter(characterId: string, opts?: { live?: boolean }) {
     refetchInterval: opts?.live && commandsInFlight === 0 ? LIVE_POLL_MS : false,
   });
   const full = query.data?.access === 'full' ? query.data : null;
-  const content = useContent(full?.campaign?.id ?? null, !!full);
+  // Бандл контента грузится, когда лист уже гидрирован и браузер свободен; до этого
+  // показывается расчёт сервера из того же ответа.
+  const idle = useIdleReady();
+  const content = useContent(full?.campaign?.id ?? null, !!full && idle);
+  // Пересчёт по пришедшему бандлу — фоновым рендером с разбивкой на кусочки, чтобы не
+  // блокировать ввод на телефоне (SPEC §16.5); до него показывается расчёт сервера.
+  const contentData = useDeferredValue(content.data);
   const sheet: ComputedSheet | null = useMemo(() => {
     if (!full) return null;
-    if (!content.data) return full.sheet;
+    if (!contentData) return full.sheet;
     try {
-      return compute(full.build, full.state, content.data.index, full.rules);
+      return compute(full.build, full.state, contentData.index, full.rules);
     } catch {
       return full.sheet;
     }
-  }, [full, content.data]);
-  return { query, character: query.data, full, content, sheet };
+  }, [full, contentData]);
+  return { query, character: query.data, full, content, index: contentData?.index ?? null, sheet };
 }
 
 /** Обновление полного персонажа в кэше (краткую карточку не трогаем). */
@@ -80,7 +87,9 @@ export function announceEvents(events: EngineEvent[]) {
 export function useCharacterCommand(characterId: string, index: ContentIndex | null | undefined) {
   const trpc = useTRPC();
   const qc = useQueryClient();
-  const key = trpc.characters.get.queryKey({ characterId });
+  // Стабильные ключ и функции: иначе контекст листа меняется на каждом рендере и весь лист
+  // перерисовывается синхронно при любом обновлении запросов (SPEC §16.5).
+  const key = useMemo(() => trpc.characters.get.queryKey({ characterId }), [trpc, characterId]);
   const content = useRef(index ?? null);
   content.current = index ?? null;
   const mutation = useMutation(
@@ -94,8 +103,14 @@ export function useCharacterCommand(characterId: string, index: ContentIndex | n
       },
     }),
   );
+  const { mutate } = mutation;
   const run = useCallback(
     (command: StateCommand, opts?: { onDone?: () => void }) => {
+      // Без сети лист только для просмотра (SPEC §16.4): команда не применяется даже локально.
+      if (typeof navigator !== 'undefined' && !navigator.onLine) {
+        toast.error(ru.errors.offlineMutation);
+        return;
+      }
       // Устаревший ответ опроса не должен затереть оптимистичное состояние.
       void qc.cancelQueries({ queryKey: key });
       const cur = qc.getQueryData(key);
@@ -112,9 +127,9 @@ export function useCharacterCommand(characterId: string, index: ContentIndex | n
           }
         }
       }
-      mutation.mutate({ characterId, command }, { onSuccess: () => opts?.onDone?.() });
+      mutate({ characterId, command }, { onSuccess: () => opts?.onDone?.() });
     },
-    [qc, key, content, mutation, characterId],
+    [qc, key, content, mutate, characterId],
   );
   return { run, isPending: mutation.isPending };
 }
@@ -126,9 +141,10 @@ export function useCharacterCommand(characterId: string, index: ContentIndex | n
 export function useSaveBuild(characterId: string) {
   const trpc = useTRPC();
   const qc = useQueryClient();
-  const key = trpc.characters.get.queryKey({ characterId });
+  const key = useMemo(() => trpc.characters.get.queryKey({ characterId }), [trpc, characterId]);
   const chain = useRef<Promise<unknown>>(Promise.resolve());
   const mutation = useMutation(trpc.characters.updateBuild.mutationOptions({ meta: { silent: true } }));
+  const { mutateAsync } = mutation;
 
   const save = useCallback(
     (build: CharacterBuild): Promise<boolean> => {
@@ -136,7 +152,7 @@ export function useSaveBuild(characterId: string) {
         const cur = qc.getQueryData(key);
         if (!cur || cur.access !== 'full') return false;
         try {
-          const res = await mutation.mutateAsync({ characterId, build, expectedVersion: cur.version });
+          const res = await mutateAsync({ characterId, build, expectedVersion: cur.version });
           qc.setQueryData(key, (old) => patchFull(old, { build, state: res.state, version: res.version, name: res.name }));
           return true;
         } catch (e) {
@@ -152,7 +168,7 @@ export function useSaveBuild(characterId: string) {
       chain.current = run.catch(() => undefined);
       return run;
     },
-    [qc, key, mutation, characterId],
+    [qc, key, mutateAsync, characterId],
   );
   return { save, isSaving: mutation.isPending };
 }

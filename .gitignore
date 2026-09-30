@@ -22,3 +22,6 @@ packages/importer/parsed/
 packages/importer/.vendor/
 .DS_Store
 *.log
+
+# Резервные копии, положенные для восстановления (docs/restore.md)
+/restore/

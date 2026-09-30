@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import { useTheme } from 'next-themes';
+import { useResolvedTheme } from '@/lib/theme';
 import { basicSetup, EditorView } from 'codemirror';
 import { json } from '@codemirror/lang-json';
 import { EditorState } from '@codemirror/state';
@@ -11,7 +11,7 @@ export function JsonEditor({ value, onChange, label }: { value: string; onChange
   const host = useRef<HTMLDivElement>(null);
   const view = useRef<EditorView | null>(null);
   const change = useRef(onChange);
-  const { resolvedTheme } = useTheme();
+  const resolvedTheme = useResolvedTheme();
   useEffect(() => {
     change.current = onChange;
   });

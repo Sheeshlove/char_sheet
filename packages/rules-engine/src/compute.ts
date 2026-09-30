@@ -144,7 +144,8 @@ export function computeWithPipeline(
     xp: {
       current: state.xp,
       nextLevelAt: next,
-      canLevelUp: rules.leveling === 'xp' && next !== null && state.xp >= next,
+      canLevelUp:
+        rules.leveling === 'xp' ? next !== null && state.xp >= next : (state.milestoneLevel ?? build.levels.length) > build.levels.length,
     },
     status: {
       conditions: p.activeConditions,

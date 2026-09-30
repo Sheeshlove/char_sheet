@@ -8,6 +8,8 @@ import { notesRouter } from './notes';
 import { tagsRouter } from './tags';
 import { boardsRouter } from './boards';
 import { filtersRouter } from './filters';
+import { rollsRouter } from './rolls';
+import { homebrewRouter } from './homebrew';
 
 export const appRouter = router({
   /** Гард: публичный доступ (проверка живости). */
@@ -21,6 +23,8 @@ export const appRouter = router({
   tags: tagsRouter,
   boards: boardsRouter,
   filters: filtersRouter,
+  rolls: rollsRouter,
+  homebrew: homebrewRouter,
 });
 
 export type AppRouter = typeof appRouter;

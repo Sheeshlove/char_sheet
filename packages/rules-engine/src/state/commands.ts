@@ -293,6 +293,13 @@ export function applyCommand(
     case 'set_xp':
       s.xp = cmd.xp;
       break;
+    case 'grant_level': {
+      // Режим вех: мастер разрешает повыситься ещё на `levels` уровней сверх текущего.
+      const level = build.levels.length;
+      s.milestoneLevel = Math.min(20, Math.max(level, s.milestoneLevel ?? level) + (cmd.levels ?? 1));
+      if (s.milestoneLevel > level) events.push({ type: 'level_up_available' });
+      break;
+    }
     case 'set_currency':
       s.currency = { ...cmd.currency };
       break;

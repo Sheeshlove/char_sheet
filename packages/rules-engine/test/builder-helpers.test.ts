@@ -5,6 +5,7 @@ import {
   compute,
   createContentIndex,
   pruneChoices,
+  rollExpression,
   rollFormula,
   STARTING_GOLD_KEY,
   startingEquipmentGroups,
@@ -153,5 +154,37 @@ describe('rollFormula', () => {
     expect(rollFormula('4d6', seq(0.5))!.dice).toHaveLength(4);
     expect(rollFormula('', seq(0))).toBeNull();
     expect(rollFormula('1000d6', seq(0))).toBeNull();
+  });
+});
+
+describe('rollExpression', () => {
+  const seq = (...vals: number[]) => {
+    let i = 0;
+    return () => vals[i++ % vals.length]!;
+  };
+  it('1d20+5, преимущество и помеха по первой к20', () => {
+    const plain = rollExpression('1d20+5', 'normal', seq(0.5))!;
+    expect(plain.total).toBe(11 + 5);
+    expect(plain.natural).toBe(11);
+    // 0.1 → 3, 0.9 → 19
+    const adv = rollExpression('1d20 + 5', 'advantage', seq(0.1, 0.9))!;
+    expect(adv.terms[0]).toMatchObject({ kind: 'dice', count: 2, sides: 20, rolls: [3, 19], kept: [false, true] });
+    expect(adv.total).toBe(24);
+    expect(adv.natural).toBe(19);
+    const dis = rollExpression('d20+5', 'disadvantage', seq(0.1, 0.9))!;
+    expect(dis.total).toBe(8);
+    expect(dis.natural).toBe(3);
+  });
+  it('несколько костей, вычитание, «оставить лучшие», ошибки', () => {
+    const r = rollExpression('2к6+1d4-1', 'normal', seq(0.99, 0, 0.5))!;
+    expect(r.total).toBe(6 + 1 + 3 - 1);
+    expect(r.natural).toBeUndefined();
+    const stats = rollExpression('4d6kh3', 'advantage', seq(0, 0.5, 0.99, 0.2))!;
+    expect(stats.terms[0]).toMatchObject({ rolls: [1, 4, 6, 2], kept: [false, true, true, true] });
+    expect(stats.total).toBe(12);
+    expect(rollExpression('5', 'normal', seq(0))).toBeNull();
+    expect(rollExpression('1d20+alert(1)', 'normal', seq(0))).toBeNull();
+    expect(rollExpression('101d6', 'normal', seq(0))).toBeNull();
+    expect(rollExpression('2d6kh3', 'normal', seq(0))).toBeNull();
   });
 });

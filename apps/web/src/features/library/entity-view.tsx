@@ -1,7 +1,9 @@
 'use client';
 import Link from 'next/link';
-import { useQuery } from '@tanstack/react-query';
-import { ExternalLinkIcon } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import { toast } from 'sonner';
+import { CopyIcon, ExternalLinkIcon } from 'lucide-react';
 import type {
   ArmorData,
   BackgroundData,
@@ -287,6 +289,26 @@ function ClassTable({ d }: { d: ClassData }) {
   );
 }
 
+/** «Клонировать в homebrew» (SPEC §14): копия в личном пакете, дальше — редактор. */
+function CloneButton({ entityKey }: { entityKey: string }) {
+  const trpc = useTRPC();
+  const router = useRouter();
+  const clone = useMutation(
+    trpc.homebrew.clone.mutationOptions({
+      onSuccess: ({ key }) => {
+        toast.success(ru.homebrew.cloned);
+        router.push(`/homebrew/${key}/edit`);
+      },
+    }),
+  );
+  return (
+    <Button variant="outline" onClick={() => clone.mutate({ key: entityKey })} disabled={clone.isPending}>
+      <CopyIcon />
+      {ru.homebrew.clone}
+    </Button>
+  );
+}
+
 export function EntityView({ entityKey }: { entityKey: string }) {
   const trpc = useTRPC();
   const q = useQuery(trpc.content.get.queryOptions({ key: entityKey }));
@@ -308,14 +330,17 @@ export function EntityView({ entityKey }: { entityKey: string }) {
               </span>
             }
             actions={
-              e.sourceUrl && (
-                <Button variant="outline" asChild>
-                  <a href={e.sourceUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLinkIcon />
-                    {L.openDndsu}
-                  </a>
-                </Button>
-              )
+              <>
+                {e.sourceUrl && (
+                  <Button variant="outline" asChild>
+                    <a href={e.sourceUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLinkIcon />
+                      {L.openDndsu}
+                    </a>
+                  </Button>
+                )}
+                <CloneButton entityKey={e.key} />
+              </>
             }
           />
           <Card>

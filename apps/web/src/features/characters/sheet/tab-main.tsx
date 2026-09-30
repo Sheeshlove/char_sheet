@@ -15,6 +15,7 @@ import { cn, signed } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { ProfDot, Section } from './bits';
 import { useSheet } from './context';
+import { d20, SheetRoll } from './roll';
 import { ValButton } from './val';
 
 const S = ru.sheet;
@@ -49,6 +50,7 @@ export function AbilitiesGrid() {
                 <ProfDot level={ab.saveProficient ? 'proficient' : 'none'} />
                 <span className="text-muted-foreground">{S.saveShort}</span>
                 <ValButton val={ab.save} path={`abilities.${a}.save`} label={`${S.saves}: ${ABILITY_LABEL_RU[a]}`} sign testId={`save-${a}`} />
+                <SheetRoll expression={d20(ab.save.value)} label={ru.rolls.save(ABILITY_LABEL_RU[a])} className="size-6" />
                 {ab.autoFail && <Badge variant="destructive">{S.autoFail}</Badge>}
                 <ModeBadges modes={ab.modes} />
               </div>
@@ -75,6 +77,7 @@ export function SkillsList() {
               </span>
               <ModeBadges modes={sk.modes} />
               <ValButton val={sk.value} path={`skills.${k}`} label={SKILL_LABEL_RU[k]} sign className="w-10" />
+              <SheetRoll expression={d20(sk.value.value)} label={ru.rolls.check(SKILL_LABEL_RU[k])} className="size-6" />
             </li>
           );
         })}

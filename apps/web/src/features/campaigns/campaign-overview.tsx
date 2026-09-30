@@ -24,6 +24,7 @@ import { Field } from '@/components/ui/field';
 import { Input } from '@/components/ui/input';
 import { CampaignNav } from './campaign-nav';
 import { CampaignCharacters } from './campaign-characters';
+import { DiceRoller } from '@/features/rolls/dice-roller';
 
 export function CampaignOverview({ campaignId }: { campaignId: string }) {
   const trpc = useTRPC();
@@ -64,6 +65,7 @@ export function CampaignOverview({ campaignId }: { campaignId: string }) {
           <div className="grid gap-4 lg:grid-cols-2">
             <CampaignCharacters campaignId={campaignId} />
             <MembersCard campaignId={campaignId} role={c.role} ownerId={c.ownerId} />
+            <DiceRoller campaignId={campaignId} />
             {isGm && <InvitesCard campaignId={campaignId} />}
           </div>
         </>

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { evalBool, evalExpr, evalNumber, ExprError, parseExpr } from '../src';
+import { checkExpr, evalBool, evalExpr, evalNumber, ExprError, parseExpr } from '../src';
 
 const ctx = {
   vars: { STR: 3, DEX: 2, CLASS_LEVEL: 5, LEVEL: 7, ARMOR: 'none', SHIELD: false, PB: 3 },
@@ -53,5 +53,17 @@ describe('вычислитель выражений (SPEC §6.4)', () => {
   });
   it('кэширует разбор', () => {
     expect(parseExpr('1 + LEVEL')).toBe(parseExpr('1 + LEVEL'));
+  });
+});
+
+describe('проверка выражений в редакторе homebrew', () => {
+  it('вычисляет на тестовом персонаже 5 уровня и сообщает об ошибках', () => {
+    expect(checkExpr('2')).toEqual({ ok: true, value: 2 });
+    expect(checkExpr('PB + DEX')).toEqual({ ok: true, value: 5 });
+    expect(checkExpr('max(1, floor(LEVEL / 2))')).toEqual({ ok: true, value: 2 });
+    expect(checkExpr('col("Ярость")', { Ярость: 3 })).toEqual({ ok: true, value: 3 });
+    expect(checkExpr('col("Ярость")').ok).toBe(false);
+    expect(checkExpr('PB +').ok).toBe(false);
+    expect(checkExpr('alert(1)').ok).toBe(false);
   });
 });

@@ -135,6 +135,8 @@ export const characterStateSchema = z.strictObject({
   concentration: z.strictObject({ spellKey: contentKeySchema, sinceIso: z.string() }).optional(),
   inspiration: z.boolean(),
   xp: z.number().int().min(0),
+  /** Режим вех: уровень, до которого мастер разрешил повыситься (SPEC §10). */
+  milestoneLevel: z.number().int().min(1).max(20).optional(),
   currency: currencySchema,
   inventory: z.array(inventoryItemSchema).max(1000),
   prepared: z.record(z.string(), z.array(contentKeySchema)),
@@ -177,6 +179,7 @@ export const stateCommandSchema = z.discriminatedUnion('type', [
   z.strictObject({ type: z.literal('new_day') }),
   z.strictObject({ type: z.literal('gain_xp'), amount: z.number().int().min(-10000000).max(10000000) }),
   z.strictObject({ type: z.literal('set_xp'), xp: z.number().int().min(0).max(10000000) }),
+  z.strictObject({ type: z.literal('grant_level'), levels: z.number().int().min(1).max(19).optional() }),
   z.strictObject({ type: z.literal('set_currency'), currency: currencySchema }),
   z.strictObject({ type: z.literal('add_currency'), currency: currencySchema.partial() }),
   z.strictObject({ type: z.literal('inventory_add'), item: inventoryItemSchema.omit({ id: true }) }),

@@ -1,4 +1,4 @@
-import { and, eq, sql } from 'drizzle-orm';
+import { and, eq, inArray, sql } from 'drizzle-orm';
 import { TRPCError } from '@trpc/server';
 import {
   characterBuildSchema,
@@ -168,37 +168,63 @@ export async function runCommand(
   command: StateCommand,
   kind = 'state.command',
 ): Promise<{ row: CharacterRow; events: EngineEvent[]; sheet: ComputedSheet }> {
-  const [meta] = await db
-    .select({ ownerId: characters.ownerId, campaignId: characters.campaignId })
+  const [res] = await runCommands(db, actorId, [{ characterId, command }], kind);
+  return res!;
+}
+
+/**
+ * Команды для нескольких персонажей в одной транзакции (панель мастера, SPEC §13): строки
+ * блокируются `FOR UPDATE` в порядке id, ошибка правил у любого персонажа отменяет всё.
+ */
+export async function runCommands(
+  db: Db,
+  actorId: string,
+  items: { characterId: string; command: StateCommand }[],
+  kind = 'state.command',
+): Promise<{ row: CharacterRow; events: EngineEvent[]; sheet: ComputedSheet }[]> {
+  const ids = [...new Set(items.map((i) => i.characterId))];
+  const metas = await db
+    .select({ id: characters.id, ownerId: characters.ownerId, campaignId: characters.campaignId })
     .from(characters)
-    .where(eq(characters.id, characterId));
-  if (!meta) throw notFound();
-  const ctx = await engineContextFor(db, meta);
+    .where(inArray(characters.id, ids));
+  if (metas.length !== ids.length) throw notFound();
+  const contexts = new Map(await Promise.all(metas.map(async (m) => [m.id, await engineContextFor(db, m)] as const)));
   return db.transaction(async (tx) => {
-    const locked = await tx.execute<{ id: string }>(sql`select id from characters where id = ${characterId} for update`);
-    if (!locked.length) throw notFound();
-    const [row] = await tx.select().from(characters).where(eq(characters.id, characterId));
-    const { build, state } = parseStored(row!);
-    let result: { state: CharacterState; events: EngineEvent[] };
-    try {
-      result = applyCommand(build, state, command, ctx.content, ctx.rules);
-    } catch (e) {
-      engineError(e);
+    const sorted = [...ids].sort();
+    const locked = await tx.execute<{ id: string }>(
+      sql`select id from characters where id in (${sql.join(
+        sorted.map((id) => sql`${id}`),
+        sql`, `,
+      )}) order by id for update`,
+    );
+    if (locked.length !== ids.length) throw notFound();
+    const out: { row: CharacterRow; events: EngineEvent[]; sheet: ComputedSheet }[] = [];
+    for (const { characterId, command } of items) {
+      const ctx = contexts.get(characterId)!;
+      const [row] = await tx.select().from(characters).where(eq(characters.id, characterId));
+      const { build, state } = parseStored(row!);
+      let result: { state: CharacterState; events: EngineEvent[] };
+      try {
+        result = applyCommand(build, state, command, ctx.content, ctx.rules);
+      } catch (e) {
+        engineError(e);
+      }
+      const sheet = computeSheet(build, result.state, ctx);
+      const [updated] = await tx
+        .update(characters)
+        .set({
+          state: result.state,
+          version: sql`${characters.version} + 1`,
+          computedCache: summarize(sheet),
+          engineVersion: ENGINE_VERSION,
+          updatedAt: new Date(),
+        })
+        .where(eq(characters.id, characterId))
+        .returning();
+      await logEvent(tx, characterId, actorId, kind, { command, events: result.events });
+      out.push({ row: updated!, events: result.events, sheet });
     }
-    const sheet = computeSheet(build, result.state, ctx);
-    const [updated] = await tx
-      .update(characters)
-      .set({
-        state: result.state,
-        version: sql`${characters.version} + 1`,
-        computedCache: summarize(sheet),
-        engineVersion: ENGINE_VERSION,
-        updatedAt: new Date(),
-      })
-      .where(eq(characters.id, characterId))
-      .returning();
-    await logEvent(tx, characterId, actorId, kind, { command, events: result.events });
-    return { row: updated!, events: result.events, sheet };
+    return out;
   });
 }
 

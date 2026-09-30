@@ -61,6 +61,10 @@ export function levelUpOptions(
       reasonRu = `Нужно ${need} опыта (сейчас ${state.xp}).`;
     }
   }
+  if (canLevelUp && state && rules.leveling === 'milestone' && (state.milestoneLevel ?? current) <= current) {
+    canLevelUp = false;
+    reasonRu = 'Мастер ещё не выдал новый уровень.';
+  }
 
   const existing = new Set(build.classes.map((c) => c.classKey));
   const candidates = [

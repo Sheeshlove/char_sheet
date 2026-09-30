@@ -1,5 +1,6 @@
 'use client';
-import { DAMAGE_TYPE_LABEL_RU } from '@ps/rules-engine';
+import { ABILITIES, SKILLS } from '@ps/content-schema';
+import { ABILITY_LABEL_RU, ABILITY_SHORT_RU, DAMAGE_TYPE_LABEL_RU, SKILL_LABEL_RU } from '@ps/rules-engine';
 import { formatDamage } from '@/lib/format';
 import { ru } from '@/i18n/ru';
 import { signed } from '@/lib/utils';
@@ -9,6 +10,7 @@ import { useSheet } from './context';
 import { ConditionsBlock, DeathSaves, HpBlock, ResourcesBlock } from './tab-combat';
 import { GrantsBlock, SlotsBlock } from './tab-spells';
 import { LongRestDialog, ShortRestDialog } from './rest-dialogs';
+import { d20, SheetRoll } from './roll';
 
 const S = ru.sheet;
 
@@ -43,6 +45,34 @@ export function StickyStats() {
   );
 }
 
+/** Кнопки бросков спасбросков и навыков (SPEC §12.2, веха M9). */
+function QuickRolls() {
+  const { sheet, canEditState } = useSheet();
+  if (!canEditState) return null;
+  return (
+    <Section title={ru.rolls.title}>
+      <div className="grid gap-3" data-testid="quick-rolls">
+        <div className="grid grid-cols-3 gap-1.5">
+          {ABILITIES.map((a) => (
+            <SheetRoll key={a} expression={d20(sheet.abilities[a].save.value)} label={ru.rolls.save(ABILITY_LABEL_RU[a])} className="h-auto flex-col gap-0 py-1.5">
+              <span className="text-[11px] text-muted-foreground">{S.saveShort} {ABILITY_SHORT_RU[a]}</span>
+              <span className="font-semibold tabular-nums">{signed(sheet.abilities[a].save.value)}</span>
+            </SheetRoll>
+          ))}
+        </div>
+        <div className="grid grid-cols-2 gap-1.5">
+          {SKILLS.map((k) => (
+            <SheetRoll key={k} expression={d20(sheet.skills[k].value.value)} label={ru.rolls.check(SKILL_LABEL_RU[k])} className="h-auto justify-between py-1.5">
+              <span className="truncate text-xs">{SKILL_LABEL_RU[k]}</span>
+              <span className="font-semibold tabular-nums">{signed(sheet.skills[k].value.value)}</span>
+            </SheetRoll>
+          ))}
+        </div>
+      </div>
+    </Section>
+  );
+}
+
 /** Игровой режим: крупные элементы для телефона (SPEC §12.2). */
 export function PlayMode() {
   const { sheet } = useSheet();
@@ -58,6 +88,7 @@ export function PlayMode() {
           <LongRestDialog size="lg" />
         </div>
         <ConditionsBlock />
+        <QuickRolls />
       </div>
       <div className="grid content-start gap-4">
         <SlotsBlock big />

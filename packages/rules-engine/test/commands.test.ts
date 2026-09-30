@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { CharacterState, StateCommand } from '@ps/content-schema';
-import { applyCommand, compute, CommandError, initialState, stateAfterBuildChange } from '../src';
+import { applyCommand, compute, CommandError, initialState, levelUpOptions, stateAfterBuildChange } from '../src';
 import { mini } from './fixtures/content-mini';
 import { golden } from './helpers';
 
@@ -277,5 +277,23 @@ describe('состояние после сохранения сборки', () =
     expect(stateAfterBuildChange(ready, wounded, ready, mini, g.rules)).toBe(wounded);
     const dead = { ...wounded, deathSaves: { successes: 0, failures: 3, stable: false, dead: true } };
     expect(stateAfterBuildChange(ready, dead, tougher, mini, g.rules)).toBe(dead);
+  });
+});
+
+describe('режим вех: «Выдать уровень»', () => {
+  it('повышение доступно только после выдачи уровня мастером', () => {
+    const g = golden('01');
+    const rules = { ...g.rules, leveling: 'milestone' as const };
+    const state = initialState(g.build, g.state, mini, rules);
+    expect(compute(g.build, state, mini, rules).xp.canLevelUp).toBe(false);
+    expect(levelUpOptions(g.build, mini, rules, state).canLevelUp).toBe(false);
+    const res = applyCommand(g.build, state, { type: 'grant_level' }, mini, rules);
+    expect(res.state.milestoneLevel).toBe(g.build.levels.length + 1);
+    expect(res.events).toContainEqual({ type: 'level_up_available' });
+    expect(compute(g.build, res.state, mini, rules).xp.canLevelUp).toBe(true);
+    expect(levelUpOptions(g.build, mini, rules, res.state).canLevelUp).toBe(true);
+    // Повторная выдача добавляет ещё уровень, не больше 20.
+    const twice = applyCommand(g.build, res.state, { type: 'grant_level', levels: 19 }, mini, rules);
+    expect(twice.state.milestoneLevel).toBe(20);
   });
 });

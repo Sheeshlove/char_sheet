@@ -18,6 +18,7 @@ import { useSheet } from './context';
 import { HpDialog, type HpAction } from './hp-dialog';
 import { LongRestDialog, ShortRestDialog } from './rest-dialogs';
 import { ValButton } from './val';
+import { d20, damageExpr, SheetRoll } from './roll';
 
 const S = ru.sheet;
 
@@ -29,7 +30,10 @@ export function CoreStats() {
         <ValButton val={sheet.ac} path="ac" label={S.ac} testId="stat-ac" />
       </StatBox>
       <StatBox label={S.initiative}>
-        <ValButton val={sheet.initiative} path="initiative" label={S.initiative} sign testId="stat-init" />
+        <span className="inline-flex items-center">
+          <ValButton val={sheet.initiative} path="initiative" label={S.initiative} sign testId="stat-init" />
+          <SheetRoll expression={d20(sheet.initiative.value)} label={ru.rolls.initiative} className="size-6" />
+        </span>
       </StatBox>
       <StatBox label={S.speed}>
         {sheet.speed.walk ? <ValButton val={sheet.speed.walk} path="speed.walk" label={S.speed} testId="stat-speed" /> : '0'}
@@ -260,7 +264,12 @@ export function AttacksTable() {
                   </div>
                 </TableCell>
                 <TableCell>
-                  {a.toHit && <ValButton val={a.toHit} label={`${a.nameRu}: ${S.toHit}`} sign />}
+                  {a.toHit && (
+                    <span className="inline-flex items-center">
+                      <ValButton val={a.toHit} label={`${a.nameRu}: ${S.toHit}`} sign />
+                      <SheetRoll expression={d20(a.toHit.value)} label={ru.rolls.attack(a.nameRu)} className="size-6" />
+                    </span>
+                  )}
                   {a.saveDc && (
                     <span className="whitespace-nowrap text-sm">
                       {S.saveDc} <ValButton val={a.saveDc} label={`${a.nameRu}: ${S.saveDc}`} />
@@ -269,8 +278,9 @@ export function AttacksTable() {
                 </TableCell>
                 <TableCell className="text-sm">
                   {a.damage.map((d, i) => (
-                    <div key={i} className="whitespace-nowrap">
+                    <div key={i} className="flex items-center whitespace-nowrap">
                       {formatDamage(d, DAMAGE_TYPE_LABEL_RU)}
+                      {damageExpr(d) && <SheetRoll expression={damageExpr(d)!} label={ru.rolls.damage(a.nameRu)} className="size-6" />}
                     </div>
                   ))}
                 </TableCell>

@@ -16,10 +16,11 @@ type Payload = {
   level?: number;
 };
 
-function describe(kind: string, payload: unknown): string {
+/** Текст события журнала (персонаж и журнал кампании). */
+export function describeEvent(kind: string, payload: unknown): string {
   const p = (payload ?? {}) as Payload;
   const c = p.command;
-  if (kind === 'state.command' && c?.type) {
+  if ((kind === 'state.command' || kind === 'gm.bulk') && c?.type) {
     const name = L.commands[c.type] ?? c.type;
     if (c.amount !== undefined) return `${name}: ${c.amount}`;
     if (c.type === 'spend_slot' || c.type === 'restore_slot') return `${name}: ${L.slotLevel(c.level ?? 0)}`;
@@ -48,7 +49,7 @@ export function TabLog() {
           <ul className="grid gap-1 text-sm" data-testid="event-log">
             {items.map((e) => (
               <li key={e.id} className="flex flex-wrap justify-between gap-2 border-b py-1 last:border-0">
-                <span>{describe(e.kind, e.payload)}</span>
+                <span>{describeEvent(e.kind, e.payload)}</span>
                 <span className="text-xs text-muted-foreground">
                   {e.actorName ?? '—'} · {formatDateTime(e.createdAt)}
                 </span>

@@ -9,8 +9,9 @@ import { loadContentPacks } from '../../content/load';
 const kindSchema = z.enum(CONTENT_KINDS);
 
 /**
- * Видимость контента в справочнике: глобальные пакеты — всем вошедшим; homebrew — по правилам
- * `homebrew`-роутера (M9). Здесь — только одобренные сущности глобальных пакетов и свои.
+ * Видимость контента в справочнике: одобренные сущности глобальных пакетов — всем вошедшим;
+ * homebrew (SPEC §14) — одобренные сущности своего личного пакета и пакетов своих кампаний;
+ * свои черновики — автору.
  */
 function visibleTo(userId: string): SQL {
   return or(
@@ -18,7 +19,10 @@ function visibleTo(userId: string): SQL {
       eq(contentEntities.status, 'approved'),
       inArray(
         contentEntities.packKey,
-        sql`(select ${contentPacks.key} from ${contentPacks} where ${contentPacks.visibility} = 'global')`,
+        sql`(select p.key from content_packs p where p.visibility = 'global'
+              or (p.visibility = 'private' and p.owner_user_id = ${userId})
+              or (p.visibility = 'campaign' and exists (
+                select 1 from campaign_members m where m.campaign_id = p.campaign_id and m.user_id = ${userId})))`,
       ),
     ),
     eq(contentEntities.authorId, userId),

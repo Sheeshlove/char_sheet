@@ -46,6 +46,88 @@ export function diceRu(s: string): string {
   return s.replace(/d/g, 'к');
 }
 
+// ─── Броски (SPEC §4.7) ──────────────────────────────────────────────────
+
+export type RollMode = 'normal' | 'advantage' | 'disadvantage';
+
+export type RollTerm =
+  | { kind: 'dice'; sign: 1 | -1; count: number; sides: number; keep?: { high: boolean; n: number }; rolls: number[]; kept: boolean[] }
+  | { kind: 'mod'; sign: 1 | -1; value: number };
+
+export type RollResult = {
+  expression: string;
+  mode: RollMode;
+  total: number;
+  terms: RollTerm[];
+  /** Выпавшее значение к20, если в выражении ровно одна к20 (для отметки «натуральной 20/1»). */
+  natural?: number;
+};
+
+const MAX_TERMS = 20;
+const MAX_DICE = 100;
+
+/**
+ * Бросок выражения вида `1d20+5`, `2d6+1d4-1`, `4d6kh3` (оставить 3 лучших) с источником
+ * случайности `rng` ∈ [0, 1). Преимущество/помеха относятся к первой одиночной к20: бросаются
+ * две, берётся большая/меньшая. Некорректное выражение → null.
+ */
+export function rollExpression(expression: string, mode: RollMode, rng: () => number): RollResult | null {
+  const src = expression.replace(/\s+/g, '').replace(/к/giu, 'd').toLowerCase();
+  if (!src || src.length > 100 || !/^[+-]?[0-9d+khl-]+$/.test(src)) return null;
+  const parts = src.match(/[+-]?[^+-]+/g);
+  if (!parts || parts.length > MAX_TERMS) return null;
+  const terms: RollTerm[] = [];
+  let diceCount = 0;
+  let advApplied = mode === 'normal';
+  for (const raw of parts) {
+    const sign: 1 | -1 = raw.startsWith('-') ? -1 : 1;
+    const body = raw.replace(/^[+-]/, '');
+    const dm = /^(\d*)d(\d+)(?:k([hl])(\d+))?$/.exec(body);
+    if (dm) {
+      let count = Number(dm[1] || 1);
+      const sides = Number(dm[2]);
+      if (count < 1 || sides < 2 || sides > 1000) return null;
+      let keep = dm[3] ? { high: dm[3] === 'h', n: Number(dm[4]) } : undefined;
+      if (!advApplied && count === 1 && sides === 20 && !keep && sign === 1) {
+        count = 2;
+        keep = { high: mode === 'advantage', n: 1 };
+        advApplied = true;
+      }
+      if (keep && (keep.n < 1 || keep.n > count)) return null;
+      diceCount += count;
+      if (diceCount > MAX_DICE) return null;
+      const rolls = Array.from({ length: count }, () => 1 + Math.floor(rng() * sides));
+      let kept = rolls.map(() => true);
+      if (keep) {
+        const order = rolls.map((v, i) => ({ v, i })).sort((a, b) => (keep!.high ? b.v - a.v : a.v - b.v) || a.i - b.i);
+        const keepIdx = new Set(order.slice(0, keep.n).map((o) => o.i));
+        kept = rolls.map((_, i) => keepIdx.has(i));
+      }
+      terms.push({ kind: 'dice', sign, count, sides, ...(keep ? { keep } : {}), rolls, kept });
+      continue;
+    }
+    if (/^\d+$/.test(body) && Number(body) <= 10000) {
+      terms.push({ kind: 'mod', sign, value: Number(body) });
+      continue;
+    }
+    return null;
+  }
+  if (!terms.some((t) => t.kind === 'dice')) return null;
+  const total = terms.reduce(
+    (sum, t) => sum + t.sign * (t.kind === 'mod' ? t.value : t.rolls.reduce((a, v, i) => a + (t.kept[i] ? v : 0), 0)),
+    0,
+  );
+  const d20 = terms.filter((t): t is Extract<RollTerm, { kind: 'dice' }> => t.kind === 'dice' && t.sides === 20);
+  const single = d20.length === 1 && d20[0]!.kept.filter(Boolean).length === 1 ? d20[0]! : null;
+  return {
+    expression: src,
+    mode,
+    total,
+    terms,
+    ...(single ? { natural: single.rolls[single.kept.indexOf(true)] } : {}),
+  };
+}
+
 /**
  * Бросок формулы вида `5d4*10`, `2d6+3`, `4d6` с источником случайности `rng` ∈ [0, 1).
  * Возвращает итог и отдельные кости. Пустая или некорректная формула → null.

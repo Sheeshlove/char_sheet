@@ -21,6 +21,7 @@ export { applyCommand, initialState, stateAfterBuildChange } from './state/comma
 export { summarize } from './summary';
 export { ContentIndex, createContentIndex } from './content-index';
 export { evalExpr, evalNumber, evalBool, parseExpr, ExprError, type ExprContext, type ExprValue } from './expr/evaluate';
+export { checkExpr, previewExprContext, PREVIEW_LEVEL } from './expr/preview';
 export { resolveValPath } from './pipeline/overrides';
 export * from './dice';
 export * from './types';

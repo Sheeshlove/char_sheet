@@ -1,10 +1,11 @@
-import { and, desc, eq, ilike, isNotNull, isNull, lt, or } from 'drizzle-orm';
+import { and, desc, eq, gte, ilike, inArray, isNotNull, isNull, lt, lte, or } from 'drizzle-orm';
 import { z } from 'zod';
 import {
   characterBuildSchema,
   levelUpDecisionSchema,
   parseCampaignSettings,
   stateCommandSchema,
+  type StateCommand,
 } from '@ps/content-schema';
 import type { SheetSummary } from '@ps/rules-engine';
 import { authedProcedure, router } from '../init';
@@ -32,6 +33,7 @@ import {
   parseStored,
   refreshCache,
   runCommand,
+  runCommands,
   undoLevel,
   updateBuild,
   type CharacterRow,
@@ -44,7 +46,25 @@ const idInput = z.object({ characterId: z.uuid() });
 const versioned = idInput.extend({ expectedVersion: z.number().int().min(1) });
 
 /** Команды, которые в кампании выдаёт только мастер (SPEC §5.3: «выдать опыт»). */
-const GM_ONLY_IN_CAMPAIGN = new Set(['gain_xp', 'set_xp']);
+const GM_ONLY_IN_CAMPAIGN = new Set(['gain_xp', 'set_xp', 'grant_level']);
+
+/** Команды, доступные массовым действиям панели мастера (SPEC §13). */
+const BULK_COMMANDS = new Set<StateCommand['type']>([
+  'gain_xp',
+  'grant_level',
+  'short_rest',
+  'long_rest',
+  'new_day',
+  'damage',
+  'heal',
+  'set_temp_hp',
+  'add_condition',
+  'remove_condition',
+  'set_exhaustion',
+  'inventory_add',
+  'add_currency',
+  'set_inspiration',
+]);
 
 async function loadRow(ctx: AuthedCtx, characterId: string): Promise<CharacterRow> {
   const [row] = await ctx.db.select().from(characters).where(eq(characters.id, characterId));
@@ -379,6 +399,107 @@ export const charactersRouter = router({
         items,
         nextCursor: rows.length > input.limit && last ? `${last.createdAt.toISOString()}|${last.id}` : null,
       };
+    }),
+
+  /**
+   * Массовое действие мастера над персонажами кампании (SPEC §13): одна транзакция, автор —
+   * мастер. Гард: мастер или со-мастер кампании; все персонажи — из этой кампании.
+   */
+  bulkCommand: authedProcedure
+    .input(
+      z.object({
+        campaignId: z.uuid(),
+        characterIds: z.array(z.uuid()).min(1).max(50),
+        action: z.discriminatedUnion('kind', [
+          z.object({ kind: z.literal('xp_each'), amount: z.number().int().min(1).max(1_000_000) }),
+          z.object({ kind: z.literal('xp_split'), total: z.number().int().min(1).max(10_000_000) }),
+          z.object({ kind: z.literal('command'), command: stateCommandSchema }),
+        ]),
+      }),
+    )
+    .mutation(async ({ ctx, input }) => {
+      const role = await requireCampaignRole(ctx, input.campaignId);
+      if (!isGmRole(role)) throw forbidden();
+      const ids = [...new Set(input.characterIds)];
+      const rows = await ctx.db
+        .select({ id: characters.id })
+        .from(characters)
+        .where(and(inArray(characters.id, ids), eq(characters.campaignId, input.campaignId), isNull(characters.archivedAt)));
+      if (rows.length !== ids.length) throw notFound();
+      let command: StateCommand;
+      if (input.action.kind === 'xp_each') command = { type: 'gain_xp', amount: input.action.amount };
+      else if (input.action.kind === 'xp_split') {
+        // «Опыт поровну»: сумма делится с округлением вниз.
+        const share = Math.floor(input.action.total / ids.length);
+        if (share < 1) throw badRequest('xp_split_too_small');
+        command = { type: 'gain_xp', amount: share };
+      } else {
+        if (!BULK_COMMANDS.has(input.action.command.type)) throw badRequest();
+        command = input.action.command;
+      }
+      const res = await runCommands(
+        ctx.db,
+        ctx.user.id,
+        ids.map((characterId) => ({ characterId, command })),
+        'gm.bulk',
+      );
+      return { updated: res.length, command, results: res.map((r) => ({ characterId: r.row.id, events: r.events })) };
+    }),
+
+  /** Журнал кампании (SPEC §13): события всех персонажей с фильтрами. Гард: мастер или со-мастер. */
+  campaignEvents: authedProcedure
+    .input(
+      z.object({
+        campaignId: z.uuid(),
+        characterId: z.uuid().optional(),
+        kind: z.string().max(60).optional(),
+        actorId: z.uuid().optional(),
+        from: z.date().optional(),
+        to: z.date().optional(),
+        cursor: z.string().nullish(),
+        limit: z.number().int().min(1).max(100).default(50),
+      }),
+    )
+    .query(async ({ ctx, input }) => {
+      const role = await requireCampaignRole(ctx, input.campaignId);
+      if (!isGmRole(role)) throw forbidden();
+      let cursorCond;
+      if (input.cursor) {
+        const [iso, id] = input.cursor.split('|');
+        const at = new Date(iso ?? '');
+        if (!id || Number.isNaN(at.getTime())) throw badRequest();
+        cursorCond = or(lt(characterEvents.createdAt, at), and(eq(characterEvents.createdAt, at), lt(characterEvents.id, id)));
+      }
+      const rows = await ctx.db
+        .select({
+          id: characterEvents.id,
+          characterId: characterEvents.characterId,
+          characterName: characters.name,
+          kind: characterEvents.kind,
+          payload: characterEvents.payload,
+          createdAt: characterEvents.createdAt,
+          actorId: characterEvents.actorId,
+          actorName: users.displayName,
+        })
+        .from(characterEvents)
+        .innerJoin(characters, eq(characters.id, characterEvents.characterId))
+        .leftJoin(users, eq(users.id, characterEvents.actorId))
+        .where(
+          and(
+            eq(characters.campaignId, input.campaignId),
+            input.characterId ? eq(characterEvents.characterId, input.characterId) : undefined,
+            input.kind ? eq(characterEvents.kind, input.kind) : undefined,
+            input.actorId ? eq(characterEvents.actorId, input.actorId) : undefined,
+            input.from ? gte(characterEvents.createdAt, input.from) : undefined,
+            input.to ? lte(characterEvents.createdAt, input.to) : undefined,
+            cursorCond,
+          ),
+        )
+        .orderBy(desc(characterEvents.createdAt), desc(characterEvents.id))
+        .limit(input.limit + 1);
+      const items = rows.slice(0, input.limit);
+      const last = items.at(-1);
+      return { items, nextCursor: rows.length > input.limit && last ? `${last.createdAt.toISOString()}|${last.id}` : null };
     }),
 
   /** Кампании, к которым можно прикрепить персонажа. Гард: `requireUser` (свои участия). */

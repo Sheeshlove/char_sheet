@@ -22,3 +22,10 @@ export function diceRu(s: string | undefined): string {
 export function formatFeet(ft: number | undefined): string {
   return ft === undefined ? '—' : `${ft} ${ru.library.ft}`;
 }
+
+/** Строка урона: `1к8+3 рубящий`; без кости — только число (`0 дробящий`). */
+export function formatDamage(d: { dice: string; bonus: number; type: string }, typeLabels: Record<string, string>): string {
+  const sign = (n: number) => (n >= 0 ? `+${n}` : `−${Math.abs(n)}`);
+  const base = d.dice ? `${diceRu(d.dice)}${d.bonus ? sign(d.bonus) : ''}` : String(d.bonus);
+  return `${base} ${(typeLabels[d.type] ?? d.type).toLowerCase()}`;
+}

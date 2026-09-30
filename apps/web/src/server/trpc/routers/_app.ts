@@ -2,6 +2,7 @@ import { publicProcedure, router } from '../init';
 import { authRouter } from './auth';
 import { adminRouter } from './admin';
 import { campaignsRouter } from './campaigns';
+import { charactersRouter } from './characters';
 import { contentRouter } from './content';
 
 export const appRouter = router({
@@ -10,6 +11,7 @@ export const appRouter = router({
   auth: authRouter,
   admin: adminRouter,
   campaigns: campaignsRouter,
+  characters: charactersRouter,
   content: contentRouter,
 });
 

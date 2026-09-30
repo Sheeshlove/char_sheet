@@ -20,7 +20,9 @@ const nextConfig: NextConfig = {
   output: 'standalone',
   reactStrictMode: true,
   transpilePackages: ['@ps/rules-engine', '@ps/content-schema'],
-  serverExternalPackages: ['@node-rs/argon2', 'postgres'],
+  serverExternalPackages: ['@node-rs/argon2', 'postgres', 'sharp', '@react-pdf/renderer'],
+  // Шрифты с кириллицей для PDF листа (SPEC §12.3) — в standalone-сборку.
+  outputFileTracingIncludes: { '/characters/[id]/pdf': ['./assets/fonts/**'] },
   poweredByHeader: false,
   async headers() {
     return [

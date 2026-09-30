@@ -13,6 +13,8 @@ export const { TRPCProvider, useTRPC, useTRPCClient } = createTRPCContext<AppRou
 /** Текст ошибки tRPC для пользователя: ключ из `message` или код. */
 export function trpcErrorText(err: unknown): string {
   if (err instanceof TRPCClientError) {
+    const engineMessage = (err.data as { engineMessage?: string | null } | undefined)?.engineMessage;
+    if (engineMessage) return engineMessage;
     const msg = err.message;
     const text = errorMessage(msg);
     if (text !== ru.errors.INTERNAL_SERVER_ERROR || msg === 'INTERNAL_SERVER_ERROR') return text;

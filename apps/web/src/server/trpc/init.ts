@@ -3,6 +3,7 @@ import superjson from 'superjson';
 import { ZodError } from 'zod';
 import type { Context } from './context';
 import { requireAdmin, requireUser } from '../auth/guards';
+import { EngineRuleError } from './errors';
 
 const t = initTRPC.context<Context>().create({
   transformer: superjson,
@@ -12,6 +13,7 @@ const t = initTRPC.context<Context>().create({
       data: {
         ...shape.data,
         zodIssues: error.cause instanceof ZodError ? error.cause.issues.map((i) => i.path.join('.')) : null,
+        engineMessage: error.cause instanceof EngineRuleError ? error.cause.messageRu : null,
       },
     };
   },

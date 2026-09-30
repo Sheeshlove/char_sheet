@@ -14,3 +14,14 @@ export const notFound = (key?: string) => appError('NOT_FOUND', key);
 export const conflict = (key?: string) => appError('CONFLICT', key);
 export const badRequest = (key?: string) => appError('BAD_REQUEST', key);
 export const unauthorized = (key?: string) => appError('UNAUTHORIZED', key);
+
+/** Ошибка правил из движка: текст движка передаётся клиенту в `data.engineMessage`. */
+export class EngineRuleError extends Error {
+  constructor(
+    readonly code: string,
+    readonly messageRu: string,
+  ) {
+    super(messageRu);
+    this.name = 'EngineRuleError';
+  }
+}

@@ -2,6 +2,7 @@ import { clone } from '../util';
 import type { CampaignSettings, CharacterBuild, CharacterState, StateCommand } from '@ps/content-schema';
 import type { ContentIndex } from '../content-index';
 import { compute } from '../compute';
+import { startingInventory } from '../builder/starting';
 import { CommandError, type ComputedSheet, type EngineEvent } from '../types';
 
 function uid(state: CharacterState): string {
@@ -357,3 +358,29 @@ export function initialState(
   s.hp.current = sheet.hp.max.value;
   return s;
 }
+
+/**
+ * Состояние после сохранения сборки: при завершении конструктора — стартовое снаряжение
+ * и полные хиты; у готового персонажа изменение максимума хитов (повышение уровня,
+ * Телосложение) двигает текущие хиты на ту же величину.
+ */
+export function stateAfterBuildChange(
+  prevBuild: CharacterBuild,
+  prevState: CharacterState,
+  nextBuild: CharacterBuild,
+  content: ContentIndex,
+  rules: CampaignSettings,
+): CharacterState {
+  if (nextBuild.status !== 'ready') return prevState;
+  if (prevBuild.status === 'draft') return initialState(nextBuild, startingInventory(nextBuild, prevState, content), content, rules);
+  if (prevState.deathSaves.dead) return prevState;
+  const before = compute(prevBuild, prevState, content, rules).hp.max.value;
+  const after = compute(nextBuild, prevState, content, rules).hp.max.value;
+  if (after === before) return prevState;
+  // RULES-NOTE: RAW прямо говорит только о повышении уровня (максимум растёт — растут и
+  // текущие); то же правило применяется к любому изменению максимума, в т. ч. к уменьшению.
+  const s = clone(prevState);
+  s.hp.current = Math.max(0, Math.min(after, s.hp.current + after - before));
+  return s;
+}
+

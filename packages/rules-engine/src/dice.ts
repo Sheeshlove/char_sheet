@@ -45,3 +45,22 @@ export function scaleDice(s: string, mult: number): string {
 export function diceRu(s: string): string {
   return s.replace(/d/g, 'к');
 }
+
+/**
+ * Бросок формулы вида `5d4*10`, `2d6+3`, `4d6` с источником случайности `rng` ∈ [0, 1).
+ * Возвращает итог и отдельные кости. Пустая или некорректная формула → null.
+ */
+export function rollFormula(formula: string, rng: () => number): { total: number; dice: number[] } | null {
+  const m = /^\s*(\d*)\s*[dк]\s*(\d+)\s*(?:([*+-])\s*(\d+))?\s*$/iu.exec(formula);
+  if (!m) return null;
+  const count = Number(m[1] || 1);
+  const sides = Number(m[2]);
+  if (count < 1 || count > 100 || sides < 1 || sides > 1000) return null;
+  const dice = Array.from({ length: count }, () => 1 + Math.floor(rng() * sides));
+  let total = dice.reduce((a, b) => a + b, 0);
+  const k = Number(m[4] ?? 0);
+  if (m[3] === '*') total *= k;
+  else if (m[3] === '+') total += k;
+  else if (m[3] === '-') total -= k;
+  return { total, dice };
+}

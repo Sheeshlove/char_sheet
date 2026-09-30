@@ -200,7 +200,7 @@ export function undoLastLevel(build: CharacterBuild, content?: ContentIndex, rul
   if (content && rules) {
     const { sheet } = computeWithPipeline(next, emptyState(), content, rules);
     const valid = new Set(sheet.choices.filter((c) => c.kind === 'choice').map((c) => c.key));
-    for (const k of Object.keys(next.choices)) if (!valid.has(k)) delete next.choices[k];
+    for (const k of Object.keys(next.choices)) if (!valid.has(k) && !k.startsWith('equipment:')) delete next.choices[k];
     for (const c of sheet.spellcasting.classes) {
       const ks = next.knownSpells.find((k) => k.classKey === c.classKey);
       if (!ks) continue;

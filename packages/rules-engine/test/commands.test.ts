@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { CharacterState, StateCommand } from '@ps/content-schema';
-import { applyCommand, compute, CommandError, initialState } from '../src';
+import { applyCommand, compute, CommandError, initialState, stateAfterBuildChange } from '../src';
 import { mini } from './fixtures/content-mini';
 import { golden } from './helpers';
 
@@ -257,5 +257,25 @@ describe('команды: опыт, монеты, инвентарь, подго
     expect(run(state, { type: 'heal', amount: 5 }).state.hp.current).toBe(0);
     expect(run(state, { type: 'death_save', result: 'success' }).state).toEqual(state);
     expect(run(state, { type: 'long_rest' }).state.hp.current).toBe(0);
+  });
+});
+
+describe('состояние после сохранения сборки', () => {
+  it('завершение конструктора — полные хиты; изменение максимума двигает текущие хиты', () => {
+    const g = golden('01');
+    const draft = { ...g.build, status: 'draft' as const };
+    const ready = { ...g.build, status: 'ready' as const };
+    expect(stateAfterBuildChange(draft, g.state, draft, mini, g.rules)).toBe(g.state);
+    const started = stateAfterBuildChange(draft, { ...g.state, hp: { current: 0, temp: 0 } }, ready, mini, g.rules);
+    expect(started.hp.current).toBe(12);
+
+    const wounded = { ...started, hp: { current: 5, temp: 0 } };
+    const tougher = { ...ready, abilities: { ...ready.abilities, base: { ...ready.abilities.base, con: ready.abilities.base.con + 2 } } };
+    expect(compute(tougher, wounded, mini, g.rules).hp.max.value).toBe(13);
+    expect(stateAfterBuildChange(ready, wounded, tougher, mini, g.rules).hp.current).toBe(6);
+    expect(stateAfterBuildChange(tougher, { ...wounded, hp: { current: 0, temp: 0 } }, ready, mini, g.rules).hp.current).toBe(0);
+    expect(stateAfterBuildChange(ready, wounded, ready, mini, g.rules)).toBe(wounded);
+    const dead = { ...wounded, deathSaves: { successes: 0, failures: 3, stable: false, dead: true } };
+    expect(stateAfterBuildChange(ready, dead, tougher, mini, g.rules)).toBe(dead);
   });
 });

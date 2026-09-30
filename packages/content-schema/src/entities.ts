@@ -239,6 +239,8 @@ export const gearDataSchema = z.strictObject({
   kind: z.enum(['gear', 'ammunition', 'pack', 'focus', 'tool', 'mount', 'trade_good']),
   /** Для инструментов: группа (ремесленника, музыкальные, игровые наборы). */
   toolGroup: z.enum(['artisan', 'musical', 'gaming', 'other']).optional(),
+  /** Для фокусировок: магическая, друидическая или священный символ (категория 5e-database). */
+  focusGroup: z.enum(['arcane', 'druidic', 'holy']).optional(),
   /** Для наборов снаряжения: содержимое. */
   contents: z.array(z.strictObject({ key: contentKeySchema, qty: z.number().int().min(1) })).optional(),
 });

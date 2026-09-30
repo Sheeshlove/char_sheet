@@ -104,6 +104,8 @@ export function convertEquipment(list: SrdEquipment[], tr: Translator): { entiti
       else if (gc === 'arcane-foci' || gc === 'druidic-foci' || gc === 'holy-symbols') kind = 'focus';
       else if (cat === 'mounts-and-vehicles' && /mount/i.test(e.vehicle_category ?? '')) kind = 'mount';
       const data: GearData = { costCp: toCp(e.cost), weightLb: e.weight ?? 0, kind };
+      const focus = { 'arcane-foci': 'arcane', 'druidic-foci': 'druidic', 'holy-symbols': 'holy' } as const;
+      if (gc && gc in focus) data.focusGroup = focus[gc as keyof typeof focus];
       if (e.capacity) {
         const m = /([\d,]+)\s*lb/.exec(e.capacity);
         if (m) data.capacityLb = Number(m[1]!.replace(/,/g, ''));

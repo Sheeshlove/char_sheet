@@ -188,6 +188,24 @@ export const stateCommandSchema = z.discriminatedUnion('type', [
 ]);
 export type StateCommand = z.infer<typeof stateCommandSchema>;
 
+/** Решение мастера повышения уровня (SPEC §10). */
+export const levelUpDecisionSchema = z.strictObject({
+  classKey: contentKeySchema,
+  hp: z.strictObject({ method: z.enum(['max', 'average', 'roll']), roll: z.number().int().min(1).max(12).optional() }),
+  subclassKey: contentKeySchema.optional(),
+  asi: levelAsiSchema.optional(),
+  choices: z.record(z.string().max(300), z.array(z.string().max(200)).max(40)).optional(),
+  spells: z
+    .strictObject({
+      cantrips: z.array(contentKeySchema).max(10).optional(),
+      spells: z.array(contentKeySchema).max(20).optional(),
+      spellbook: z.array(contentKeySchema).max(20).optional(),
+      replace: z.strictObject({ from: contentKeySchema, to: contentKeySchema }).optional(),
+    })
+    .optional(),
+});
+export type LevelUpDecisionInput = z.infer<typeof levelUpDecisionSchema>;
+
 export const EMPTY_ABILITIES: Record<Ability, number> = { str: 10, dex: 10, con: 10, int: 10, wis: 10, cha: 10 };
 
 export function emptyBuild(name = ''): CharacterBuild {

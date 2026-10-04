@@ -1,0 +1,55 @@
+{
+  "target": "srd/subclass/berserker",
+  "features": {
+    "frenzy": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "В ярости можно впасть в бешенство: бонусным действием одна рукопашная атака оружием в каждый ход; после окончания ярости — 1 степень истощения"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "mindless-rage": {
+      "effects": [
+        {
+          "type": "condition_immunity",
+          "condition": "charmed",
+          "when": {
+            "toggle": "raging"
+          }
+        },
+        {
+          "type": "condition_immunity",
+          "condition": "frightened",
+          "when": {
+            "toggle": "raging"
+          }
+        },
+        {
+          "type": "text",
+          "noteRu": "Очарование и испуг, наложенные до ярости, приостанавливаются на время ярости"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "intimidating-presence": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Действием: существо в 30 футах — спасбросок Мудрости (Сл 8 + БМ + Хар) или испуган до конца вашего следующего хода"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "retaliation": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Реакцией: рукопашная атака оружием по существу в 5 футах, причинившему вам урон"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

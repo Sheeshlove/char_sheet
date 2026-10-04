@@ -1,0 +1,668 @@
+{
+  "target": "srd/class/warlock",
+  "features": {
+    "otherworldly-patron": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "pact-magic": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "eldritch-invocations": {
+      "effects": [
+        {
+          "choose": "col(\"invocations_known\")",
+          "id": "invocations",
+          "labelRu": "Воззвания",
+          "options": {
+            "items": [
+              {
+                "effects": [
+                  {
+                    "type": "spell_damage_bonus",
+                    "value": "CHA",
+                    "labelRu": "Мучительный взрыв (к каждому лучу)",
+                    "spells": [
+                      "srd/spell/eldritch-blast"
+                    ]
+                  }
+                ],
+                "labelRu": "Мучительный взрыв",
+                "value": "agonizing-blast"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/mage-armor",
+                    "ability": "cha",
+                    "mode": "innate"
+                  }
+                ],
+                "labelRu": "Доспех теней",
+                "value": "armor-of-shadows"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/speak-with-animals",
+                    "ability": "cha",
+                    "mode": "innate"
+                  }
+                ],
+                "labelRu": "Звериная речь",
+                "value": "beast-speech"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "proficiency",
+                    "target": "skill:deception",
+                    "level": "proficient"
+                  },
+                  {
+                    "type": "proficiency",
+                    "target": "skill:persuasion",
+                    "level": "proficient"
+                  }
+                ],
+                "labelRu": "Обворожительное влияние",
+                "value": "beguiling-influence"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Книга ритуалов: два ритуала 1 круга любых классов; новые — по найденным"
+                  }
+                ],
+                "labelRu": "Книга древних секретов",
+                "value": "book-of-ancient-secrets"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "sense",
+                    "sense": "darkvision",
+                    "rangeFt": 120,
+                    "op": "set_max"
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Видите в магической темноте"
+                  }
+                ],
+                "labelRu": "Дьявольское зрение",
+                "value": "devils-sight"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/detect-magic",
+                    "ability": "cha",
+                    "mode": "innate"
+                  }
+                ],
+                "labelRu": "Мистическое зрение",
+                "value": "eldritch-sight"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Дистанция «Мистического заряда» — 300 футов"
+                  }
+                ],
+                "labelRu": "Мистическое копьё",
+                "value": "eldritch-spear"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Читаете любые письмена"
+                  }
+                ],
+                "labelRu": "Глаза хранителя рун",
+                "value": "eyes-of-the-rune-keeper"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/false-life",
+                    "ability": "cha",
+                    "mode": "innate",
+                    "castAtLevel": 1
+                  }
+                ],
+                "labelRu": "Дьявольская живучесть",
+                "value": "fiendish-vigor"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Действием: воспринимаете чувствами согласного гуманоида"
+                  }
+                ],
+                "labelRu": "Взгляд двух разумов",
+                "value": "gaze-of-two-minds"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/disguise-self",
+                    "ability": "cha",
+                    "mode": "innate"
+                  }
+                ],
+                "labelRu": "Маска многих лиц",
+                "value": "mask-of-many-faces"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/silent-image",
+                    "ability": "cha",
+                    "mode": "innate"
+                  }
+                ],
+                "labelRu": "Туманные видения",
+                "value": "misty-visions"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Попадание «Мистическим зарядом» отталкивает на 10 футов"
+                  }
+                ],
+                "labelRu": "Отталкивающий взрыв",
+                "value": "repelling-blast"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/bane",
+                    "ability": "cha",
+                    "mode": "innate",
+                    "uses": {
+                      "count": "1",
+                      "reset": "long"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Раз в продолжительный отдых, с тратой ячейки колдуна"
+                  }
+                ],
+                "labelRu": "Вор пяти судеб",
+                "value": "thief-of-five-fates"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Общение с фамильяром и восприятие его чувствами на любом расстоянии"
+                  }
+                ],
+                "labelRu": "Голос повелителя цепи",
+                "value": "voice-of-the-chain-master"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/slow",
+                    "ability": "cha",
+                    "mode": "innate",
+                    "uses": {
+                      "count": "1",
+                      "reset": "long"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Раз в продолжительный отдых, с тратой ячейки колдуна"
+                  }
+                ],
+                "labelRu": "Трясина разума",
+                "value": "mire-the-mind"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "В тусклом свете или темноте действием становитесь невидимым, пока не двигаетесь"
+                  }
+                ],
+                "labelRu": "Единство с тенями",
+                "value": "one-with-shadows"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/bestow-curse",
+                    "ability": "cha",
+                    "mode": "innate",
+                    "uses": {
+                      "count": "1",
+                      "reset": "long"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Раз в продолжительный отдых, с тратой ячейки колдуна"
+                  }
+                ],
+                "labelRu": "Знак дурного предзнаменования",
+                "value": "sign-of-ill-omen"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Оружие договора: две атаки действием Атака"
+                  }
+                ],
+                "labelRu": "Жаждущий клинок",
+                "value": "thirsting-blade"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/compulsion",
+                    "ability": "cha",
+                    "mode": "innate",
+                    "uses": {
+                      "count": "1",
+                      "reset": "long"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Раз в продолжительный отдых, с тратой ячейки колдуна"
+                  }
+                ],
+                "labelRu": "Колдовской шёпот",
+                "value": "bewitching-whispers"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/confusion",
+                    "ability": "cha",
+                    "mode": "innate",
+                    "uses": {
+                      "count": "1",
+                      "reset": "long"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Раз в продолжительный отдых, с тратой ячейки колдуна"
+                  }
+                ],
+                "labelRu": "Ужасное слово",
+                "value": "dreadful-word"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/polymorph",
+                    "ability": "cha",
+                    "mode": "innate",
+                    "uses": {
+                      "count": "1",
+                      "reset": "long"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Раз в продолжительный отдых, с тратой ячейки колдуна"
+                  }
+                ],
+                "labelRu": "Скульптор плоти",
+                "value": "sculptor-of-flesh"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/levitate",
+                    "ability": "cha",
+                    "mode": "innate"
+                  }
+                ],
+                "labelRu": "Восходящий шаг",
+                "value": "ascendant-step"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/conjure-elemental",
+                    "ability": "cha",
+                    "mode": "innate",
+                    "uses": {
+                      "count": "1",
+                      "reset": "long"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Раз в продолжительный отдых, с тратой ячейки колдуна"
+                  }
+                ],
+                "labelRu": "Слуги хаоса",
+                "value": "minions-of-chaos"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/jump",
+                    "ability": "cha",
+                    "mode": "innate"
+                  }
+                ],
+                "labelRu": "Потусторонний прыжок",
+                "value": "otherworldly-leap"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/speak-with-dead",
+                    "ability": "cha",
+                    "mode": "innate"
+                  }
+                ],
+                "labelRu": "Шёпот могилы",
+                "value": "whispers-of-the-grave"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Оружие договора: +Хар некротического урона при попадании"
+                  }
+                ],
+                "labelRu": "Пьющий жизнь",
+                "value": "lifedrinker"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/hold-monster",
+                    "ability": "cha",
+                    "mode": "innate"
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Только небожители, исчадия и элементали; одно существо — раз в продолжительный отдых"
+                  }
+                ],
+                "labelRu": "Цепи Карцери",
+                "value": "chains-of-carceri"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/alter-self",
+                    "ability": "cha",
+                    "mode": "innate"
+                  }
+                ],
+                "labelRu": "Мастер бесчисленных обличий",
+                "value": "master-of-myriad-forms"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/arcane-eye",
+                    "ability": "cha",
+                    "mode": "innate"
+                  }
+                ],
+                "labelRu": "Видения далёких миров",
+                "value": "visions-of-distant-realms"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Видите истинный облик перевёртышей и иллюзий в 30 футах"
+                  }
+                ],
+                "labelRu": "Ведьмовское зрение",
+                "value": "witch-sight"
+              }
+            ],
+            "kind": "list"
+          },
+          "replaceOnLevelUp": true,
+          "type": "choice"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "pact-boon": {
+      "effects": [
+        {
+          "choose": 1,
+          "id": "option",
+          "labelRu": "Предмет договора",
+          "options": {
+            "items": [
+              {
+                "effects": [
+                  {
+                    "type": "spell_grant",
+                    "spell": "srd/spell/find-familiar",
+                    "ability": "cha",
+                    "mode": "known"
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Особые формы фамильяра; фамильяр атакует вашей реакцией"
+                  }
+                ],
+                "labelRu": "Договор цепи",
+                "value": "pact-of-the-chain"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Действием создаёте оружие договора; вы им владеете, оно считается магическим"
+                  }
+                ],
+                "labelRu": "Договор клинка",
+                "value": "pact-of-the-blade"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Книга теней: три заговора любых классов, известные вам"
+                  },
+                  {
+                    "type": "choice",
+                    "id": "book-of-shadows",
+                    "labelRu": "Книга теней: заговоры",
+                    "choose": 3,
+                    "options": {
+                      "kind": "spells",
+                      "list": "*",
+                      "level": "cantrip"
+                    }
+                  },
+                  {
+                    "type": "spell_grant",
+                    "spell": {
+                      "choice": "book-of-shadows"
+                    },
+                    "ability": "cha",
+                    "mode": "known"
+                  }
+                ],
+                "labelRu": "Договор гримуара",
+                "value": "pact-of-the-tome"
+              }
+            ],
+            "kind": "list"
+          },
+          "type": "choice"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "mystic-arcanum-6th-level": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "mystic-arcanum-6",
+          "labelRu": "Таинственный арканум (6 круг)",
+          "choose": 1,
+          "options": {
+            "kind": "spells",
+            "list": "warlock",
+            "level": 6
+          }
+        },
+        {
+          "type": "spell_grant",
+          "spell": {
+            "choice": "mystic-arcanum-6"
+          },
+          "ability": "class",
+          "mode": "known",
+          "uses": {
+            "count": "1",
+            "reset": "long"
+          },
+          "castAtLevel": 6
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "mystic-arcanum-7th-level": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "mystic-arcanum-7",
+          "labelRu": "Таинственный арканум (7 круг)",
+          "choose": 1,
+          "options": {
+            "kind": "spells",
+            "list": "warlock",
+            "level": 7
+          }
+        },
+        {
+          "type": "spell_grant",
+          "spell": {
+            "choice": "mystic-arcanum-7"
+          },
+          "ability": "class",
+          "mode": "known",
+          "uses": {
+            "count": "1",
+            "reset": "long"
+          },
+          "castAtLevel": 7
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "mystic-arcanum-8th-level": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "mystic-arcanum-8",
+          "labelRu": "Таинственный арканум (8 круг)",
+          "choose": 1,
+          "options": {
+            "kind": "spells",
+            "list": "warlock",
+            "level": 8
+          }
+        },
+        {
+          "type": "spell_grant",
+          "spell": {
+            "choice": "mystic-arcanum-8"
+          },
+          "ability": "class",
+          "mode": "known",
+          "uses": {
+            "count": "1",
+            "reset": "long"
+          },
+          "castAtLevel": 8
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "mystic-arcanum-9th-level": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "mystic-arcanum-9",
+          "labelRu": "Таинственный арканум (9 круг)",
+          "choose": 1,
+          "options": {
+            "kind": "spells",
+            "list": "warlock",
+            "level": 9
+          }
+        },
+        {
+          "type": "spell_grant",
+          "spell": {
+            "choice": "mystic-arcanum-9"
+          },
+          "ability": "class",
+          "mode": "known",
+          "uses": {
+            "count": "1",
+            "reset": "long"
+          },
+          "castAtLevel": 9
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "eldritch-master": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "eldritch-master",
+          "nameRu": "Таинственный мастер",
+          "max": "1",
+          "reset": "long"
+        },
+        {
+          "type": "text",
+          "noteRu": "1 минута мольбы: восстановить все ячейки магии договора"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

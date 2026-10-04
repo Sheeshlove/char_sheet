@@ -1,0 +1,37 @@
+{
+  "name": "@ps/importer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run --passWithNoTests",
+    "import:srd": "tsx src/cli/import-srd.ts",
+    "import:dndsu": "tsx src/cli/import-dndsu.ts",
+    "content:validate": "tsx src/cli/content-validate.ts",
+    "content:coverage": "tsx src/cli/content-coverage.ts"
+  },
+  "dependencies": {
+    "@ps/content-data": "workspace:*",
+    "@ps/content-schema": "workspace:*",
+    "@ps/rules-engine": "workspace:*",
+    "cheerio": "^1.2.0",
+    "domhandler": "^6.0.1",
+    "playwright-core": "1.63.0",
+    "tough-cookie": "^6.0.2",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2",
+    "undici": "^8.11.2",
+    "zod": "^4.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/turndown": "^5.0.6",
+    "tsx": "^4.21.0",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.0"
+  }
+}

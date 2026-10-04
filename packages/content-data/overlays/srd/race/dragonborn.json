@@ -1,0 +1,191 @@
+{
+  "target": "srd/race/dragonborn",
+  "features": {
+    "draconic-ancestry": {
+      "effects": [
+        {
+          "choose": 1,
+          "id": "ancestry",
+          "labelRu": "Наследие драконов",
+          "options": {
+            "items": [
+              {
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "acid"
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Оружие дыхания: кислота, линия 5 × 30 футов, спасбросок Лов"
+                  }
+                ],
+                "labelRu": "чёрный",
+                "value": "draconic-ancestry-black"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "lightning"
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Оружие дыхания: электричество, линия 5 × 30 футов, спасбросок Лов"
+                  }
+                ],
+                "labelRu": "синий",
+                "value": "draconic-ancestry-blue"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "fire"
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Оружие дыхания: огонь, линия 5 × 30 футов, спасбросок Лов"
+                  }
+                ],
+                "labelRu": "латунный",
+                "value": "draconic-ancestry-brass"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "lightning"
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Оружие дыхания: электричество, линия 5 × 30 футов, спасбросок Лов"
+                  }
+                ],
+                "labelRu": "бронзовый",
+                "value": "draconic-ancestry-bronze"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "acid"
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Оружие дыхания: кислота, линия 5 × 30 футов, спасбросок Лов"
+                  }
+                ],
+                "labelRu": "медный",
+                "value": "draconic-ancestry-copper"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "fire"
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Оружие дыхания: огонь, конус 15 футов, спасбросок Лов"
+                  }
+                ],
+                "labelRu": "золотой",
+                "value": "draconic-ancestry-gold"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "poison"
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Оружие дыхания: яд, конус 15 футов, спасбросок Тел"
+                  }
+                ],
+                "labelRu": "зелёный",
+                "value": "draconic-ancestry-green"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "fire"
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Оружие дыхания: огонь, конус 15 футов, спасбросок Лов"
+                  }
+                ],
+                "labelRu": "красный",
+                "value": "draconic-ancestry-red"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "cold"
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Оружие дыхания: холод, конус 15 футов, спасбросок Тел"
+                  }
+                ],
+                "labelRu": "серебряный",
+                "value": "draconic-ancestry-silver"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "defense",
+                    "kind": "resistance",
+                    "damageType": "cold"
+                  },
+                  {
+                    "type": "text",
+                    "noteRu": "Оружие дыхания: холод, конус 15 футов, спасбросок Тел"
+                  }
+                ],
+                "labelRu": "белый",
+                "value": "draconic-ancestry-white"
+              }
+            ],
+            "kind": "list"
+          },
+          "type": "choice"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "breath-weapon": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "breath-weapon",
+          "nameRu": "Оружие дыхания",
+          "max": "1",
+          "reset": "short"
+        },
+        {
+          "type": "text",
+          "noteRu": "Действием; Сл = 8 + Тел + БМ; урон 2к6 (3к6 с 6, 4к6 с 11, 5к6 с 16 уровня), при успехе половина"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "damage-resistance": {
+      "effects": [],
+      "effectsStatus": "complete"
+    }
+  }
+}

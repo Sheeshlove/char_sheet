@@ -1,0 +1,218 @@
+{
+  "target": "srd/class/paladin",
+  "features": {
+    "divine-sense": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "divine-sense",
+          "nameRu": "Божественное чувство",
+          "max": "max(1, 1 + CHA)",
+          "reset": "long"
+        },
+        {
+          "type": "text",
+          "noteRu": "Действием: чувствуете небожителей, исчадий и нежить в 60 футах до конца следующего хода"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "lay-on-hands": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "lay-on-hands",
+          "nameRu": "Наложение рук (хиты)",
+          "max": "CLASS_LEVEL * 5",
+          "reset": "long"
+        },
+        {
+          "type": "text",
+          "noteRu": "Действием: восстановить хиты из запаса или потратить 5 на лечение болезни или яда"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "fighting-style": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "fighting-style",
+          "labelRu": "Боевой стиль",
+          "choose": 1,
+          "options": {
+            "kind": "list",
+            "items": [
+              {
+                "value": "defense",
+                "labelRu": "Оборона",
+                "effects": [
+                  {
+                    "type": "bonus",
+                    "target": "ac",
+                    "value": "1",
+                    "labelRu": "Боевой стиль: Оборона",
+                    "when": {
+                      "not": {
+                        "armor": "none"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "value": "dueling",
+                "labelRu": "Дуэлянт",
+                "effects": [
+                  {
+                    "type": "bonus",
+                    "target": "damage:melee_weapon",
+                    "value": "2",
+                    "labelRu": "Боевой стиль: Дуэлянт",
+                    "when": {
+                      "wielding": "one_melee_weapon_no_other"
+                    }
+                  }
+                ]
+              },
+              {
+                "value": "great-weapon-fighting",
+                "labelRu": "Сражение большим оружием",
+                "effects": [
+                  {
+                    "type": "combat_rule",
+                    "rule": "great_weapon_reroll",
+                    "noteRu": "Перебросить 1 и 2 на костях урона двуручным или универсальным оружием (двумя руками)"
+                  }
+                ]
+              },
+              {
+                "value": "protection",
+                "labelRu": "Защита",
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Реакцией, со щитом: помеха на атаку по союзнику в 5 футах от вас"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "spellcasting-paladin": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "divine-smite": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Попадание рукопашной атакой оружием: потратить ячейку — +2к8 излучением, +1к8 за круг выше 1-го (максимум 5к8), +1к8 против нежити и исчадий"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "divine-health": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Иммунитет к болезням"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "sacred-oath": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "oath-spells": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "channel-divinity": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "channel-divinity",
+          "nameRu": "Божественный канал",
+          "max": "1",
+          "reset": "short"
+        },
+        {
+          "type": "text",
+          "noteRu": "Варианты канала — от священной клятвы"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "extra-attack": {
+      "effects": [
+        {
+          "type": "extra_attack",
+          "attacks": 1
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "aura-of-protection": {
+      "effects": [
+        {
+          "type": "bonus",
+          "target": "save:*",
+          "value": "max(1, CHA)",
+          "labelRu": "Аура защиты"
+        },
+        {
+          "type": "text",
+          "noteRu": "Союзники в пределах ауры (колонка «Радиус ауры») тоже получают бонус к спасброскам"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "aura-of-courage": {
+      "effects": [
+        {
+          "type": "condition_immunity",
+          "condition": "frightened"
+        },
+        {
+          "type": "text",
+          "noteRu": "Союзники в пределах ауры не могут быть испуганы, пока вы в сознании"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "improved-divine-smite": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Каждое попадание рукопашным оружием: +1к8 излучением"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "cleansing-touch": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "cleansing-touch",
+          "nameRu": "Очищающее касание",
+          "max": "max(1, CHA)",
+          "reset": "long"
+        },
+        {
+          "type": "text",
+          "noteRu": "Действием окончить одно заклинание на себе или согласном существе"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "aura-improvements": {
+      "effects": [],
+      "effectsStatus": "complete"
+    }
+  }
+}

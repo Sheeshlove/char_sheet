@@ -1,0 +1,89 @@
+{
+  "title": "Высший эльф-волшебник 1, «Доспехи мага» как переключатель",
+  "build": {
+    "identity": {
+      "name": "Эталон 03",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 8,
+        "dex": 14,
+        "con": 13,
+        "int": 15,
+        "wis": 12,
+        "cha": 10
+      }
+    },
+    "race": "mini/race/elf",
+    "subrace": "mini/subrace/high-elf",
+    "background": "mini/background/acolyte",
+    "classes": [
+      {
+        "classKey": "mini/class/wizard"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "max"
+        }
+      }
+    ],
+    "choices": {
+      "mini/subrace/high-elf#cantrip#cantrip": [
+        "mini/spell/minor-illusion"
+      ],
+      "mini/subrace/high-elf#extra-language#language": [
+        "draconic"
+      ],
+      "mini/class/wizard#proficiencies#skills": [
+        "arcana",
+        "history"
+      ],
+      "mini/background/acolyte#proficiencies#languages": [
+        "dwarvish",
+        "halfling"
+      ]
+    },
+    "knownSpells": [
+      {
+        "classKey": "mini/class/wizard",
+        "cantrips": [
+          "mini/spell/fire-bolt",
+          "mini/spell/light",
+          "mini/spell/mage-hand"
+        ],
+        "spells": [],
+        "spellbook": [
+          "mini/spell/mage-armor",
+          "mini/spell/magic-missile",
+          "mini/spell/shield",
+          "mini/spell/burning-hands",
+          "mini/spell/sleep",
+          "mini/spell/detect-magic"
+        ]
+      }
+    ]
+  },
+  "state": {
+    "toggles": [
+      "spell:mini/spell/mage-armor"
+    ],
+    "prepared": {
+      "mini/class/wizard": [
+        "mini/spell/mage-armor",
+        "mini/spell/magic-missile",
+        "mini/spell/shield",
+        "mini/spell/sleep"
+      ]
+    }
+  }
+}

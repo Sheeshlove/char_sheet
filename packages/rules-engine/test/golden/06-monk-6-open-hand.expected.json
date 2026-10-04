@@ -1,0 +1,13 @@
+{
+  "ac.value": 16,
+  "ac.formulaLabelRu": "Защита без доспехов",
+  "resources[id=ki].max": 6,
+  "speed.walk.value": 45,
+  "attacks[id=unarmed].damage.0.dice": "1d6",
+  "attacks[id=unarmed].damage.0.bonus": 3,
+  "attacks[id=unarmed].toHit.value": 6,
+  "attacks[id=unarmed].ability": "dex",
+  "hp.max.value": 45,
+  "attacksPerAction": 2,
+  "pb.value": 3
+}

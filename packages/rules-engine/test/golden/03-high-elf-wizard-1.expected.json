@@ -1,0 +1,26 @@
+{
+  "ac.value": 16,
+  "ac.formulaLabelRu": "Доспехи мага",
+  "hp.max.value": 7,
+  "toggles[id=spell:mini/spell/mage-armor].active": true,
+  "spellcasting.classes.0.spellbookFree": 6,
+  "spellcasting.classes.0.preparedMax": 4,
+  "spellcasting.classes.0.cantripsMax": 3,
+  "spellcasting.classes.0.dc.value": 13,
+  "spellcasting.slots": [
+    {
+      "level": 1,
+      "max": 2,
+      "used": 0
+    }
+  ],
+  "spellcasting.grants.0.spellKey": "mini/spell/minor-illusion",
+  "spellcasting.grants.0.ability": "int",
+  "skills.perception.value.value": 3,
+  "skills.perception.prof": "proficient",
+  "attacks[nameRu=Огненный снаряд].toHit.value": 5,
+  "attacks[nameRu=Огненный снаряд].damage.0.dice": "1d10",
+  "abilities.dex.score.value": 16,
+  "abilities.int.score.value": 16,
+  "pendingChoices.length": 0
+}

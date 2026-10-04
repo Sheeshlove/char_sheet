@@ -1,0 +1,92 @@
+{
+  "title": "Следопыт 3",
+  "build": {
+    "identity": {
+      "name": "Эталон 08",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 12,
+        "dex": 15,
+        "con": 13,
+        "int": 10,
+        "wis": 14,
+        "cha": 8
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/acolyte",
+    "classes": [
+      {
+        "classKey": "mini/class/ranger"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/ranger",
+        "hp": {
+          "method": "max"
+        }
+      },
+      {
+        "classKey": "mini/class/ranger",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/ranger",
+        "hp": {
+          "method": "average"
+        }
+      }
+    ],
+    "choices": {
+      "mini/race/human#languages#language": [
+        "elvish"
+      ],
+      "mini/class/ranger#proficiencies#skills": [
+        "perception",
+        "stealth",
+        "survival"
+      ],
+      "mini/class/ranger#fighting-style#fighting-style": [
+        "archery"
+      ],
+      "mini/background/acolyte#proficiencies#languages": [
+        "giant",
+        "orc"
+      ]
+    },
+    "knownSpells": [
+      {
+        "classKey": "mini/class/ranger",
+        "cantrips": [],
+        "spells": [
+          "mini/spell/hunters-mark",
+          "mini/spell/cure-wounds",
+          "mini/spell/detect-magic"
+        ]
+      }
+    ]
+  },
+  "state": {
+    "inventory": [
+      {
+        "id": "i1",
+        "key": "mini/weapon/longbow",
+        "qty": 1,
+        "equipped": true,
+        "attuned": false,
+        "hand": "both"
+      }
+    ]
+  }
+}

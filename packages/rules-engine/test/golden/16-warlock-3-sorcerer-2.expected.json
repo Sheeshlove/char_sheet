@@ -1,0 +1,16 @@
+{
+  "spellcasting.slots": [
+    {
+      "level": 1,
+      "max": 3,
+      "used": 0
+    }
+  ],
+  "spellcasting.pact": {
+    "level": 2,
+    "max": 2,
+    "used": 0
+  },
+  "hp.max.value": 38,
+  "ac.value": 15
+}

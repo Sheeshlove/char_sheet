@@ -1,0 +1,12 @@
+{
+  "target": "srd/spell/stoneskin",
+  "data": {
+    "selfEffects": [
+      {
+        "type": "defense",
+        "kind": "resistance",
+        "damageType": "nonmagical_bps"
+      }
+    ]
+  }
+}

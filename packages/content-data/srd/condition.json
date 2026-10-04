@@ -1,0 +1,530 @@
+[
+  {
+    "data": {
+      "effects": [
+        {
+          "conditional": false,
+          "mode": "disadvantage",
+          "noteRu": "Ослеплён: помеха на свои атаки",
+          "target": "attack:*",
+          "type": "roll_mode"
+        },
+        {
+          "mode": "advantage",
+          "noteRu": "Атаки по ослеплённому совершаются с преимуществом",
+          "target": "attacks_against_you",
+          "type": "roll_mode"
+        },
+        {
+          "noteRu": "Автоматически проваливает проверки, требующие зрения",
+          "type": "text"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/blinded",
+    "kind": "condition",
+    "nameEn": "Blinded",
+    "nameRu": "Ослеплённый",
+    "slug": "blinded",
+    "sourceBook": "SRD 5.1",
+    "textMd": "- Ослеплённое существо не видит и автоматически проваливает любую проверку характеристики, требующую зрения.\n\n- Броски атаки по существу совершаются с преимуществом, а броски атаки самого существа — с помехой."
+  },
+  {
+    "data": {
+      "effects": [
+        {
+          "noteRu": "Не может атаковать очарователя; тот совершает с преимуществом социальные проверки",
+          "type": "text"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/charmed",
+    "kind": "condition",
+    "nameEn": "Charmed",
+    "nameRu": "Очарованный",
+    "slug": "charmed",
+    "sourceBook": "SRD 5.1",
+    "textMd": "- Очарованное существо не может атаковать очаровавшего или нацеливать на него вредные способности или магические эффекты.\n\n- Очаровавший совершает с преимуществом любые проверки характеристик при социальном взаимодействии с этим существом."
+  },
+  {
+    "data": {
+      "effects": [
+        {
+          "noteRu": "Автоматически проваливает проверки, требующие слуха",
+          "type": "text"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/deafened",
+    "kind": "condition",
+    "nameEn": "Deafened",
+    "nameRu": "Оглохший",
+    "slug": "deafened",
+    "sourceBook": "SRD 5.1",
+    "textMd": "- Оглушённое существо не слышит и автоматически проваливает любую проверку характеристики, требующую слуха."
+  },
+  {
+    "data": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/exhaustion",
+    "kind": "condition",
+    "nameEn": "Exhaustion",
+    "nameRu": "Истощение",
+    "slug": "exhaustion",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Некоторые особые способности и опасности окружающей среды, такие как голод и долгосрочное воздействие морозных или знойных температур, могут привести к особому состоянию под названием истощение. Истощение измеряется шестью уровнями. Эффект может дать существу один или несколько уровней истощения, как указано в описании эффекта.\n\n1 — Помеха на проверки характеристик\n\n2 — Скорость уменьшена вдвое\n\n3 — Помеха на броски атаки и спасброски\n\n4 — Максимум хитов уменьшен вдвое\n\n5 — Скорость уменьшена до 0\n\n6 — Смерть\n\nЕсли уже истощённое существо подвергается другому эффекту, вызывающему истощение, его текущий уровень истощения увеличивается на величину, указанную в описании эффекта.\n\nСущество страдает от эффектов своего текущего уровня истощения, а также всех более низких уровней. Например, существо, страдающее истощением 2-го уровня, имеет скорость, уменьшенную вдвое, и помеху на проверки характеристик.\n\nЭффект, снимающий истощение, уменьшает его уровень на величину, указанную в описании эффекта; при этом все эффекты истощения оканчиваются, если уровень истощения существа становится ниже 1.\n\nЗавершение продолжительного отдыха уменьшает уровень истощения существа на 1, при условии, что существо также употребило некоторое количество пищи и питья."
+  },
+  {
+    "data": {
+      "effects": [
+        {
+          "conditional": true,
+          "mode": "disadvantage",
+          "noteRu": "Испуган: помеха, пока источник страха в поле зрения",
+          "target": "check:*",
+          "type": "roll_mode"
+        },
+        {
+          "conditional": true,
+          "mode": "disadvantage",
+          "noteRu": "Испуган: помеха, пока источник страха в поле зрения",
+          "target": "attack:*",
+          "type": "roll_mode"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/frightened",
+    "kind": "condition",
+    "nameEn": "Frightened",
+    "nameRu": "Испуганный",
+    "slug": "frightened",
+    "sourceBook": "SRD 5.1",
+    "textMd": "- Испуганное существо совершает с помехой проверки характеристик и броски атаки, пока источник его страха находится в пределах прямой видимости.\n\n- Существо не может добровольно приближаться к источнику своего страха."
+  },
+  {
+    "data": {
+      "effects": [
+        {
+          "mode": "all",
+          "op": "zero",
+          "type": "speed"
+        },
+        {
+          "noteRu": "Скорость 0",
+          "type": "text"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/grappled",
+    "kind": "condition",
+    "nameEn": "Grappled",
+    "nameRu": "Схваченный",
+    "slug": "grappled",
+    "sourceBook": "SRD 5.1",
+    "textMd": "- Скорость схваченного существа становится равной 0, и оно не может получать никаких бонусов к скорости.\n\n- Состояние оканчивается, если захватывающий становится недееспособным (см. это состояние).\n\n- Состояние также оканчивается, если какой-либо эффект убирает схваченное существо за пределы досягаемости захватывающего или захватывающего эффекта, например, если существо отброшено заклинанием громовая волна."
+  },
+  {
+    "data": {
+      "effects": [
+        {
+          "noteRu": "Не может совершать действия и реакции",
+          "type": "text"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/incapacitated",
+    "kind": "condition",
+    "nameEn": "Incapacitated",
+    "nameRu": "Недееспособный",
+    "slug": "incapacitated",
+    "sourceBook": "SRD 5.1",
+    "textMd": "- Недееспособное существо не может совершать действия и реакции."
+  },
+  {
+    "data": {
+      "effects": [
+        {
+          "conditional": false,
+          "mode": "advantage",
+          "noteRu": "Невидим: преимущество на атаки",
+          "target": "attack:*",
+          "type": "roll_mode"
+        },
+        {
+          "mode": "disadvantage",
+          "noteRu": "Атаки по невидимому совершаются с помехой",
+          "target": "attacks_against_you",
+          "type": "roll_mode"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/invisible",
+    "kind": "condition",
+    "nameEn": "Invisible",
+    "nameRu": "Невидимый",
+    "slug": "invisible",
+    "sourceBook": "SRD 5.1",
+    "textMd": "- Невидимое существо невозможно увидеть без помощи магии или особого чувства. Для целей пряток существо считается сильно заслонённым. Местоположение существа можно обнаружить по любому шуму, который оно издаёт, или следам, которые оно оставляет.\n\n- Броски атаки по существу совершаются с помехой, а броски атаки самого существа — с преимуществом."
+  },
+  {
+    "data": {
+      "effects": [
+        {
+          "mode": "all",
+          "op": "zero",
+          "type": "speed"
+        },
+        {
+          "noteRu": "Автоматический провал спасбросков Силы и Ловкости",
+          "saves": [
+            "str",
+            "dex"
+          ],
+          "type": "auto_fail"
+        },
+        {
+          "mode": "advantage",
+          "noteRu": "Атаки по парализованному совершаются с преимуществом",
+          "target": "attacks_against_you",
+          "type": "roll_mode"
+        },
+        {
+          "noteRu": "Попадание атакующим в пределах 5 футов — критическое",
+          "type": "text"
+        }
+      ],
+      "effectsStatus": "complete",
+      "implies": [
+        "incapacitated"
+      ]
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/paralyzed",
+    "kind": "condition",
+    "nameEn": "Paralyzed",
+    "nameRu": "Парализованный",
+    "slug": "paralyzed",
+    "sourceBook": "SRD 5.1",
+    "textMd": "- Парализованное существо недееспособно (см. это состояние) и не может перемещаться или говорить.\n\n- Существо автоматически проваливает спасброски Силы и Ловкости.\n\n- Броски атаки по существу совершаются с преимуществом.\n\n- Любая атака, попавшая по существу, является критическим попаданием, если атакующий находится в пределах 5 футов от существа."
+  },
+  {
+    "data": {
+      "effects": [
+        {
+          "mode": "all",
+          "op": "zero",
+          "type": "speed"
+        },
+        {
+          "noteRu": "Автоматический провал спасбросков Силы и Ловкости",
+          "saves": [
+            "str",
+            "dex"
+          ],
+          "type": "auto_fail"
+        },
+        {
+          "mode": "advantage",
+          "noteRu": "Атаки по окаменевшему совершаются с преимуществом",
+          "target": "attacks_against_you",
+          "type": "roll_mode"
+        },
+        {
+          "damageType": "acid",
+          "kind": "resistance",
+          "noteRu": "Окаменение",
+          "type": "defense"
+        },
+        {
+          "damageType": "bludgeoning",
+          "kind": "resistance",
+          "noteRu": "Окаменение",
+          "type": "defense"
+        },
+        {
+          "damageType": "cold",
+          "kind": "resistance",
+          "noteRu": "Окаменение",
+          "type": "defense"
+        },
+        {
+          "damageType": "fire",
+          "kind": "resistance",
+          "noteRu": "Окаменение",
+          "type": "defense"
+        },
+        {
+          "damageType": "force",
+          "kind": "resistance",
+          "noteRu": "Окаменение",
+          "type": "defense"
+        },
+        {
+          "damageType": "lightning",
+          "kind": "resistance",
+          "noteRu": "Окаменение",
+          "type": "defense"
+        },
+        {
+          "damageType": "necrotic",
+          "kind": "resistance",
+          "noteRu": "Окаменение",
+          "type": "defense"
+        },
+        {
+          "damageType": "piercing",
+          "kind": "resistance",
+          "noteRu": "Окаменение",
+          "type": "defense"
+        },
+        {
+          "damageType": "poison",
+          "kind": "resistance",
+          "noteRu": "Окаменение",
+          "type": "defense"
+        },
+        {
+          "damageType": "psychic",
+          "kind": "resistance",
+          "noteRu": "Окаменение",
+          "type": "defense"
+        },
+        {
+          "damageType": "radiant",
+          "kind": "resistance",
+          "noteRu": "Окаменение",
+          "type": "defense"
+        },
+        {
+          "damageType": "slashing",
+          "kind": "resistance",
+          "noteRu": "Окаменение",
+          "type": "defense"
+        },
+        {
+          "damageType": "thunder",
+          "kind": "resistance",
+          "noteRu": "Окаменение",
+          "type": "defense"
+        },
+        {
+          "damageType": "poison",
+          "kind": "immunity",
+          "noteRu": "Окаменение",
+          "type": "defense"
+        },
+        {
+          "condition": "poisoned",
+          "type": "condition_immunity"
+        },
+        {
+          "noteRu": "Иммунитет к болезням; яд в организме приостанавливается",
+          "type": "text"
+        }
+      ],
+      "effectsStatus": "complete",
+      "implies": [
+        "incapacitated"
+      ]
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/petrified",
+    "kind": "condition",
+    "nameEn": "Petrified",
+    "nameRu": "Окаменевший",
+    "slug": "petrified",
+    "sourceBook": "SRD 5.1",
+    "textMd": "- Окаменевшее существо превращается, вместе с любыми немагическими предметами, которые оно носило или несло, в твёрдое неживое вещество (обычно камень). Его вес увеличивается в десять раз, и оно перестаёт стареть.\n\n- Существо недееспособно (см. это состояние), не может перемещаться или говорить и не осознаёт окружающего.\n\n- Броски атаки по существу совершаются с преимуществом.\n\n- Существо автоматически проваливает спасброски Силы и Ловкости.\n\n- Существо обладает сопротивлением ко всем видам урона.\n\n- Существо обладает иммунитетом к ядам и болезням, хотя яд или болезнь, уже находящиеся в его организме, лишь приостанавливаются, но не нейтрализуются."
+  },
+  {
+    "data": {
+      "effects": [
+        {
+          "conditional": false,
+          "mode": "disadvantage",
+          "noteRu": "Отравлен: помеха на броски атаки",
+          "target": "attack:*",
+          "type": "roll_mode"
+        },
+        {
+          "conditional": false,
+          "mode": "disadvantage",
+          "noteRu": "Отравлен: помеха на проверки характеристик",
+          "target": "check:*",
+          "type": "roll_mode"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/poisoned",
+    "kind": "condition",
+    "nameEn": "Poisoned",
+    "nameRu": "Отравленный",
+    "slug": "poisoned",
+    "sourceBook": "SRD 5.1",
+    "textMd": "- Отравленное существо совершает с помехой броски атаки и проверки характеристик."
+  },
+  {
+    "data": {
+      "effects": [
+        {
+          "conditional": false,
+          "mode": "disadvantage",
+          "noteRu": "Сбит с ног: помеха на свои атаки",
+          "target": "attack:*",
+          "type": "roll_mode"
+        },
+        {
+          "noteRu": "Атаки по вам в пределах 5 футов — с преимуществом, дальше — с помехой",
+          "type": "text"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/prone",
+    "kind": "condition",
+    "nameEn": "Prone",
+    "nameRu": "Сбитый с ног",
+    "slug": "prone",
+    "sourceBook": "SRD 5.1",
+    "textMd": "- Сбитое с ног существо может перемещаться только ползком, если оно не встанет, окончив тем самым это состояние.\n\n- Существо совершает броски атаки с помехой.\n\n- Бросок атаки по существу совершается с преимуществом, если атакующий находится в пределах 5 футов от существа. В противном случае бросок атаки совершается с помехой."
+  },
+  {
+    "data": {
+      "effects": [
+        {
+          "mode": "all",
+          "op": "zero",
+          "type": "speed"
+        },
+        {
+          "conditional": false,
+          "mode": "disadvantage",
+          "noteRu": "Опутан: помеха на свои атаки",
+          "target": "attack:*",
+          "type": "roll_mode"
+        },
+        {
+          "conditional": false,
+          "mode": "disadvantage",
+          "noteRu": "Опутан: помеха на спасброски Ловкости",
+          "target": "save:dex",
+          "type": "roll_mode"
+        },
+        {
+          "mode": "advantage",
+          "noteRu": "Атаки по опутанному совершаются с преимуществом",
+          "target": "attacks_against_you",
+          "type": "roll_mode"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/restrained",
+    "kind": "condition",
+    "nameEn": "Restrained",
+    "nameRu": "Опутанный",
+    "slug": "restrained",
+    "sourceBook": "SRD 5.1",
+    "textMd": "- Скорость опутанного существа становится равной 0, и оно не может получать никаких бонусов к скорости.\n\n- Броски атаки по существу совершаются с преимуществом, а броски атаки самого существа — с помехой.\n\n- Существо совершает с помехой спасброски Ловкости."
+  },
+  {
+    "data": {
+      "effects": [
+        {
+          "mode": "all",
+          "op": "zero",
+          "type": "speed"
+        },
+        {
+          "noteRu": "Автоматический провал спасбросков Силы и Ловкости",
+          "saves": [
+            "str",
+            "dex"
+          ],
+          "type": "auto_fail"
+        },
+        {
+          "mode": "advantage",
+          "noteRu": "Атаки по ошеломлённому совершаются с преимуществом",
+          "target": "attacks_against_you",
+          "type": "roll_mode"
+        }
+      ],
+      "effectsStatus": "complete",
+      "implies": [
+        "incapacitated"
+      ]
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/stunned",
+    "kind": "condition",
+    "nameEn": "Stunned",
+    "nameRu": "Ошеломлённый",
+    "slug": "stunned",
+    "sourceBook": "SRD 5.1",
+    "textMd": "- Ошеломлённое существо недееспособно (см. это состояние), не может перемещаться и может говорить лишь сбивчиво.\n\n- Существо автоматически проваливает спасброски Силы и Ловкости.\n\n- Броски атаки по существу совершаются с преимуществом."
+  },
+  {
+    "data": {
+      "effects": [
+        {
+          "mode": "all",
+          "op": "zero",
+          "type": "speed"
+        },
+        {
+          "noteRu": "Автоматический провал спасбросков Силы и Ловкости",
+          "saves": [
+            "str",
+            "dex"
+          ],
+          "type": "auto_fail"
+        },
+        {
+          "mode": "advantage",
+          "noteRu": "Атаки по бессознательному совершаются с преимуществом",
+          "target": "attacks_against_you",
+          "type": "roll_mode"
+        },
+        {
+          "noteRu": "Попадание атакующим в пределах 5 футов — критическое",
+          "type": "text"
+        }
+      ],
+      "effectsStatus": "complete",
+      "implies": [
+        "incapacitated",
+        "prone"
+      ]
+    },
+    "effectsStatus": "complete",
+    "key": "srd/condition/unconscious",
+    "kind": "condition",
+    "nameEn": "Unconscious",
+    "nameRu": "Бессознательный",
+    "slug": "unconscious",
+    "sourceBook": "SRD 5.1",
+    "textMd": "- Существо без сознания недееспособно (см. это состояние), не может перемещаться или говорить и не осознаёт окружающего.\n\n- Существо роняет всё, что держало, и оказывается сбитым с ног.\n\n- Существо автоматически проваливает спасброски Силы и Ловкости.\n\n- Броски атаки по существу совершаются с преимуществом.\n\n- Любая атака, попавшая по существу, является критическим попаданием, если атакующий находится в пределах 5 футов от существа."
+  }
+]

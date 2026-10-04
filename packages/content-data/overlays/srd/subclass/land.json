@@ -1,0 +1,97 @@
+{
+  "target": "srd/subclass/land",
+  "features": {
+    "bonus-cantrip": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "bonus-cantrip",
+          "labelRu": "Бонусный заговор",
+          "choose": 1,
+          "options": {
+            "kind": "spells",
+            "list": "druid",
+            "level": "cantrip"
+          }
+        },
+        {
+          "type": "spell_grant",
+          "spell": {
+            "choice": "bonus-cantrip"
+          },
+          "ability": "class",
+          "mode": "known"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "natural-recovery": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "natural-recovery",
+          "nameRu": "Естественное восстановление",
+          "max": "1",
+          "reset": "long"
+        },
+        {
+          "type": "text",
+          "noteRu": "Короткий отдых: восстановить ячейки суммарным кругом до половины уровня друида (округляя вверх), не выше 5 круга"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "circle-spells-1": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "circle-spells-2": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "circle-spells-3": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "circle-spells-4": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "lands-stride": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Немагическая труднопроходимая местность не замедляет; преимущество на спасброски от магических растений"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "natures-ward": {
+      "effects": [
+        {
+          "type": "condition_immunity",
+          "condition": "poisoned"
+        },
+        {
+          "type": "defense",
+          "kind": "immunity",
+          "damageType": "poison"
+        },
+        {
+          "type": "text",
+          "noteRu": "Иммунитет к болезням; элементали и феи не могут вас очаровать или испугать"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "natures-sanctuary": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Звери и растения должны пройти спасбросок Мудрости, чтобы атаковать вас"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

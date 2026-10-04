@@ -1,0 +1,34 @@
+{
+  "target": "srd/race/halfling",
+  "features": {
+    "brave": {
+      "effects": [
+        {
+          "type": "roll_mode",
+          "mode": "advantage",
+          "target": "save:*",
+          "noteRu": "Против испуга"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "halfling-nimbleness": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Можно проходить через пространство существ крупнее вас"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "lucky": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Выпала 1 на к20 при атаке, проверке или спасброске — перебросьте и используйте новый результат"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

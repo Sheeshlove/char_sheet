@@ -1,0 +1,57 @@
+{
+  "target": "srd/subclass/thief",
+  "features": {
+    "fast-hands": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Бонусным действием: Ловкость рук, воровские инструменты или Использование предмета"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "second-story-work": {
+      "effects": [
+        {
+          "type": "speed",
+          "mode": "climb",
+          "op": "equal_walk"
+        },
+        {
+          "type": "text",
+          "noteRu": "Прыжок в длину с разбега дальше на модификатор Ловкости (в футах)"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "supreme-sneak": {
+      "effects": [
+        {
+          "type": "roll_mode",
+          "mode": "advantage",
+          "target": "skill:stealth",
+          "noteRu": "Если за ход перемещаетесь не более чем на половину скорости"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "use-magic-device": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Игнорируете требования классов, рас и уровней для магических предметов"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "thiefs-reflexes": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "В первом раунде боя — два хода: обычный и с инициативой −10"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

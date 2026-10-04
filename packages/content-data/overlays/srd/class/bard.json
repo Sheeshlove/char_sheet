@@ -1,0 +1,187 @@
+{
+  "target": "srd/class/bard",
+  "features": {
+    "spellcasting-bard": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "bardic-inspiration-d6": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "bardic-inspiration",
+          "nameRu": "Вдохновение барда",
+          "max": "max(1, CHA)",
+          "reset": "long",
+          "die": "col(\"bardic_inspiration\")",
+          "when": "CLASS_LEVEL < 5"
+        },
+        {
+          "type": "text",
+          "noteRu": "Бонусным действием: существо в 60 футах получает кость вдохновения на 10 минут"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "bardic-inspiration-d8": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "bardic-inspiration-d10": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "bardic-inspiration-d12": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "font-of-inspiration": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "bardic-inspiration",
+          "nameRu": "Вдохновение барда",
+          "max": "max(1, CHA)",
+          "reset": "short",
+          "die": "col(\"bardic_inspiration\")"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "jack-of-all-trades": {
+      "effects": [
+        {
+          "type": "half_proficiency",
+          "scope": "checks",
+          "rounding": "down",
+          "includeInitiative": true
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "song-of-rest-d6": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Короткий отдых: союзники, тратящие кости хитов, восстанавливают дополнительно кость из колонки «Песнь отдыха»"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "song-of-rest-d8": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "song-of-rest-d10": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "song-of-rest-d12": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "college": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "countercharm": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Действием: исполнение до конца следующего хода — союзники в 30 футах с преимуществом на спасброски от испуга и очарования"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "magical-secrets-1": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "magical-secrets-1",
+          "labelRu": "Тайны магии",
+          "choose": 2,
+          "options": {
+            "kind": "spells",
+            "list": "*",
+            "level": "up_to_max"
+          }
+        },
+        {
+          "type": "spell_list_extend",
+          "list": "bard",
+          "spells": {
+            "choice": "magical-secrets-1"
+          }
+        },
+        {
+          "type": "text",
+          "noteRu": "Выбранные заклинания считаются заклинаниями барда и входят в число известных заклинаний"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "magical-secrets-2": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "magical-secrets-2",
+          "labelRu": "Тайны магии",
+          "choose": 2,
+          "options": {
+            "kind": "spells",
+            "list": "*",
+            "level": "up_to_max"
+          }
+        },
+        {
+          "type": "spell_list_extend",
+          "list": "bard",
+          "spells": {
+            "choice": "magical-secrets-2"
+          }
+        },
+        {
+          "type": "text",
+          "noteRu": "Выбранные заклинания считаются заклинаниями барда и входят в число известных заклинаний"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "magical-secrets-3": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "magical-secrets-3",
+          "labelRu": "Тайны магии",
+          "choose": 2,
+          "options": {
+            "kind": "spells",
+            "list": "*",
+            "level": "up_to_max"
+          }
+        },
+        {
+          "type": "spell_list_extend",
+          "list": "bard",
+          "spells": {
+            "choice": "magical-secrets-3"
+          }
+        },
+        {
+          "type": "text",
+          "noteRu": "Выбранные заклинания считаются заклинаниями барда и входят в число известных заклинаний"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "superior-inspiration": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Если при броске инициативы у вас не осталось вдохновения — восстанавливаете одно"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

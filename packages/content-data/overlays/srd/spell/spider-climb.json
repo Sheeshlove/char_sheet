@@ -1,0 +1,12 @@
+{
+  "target": "srd/spell/spider-climb",
+  "data": {
+    "selfEffects": [
+      {
+        "type": "speed",
+        "mode": "climb",
+        "op": "equal_walk"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "target": "srd/spell/aid",
+  "data": {
+    "selfEffects": [
+      {
+        "type": "hp_max",
+        "value": "5"
+      },
+      {
+        "type": "text",
+        "noteRu": "Ячейкой выше 2 круга: +5 хитов за каждый круг"
+      }
+    ]
+  }
+}

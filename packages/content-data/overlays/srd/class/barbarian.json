@@ -1,0 +1,241 @@
+{
+  "target": "srd/class/barbarian",
+  "features": {
+    "rage": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "rage",
+          "nameRu": "Ярость",
+          "max": "CLASS_LEVEL >= 20 ? 99 : col(\"rages\")",
+          "reset": "long"
+        },
+        {
+          "type": "toggle",
+          "id": "raging",
+          "labelRu": "В ярости",
+          "effects": [
+            {
+              "type": "roll_mode",
+              "mode": "advantage",
+              "target": "check:str",
+              "noteRu": "Проверки Силы"
+            },
+            {
+              "type": "roll_mode",
+              "mode": "advantage",
+              "target": "save:str",
+              "noteRu": "Спасброски Силы"
+            },
+            {
+              "type": "bonus",
+              "target": "damage:melee_weapon",
+              "value": "col(\"rage_damage\")",
+              "labelRu": "Урон ярости (атаки Силой)",
+              "when": {
+                "all": [
+                  {
+                    "not": {
+                      "armor": "heavy"
+                    }
+                  },
+                  {
+                    "attackAbility": "str"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "defense",
+              "kind": "resistance",
+              "damageType": "bludgeoning"
+            },
+            {
+              "type": "defense",
+              "kind": "resistance",
+              "damageType": "piercing"
+            },
+            {
+              "type": "defense",
+              "kind": "resistance",
+              "damageType": "slashing"
+            },
+            {
+              "type": "text",
+              "noteRu": "В ярости нельзя накладывать заклинания и концентрироваться; не действует в тяжёлых доспехах"
+            }
+          ],
+          "cost": {
+            "resource": "rage",
+            "amount": 1
+          }
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "unarmored-defense": {
+      "effects": [
+        {
+          "type": "ac_formula",
+          "id": "barbarian-ud",
+          "labelRu": "Защита без доспехов",
+          "base": "10 + DEX + CON",
+          "allowShield": true,
+          "requires": "no_armor"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "reckless-attack": {
+      "effects": [
+        {
+          "type": "toggle",
+          "id": "reckless",
+          "labelRu": "Безрассудная атака",
+          "effects": [
+            {
+              "type": "roll_mode",
+              "mode": "advantage",
+              "target": "attack:melee_weapon",
+              "noteRu": "Рукопашные атаки Силой в этот ход"
+            },
+            {
+              "type": "roll_mode",
+              "mode": "advantage",
+              "target": "attacks_against_you",
+              "noteRu": "Безрассудная атака: атаки по вам с преимуществом"
+            }
+          ]
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "danger-sense": {
+      "effects": [
+        {
+          "type": "roll_mode",
+          "mode": "advantage",
+          "target": "save:dex",
+          "noteRu": "Против видимых эффектов (если не ослеплены, не оглохли, дееспособны)"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "primal-path": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "extra-attack": {
+      "effects": [
+        {
+          "type": "extra_attack",
+          "attacks": 1
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "fast-movement": {
+      "effects": [
+        {
+          "type": "speed",
+          "mode": "walk",
+          "op": "add",
+          "value": "10",
+          "when": {
+            "not": {
+              "armor": "heavy"
+            }
+          }
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "feral-instinct": {
+      "effects": [
+        {
+          "type": "roll_mode",
+          "mode": "advantage",
+          "target": "initiative",
+          "noteRu": "Инициатива",
+          "conditional": false
+        },
+        {
+          "type": "text",
+          "noteRu": "Застигнутым врасплох можно действовать в первый ход, если сразу войти в ярость"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "brutal-critical-1-die": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Критическое попадание рукопашной атакой оружием: дополнительные кости урона оружия — колонка «Сильный критический удар»"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "brutal-critical-2-dice": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "brutal-critical-3-dice": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "relentless-rage": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "В ярости при падении до 0 хитов: спасбросок Телосложения Сл 10 (+5 за каждое повторение до отдыха) — при успехе 1 хит"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "persistent-rage": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Ярость заканчивается раньше срока, только если вы теряете сознание или прекращаете её сами"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "indomitable-might": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Если итог проверки Силы меньше значения Силы, используйте значение Силы"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "primal-champion": {
+      "effects": [
+        {
+          "type": "ability",
+          "ability": "str",
+          "op": "add",
+          "value": "4"
+        },
+        {
+          "type": "ability",
+          "ability": "con",
+          "op": "add",
+          "value": "4"
+        },
+        {
+          "type": "ability_cap",
+          "ability": "str",
+          "max": 24
+        },
+        {
+          "type": "ability_cap",
+          "ability": "con",
+          "max": 24
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

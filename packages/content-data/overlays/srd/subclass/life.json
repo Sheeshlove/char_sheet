@@ -1,0 +1,67 @@
+{
+  "target": "srd/subclass/life",
+  "features": {
+    "bonus-proficiency": {
+      "effects": [
+        {
+          "type": "proficiency",
+          "target": "armor:heavy",
+          "level": "proficient"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "disciple-of-life": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Лечащие заклинания 1 круга и выше восстанавливают дополнительно 2 + круг заклинания хитов"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "channel-divinity-preserve-life": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Божественный канал: распределить 5 × уровень жреца хитов между существами в 30 футах (не выше половины их максимума)"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "blessed-healer": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Лечащее заклинание 1 круга и выше на другое существо лечит и вас на 2 + круг заклинания"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "divine-strike": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Раз в ход при попадании оружием: +1к8 излучением (2к8 с 14 уровня)"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  },
+  "addFeatures": [
+    {
+      "key": "supreme-healing",
+      "nameRu": "Высшее исцеление",
+      "nameEn": "Supreme Healing",
+      "level": 17,
+      "textMd": "Starting at 17th level, when you would normally roll one or more dice to restore hit points with a spell, you instead use the highest number possible for each die.",
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Кости лечения заклинаний принимают максимальное значение"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  ]
+}

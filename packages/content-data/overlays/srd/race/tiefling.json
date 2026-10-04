@@ -1,0 +1,49 @@
+{
+  "target": "srd/race/tiefling",
+  "features": {
+    "hellish-resistance": {
+      "effects": [
+        {
+          "type": "defense",
+          "kind": "resistance",
+          "damageType": "fire"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "infernal-legacy": {
+      "effects": [
+        {
+          "type": "spell_grant",
+          "spell": "srd/spell/thaumaturgy",
+          "ability": "cha",
+          "mode": "innate"
+        },
+        {
+          "type": "spell_grant",
+          "spell": "srd/spell/hellish-rebuke",
+          "ability": "cha",
+          "mode": "innate",
+          "uses": {
+            "count": "1",
+            "reset": "long"
+          },
+          "castAtLevel": 2,
+          "minCharacterLevel": 3
+        },
+        {
+          "type": "spell_grant",
+          "spell": "srd/spell/darkness",
+          "ability": "cha",
+          "mode": "innate",
+          "uses": {
+            "count": "1",
+            "reset": "long"
+          },
+          "minCharacterLevel": 5
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

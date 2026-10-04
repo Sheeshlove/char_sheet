@@ -1,0 +1,117 @@
+{
+  "target": "srd/class/cleric",
+  "features": {
+    "spellcasting-cleric": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "divine-domain": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "domain-spells-1": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "domain-spells-2": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "domain-spells-3": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "domain-spells-4": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "domain-spells-5": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "channel-divinity-1-rest": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "channel-divinity",
+          "nameRu": "Божественный канал",
+          "max": "col(\"channel_divinity\")",
+          "reset": "short"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "channel-divinity-2-rest": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "channel-divinity-3-rest": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "channel-divinity-turn-undead": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Действием: нежить в 30 футах — спасбросок Мудрости (Сл заклинаний), при провале изгнана на 1 минуту"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "destroy-undead-cr-1-2-or-below": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Изгнанная нежить с ПО не выше колонки «Уничтожение нежити» уничтожается"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "destroy-undead-cr-1-or-below": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "destroy-undead-cr-2-or-below": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "destroy-undead-cr-3-or-below": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "destroy-undead-cr-4-or-below": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "divine-intervention": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "divine-intervention",
+          "nameRu": "Божественное вмешательство",
+          "max": "1",
+          "reset": "long"
+        },
+        {
+          "type": "text",
+          "noteRu": "Успех, если к100 ≤ уровня жреца; после успеха — снова только через 7 дней"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "divine-intervention-improvement": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Божественное вмешательство удаётся автоматически"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "supreme-healing": {
+      "effects": [],
+      "effectsStatus": "complete",
+      "hidden": true
+    }
+  }
+}

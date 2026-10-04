@@ -1,0 +1,21 @@
+{
+  "spellcasting.slots": [
+    {
+      "level": 1,
+      "max": 4,
+      "used": 0
+    },
+    {
+      "level": 2,
+      "max": 3,
+      "used": 0
+    }
+  ],
+  "spellcasting.casterLevel": 4,
+  "hp.max.value": 41,
+  "abilities.con.save.value": 2,
+  "abilities.cha.save.value": 5,
+  "abilities.con.saveProficient": false,
+  "pb.value": 3,
+  "ac.value": 14
+}

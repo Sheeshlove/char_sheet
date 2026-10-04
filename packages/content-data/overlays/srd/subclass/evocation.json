@@ -1,0 +1,54 @@
+{
+  "target": "srd/subclass/evocation",
+  "features": {
+    "evocation-savant": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Копирование заклинаний школы Воплощения в книгу — вдвое быстрее и дешевле"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "sculpt-spells": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Существа (1 + круг заклинания) автоматически преуспевают в спасброске от вашего воплощения и не получают урона"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "potent-cantrip": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Цель, преуспевшая в спасброске от вашего заговора, получает половину урона"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "empowered-evocation": {
+      "effects": [
+        {
+          "type": "spell_damage_bonus",
+          "value": "INT",
+          "labelRu": "Усиленное воплощение",
+          "schools": [
+            "evocation"
+          ]
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "overchannel": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Максимальный урон заклинания 1–5 круга; повтор до продолжительного отдыха — некротический урон 2к12 за круг (растёт)"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

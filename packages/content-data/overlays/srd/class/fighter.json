@@ -1,0 +1,212 @@
+{
+  "target": "srd/class/fighter",
+  "features": {
+    "fighting-style": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "fighting-style",
+          "labelRu": "Боевой стиль",
+          "choose": 1,
+          "options": {
+            "kind": "list",
+            "items": [
+              {
+                "value": "archery",
+                "labelRu": "Стрельба",
+                "effects": [
+                  {
+                    "type": "bonus",
+                    "target": "attack:ranged_weapon",
+                    "value": "2",
+                    "labelRu": "Боевой стиль: Стрельба"
+                  }
+                ]
+              },
+              {
+                "value": "defense",
+                "labelRu": "Оборона",
+                "effects": [
+                  {
+                    "type": "bonus",
+                    "target": "ac",
+                    "value": "1",
+                    "labelRu": "Боевой стиль: Оборона",
+                    "when": {
+                      "not": {
+                        "armor": "none"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "value": "dueling",
+                "labelRu": "Дуэлянт",
+                "effects": [
+                  {
+                    "type": "bonus",
+                    "target": "damage:melee_weapon",
+                    "value": "2",
+                    "labelRu": "Боевой стиль: Дуэлянт",
+                    "when": {
+                      "wielding": "one_melee_weapon_no_other"
+                    }
+                  }
+                ]
+              },
+              {
+                "value": "great-weapon-fighting",
+                "labelRu": "Сражение большим оружием",
+                "effects": [
+                  {
+                    "type": "combat_rule",
+                    "rule": "great_weapon_reroll",
+                    "noteRu": "Перебросить 1 и 2 на костях урона двуручным или универсальным оружием (двумя руками)"
+                  }
+                ]
+              },
+              {
+                "value": "protection",
+                "labelRu": "Защита",
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Реакцией, со щитом: помеха на атаку по союзнику в 5 футах от вас"
+                  }
+                ]
+              },
+              {
+                "value": "two-weapon-fighting",
+                "labelRu": "Сражение двумя оружиями",
+                "effects": [
+                  {
+                    "type": "combat_rule",
+                    "rule": "twf_ability_mod",
+                    "noteRu": "Модификатор характеристики добавляется к урону второй атаки"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "second-wind": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "second-wind",
+          "nameRu": "Второе дыхание",
+          "max": "1",
+          "reset": "short"
+        },
+        {
+          "type": "text",
+          "noteRu": "Бонусным действием восстановить 1к10 + уровень воина хитов"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "action-surge-1-use": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "action-surge",
+          "nameRu": "Всплеск действий",
+          "max": "1",
+          "reset": "short"
+        },
+        {
+          "type": "text",
+          "noteRu": "Одно дополнительное действие в свой ход"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "action-surge-2-uses": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "action-surge",
+          "nameRu": "Всплеск действий",
+          "max": "2",
+          "reset": "short"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "martial-archetype": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "extra-attack-1": {
+      "effects": [
+        {
+          "type": "extra_attack",
+          "attacks": 1
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "extra-attack-2": {
+      "effects": [
+        {
+          "type": "extra_attack",
+          "attacks": 2
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "extra-attack-3": {
+      "effects": [
+        {
+          "type": "extra_attack",
+          "attacks": 3
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "indomitable-1-use": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "indomitable",
+          "nameRu": "Упорный",
+          "max": "1",
+          "reset": "long"
+        },
+        {
+          "type": "text",
+          "noteRu": "Перебросить проваленный спасбросок"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "indomitable-2-uses": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "indomitable",
+          "nameRu": "Упорный",
+          "max": "2",
+          "reset": "long"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "indomitable-3-uses": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "indomitable",
+          "nameRu": "Упорный",
+          "max": "3",
+          "reset": "long"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

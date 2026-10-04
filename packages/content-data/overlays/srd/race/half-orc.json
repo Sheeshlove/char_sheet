@@ -1,0 +1,30 @@
+{
+  "target": "srd/race/half-orc",
+  "features": {
+    "savage-attacks": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Критическое попадание рукопашной атакой оружием: одна дополнительная кость урона оружия"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "relentless-endurance": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "relentless-endurance",
+          "nameRu": "Непоколебимая стойкость",
+          "max": "1",
+          "reset": "long"
+        },
+        {
+          "type": "text",
+          "noteRu": "Если урон опускает хиты до 0, но не убивает — остаётесь с 1 хитом"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

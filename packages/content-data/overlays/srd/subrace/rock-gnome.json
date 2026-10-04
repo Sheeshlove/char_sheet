@@ -1,0 +1,14 @@
+{
+  "target": "srd/subrace/rock-gnome",
+  "features": {
+    "artificers-lore": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Проверки Интеллекта (История) о магических, алхимических и технологических предметах: удвоенный БМ"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

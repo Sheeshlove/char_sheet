@@ -1,0 +1,29 @@
+{
+  "speed.walk.value": 25,
+  "hp.max.value": 12,
+  "ac.value": 18,
+  "spellcasting.classes.0.preparedMax": 4,
+  "spellcasting.classes.0.dc.value": 13,
+  "spellcasting.classes.0.attack.value": 5,
+  "spellcasting.slots": [
+    {
+      "level": 1,
+      "max": 2,
+      "used": 0
+    }
+  ],
+  "abilities.wis.save.value": 5,
+  "abilities.cha.save.value": 3,
+  "abilities.con.score.value": 16,
+  "abilities.wis.score.value": 16,
+  "defenses.resistances.0.damageType": "poison",
+  "senses": [
+    {
+      "sense": "darkvision",
+      "rangeFt": 60
+    }
+  ],
+  "spellcasting.classes.0.spells[key=mini/spell/bless].alwaysPrepared": true,
+  "spellcasting.classes.0.spells[key=mini/spell/detect-magic].prepared": true,
+  "pendingChoices.length": 0
+}

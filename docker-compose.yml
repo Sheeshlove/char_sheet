@@ -1,0 +1,84 @@
+# Продакшен (SPEC §16.2): `cp .env.example .env`, заполнить, затем `docker compose up -d`.
+# Для разработки — docker/docker-compose.dev.yml (только БД) и `pnpm dev`.
+name: party-sheet
+
+x-db-env: &db-env
+  POSTGRES_USER: party
+  POSTGRES_DB: party_sheet
+  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Задайте POSTGRES_PASSWORD в .env}
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment: *db-env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U party -d party_sheet']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    # Порт наружу не публикуется: БД доступна только сервисам этой сети.
+
+  web:
+    build: .
+    image: party-sheet-web:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://party:${POSTGRES_PASSWORD}@db:5432/party_sheet
+      APP_URL: ${APP_URL:-https://${DOMAIN}}
+      UPLOAD_DIR: /data/uploads
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      SENTRY_DSN: ${SENTRY_DSN:-}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    volumes:
+      - uploads:/data/uploads
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on:
+      - web
+    ports:
+      - '80:80'
+      - '443:443'
+      - '443:443/udp'
+    environment:
+      DOMAIN: ${DOMAIN:?Задайте DOMAIN в .env}
+    volumes:
+      - ./docker/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+
+  backup:
+    image: postgres:16
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGHOST: db
+      PGUSER: party
+      PGDATABASE: party_sheet
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      BACKUP_RETENTION_DAYS: ${BACKUP_RETENTION_DAYS:-14}
+      BACKUP_TIME: ${BACKUP_TIME:-03:30}
+      UPLOADS_BACKUP_WEEKDAY: ${UPLOADS_BACKUP_WEEKDAY:-7}
+      TZ: ${TZ:-Europe/Moscow}
+    entrypoint: ['/bin/sh', '/scripts/scheduler.sh']
+    volumes:
+      - ./docker/backup:/scripts:ro
+      - backups:/backups
+      - uploads:/uploads:ro
+
+volumes:
+  pgdata:
+  uploads:
+  backups:
+  caddy-data:
+  caddy-config:

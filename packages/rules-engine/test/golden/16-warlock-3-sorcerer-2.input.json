@@ -1,0 +1,70 @@
+{
+  "title": "Колдун 3 / Чародей 2",
+  "build": {
+    "identity": {
+      "name": "Эталон 16",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 8,
+        "dex": 13,
+        "con": 14,
+        "int": 10,
+        "wis": 12,
+        "cha": 15
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/acolyte",
+    "classes": [
+      {
+        "classKey": "mini/class/warlock",
+        "subclassKey": "mini/subclass/fiend"
+      },
+      {
+        "classKey": "mini/class/sorcerer",
+        "subclassKey": "mini/subclass/draconic-bloodline"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/warlock",
+        "hp": {
+          "method": "max"
+        }
+      },
+      {
+        "classKey": "mini/class/warlock",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/warlock",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/sorcerer",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/sorcerer",
+        "hp": {
+          "method": "average"
+        }
+      }
+    ],
+    "choices": {}
+  }
+}

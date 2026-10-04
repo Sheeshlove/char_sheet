@@ -1,0 +1,95 @@
+{
+  "target": "srd/race/dwarf",
+  "features": {
+    "dwarven-resilience": {
+      "effects": [
+        {
+          "type": "roll_mode",
+          "mode": "advantage",
+          "target": "save:*",
+          "noteRu": "Против яда"
+        },
+        {
+          "type": "defense",
+          "kind": "resistance",
+          "damageType": "poison"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "stonecunning": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Проверки Интеллекта (История) о происхождении каменной кладки: удвоенный БМ"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "tool-proficiency": {
+      "effects": [
+        {
+          "choose": 1,
+          "id": "tool",
+          "labelRu": "Инструменты ремесленника",
+          "options": {
+            "items": [
+              {
+                "effects": [
+                  {
+                    "type": "proficiency",
+                    "target": "tool:smiths-tools",
+                    "level": "proficient"
+                  }
+                ],
+                "labelRu": "Инструменты кузнеца",
+                "value": "smiths-tools"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "proficiency",
+                    "target": "tool:brewers-supplies",
+                    "level": "proficient"
+                  }
+                ],
+                "labelRu": "Инструменты пивовара",
+                "value": "brewers-supplies"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "proficiency",
+                    "target": "tool:masons-tools",
+                    "level": "proficient"
+                  }
+                ],
+                "labelRu": "Инструменты каменщика",
+                "value": "masons-tools"
+              }
+            ],
+            "kind": "list"
+          },
+          "type": "choice"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  },
+  "addFeatures": [
+    {
+      "key": "speed",
+      "nameRu": "Скорость",
+      "nameEn": "Speed",
+      "textMd": "Your base walking speed is 25 feet. Your speed is not reduced by wearing heavy armor.",
+      "effects": [
+        {
+          "type": "armor_rule",
+          "category": "heavy",
+          "ignoreStrSpeedPenalty": true
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  ]
+}

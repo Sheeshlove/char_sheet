@@ -1,0 +1,62 @@
+{
+  "title": "Вариант нагрузки: штрафы скорости и помехи",
+  "build": {
+    "identity": {
+      "name": "Эталон 21",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 15,
+        "dex": 12,
+        "con": 14,
+        "int": 8,
+        "wis": 13,
+        "cha": 10
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/soldier",
+    "classes": [
+      {
+        "classKey": "mini/class/fighter"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "max"
+        }
+      }
+    ],
+    "choices": {}
+  },
+  "state": {
+    "inventory": [
+      {
+        "id": "i1",
+        "key": "mini/armor/chain-mail",
+        "qty": 1,
+        "equipped": true,
+        "attuned": false
+      },
+      {
+        "id": "i2",
+        "key": "mini/gear/iron-ingot",
+        "qty": 120,
+        "equipped": false,
+        "attuned": false
+      }
+    ]
+  },
+  "rules": {
+    "encumbrance": "variant"
+  }
+}

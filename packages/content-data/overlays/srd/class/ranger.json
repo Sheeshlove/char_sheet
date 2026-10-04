@@ -1,0 +1,621 @@
+{
+  "target": "srd/class/ranger",
+  "features": {
+    "favored-enemy-1-type": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "favored-enemy-1",
+          "labelRu": "Избранный враг",
+          "choose": 1,
+          "options": {
+            "kind": "list",
+            "items": [
+              {
+                "value": "aberrations",
+                "labelRu": "Аберрации",
+                "effects": []
+              },
+              {
+                "value": "beasts",
+                "labelRu": "Звери",
+                "effects": []
+              },
+              {
+                "value": "celestials",
+                "labelRu": "Небожители",
+                "effects": []
+              },
+              {
+                "value": "constructs",
+                "labelRu": "Конструкты",
+                "effects": []
+              },
+              {
+                "value": "dragons",
+                "labelRu": "Драконы",
+                "effects": []
+              },
+              {
+                "value": "elementals",
+                "labelRu": "Элементали",
+                "effects": []
+              },
+              {
+                "value": "fey",
+                "labelRu": "Феи",
+                "effects": []
+              },
+              {
+                "value": "fiends",
+                "labelRu": "Исчадия",
+                "effects": []
+              },
+              {
+                "value": "giants",
+                "labelRu": "Великаны",
+                "effects": []
+              },
+              {
+                "value": "monstrosities",
+                "labelRu": "Чудовища",
+                "effects": []
+              },
+              {
+                "value": "oozes",
+                "labelRu": "Слизи",
+                "effects": []
+              },
+              {
+                "value": "plants",
+                "labelRu": "Растения",
+                "effects": []
+              },
+              {
+                "value": "undead",
+                "labelRu": "Нежить",
+                "effects": []
+              },
+              {
+                "value": "humanoids",
+                "labelRu": "Два вида гуманоидов",
+                "effects": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "choice",
+          "id": "favored-enemy-language-1",
+          "labelRu": "Язык избранного врага",
+          "choose": 1,
+          "options": {
+            "kind": "languages"
+          }
+        },
+        {
+          "type": "text",
+          "noteRu": "Преимущество на проверки Мудрости (Выживание) для выслеживания и Интеллекта для воспоминаний об избранных врагах"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "favored-enemy-2-types": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "favored-enemy-2",
+          "labelRu": "Избранный враг",
+          "choose": 1,
+          "options": {
+            "kind": "list",
+            "items": [
+              {
+                "value": "aberrations",
+                "labelRu": "Аберрации",
+                "effects": []
+              },
+              {
+                "value": "beasts",
+                "labelRu": "Звери",
+                "effects": []
+              },
+              {
+                "value": "celestials",
+                "labelRu": "Небожители",
+                "effects": []
+              },
+              {
+                "value": "constructs",
+                "labelRu": "Конструкты",
+                "effects": []
+              },
+              {
+                "value": "dragons",
+                "labelRu": "Драконы",
+                "effects": []
+              },
+              {
+                "value": "elementals",
+                "labelRu": "Элементали",
+                "effects": []
+              },
+              {
+                "value": "fey",
+                "labelRu": "Феи",
+                "effects": []
+              },
+              {
+                "value": "fiends",
+                "labelRu": "Исчадия",
+                "effects": []
+              },
+              {
+                "value": "giants",
+                "labelRu": "Великаны",
+                "effects": []
+              },
+              {
+                "value": "monstrosities",
+                "labelRu": "Чудовища",
+                "effects": []
+              },
+              {
+                "value": "oozes",
+                "labelRu": "Слизи",
+                "effects": []
+              },
+              {
+                "value": "plants",
+                "labelRu": "Растения",
+                "effects": []
+              },
+              {
+                "value": "undead",
+                "labelRu": "Нежить",
+                "effects": []
+              },
+              {
+                "value": "humanoids",
+                "labelRu": "Два вида гуманоидов",
+                "effects": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "choice",
+          "id": "favored-enemy-language-2",
+          "labelRu": "Язык избранного врага",
+          "choose": 1,
+          "options": {
+            "kind": "languages"
+          }
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "favored-enemy-3-enemies": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "favored-enemy-3",
+          "labelRu": "Избранный враг",
+          "choose": 1,
+          "options": {
+            "kind": "list",
+            "items": [
+              {
+                "value": "aberrations",
+                "labelRu": "Аберрации",
+                "effects": []
+              },
+              {
+                "value": "beasts",
+                "labelRu": "Звери",
+                "effects": []
+              },
+              {
+                "value": "celestials",
+                "labelRu": "Небожители",
+                "effects": []
+              },
+              {
+                "value": "constructs",
+                "labelRu": "Конструкты",
+                "effects": []
+              },
+              {
+                "value": "dragons",
+                "labelRu": "Драконы",
+                "effects": []
+              },
+              {
+                "value": "elementals",
+                "labelRu": "Элементали",
+                "effects": []
+              },
+              {
+                "value": "fey",
+                "labelRu": "Феи",
+                "effects": []
+              },
+              {
+                "value": "fiends",
+                "labelRu": "Исчадия",
+                "effects": []
+              },
+              {
+                "value": "giants",
+                "labelRu": "Великаны",
+                "effects": []
+              },
+              {
+                "value": "monstrosities",
+                "labelRu": "Чудовища",
+                "effects": []
+              },
+              {
+                "value": "oozes",
+                "labelRu": "Слизи",
+                "effects": []
+              },
+              {
+                "value": "plants",
+                "labelRu": "Растения",
+                "effects": []
+              },
+              {
+                "value": "undead",
+                "labelRu": "Нежить",
+                "effects": []
+              },
+              {
+                "value": "humanoids",
+                "labelRu": "Два вида гуманоидов",
+                "effects": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "choice",
+          "id": "favored-enemy-language-3",
+          "labelRu": "Язык избранного врага",
+          "choose": 1,
+          "options": {
+            "kind": "languages"
+          }
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "natural-explorer-1-terrain-type": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "favored-terrain-1",
+          "labelRu": "Избранная местность",
+          "choose": 1,
+          "options": {
+            "kind": "list",
+            "items": [
+              {
+                "value": "arctic",
+                "labelRu": "Полярная",
+                "effects": []
+              },
+              {
+                "value": "coast",
+                "labelRu": "Побережье",
+                "effects": []
+              },
+              {
+                "value": "desert",
+                "labelRu": "Пустыня",
+                "effects": []
+              },
+              {
+                "value": "forest",
+                "labelRu": "Лес",
+                "effects": []
+              },
+              {
+                "value": "grassland",
+                "labelRu": "Луга",
+                "effects": []
+              },
+              {
+                "value": "mountain",
+                "labelRu": "Горы",
+                "effects": []
+              },
+              {
+                "value": "swamp",
+                "labelRu": "Болото",
+                "effects": []
+              },
+              {
+                "value": "underdark",
+                "labelRu": "Подземье",
+                "effects": []
+              }
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "noteRu": "В избранной местности: удвоенный БМ к проверкам Инт и Мдр с владением, путешествие без замедлений и потерь"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "natural-explorer-2-terrain-types": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "favored-terrain-2",
+          "labelRu": "Избранная местность",
+          "choose": 1,
+          "options": {
+            "kind": "list",
+            "items": [
+              {
+                "value": "arctic",
+                "labelRu": "Полярная",
+                "effects": []
+              },
+              {
+                "value": "coast",
+                "labelRu": "Побережье",
+                "effects": []
+              },
+              {
+                "value": "desert",
+                "labelRu": "Пустыня",
+                "effects": []
+              },
+              {
+                "value": "forest",
+                "labelRu": "Лес",
+                "effects": []
+              },
+              {
+                "value": "grassland",
+                "labelRu": "Луга",
+                "effects": []
+              },
+              {
+                "value": "mountain",
+                "labelRu": "Горы",
+                "effects": []
+              },
+              {
+                "value": "swamp",
+                "labelRu": "Болото",
+                "effects": []
+              },
+              {
+                "value": "underdark",
+                "labelRu": "Подземье",
+                "effects": []
+              }
+            ]
+          }
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "natural-explorer-3-terrain-types": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "favored-terrain-3",
+          "labelRu": "Избранная местность",
+          "choose": 1,
+          "options": {
+            "kind": "list",
+            "items": [
+              {
+                "value": "arctic",
+                "labelRu": "Полярная",
+                "effects": []
+              },
+              {
+                "value": "coast",
+                "labelRu": "Побережье",
+                "effects": []
+              },
+              {
+                "value": "desert",
+                "labelRu": "Пустыня",
+                "effects": []
+              },
+              {
+                "value": "forest",
+                "labelRu": "Лес",
+                "effects": []
+              },
+              {
+                "value": "grassland",
+                "labelRu": "Луга",
+                "effects": []
+              },
+              {
+                "value": "mountain",
+                "labelRu": "Горы",
+                "effects": []
+              },
+              {
+                "value": "swamp",
+                "labelRu": "Болото",
+                "effects": []
+              },
+              {
+                "value": "underdark",
+                "labelRu": "Подземье",
+                "effects": []
+              }
+            ]
+          }
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "fighting-style": {
+      "effects": [
+        {
+          "type": "choice",
+          "id": "fighting-style",
+          "labelRu": "Боевой стиль",
+          "choose": 1,
+          "options": {
+            "kind": "list",
+            "items": [
+              {
+                "value": "archery",
+                "labelRu": "Стрельба",
+                "effects": [
+                  {
+                    "type": "bonus",
+                    "target": "attack:ranged_weapon",
+                    "value": "2",
+                    "labelRu": "Боевой стиль: Стрельба"
+                  }
+                ]
+              },
+              {
+                "value": "defense",
+                "labelRu": "Оборона",
+                "effects": [
+                  {
+                    "type": "bonus",
+                    "target": "ac",
+                    "value": "1",
+                    "labelRu": "Боевой стиль: Оборона",
+                    "when": {
+                      "not": {
+                        "armor": "none"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "value": "dueling",
+                "labelRu": "Дуэлянт",
+                "effects": [
+                  {
+                    "type": "bonus",
+                    "target": "damage:melee_weapon",
+                    "value": "2",
+                    "labelRu": "Боевой стиль: Дуэлянт",
+                    "when": {
+                      "wielding": "one_melee_weapon_no_other"
+                    }
+                  }
+                ]
+              },
+              {
+                "value": "two-weapon-fighting",
+                "labelRu": "Сражение двумя оружиями",
+                "effects": [
+                  {
+                    "type": "combat_rule",
+                    "rule": "twf_ability_mod",
+                    "noteRu": "Модификатор характеристики добавляется к урону второй атаки"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "spellcasting-ranger": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "archetype": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "primeval-awareness": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Действием и ячейкой: 1 минута на круг — узнаёте о присутствии избранных врагов в 1 миле (6 милях в избранной местности)"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "extra-attack": {
+      "effects": [
+        {
+          "type": "extra_attack",
+          "attacks": 1
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "lands-stride": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Немагическая труднопроходимая местность не замедляет; преимущество на спасброски от магических растений"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "hide-in-plain-sight": {
+      "effects": [
+        {
+          "type": "toggle",
+          "id": "camouflage",
+          "labelRu": "Маскировка на виду",
+          "effects": [
+            {
+              "type": "bonus",
+              "target": "skill:stealth",
+              "value": "10",
+              "labelRu": "Маскировка на виду"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "noteRu": "1 минута на маскировку; действует, пока вы не двигаетесь и не совершаете действий"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "vanish": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Засада бонусным действием; вас нельзя выследить немагическими способами, если вы не хотите"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "feral-senses": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Нет помехи на атаки по невидимым существам; знаете о невидимых существах в 30 футах"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "foe-slayer": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Раз в ход: +Мдр к броску атаки или урона по избранному врагу"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

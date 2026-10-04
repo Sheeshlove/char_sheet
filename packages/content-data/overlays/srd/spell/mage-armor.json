@@ -1,0 +1,15 @@
+{
+  "target": "srd/spell/mage-armor",
+  "data": {
+    "selfEffects": [
+      {
+        "type": "ac_formula",
+        "id": "mage-armor",
+        "labelRu": "Доспехи мага",
+        "base": "13 + DEX",
+        "allowShield": true,
+        "requires": "no_armor"
+      }
+    ]
+  }
+}

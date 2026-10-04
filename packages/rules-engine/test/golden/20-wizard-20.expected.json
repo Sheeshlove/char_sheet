@@ -1,0 +1,53 @@
+{
+  "spellcasting.slots": [
+    {
+      "level": 1,
+      "max": 4,
+      "used": 0
+    },
+    {
+      "level": 2,
+      "max": 3,
+      "used": 0
+    },
+    {
+      "level": 3,
+      "max": 3,
+      "used": 0
+    },
+    {
+      "level": 4,
+      "max": 3,
+      "used": 0
+    },
+    {
+      "level": 5,
+      "max": 3,
+      "used": 0
+    },
+    {
+      "level": 6,
+      "max": 2,
+      "used": 0
+    },
+    {
+      "level": 7,
+      "max": 2,
+      "used": 0
+    },
+    {
+      "level": 8,
+      "max": 1,
+      "used": 0
+    },
+    {
+      "level": 9,
+      "max": 1,
+      "used": 0
+    }
+  ],
+  "spellcasting.classes.0.maxSpellLevel": 9,
+  "spellcasting.classes.0.spellbookFree": 44,
+  "pb.value": 6,
+  "spellcasting.classes.0.cantripsMax": 5
+}

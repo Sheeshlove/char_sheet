@@ -1,0 +1,20 @@
+# HTTPS для DOMAIN (Let's Encrypt автоматически; для localhost — внутренний CA Caddy).
+{$DOMAIN} {
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		-Server
+		-X-Powered-By
+	}
+
+	# Service worker и манифест не кэшируются браузером надолго — обновления доходят сразу.
+	@sw path /serwist/sw.js /manifest.webmanifest
+	header @sw Cache-Control "no-cache"
+
+	reverse_proxy web:3000
+}

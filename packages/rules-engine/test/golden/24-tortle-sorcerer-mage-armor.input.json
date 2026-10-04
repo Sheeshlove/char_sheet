@@ -1,0 +1,65 @@
+{
+  "title": "Чародей-черепахид: природный доспех, Драконья устойчивость и «Доспехи мага»",
+  "build": {
+    "identity": {
+      "name": "Эталон 24",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 8,
+        "dex": 13,
+        "con": 14,
+        "int": 12,
+        "wis": 10,
+        "cha": 15
+      }
+    },
+    "race": "mini/race/tortle",
+    "background": "mini/background/acolyte",
+    "classes": [
+      {
+        "classKey": "mini/class/sorcerer",
+        "subclassKey": "mini/subclass/draconic-bloodline"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/sorcerer",
+        "hp": {
+          "method": "max"
+        }
+      }
+    ],
+    "choices": {
+      "mini/race/tortle#asi#asi": [
+        "cha",
+        "cha",
+        "dex"
+      ]
+    },
+    "knownSpells": [
+      {
+        "classKey": "mini/class/sorcerer",
+        "cantrips": [
+          "mini/spell/fire-bolt"
+        ],
+        "spells": [
+          "mini/spell/mage-armor",
+          "mini/spell/shield"
+        ]
+      }
+    ]
+  },
+  "state": {
+    "toggles": [
+      "spell:mini/spell/mage-armor"
+    ]
+  }
+}

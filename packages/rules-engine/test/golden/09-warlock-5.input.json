@@ -1,0 +1,110 @@
+{
+  "title": "Колдун 5 (Исчадие)",
+  "build": {
+    "identity": {
+      "name": "Эталон 09",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 8,
+        "dex": 13,
+        "con": 14,
+        "int": 10,
+        "wis": 12,
+        "cha": 15
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/acolyte",
+    "classes": [
+      {
+        "classKey": "mini/class/warlock",
+        "subclassKey": "mini/subclass/fiend"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/warlock",
+        "hp": {
+          "method": "max"
+        }
+      },
+      {
+        "classKey": "mini/class/warlock",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/warlock",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/warlock",
+        "hp": {
+          "method": "average"
+        },
+        "asi": {
+          "kind": "asi",
+          "increases": {
+            "cha": 2
+          }
+        }
+      },
+      {
+        "classKey": "mini/class/warlock",
+        "hp": {
+          "method": "average"
+        }
+      }
+    ],
+    "choices": {
+      "mini/race/human#languages#language": [
+        "infernal"
+      ],
+      "mini/class/warlock#proficiencies#skills": [
+        "arcana",
+        "deception"
+      ],
+      "mini/background/acolyte#proficiencies#languages": [
+        "giant",
+        "orc"
+      ],
+      "mini/class/warlock#eldritch-invocations#invocations": [
+        "agonizing-blast",
+        "armor-of-shadows",
+        "devils-sight"
+      ]
+    },
+    "knownSpells": [
+      {
+        "classKey": "mini/class/warlock",
+        "cantrips": [
+          "mini/spell/eldritch-blast",
+          "mini/spell/mage-hand",
+          "mini/spell/minor-illusion"
+        ],
+        "spells": [
+          "mini/spell/hex",
+          "mini/spell/armor-of-agathys",
+          "mini/spell/burning-hands",
+          "mini/spell/misty-step",
+          "mini/spell/fireball",
+          "mini/spell/counterspell"
+        ]
+      }
+    ]
+  },
+  "state": {
+    "pactSlotsUsed": 2
+  }
+}

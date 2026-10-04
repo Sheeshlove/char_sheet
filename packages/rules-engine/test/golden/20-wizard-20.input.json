@@ -1,0 +1,155 @@
+{
+  "title": "Волшебник 20: полная таблица ячеек",
+  "build": {
+    "identity": {
+      "name": "Эталон 20",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 8,
+        "dex": 14,
+        "con": 13,
+        "int": 15,
+        "wis": 12,
+        "cha": 10
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/acolyte",
+    "classes": [
+      {
+        "classKey": "mini/class/wizard"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "max"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/wizard",
+        "hp": {
+          "method": "average"
+        }
+      }
+    ],
+    "choices": {}
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "spellcasting.slots": [
+    {
+      "level": 1,
+      "max": 4,
+      "used": 0
+    },
+    {
+      "level": 2,
+      "max": 2,
+      "used": 0
+    }
+  ],
+  "spellcasting.classes.0.knownMax": 5,
+  "spellcasting.classes.0.cantripsMax": 2,
+  "spellcasting.classes.0.schoolRestriction.schools": [
+    "abjuration",
+    "evocation"
+  ],
+  "spellcasting.classes.0.dc.value": 14,
+  "spellcasting.classes.0.maxSpellLevel": 2,
+  "hp.max.value": 60,
+  "attacksPerAction": 2,
+  "pendingChoices.length": 0
+}

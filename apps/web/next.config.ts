@@ -1,0 +1,45 @@
+import type { NextConfig } from 'next';
+import { withSerwist } from '@serwist/turbopack';
+
+const isDev = process.env.NODE_ENV !== 'production';
+
+// CSP без 'unsafe-eval' (SPEC §16.3). В режиме разработки Next требует eval для HMR.
+const csp = [
+  "default-src 'self'",
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''}`,
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "font-src 'self' data:",
+  "connect-src 'self'",
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "object-src 'none'",
+].join('; ');
+
+const nextConfig: NextConfig = {
+  output: 'standalone',
+  reactStrictMode: true,
+  transpilePackages: ['@ps/rules-engine', '@ps/content-schema'],
+  serverExternalPackages: ['@node-rs/argon2', 'postgres', 'sharp', '@react-pdf/renderer'],
+  // Шрифты с кириллицей для PDF листа (SPEC §12.3) — в standalone-сборку.
+  outputFileTracingIncludes: { '/characters/[id]/pdf': ['./assets/fonts/**'] },
+  poweredByHeader: false,
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'Content-Security-Policy', value: csp },
+          { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+        ],
+      },
+    ];
+  },
+};
+
+// Service worker собирается маршрутом `/serwist/[path]` (SPEC §16.4).
+export default withSerwist(nextConfig);

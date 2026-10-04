@@ -1,0 +1,13 @@
+{
+  "initiative.value": 3,
+  "skills.athletics.value.value": 0,
+  "skills.athletics.prof": "half",
+  "skills.history.value.value": 1,
+  "skills.performance.value.value": 7,
+  "skills.insight.value.value": 3,
+  "passives.perception.value": 12,
+  "resources[id=bardic-inspiration].max": 3,
+  "resources[id=bardic-inspiration].die": "1d6",
+  "resources[id=bardic-inspiration].reset": "long",
+  "hp.max.value": 24
+}

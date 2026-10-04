@@ -1,0 +1,23 @@
+{
+  "ac.value": 19,
+  "ac.formulaLabelRu": "Кольчуга",
+  "pb.value": 2,
+  "abilities.str.score.value": 16,
+  "abilities.str.save.value": 5,
+  "abilities.con.save.value": 4,
+  "abilities.dex.save.value": 1,
+  "abilities.wis.save.value": 2,
+  "abilities.str.saveProficient": true,
+  "abilities.dex.saveProficient": false,
+  "hp.max.value": 12,
+  "attacks[nameRu=Длинный меч].toHit.value": 5,
+  "attacks[nameRu=Длинный меч].damage.0.dice": "1d8",
+  "attacks[nameRu=Длинный меч].damage.0.bonus": 3,
+  "attacks[nameRu=Безоружный удар].damage.0.bonus": 4,
+  "speed.walk.value": 30,
+  "skills.athletics.value.value": 5,
+  "skills.perception.value.value": 4,
+  "passives.perception.value": 14,
+  "initiative.value": 1,
+  "pendingChoices.length": 0
+}

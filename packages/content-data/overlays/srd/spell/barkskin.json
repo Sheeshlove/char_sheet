@@ -1,0 +1,15 @@
+{
+  "target": "srd/spell/barkskin",
+  "data": {
+    "selfEffects": [
+      {
+        "type": "ac_formula",
+        "id": "barkskin",
+        "labelRu": "Дубовая кожа",
+        "base": "16",
+        "allowShield": false,
+        "requires": "any"
+      }
+    ]
+  }
+}

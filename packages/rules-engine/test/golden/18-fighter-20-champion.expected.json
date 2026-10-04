@@ -1,0 +1,15 @@
+{
+  "critMin": 18,
+  "initiative.value": 7,
+  "skills.acrobatics.value.value": 7,
+  "skills.acrobatics.prof": "half",
+  "skills.athletics.value.value": 11,
+  "skills.history.value.value": 0,
+  "skills.history.prof": "none",
+  "attacksPerAction": 4,
+  "hp.max.value": 224,
+  "pb.value": 6,
+  "abilities.str.score.value": 20,
+  "abilities.con.score.value": 20,
+  "abilities.dex.score.value": 18
+}

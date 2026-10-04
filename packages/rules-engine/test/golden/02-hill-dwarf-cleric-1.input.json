@@ -1,0 +1,91 @@
+{
+  "title": "Холмовой дварф-жрец 1 (Домен жизни)",
+  "build": {
+    "identity": {
+      "name": "Эталон 02",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 10,
+        "dex": 12,
+        "con": 14,
+        "int": 8,
+        "wis": 15,
+        "cha": 13
+      }
+    },
+    "race": "mini/race/dwarf",
+    "subrace": "mini/subrace/hill-dwarf",
+    "background": "mini/background/acolyte",
+    "classes": [
+      {
+        "classKey": "mini/class/cleric",
+        "subclassKey": "mini/subclass/life"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/cleric",
+        "hp": {
+          "method": "max"
+        }
+      }
+    ],
+    "choices": {
+      "mini/race/dwarf#tool-proficiency#tool": [
+        "smiths-tools"
+      ],
+      "mini/class/cleric#proficiencies#skills": [
+        "medicine",
+        "persuasion"
+      ],
+      "mini/background/acolyte#proficiencies#languages": [
+        "giant",
+        "celestial"
+      ]
+    },
+    "knownSpells": [
+      {
+        "classKey": "mini/class/cleric",
+        "cantrips": [
+          "mini/spell/sacred-flame",
+          "mini/spell/guidance",
+          "mini/spell/light"
+        ],
+        "spells": []
+      }
+    ]
+  },
+  "state": {
+    "inventory": [
+      {
+        "id": "i1",
+        "key": "mini/armor/chain-mail",
+        "qty": 1,
+        "equipped": true,
+        "attuned": false
+      },
+      {
+        "id": "i2",
+        "key": "mini/armor/shield",
+        "qty": 1,
+        "equipped": true,
+        "attuned": false
+      }
+    ],
+    "prepared": {
+      "mini/class/cleric": [
+        "mini/spell/detect-magic",
+        "mini/spell/command",
+        "mini/spell/healing-word"
+      ]
+    }
+  }
+}

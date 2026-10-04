@@ -1,0 +1,345 @@
+{
+  "target": "srd/class/sorcerer",
+  "features": {
+    "spellcasting-sorcerer": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "sorcerous-origin": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "font-of-magic": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "sorcery-points",
+          "nameRu": "Единицы чародейства",
+          "max": "col(\"sorcery_points\")",
+          "reset": "long"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "flexible-casting-creating-spell-slots": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Бонусным действием: ячейка 1/2/3/4/5 круга за 2/3/5/6/7 единиц; исчезают после продолжительного отдыха"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "flexible-casting-converting-spell-slot": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Бонусным действием: ячейка превращается в единицы чародейства по её кругу"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "metamagic-1": {
+      "effects": [
+        {
+          "choose": 2,
+          "id": "option",
+          "labelRu": "Метамагия",
+          "options": {
+            "items": [
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: союзники (до Хар) автоматически преуспевают в спасброске"
+                  }
+                ],
+                "labelRu": "Аккуратное заклинание",
+                "value": "metamagic-careful-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: дистанция удваивается; касание → 30 футов"
+                  }
+                ],
+                "labelRu": "Далёкое заклинание",
+                "value": "metamagic-distant-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: перебросить кости урона (до Хар)"
+                  }
+                ],
+                "labelRu": "Усиленное заклинание",
+                "value": "metamagic-empowered-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: длительность от 1 минуты удваивается (до 24 часов)"
+                  }
+                ],
+                "labelRu": "Продлённое заклинание",
+                "value": "metamagic-extended-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "3 ед.: помеха одной цели на первый спасбросок"
+                  }
+                ],
+                "labelRu": "Повышенное заклинание",
+                "value": "metamagic-heightened-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "2 ед.: время накладывания 1 действие → 1 бонусное действие"
+                  }
+                ],
+                "labelRu": "Ускоренное заклинание",
+                "value": "metamagic-quickened-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: без вербальных и соматических компонентов"
+                  }
+                ],
+                "labelRu": "Неуловимое заклинание",
+                "value": "metamagic-subtle-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Ед. = круг заклинания (заговор — 1): вторая цель для заклинания на одно существо"
+                  }
+                ],
+                "labelRu": "Сдвоенное заклинание",
+                "value": "metamagic-twinned-spell"
+              }
+            ],
+            "kind": "list"
+          },
+          "type": "choice"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "metamagic-2": {
+      "effects": [
+        {
+          "choose": 1,
+          "id": "option",
+          "labelRu": "Метамагия",
+          "options": {
+            "items": [
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: союзники (до Хар) автоматически преуспевают в спасброске"
+                  }
+                ],
+                "labelRu": "Аккуратное заклинание",
+                "value": "metamagic-careful-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: дистанция удваивается; касание → 30 футов"
+                  }
+                ],
+                "labelRu": "Далёкое заклинание",
+                "value": "metamagic-distant-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: перебросить кости урона (до Хар)"
+                  }
+                ],
+                "labelRu": "Усиленное заклинание",
+                "value": "metamagic-empowered-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: длительность от 1 минуты удваивается (до 24 часов)"
+                  }
+                ],
+                "labelRu": "Продлённое заклинание",
+                "value": "metamagic-extended-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "3 ед.: помеха одной цели на первый спасбросок"
+                  }
+                ],
+                "labelRu": "Повышенное заклинание",
+                "value": "metamagic-heightened-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "2 ед.: время накладывания 1 действие → 1 бонусное действие"
+                  }
+                ],
+                "labelRu": "Ускоренное заклинание",
+                "value": "metamagic-quickened-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: без вербальных и соматических компонентов"
+                  }
+                ],
+                "labelRu": "Неуловимое заклинание",
+                "value": "metamagic-subtle-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Ед. = круг заклинания (заговор — 1): вторая цель для заклинания на одно существо"
+                  }
+                ],
+                "labelRu": "Сдвоенное заклинание",
+                "value": "metamagic-twinned-spell"
+              }
+            ],
+            "kind": "list"
+          },
+          "type": "choice"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "metamagic-3": {
+      "effects": [
+        {
+          "choose": 1,
+          "id": "option",
+          "labelRu": "Метамагия",
+          "options": {
+            "items": [
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: союзники (до Хар) автоматически преуспевают в спасброске"
+                  }
+                ],
+                "labelRu": "Аккуратное заклинание",
+                "value": "metamagic-careful-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: дистанция удваивается; касание → 30 футов"
+                  }
+                ],
+                "labelRu": "Далёкое заклинание",
+                "value": "metamagic-distant-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: перебросить кости урона (до Хар)"
+                  }
+                ],
+                "labelRu": "Усиленное заклинание",
+                "value": "metamagic-empowered-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: длительность от 1 минуты удваивается (до 24 часов)"
+                  }
+                ],
+                "labelRu": "Продлённое заклинание",
+                "value": "metamagic-extended-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "3 ед.: помеха одной цели на первый спасбросок"
+                  }
+                ],
+                "labelRu": "Повышенное заклинание",
+                "value": "metamagic-heightened-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "2 ед.: время накладывания 1 действие → 1 бонусное действие"
+                  }
+                ],
+                "labelRu": "Ускоренное заклинание",
+                "value": "metamagic-quickened-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "1 ед.: без вербальных и соматических компонентов"
+                  }
+                ],
+                "labelRu": "Неуловимое заклинание",
+                "value": "metamagic-subtle-spell"
+              },
+              {
+                "effects": [
+                  {
+                    "type": "text",
+                    "noteRu": "Ед. = круг заклинания (заговор — 1): вторая цель для заклинания на одно существо"
+                  }
+                ],
+                "labelRu": "Сдвоенное заклинание",
+                "value": "metamagic-twinned-spell"
+              }
+            ],
+            "kind": "list"
+          },
+          "type": "choice"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "metamagic-twinned-spell": {
+      "effects": [],
+      "effectsStatus": "complete",
+      "hidden": true
+    },
+    "sorcerous-restoration": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Короткий отдых: восстанавливаете 4 единицы чародейства"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

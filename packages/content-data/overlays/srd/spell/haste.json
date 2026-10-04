@@ -1,0 +1,23 @@
+{
+  "target": "srd/spell/haste",
+  "data": {
+    "selfEffects": [
+      {
+        "type": "bonus",
+        "target": "ac",
+        "value": "2",
+        "labelRu": "Ускорение"
+      },
+      {
+        "type": "roll_mode",
+        "mode": "advantage",
+        "target": "save:dex",
+        "noteRu": "Ускорение"
+      },
+      {
+        "type": "text",
+        "noteRu": "Скорость удваивается; дополнительное действие (Атака одним оружием, Рывок, Отход, Засада, Использование предмета)"
+      }
+    ]
+  }
+}

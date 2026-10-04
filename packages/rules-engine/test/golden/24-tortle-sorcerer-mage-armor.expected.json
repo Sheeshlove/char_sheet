@@ -1,0 +1,8 @@
+{
+  "ac.value": 17,
+  "ac.formulaLabelRu": "Природный доспех",
+  "abilities.cha.score.value": 17,
+  "abilities.dex.score.value": 14,
+  "toggles[id=spell:mini/spell/mage-armor].active": true,
+  "attacks[nameRu=Когти].damage.0.dice": "1d6"
+}

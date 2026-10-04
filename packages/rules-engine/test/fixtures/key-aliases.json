@@ -1,0 +1,83 @@
+{
+  "_comment": "Соответствие ключей мини-набора и реальных пакетов для эталонов на реальном контенте (SPEC §17 M6). fromMini — сущностей нет в SRD 5.1, они берутся из мини-набора (их ссылки тоже переводятся). choiceKeys — выборы, у которых в SRD другой ключ умения. extraChoices — выборы, которых нет в мини-наборе. skip — эталоны, которые нельзя собрать из SRD.",
+  "keys": {
+    "mini/armor/chain-mail": "srd/armor/chain-mail",
+    "mini/armor/shield": "srd/armor/shield",
+    "mini/background/acolyte": "srd/background/acolyte",
+    "mini/class/barbarian": "srd/class/barbarian",
+    "mini/class/bard": "srd/class/bard",
+    "mini/class/cleric": "srd/class/cleric",
+    "mini/class/fighter": "srd/class/fighter",
+    "mini/class/monk": "srd/class/monk",
+    "mini/class/paladin": "srd/class/paladin",
+    "mini/class/ranger": "srd/class/ranger",
+    "mini/class/rogue": "srd/class/rogue",
+    "mini/class/sorcerer": "srd/class/sorcerer",
+    "mini/class/warlock": "srd/class/warlock",
+    "mini/class/wizard": "srd/class/wizard",
+    "mini/race/dwarf": "srd/race/dwarf",
+    "mini/race/elf": "srd/race/elf",
+    "mini/race/halfling": "srd/race/halfling",
+    "mini/race/human": "srd/race/human",
+    "mini/spell/bless": "srd/spell/bless",
+    "mini/spell/burning-hands": "srd/spell/burning-hands",
+    "mini/spell/command": "srd/spell/command",
+    "mini/spell/counterspell": "srd/spell/counterspell",
+    "mini/spell/cure-wounds": "srd/spell/cure-wounds",
+    "mini/spell/detect-magic": "srd/spell/detect-magic",
+    "mini/spell/eldritch-blast": "srd/spell/eldritch-blast",
+    "mini/spell/fire-bolt": "srd/spell/fire-bolt",
+    "mini/spell/fireball": "srd/spell/fireball",
+    "mini/spell/guidance": "srd/spell/guidance",
+    "mini/spell/healing-word": "srd/spell/healing-word",
+    "mini/spell/hunters-mark": "srd/spell/hunters-mark",
+    "mini/spell/light": "srd/spell/light",
+    "mini/spell/mage-armor": "srd/spell/mage-armor",
+    "mini/spell/mage-hand": "srd/spell/mage-hand",
+    "mini/spell/magic-missile": "srd/spell/magic-missile",
+    "mini/spell/minor-illusion": "srd/spell/minor-illusion",
+    "mini/spell/misty-step": "srd/spell/misty-step",
+    "mini/spell/sacred-flame": "srd/spell/sacred-flame",
+    "mini/spell/shield": "srd/spell/shield",
+    "mini/spell/sleep": "srd/spell/sleep",
+    "mini/spell/thunderwave": "srd/spell/thunderwave",
+    "mini/subclass/berserker": "srd/subclass/berserker",
+    "mini/subclass/champion": "srd/subclass/champion",
+    "mini/subclass/draconic-bloodline": "srd/subclass/draconic",
+    "mini/subclass/fiend": "srd/subclass/fiend",
+    "mini/subclass/life": "srd/subclass/life",
+    "mini/subclass/open-hand": "srd/subclass/open-hand",
+    "mini/subclass/thief": "srd/subclass/thief",
+    "mini/subrace/high-elf": "srd/subrace/high-elf",
+    "mini/subrace/hill-dwarf": "srd/subrace/hill-dwarf",
+    "mini/subrace/lightfoot": "srd/subrace/lightfoot-halfling",
+    "mini/weapon/greataxe": "srd/weapon/greataxe",
+    "mini/weapon/longbow": "srd/weapon/longbow",
+    "mini/weapon/longsword": "srd/weapon/longsword"
+  },
+  "choiceKeys": {
+    "srd/class/rogue#expertise#expertise": "srd/class/rogue#expertise-1#expertise",
+    "srd/class/bard#expertise#expertise": "srd/class/bard#expertise-1#expertise",
+    "srd/subrace/high-elf#cantrip#cantrip": "srd/subrace/high-elf#high-elf-cantrip#cantrip"
+  },
+  "fromMini": [
+    "mini/background/criminal",
+    "mini/background/soldier",
+    "mini/feat/tough",
+    "mini/gear/iron-ingot",
+    "mini/race/tortle",
+    "mini/spell/armor-of-agathys",
+    "mini/spell/hex",
+    "mini/subclass/eldritch-knight"
+  ],
+  "extraChoices": {
+    "09-warlock-5": {
+      "srd/class/warlock#pact-boon#option": [
+        "pact-of-the-blade"
+      ]
+    }
+  },
+  "skip": {
+    "12-artificer-1": "Изобретатель не входит в SRD 5.1 (появится с пакетом dndsu-official)"
+  }
+}

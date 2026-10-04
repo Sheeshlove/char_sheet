@@ -1,0 +1,14 @@
+{
+  "target": "srd/subrace/hill-dwarf",
+  "features": {
+    "dwarven-toughness": {
+      "effects": [
+        {
+          "type": "hp_max",
+          "value": "LEVEL"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+node_modules/
+.pnpm-store/
+.turbo/
+.next/
+out/
+dist/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+.env
+.env.local
+.env.*.local
+!.env.example
+apps/web/uploads/
+apps/web/test-results/
+apps/web/playwright-report/
+apps/web/public/sw.js
+apps/web/public/sw.js.map
+apps/web/public/swe-worker-*.js
+packages/importer/cache/
+packages/importer/parsed/
+packages/importer/.vendor/
+.DS_Store
+*.log
+
+# Резервные копии, положенные для восстановления (docs/restore.md)
+/restore/

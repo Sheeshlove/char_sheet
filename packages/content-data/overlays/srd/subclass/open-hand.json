@@ -1,0 +1,48 @@
+{
+  "target": "srd/subclass/open-hand",
+  "features": {
+    "open-hand-technique": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "При попадании «Шквалом ударов»: сбить с ног (Лов), оттолкнуть на 15 футов (Сил) или лишить реакций до конца вашего следующего хода"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "wholeness-of-body": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "wholeness-of-body",
+          "nameRu": "Исцеление тела",
+          "max": "1",
+          "reset": "long"
+        },
+        {
+          "type": "text",
+          "noteRu": "Действием восстановить хиты: 3 × уровень монаха"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "tranquility": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "После продолжительного отдыха — эффект «Убежища» до следующего отдыха (Сл 8 + Мдр + БМ)"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "quivering-palm": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "3 ци при попадании безоружным ударом: позже действием — спасбросок Телосложения, при провале хиты 0, при успехе 10к10 некротической энергии"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

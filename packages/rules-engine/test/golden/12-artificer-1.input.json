@@ -1,0 +1,45 @@
+{
+  "title": "Изобретатель 1",
+  "build": {
+    "identity": {
+      "name": "Эталон 12",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 10,
+        "dex": 13,
+        "con": 14,
+        "int": 15,
+        "wis": 12,
+        "cha": 8
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/acolyte",
+    "classes": [
+      {
+        "classKey": "mini/class/artificer"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/artificer",
+        "hp": {
+          "method": "max"
+        }
+      }
+    ],
+    "choices": {
+      "mini/race/human#languages#language": [
+        "elvish"
+      ]
+    }
+  }
+}

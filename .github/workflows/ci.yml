@@ -1,0 +1,83 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+
+  e2e:
+    runs-on: ubuntu-latest
+    needs: check
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: party
+          POSTGRES_PASSWORD: party
+          POSTGRES_DB: party_sheet_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U party" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      E2E_DATABASE_URL: postgres://party:party@localhost:5432/party_sheet_test
+      DATABASE_URL: postgres://party:party@localhost:5432/party_sheet_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @ps/web exec playwright install --with-deps chromium
+      - run: pnpm build
+      - run: pnpm test:e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: apps/web/test-results
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: check
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          tags: party-sheet-web:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - name: Образ стартует на чистой БД (миграции, админ, контент)
+        run: |
+          docker network create ps
+          docker run -d --name db --network ps -e POSTGRES_USER=party -e POSTGRES_PASSWORD=party -e POSTGRES_DB=party_sheet postgres:16
+          docker run -d --name web --network ps -p 3000:3000 \
+            -e DATABASE_URL=postgres://party:party@db:5432/party_sheet -e APP_URL=http://localhost:3000 \
+            -e ADMIN_EMAIL=ci@example.com -e ADMIN_PASSWORD=ci-password-123 party-sheet-web:ci
+          for i in $(seq 1 60); do curl -fs http://localhost:3000/api/health && break; sleep 2; done
+          docker logs web
+          curl -fs http://localhost:3000/api/health
+          docker logs web 2>&1 | grep -q '"status":"loaded"'

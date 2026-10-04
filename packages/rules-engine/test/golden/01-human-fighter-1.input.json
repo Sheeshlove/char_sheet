@@ -1,0 +1,81 @@
+{
+  "title": "Человек-воин 1, кольчуга, длинный меч + щит, «Оборона»",
+  "build": {
+    "identity": {
+      "name": "Эталон 01",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 15,
+        "dex": 12,
+        "con": 14,
+        "int": 8,
+        "wis": 13,
+        "cha": 10
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/soldier",
+    "classes": [
+      {
+        "classKey": "mini/class/fighter"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/fighter",
+        "hp": {
+          "method": "max"
+        }
+      }
+    ],
+    "choices": {
+      "mini/race/human#languages#language": [
+        "dwarvish"
+      ],
+      "mini/class/fighter#proficiencies#skills": [
+        "perception",
+        "survival"
+      ],
+      "mini/class/fighter#fighting-style#fighting-style": [
+        "defense"
+      ],
+      "mini/background/soldier#proficiencies#tools-1": [
+        "dice-set"
+      ]
+    }
+  },
+  "state": {
+    "inventory": [
+      {
+        "id": "i1",
+        "key": "mini/armor/chain-mail",
+        "qty": 1,
+        "equipped": true,
+        "attuned": false
+      },
+      {
+        "id": "i2",
+        "key": "mini/weapon/longsword",
+        "qty": 1,
+        "equipped": true,
+        "attuned": false,
+        "hand": "main"
+      },
+      {
+        "id": "i3",
+        "key": "mini/armor/shield",
+        "qty": 1,
+        "equipped": true,
+        "attuned": false
+      }
+    ]
+  }
+}

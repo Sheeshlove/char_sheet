@@ -1,0 +1,28 @@
+{
+  "target": "srd/race/gnome",
+  "features": {
+    "gnome-cunning": {
+      "effects": [
+        {
+          "type": "roll_mode",
+          "mode": "advantage",
+          "target": "save:int",
+          "noteRu": "Против магии"
+        },
+        {
+          "type": "roll_mode",
+          "mode": "advantage",
+          "target": "save:wis",
+          "noteRu": "Против магии"
+        },
+        {
+          "type": "roll_mode",
+          "mode": "advantage",
+          "target": "save:cha",
+          "noteRu": "Против магии"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}

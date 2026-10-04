@@ -1,0 +1,1246 @@
+[
+  {
+    "data": {
+      "ageMd": "Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 80.",
+      "alignmentMd": "Dragonborn tend to extremes, making a conscious choice for one side or the other in the cosmic war between good and evil. Most dragonborn are good, but those who side with evil can be terrible villains.",
+      "features": [
+        {
+          "effects": [
+            {
+              "ability": "str",
+              "op": "add",
+              "type": "ability",
+              "value": "2"
+            },
+            {
+              "ability": "cha",
+              "op": "add",
+              "type": "ability",
+              "value": "1"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "asi",
+          "nameRu": "Увеличение характеристик",
+          "textMd": ""
+        },
+        {
+          "effects": [
+            {
+              "choose": 1,
+              "id": "ancestry",
+              "labelRu": "Наследие драконов",
+              "options": {
+                "items": [
+                  {
+                    "effects": [
+                      {
+                        "damageType": "acid",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: кислота, линия 5 × 30 футов, спасбросок Лов",
+                        "type": "text"
+                      }
+                    ],
+                    "labelRu": "чёрный",
+                    "value": "draconic-ancestry-black"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "lightning",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: электричество, линия 5 × 30 футов, спасбросок Лов",
+                        "type": "text"
+                      }
+                    ],
+                    "labelRu": "синий",
+                    "value": "draconic-ancestry-blue"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "fire",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: огонь, линия 5 × 30 футов, спасбросок Лов",
+                        "type": "text"
+                      }
+                    ],
+                    "labelRu": "латунный",
+                    "value": "draconic-ancestry-brass"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "lightning",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: электричество, линия 5 × 30 футов, спасбросок Лов",
+                        "type": "text"
+                      }
+                    ],
+                    "labelRu": "бронзовый",
+                    "value": "draconic-ancestry-bronze"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "acid",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: кислота, линия 5 × 30 футов, спасбросок Лов",
+                        "type": "text"
+                      }
+                    ],
+                    "labelRu": "медный",
+                    "value": "draconic-ancestry-copper"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "fire",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: огонь, конус 15 футов, спасбросок Лов",
+                        "type": "text"
+                      }
+                    ],
+                    "labelRu": "золотой",
+                    "value": "draconic-ancestry-gold"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "poison",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: яд, конус 15 футов, спасбросок Тел",
+                        "type": "text"
+                      }
+                    ],
+                    "labelRu": "зелёный",
+                    "value": "draconic-ancestry-green"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "fire",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: огонь, конус 15 футов, спасбросок Лов",
+                        "type": "text"
+                      }
+                    ],
+                    "labelRu": "красный",
+                    "value": "draconic-ancestry-red"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "cold",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: холод, конус 15 футов, спасбросок Тел",
+                        "type": "text"
+                      }
+                    ],
+                    "labelRu": "серебряный",
+                    "value": "draconic-ancestry-silver"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "damageType": "cold",
+                        "kind": "resistance",
+                        "type": "defense"
+                      },
+                      {
+                        "noteRu": "Оружие дыхания: холод, конус 15 футов, спасбросок Тел",
+                        "type": "text"
+                      }
+                    ],
+                    "labelRu": "белый",
+                    "value": "draconic-ancestry-white"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "draconic-ancestry",
+          "nameEn": "Draconic Ancestry",
+          "nameRu": "Наследие драконов",
+          "textMd": "You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table."
+        },
+        {
+          "effects": [
+            {
+              "id": "breath-weapon",
+              "max": "1",
+              "nameRu": "Оружие дыхания",
+              "reset": "short",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Действием; Сл = 8 + Тел + БМ; урон 2к6 (3к6 с 6, 4к6 с 11, 5к6 с 16 уровня), при успехе половина",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "breath-weapon",
+          "nameEn": "Breath Weapon",
+          "nameRu": "Оружие дыхания",
+          "textMd": "You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.\n\nWhen you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.\n\nAfter you use your breath weapon, you cannot use it again until you complete a short or long rest."
+        },
+        {
+          "effects": [],
+          "effectsStatus": "complete",
+          "key": "damage-resistance",
+          "nameEn": "Damage Resistance",
+          "nameRu": "Сопротивление урону",
+          "textMd": "You have resistance to the damage type associated with your draconic ancestry."
+        },
+        {
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "language:common",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "language:draconic",
+              "type": "proficiency"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "languages",
+          "nameRu": "Языки",
+          "textMd": "You can speak, read, and write Common and Draconic. Draconic is thought to be one of the oldest languages and is often used in the study of magic. The language sounds harsh to most other creatures and includes numerous hard consonants and sibilants."
+        }
+      ],
+      "size": "medium",
+      "speed": {
+        "walk": 30
+      },
+      "subraceRequired": false
+    },
+    "effectsStatus": "complete",
+    "key": "srd/race/dragonborn",
+    "kind": "race",
+    "nameEn": "Dragonborn",
+    "nameRu": "Драконорождённый",
+    "slug": "dragonborn",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Dragonborn are taller and heavier than humans, standing well over 6 feet tall and averaging almost 250 pounds. Your size is Medium.\n\nYou can speak, read, and write Common and Draconic. Draconic is thought to be one of the oldest languages and is often used in the study of magic. The language sounds harsh to most other creatures and includes numerous hard consonants and sibilants."
+  },
+  {
+    "data": {
+      "ageMd": "Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average, they live about 350 years.",
+      "alignmentMd": "Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just order.",
+      "features": [
+        {
+          "effects": [
+            {
+              "ability": "con",
+              "op": "add",
+              "type": "ability",
+              "value": "2"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "asi",
+          "nameRu": "Увеличение характеристик",
+          "textMd": ""
+        },
+        {
+          "effects": [
+            {
+              "op": "set_max",
+              "rangeFt": 60,
+              "sense": "darkvision",
+              "type": "sense"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "darkvision",
+          "nameEn": "Darkvision",
+          "nameRu": "Тёмное зрение",
+          "textMd": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray."
+        },
+        {
+          "effects": [
+            {
+              "mode": "advantage",
+              "noteRu": "Против яда",
+              "target": "save:*",
+              "type": "roll_mode"
+            },
+            {
+              "damageType": "poison",
+              "kind": "resistance",
+              "type": "defense"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "dwarven-resilience",
+          "nameEn": "Dwarven Resilience",
+          "nameRu": "Дварфская устойчивость",
+          "textMd": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+        },
+        {
+          "effects": [
+            {
+              "noteRu": "Проверки Интеллекта (История) о происхождении каменной кладки: удвоенный БМ",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "stonecunning",
+          "nameEn": "Stonecunning",
+          "nameRu": "Знание камня",
+          "textMd": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
+        },
+        {
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "weapon:battleaxe",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "weapon:handaxe",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "weapon:light-hammer",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "weapon:warhammer",
+              "type": "proficiency"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "dwarven-combat-training",
+          "nameEn": "Dwarven Combat Training",
+          "nameRu": "Дварфская боевая тренировка",
+          "textMd": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+        },
+        {
+          "effects": [
+            {
+              "choose": 1,
+              "id": "tool",
+              "labelRu": "Инструменты ремесленника",
+              "options": {
+                "items": [
+                  {
+                    "effects": [
+                      {
+                        "level": "proficient",
+                        "target": "tool:smiths-tools",
+                        "type": "proficiency"
+                      }
+                    ],
+                    "labelRu": "Инструменты кузнеца",
+                    "value": "smiths-tools"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "level": "proficient",
+                        "target": "tool:brewers-supplies",
+                        "type": "proficiency"
+                      }
+                    ],
+                    "labelRu": "Инструменты пивовара",
+                    "value": "brewers-supplies"
+                  },
+                  {
+                    "effects": [
+                      {
+                        "level": "proficient",
+                        "target": "tool:masons-tools",
+                        "type": "proficiency"
+                      }
+                    ],
+                    "labelRu": "Инструменты каменщика",
+                    "value": "masons-tools"
+                  }
+                ],
+                "kind": "list"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "tool-proficiency",
+          "nameEn": "Tool Proficiency",
+          "nameRu": "Владение инструментами",
+          "textMd": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
+        },
+        {
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "language:common",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "language:dwarvish",
+              "type": "proficiency"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "languages",
+          "nameRu": "Языки",
+          "textMd": "You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and those characteristics spill over into whatever other language a dwarf might speak."
+        },
+        {
+          "effects": [
+            {
+              "category": "heavy",
+              "ignoreStrSpeedPenalty": true,
+              "type": "armor_rule"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "speed",
+          "nameEn": "Speed",
+          "nameRu": "Скорость",
+          "textMd": "Your base walking speed is 25 feet. Your speed is not reduced by wearing heavy armor."
+        }
+      ],
+      "size": "medium",
+      "speed": {
+        "walk": 25
+      },
+      "subraceRequired": true
+    },
+    "effectsStatus": "complete",
+    "key": "srd/race/dwarf",
+    "kind": "race",
+    "nameEn": "Dwarf",
+    "nameRu": "Дварф",
+    "slug": "dwarf",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Dwarves stand between 4 and 5 feet tall and average about 150 pounds. Your size is Medium.\n\nYou can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and those characteristics spill over into whatever other language a dwarf might speak."
+  },
+  {
+    "data": {
+      "ageMd": "Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.",
+      "alignmentMd": "Elves love freedom, variety, and self-expression, so they lean strongly toward the gentler aspects of chaos. They value and protect others' freedom as well as their own, and they are more often good than not.",
+      "features": [
+        {
+          "effects": [
+            {
+              "ability": "dex",
+              "op": "add",
+              "type": "ability",
+              "value": "2"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "asi",
+          "nameRu": "Увеличение характеристик",
+          "textMd": ""
+        },
+        {
+          "effects": [
+            {
+              "op": "set_max",
+              "rangeFt": 60,
+              "sense": "darkvision",
+              "type": "sense"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "darkvision",
+          "nameEn": "Darkvision",
+          "nameRu": "Тёмное зрение",
+          "textMd": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray."
+        },
+        {
+          "effects": [
+            {
+              "mode": "advantage",
+              "noteRu": "Против очарования",
+              "target": "save:*",
+              "type": "roll_mode"
+            },
+            {
+              "noteRu": "Магия не может вас усыпить",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "fey-ancestry",
+          "nameEn": "Fey Ancestry",
+          "nameRu": "Наследие фей",
+          "textMd": "You have advantage on saving throws against being charmed, and magic cannot put you to sleep."
+        },
+        {
+          "effects": [
+            {
+              "noteRu": "Вместо сна 4 часа медитации — эффект продолжительного отдыха",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "trance",
+          "nameEn": "Trance",
+          "nameRu": "Транс",
+          "textMd": "Elves do not need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting this way, you gain the same benefit that a human does from 8 hours of sleep."
+        },
+        {
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "skill:perception",
+              "type": "proficiency"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "keen-senses",
+          "nameEn": "Keen Senses",
+          "nameRu": "Обострённые чувства",
+          "textMd": "You have proficiency in the Perception skill."
+        },
+        {
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "language:common",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "language:elvish",
+              "type": "proficiency"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "languages",
+          "nameRu": "Языки",
+          "textMd": "You can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many bards learn their language so they can add Elvish ballads to their repertoires."
+        }
+      ],
+      "size": "medium",
+      "speed": {
+        "walk": 30
+      },
+      "subraceRequired": true
+    },
+    "effectsStatus": "complete",
+    "key": "srd/race/elf",
+    "kind": "race",
+    "nameEn": "Elf",
+    "nameRu": "Эльф",
+    "slug": "elf",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Elves range from under 5 to over 6 feet tall and have slender builds. Your size is Medium.\n\nYou can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many bards learn their language so they can add Elvish ballads to their repertoires."
+  },
+  {
+    "data": {
+      "ageMd": "Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age 40. They can live 350 to almost 500 years.",
+      "alignmentMd": "Gnomes are most often good. Those who tend toward law are sages, engineers, researchers, scholars, investigators, or inventors. Those who tend toward chaos are minstrels, tricksters, wanderers, or fanciful jewelers. Gnomes are good-hearted, and even the tricksters among them are more playful than vicious.",
+      "features": [
+        {
+          "effects": [
+            {
+              "ability": "int",
+              "op": "add",
+              "type": "ability",
+              "value": "2"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "asi",
+          "nameRu": "Увеличение характеристик",
+          "textMd": ""
+        },
+        {
+          "effects": [
+            {
+              "op": "set_max",
+              "rangeFt": 60,
+              "sense": "darkvision",
+              "type": "sense"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "darkvision",
+          "nameEn": "Darkvision",
+          "nameRu": "Тёмное зрение",
+          "textMd": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray."
+        },
+        {
+          "effects": [
+            {
+              "mode": "advantage",
+              "noteRu": "Против магии",
+              "target": "save:int",
+              "type": "roll_mode"
+            },
+            {
+              "mode": "advantage",
+              "noteRu": "Против магии",
+              "target": "save:wis",
+              "type": "roll_mode"
+            },
+            {
+              "mode": "advantage",
+              "noteRu": "Против магии",
+              "target": "save:cha",
+              "type": "roll_mode"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "gnome-cunning",
+          "nameEn": "Gnome Cunning",
+          "nameRu": "Гномья хитрость",
+          "textMd": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+        },
+        {
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "language:common",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "language:gnomish",
+              "type": "proficiency"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "languages",
+          "nameRu": "Языки",
+          "textMd": "You can speak, read, and write Common and Gnomish. The Gnomish language, which uses the Dwarvish script, is renowned for its technical treatises and its catalogs of knowledge about the natural world."
+        }
+      ],
+      "size": "small",
+      "speed": {
+        "walk": 25
+      },
+      "subraceRequired": true
+    },
+    "effectsStatus": "complete",
+    "key": "srd/race/gnome",
+    "kind": "race",
+    "nameEn": "Gnome",
+    "nameRu": "Гном",
+    "slug": "gnome",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Gnomes are between 3 and 4 feet tall and average about 40 pounds. Your size is Small.\n\nYou can speak, read, and write Common and Gnomish. The Gnomish language, which uses the Dwarvish script, is renowned for its technical treatises and its catalogs of knowledge about the natural world."
+  },
+  {
+    "data": {
+      "ageMd": "Half-elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than humans, however, often exceeding 180 years.",
+      "alignmentMd": "Half-elves share the chaotic bent of their elven heritage. They value both personal freedom and creative expression, demonstrating neither love of leaders nor desire for followers. They chafe at rules, resent others' demands, and sometimes prove unreliable, or at least unpredictable.",
+      "features": [
+        {
+          "effects": [
+            {
+              "ability": "cha",
+              "op": "add",
+              "type": "ability",
+              "value": "2"
+            },
+            {
+              "choose": 2,
+              "id": "asi",
+              "labelRu": "Увеличение характеристик",
+              "options": {
+                "abilities": [
+                  "str",
+                  "dex",
+                  "con",
+                  "int",
+                  "wis"
+                ],
+                "kind": "ability_increase",
+                "maxPerAbility": 1,
+                "points": 2
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "asi",
+          "nameRu": "Увеличение характеристик",
+          "textMd": ""
+        },
+        {
+          "effects": [
+            {
+              "op": "set_max",
+              "rangeFt": 60,
+              "sense": "darkvision",
+              "type": "sense"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "darkvision",
+          "nameEn": "Darkvision",
+          "nameRu": "Тёмное зрение",
+          "textMd": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray."
+        },
+        {
+          "effects": [
+            {
+              "mode": "advantage",
+              "noteRu": "Против очарования",
+              "target": "save:*",
+              "type": "roll_mode"
+            },
+            {
+              "noteRu": "Магия не может вас усыпить",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "fey-ancestry",
+          "nameEn": "Fey Ancestry",
+          "nameRu": "Наследие фей",
+          "textMd": "You have advantage on saving throws against being charmed, and magic cannot put you to sleep."
+        },
+        {
+          "effects": [
+            {
+              "choose": 2,
+              "id": "choice",
+              "labelRu": "Универсальность навыков",
+              "options": {
+                "from": [
+                  "acrobatics",
+                  "animal_handling",
+                  "arcana",
+                  "athletics",
+                  "deception",
+                  "history",
+                  "insight",
+                  "intimidation",
+                  "investigation",
+                  "medicine",
+                  "nature",
+                  "perception",
+                  "performance",
+                  "persuasion",
+                  "religion",
+                  "sleight_of_hand",
+                  "stealth",
+                  "survival"
+                ],
+                "grant": "proficient",
+                "kind": "skills"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "skill-versatility",
+          "nameEn": "Skill Versatility",
+          "nameRu": "Универсальность навыков",
+          "textMd": "You gain proficiency in two skills of your choice."
+        },
+        {
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "language:common",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "language:elvish",
+              "type": "proficiency"
+            },
+            {
+              "choose": 1,
+              "id": "language",
+              "labelRu": "Дополнительный язык",
+              "options": {
+                "kind": "languages"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "languages",
+          "nameRu": "Языки",
+          "textMd": "You can speak, read, and write Common, Elvish, and one extra language of your choice."
+        }
+      ],
+      "size": "medium",
+      "speed": {
+        "walk": 30
+      },
+      "subraceRequired": false
+    },
+    "effectsStatus": "complete",
+    "key": "srd/race/half-elf",
+    "kind": "race",
+    "nameEn": "Half-Elf",
+    "nameRu": "Полуэльф",
+    "slug": "half-elf",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Half-elves are about the same size as humans, ranging from 5 to 6 feet tall. Your size is Medium.\n\nYou can speak, read, and write Common, Elvish, and one extra language of your choice."
+  },
+  {
+    "data": {
+      "ageMd": "Half-orcs mature a little faster than humans, reaching adulthood around age 14. They age noticeably faster and rarely live longer than 75 years.",
+      "alignmentMd": "Half-orcs inherit a tendency toward chaos from their orc parents and are not strongly inclined toward good. Half-orcs raised among orcs and willing to live out their lives among them are usually evil.",
+      "features": [
+        {
+          "effects": [
+            {
+              "ability": "str",
+              "op": "add",
+              "type": "ability",
+              "value": "2"
+            },
+            {
+              "ability": "con",
+              "op": "add",
+              "type": "ability",
+              "value": "1"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "asi",
+          "nameRu": "Увеличение характеристик",
+          "textMd": ""
+        },
+        {
+          "effects": [
+            {
+              "op": "set_max",
+              "rangeFt": 60,
+              "sense": "darkvision",
+              "type": "sense"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "darkvision",
+          "nameEn": "Darkvision",
+          "nameRu": "Тёмное зрение",
+          "textMd": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray."
+        },
+        {
+          "effects": [
+            {
+              "noteRu": "Критическое попадание рукопашной атакой оружием: одна дополнительная кость урона оружия",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "savage-attacks",
+          "nameEn": "Savage Attacks",
+          "nameRu": "Свирепые атаки",
+          "textMd": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."
+        },
+        {
+          "effects": [
+            {
+              "id": "relentless-endurance",
+              "max": "1",
+              "nameRu": "Непоколебимая стойкость",
+              "reset": "long",
+              "type": "resource"
+            },
+            {
+              "noteRu": "Если урон опускает хиты до 0, но не убивает — остаётесь с 1 хитом",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "relentless-endurance",
+          "nameEn": "Relentless Endurance",
+          "nameRu": "Непоколебимая стойкость",
+          "textMd": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. you cannot use this feature again until you finish a long rest."
+        },
+        {
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "skill:intimidation",
+              "type": "proficiency"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "menacing",
+          "nameEn": "Menacing",
+          "nameRu": "Угрожающий вид",
+          "textMd": "You gain proficiency in the Intimidation skill."
+        },
+        {
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "language:common",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "language:orc",
+              "type": "proficiency"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "languages",
+          "nameRu": "Языки",
+          "textMd": "You can speak, read, and write Common and Orc. Orc is a harsh, grating language with hard consonants. It has no script of its own but is written in the Dwarvish script."
+        }
+      ],
+      "size": "medium",
+      "speed": {
+        "walk": 30
+      },
+      "subraceRequired": false
+    },
+    "effectsStatus": "complete",
+    "key": "srd/race/half-orc",
+    "kind": "race",
+    "nameEn": "Half-Orc",
+    "nameRu": "Полуорк",
+    "slug": "half-orc",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Half-orcs are somewhat larger and bulkier than humans, and they range from 5 to well over 6 feet tall. Your size is Medium.\n\nYou can speak, read, and write Common and Orc. Orc is a harsh, grating language with hard consonants. It has no script of its own but is written in the Dwarvish script."
+  },
+  {
+    "data": {
+      "ageMd": "A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.",
+      "alignmentMd": "Most halflings are lawful good. As a rule, they are good-hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways.",
+      "features": [
+        {
+          "effects": [
+            {
+              "ability": "dex",
+              "op": "add",
+              "type": "ability",
+              "value": "2"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "asi",
+          "nameRu": "Увеличение характеристик",
+          "textMd": ""
+        },
+        {
+          "effects": [
+            {
+              "mode": "advantage",
+              "noteRu": "Против испуга",
+              "target": "save:*",
+              "type": "roll_mode"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "brave",
+          "nameEn": "Brave",
+          "nameRu": "Храбрый",
+          "textMd": "You have advantage on saving throw against being frightened."
+        },
+        {
+          "effects": [
+            {
+              "noteRu": "Можно проходить через пространство существ крупнее вас",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "halfling-nimbleness",
+          "nameEn": "Halfling Nimbleness",
+          "nameRu": "Проворство полуросликов",
+          "textMd": "You can move through the space of any creature that is of a size larger than yours."
+        },
+        {
+          "effects": [
+            {
+              "noteRu": "Выпала 1 на к20 при атаке, проверке или спасброске — перебросьте и используйте новый результат",
+              "type": "text"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "lucky",
+          "nameEn": "Lucky",
+          "nameRu": "Везучий",
+          "textMd": "When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+        },
+        {
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "language:common",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "language:halfling",
+              "type": "proficiency"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "languages",
+          "nameRu": "Языки",
+          "textMd": "You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling."
+        }
+      ],
+      "size": "small",
+      "speed": {
+        "walk": 25
+      },
+      "subraceRequired": true
+    },
+    "effectsStatus": "complete",
+    "key": "srd/race/halfling",
+    "kind": "race",
+    "nameEn": "Halfling",
+    "nameRu": "Полурослик",
+    "slug": "halfling",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small.\n\nYou can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling."
+  },
+  {
+    "data": {
+      "ageMd": "Humans reach adulthood in their late teens and live less than a century.",
+      "alignmentMd": "Humans tend toward no particular alignment. The best and the worst are found among them.",
+      "features": [
+        {
+          "effects": [
+            {
+              "ability": "str",
+              "op": "add",
+              "type": "ability",
+              "value": "1"
+            },
+            {
+              "ability": "dex",
+              "op": "add",
+              "type": "ability",
+              "value": "1"
+            },
+            {
+              "ability": "con",
+              "op": "add",
+              "type": "ability",
+              "value": "1"
+            },
+            {
+              "ability": "int",
+              "op": "add",
+              "type": "ability",
+              "value": "1"
+            },
+            {
+              "ability": "wis",
+              "op": "add",
+              "type": "ability",
+              "value": "1"
+            },
+            {
+              "ability": "cha",
+              "op": "add",
+              "type": "ability",
+              "value": "1"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "asi",
+          "nameRu": "Увеличение характеристик",
+          "textMd": ""
+        },
+        {
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "language:common",
+              "type": "proficiency"
+            },
+            {
+              "choose": 1,
+              "id": "language",
+              "labelRu": "Дополнительный язык",
+              "options": {
+                "kind": "languages"
+              },
+              "type": "choice"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "languages",
+          "nameRu": "Языки",
+          "textMd": "You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on."
+        }
+      ],
+      "size": "medium",
+      "speed": {
+        "walk": 30
+      },
+      "subraceRequired": false
+    },
+    "effectsStatus": "complete",
+    "key": "srd/race/human",
+    "kind": "race",
+    "nameEn": "Human",
+    "nameRu": "Человек",
+    "slug": "human",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.\n\nYou can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on."
+  },
+  {
+    "data": {
+      "ageMd": "Tieflings mature at the same rate as humans but live a few years longer.",
+      "alignmentMd": "Tieflings might not have an innate tendency toward evil, but many of them end up there. Evil or not, an independent nature inclines many tieflings toward a chaotic alignment.",
+      "features": [
+        {
+          "effects": [
+            {
+              "ability": "int",
+              "op": "add",
+              "type": "ability",
+              "value": "1"
+            },
+            {
+              "ability": "cha",
+              "op": "add",
+              "type": "ability",
+              "value": "2"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "asi",
+          "nameRu": "Увеличение характеристик",
+          "textMd": ""
+        },
+        {
+          "effects": [
+            {
+              "op": "set_max",
+              "rangeFt": 60,
+              "sense": "darkvision",
+              "type": "sense"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "darkvision",
+          "nameEn": "Darkvision",
+          "nameRu": "Тёмное зрение",
+          "textMd": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray."
+        },
+        {
+          "effects": [
+            {
+              "damageType": "fire",
+              "kind": "resistance",
+              "type": "defense"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "hellish-resistance",
+          "nameEn": "Hellish Resistance",
+          "nameRu": "Адское сопротивление",
+          "textMd": "You have resistance to fire damage."
+        },
+        {
+          "effects": [
+            {
+              "ability": "cha",
+              "mode": "innate",
+              "spell": "srd/spell/thaumaturgy",
+              "type": "spell_grant"
+            },
+            {
+              "ability": "cha",
+              "castAtLevel": 2,
+              "minCharacterLevel": 3,
+              "mode": "innate",
+              "spell": "srd/spell/hellish-rebuke",
+              "type": "spell_grant",
+              "uses": {
+                "count": "1",
+                "reset": "long"
+              }
+            },
+            {
+              "ability": "cha",
+              "minCharacterLevel": 5,
+              "mode": "innate",
+              "spell": "srd/spell/darkness",
+              "type": "spell_grant",
+              "uses": {
+                "count": "1",
+                "reset": "long"
+              }
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "infernal-legacy",
+          "nameEn": "Infernal Legacy",
+          "nameRu": "Дьявольское наследие",
+          "textMd": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+        },
+        {
+          "effects": [
+            {
+              "level": "proficient",
+              "target": "language:common",
+              "type": "proficiency"
+            },
+            {
+              "level": "proficient",
+              "target": "language:infernal",
+              "type": "proficiency"
+            }
+          ],
+          "effectsStatus": "complete",
+          "key": "languages",
+          "nameRu": "Языки",
+          "textMd": "You can speak, read, and write Common and Infernal."
+        }
+      ],
+      "size": "medium",
+      "speed": {
+        "walk": 30
+      },
+      "subraceRequired": false
+    },
+    "effectsStatus": "complete",
+    "key": "srd/race/tiefling",
+    "kind": "race",
+    "nameEn": "Tiefling",
+    "nameRu": "Тифлинг",
+    "slug": "tiefling",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Tieflings are about the same size and build as humans. Your size is Medium.\n\nYou can speak, read, and write Common and Infernal."
+  }
+]

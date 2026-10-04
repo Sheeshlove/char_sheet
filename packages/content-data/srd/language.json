@@ -1,0 +1,241 @@
+[
+  {
+    "data": {
+      "scriptRu": "Инфернальный",
+      "speakersRu": "Демоны",
+      "type": "exotic"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/abyssal",
+    "kind": "language",
+    "nameEn": "Abyssal",
+    "nameRu": "Бездны",
+    "slug": "abyssal",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "scriptRu": "Небесный",
+      "speakersRu": "Небожители",
+      "type": "exotic"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/celestial",
+    "kind": "language",
+    "nameEn": "Celestial",
+    "nameRu": "Небесный",
+    "slug": "celestial",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "scriptRu": "Общий",
+      "speakersRu": "Люди",
+      "type": "standard"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/common",
+    "kind": "language",
+    "nameEn": "Common",
+    "nameRu": "Общий",
+    "slug": "common",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "speakersRu": "Аболеты, Плащевики",
+      "type": "exotic"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/deep-speech",
+    "kind": "language",
+    "nameEn": "Deep Speech",
+    "nameRu": "Глубинная речь",
+    "slug": "deep-speech",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "scriptRu": "Драконий",
+      "speakersRu": "Драконы, Драконорождённые",
+      "type": "exotic"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/draconic",
+    "kind": "language",
+    "nameEn": "Draconic",
+    "nameRu": "Драконий",
+    "slug": "draconic",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Драконий считается одним из старейших языков и часто используется при изучении магии. Он звучит резко для большинства других существ и включает множество твёрдых согласных и шипящих звуков."
+  },
+  {
+    "data": {
+      "scriptRu": "Дварфийский",
+      "speakersRu": "Дварфы",
+      "type": "standard"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/dwarvish",
+    "kind": "language",
+    "nameEn": "Dwarvish",
+    "nameRu": "Дварфийский",
+    "slug": "dwarvish",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Дварфийский язык полон твёрдых согласных и гортанных звуков."
+  },
+  {
+    "data": {
+      "scriptRu": "Эльфийский",
+      "speakersRu": "Эльфы",
+      "type": "standard"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/elvish",
+    "kind": "language",
+    "nameEn": "Elvish",
+    "nameRu": "Эльфийский",
+    "slug": "elvish",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Эльфийский язык плавный, с тонкими интонациями и сложной грамматикой. Литература эльфов богата и разнообразна, а их песни и поэмы славятся среди других народов. Многие барды учат этот язык, чтобы добавить эльфийские баллады в свой репертуар."
+  },
+  {
+    "data": {
+      "scriptRu": "Дварфийский",
+      "speakersRu": "Огры, Великаны",
+      "type": "standard"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/giant",
+    "kind": "language",
+    "nameEn": "Giant",
+    "nameRu": "Великаний",
+    "slug": "giant",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "scriptRu": "Дварфийский",
+      "speakersRu": "Гномы",
+      "type": "standard"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/gnomish",
+    "kind": "language",
+    "nameEn": "Gnomish",
+    "nameRu": "Гномий",
+    "slug": "gnomish",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Гномий язык, использующий дварфийский алфавит, известен своими техническими трактатами и каталогами знаний об окружающем мире."
+  },
+  {
+    "data": {
+      "scriptRu": "Дварфийский",
+      "speakersRu": "Гоблиноиды",
+      "type": "standard"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/goblin",
+    "kind": "language",
+    "nameEn": "Goblin",
+    "nameRu": "Гоблинский",
+    "slug": "goblin",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "scriptRu": "Общий",
+      "speakersRu": "Полурослики",
+      "type": "standard"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/halfling",
+    "kind": "language",
+    "nameEn": "Halfling",
+    "nameRu": "Полуросликов",
+    "slug": "halfling",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Язык полуросликов не является секретным, но полурослики неохотно делятся им с другими. Они мало пишут, поэтому у них нет богатой литературы. Однако их устная традиция очень сильна."
+  },
+  {
+    "data": {
+      "scriptRu": "Инфернальный",
+      "speakersRu": "Дьяволы",
+      "type": "exotic"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/infernal",
+    "kind": "language",
+    "nameEn": "Infernal",
+    "nameRu": "Инфернальный",
+    "slug": "infernal",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "scriptRu": "Дварфийский",
+      "speakersRu": "Орки",
+      "type": "standard"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/orc",
+    "kind": "language",
+    "nameEn": "Orc",
+    "nameRu": "Орочий",
+    "slug": "orc",
+    "sourceBook": "SRD 5.1",
+    "textMd": "Орочий — резкий, скрипучий язык с твёрдыми согласными. У него нет собственного алфавита, и он записывается дварфийским письмом."
+  },
+  {
+    "data": {
+      "scriptRu": "Дварфийский",
+      "speakersRu": "Элементали",
+      "type": "exotic"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/primordial",
+    "kind": "language",
+    "nameEn": "Primordial",
+    "nameRu": "Первичный",
+    "slug": "primordial",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "scriptRu": "Эльфийский",
+      "speakersRu": "Феи",
+      "type": "exotic"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/sylvan",
+    "kind": "language",
+    "nameEn": "Sylvan",
+    "nameRu": "Сильванский",
+    "slug": "sylvan",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  },
+  {
+    "data": {
+      "scriptRu": "Эльфийский",
+      "speakersRu": "Торговцы Подземья",
+      "type": "exotic"
+    },
+    "effectsStatus": "complete",
+    "key": "srd/language/undercommon",
+    "kind": "language",
+    "nameEn": "Undercommon",
+    "nameRu": "Подобщий",
+    "slug": "undercommon",
+    "sourceBook": "SRD 5.1",
+    "textMd": ""
+  }
+]

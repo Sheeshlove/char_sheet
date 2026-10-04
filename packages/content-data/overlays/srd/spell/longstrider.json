@@ -1,0 +1,13 @@
+{
+  "target": "srd/spell/longstrider",
+  "data": {
+    "selfEffects": [
+      {
+        "type": "speed",
+        "mode": "walk",
+        "op": "add",
+        "value": "10"
+      }
+    ]
+  }
+}

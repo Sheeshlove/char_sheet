@@ -1,0 +1,87 @@
+{
+  "title": "Паладин 2 / Чародей 3",
+  "build": {
+    "identity": {
+      "name": "Эталон 14",
+      "personality": {
+        "traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      }
+    },
+    "abilities": {
+      "method": "standard_array",
+      "base": {
+        "str": 15,
+        "dex": 12,
+        "con": 13,
+        "int": 8,
+        "wis": 10,
+        "cha": 14
+      }
+    },
+    "race": "mini/race/human",
+    "background": "mini/background/acolyte",
+    "classes": [
+      {
+        "classKey": "mini/class/paladin"
+      },
+      {
+        "classKey": "mini/class/sorcerer",
+        "subclassKey": "mini/subclass/draconic-bloodline"
+      }
+    ],
+    "levels": [
+      {
+        "classKey": "mini/class/paladin",
+        "hp": {
+          "method": "max"
+        }
+      },
+      {
+        "classKey": "mini/class/paladin",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/sorcerer",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/sorcerer",
+        "hp": {
+          "method": "average"
+        }
+      },
+      {
+        "classKey": "mini/class/sorcerer",
+        "hp": {
+          "method": "average"
+        }
+      }
+    ],
+    "choices": {
+      "mini/race/human#languages#language": [
+        "elvish"
+      ],
+      "mini/class/paladin#proficiencies#skills": [
+        "athletics",
+        "persuasion"
+      ],
+      "mini/class/paladin#fighting-style#fighting-style": [
+        "defense"
+      ],
+      "mini/background/acolyte#proficiencies#languages": [
+        "giant",
+        "orc"
+      ],
+      "mini/subclass/draconic-bloodline#dragon-ancestor#ancestor": [
+        "red"
+      ]
+    }
+  }
+}

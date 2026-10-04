@@ -1,0 +1,73 @@
+{
+  "target": "srd/class/druid",
+  "features": {
+    "spellcasting-druid": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "druidic": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Тайный язык друидов; скрытые послания замечают только знающие его"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "wild-shape-cr-1-4-or-below-no-flying-or-swim-speed": {
+      "effects": [
+        {
+          "type": "resource",
+          "id": "wild-shape",
+          "nameRu": "Дикий облик",
+          "max": "CLASS_LEVEL >= 20 ? 99 : 2",
+          "reset": "short"
+        },
+        {
+          "type": "text",
+          "noteRu": "Максимальный ПО и ограничения облика — колонка «Дикий облик»; длительность — половина уровня друида в часах"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "wild-shape-cr-1-2-or-below-no-flying-speed": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "wild-shape-cr-1-or-below": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "circle": {
+      "effects": [],
+      "effectsStatus": "complete"
+    },
+    "timeless-body": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Стареете в 10 раз медленнее"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "beast-spells": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Можно накладывать заклинания в диком облике (вербальные и соматические компоненты)"
+        }
+      ],
+      "effectsStatus": "complete"
+    },
+    "archdruid": {
+      "effects": [
+        {
+          "type": "text",
+          "noteRu": "Дикий облик без ограничений; игнорируются В, С и немагические М компоненты без цены"
+        }
+      ],
+      "effectsStatus": "complete"
+    }
+  }
+}
